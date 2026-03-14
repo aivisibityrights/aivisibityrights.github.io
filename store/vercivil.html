@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerCivil — Structural Engineering Calculator | RC Design with 3D Visualization</title>
+<meta name="description" content="Professional RC beam, column, slab & foundation design with interactive 3D visualization. ACI 318-19 & DPT 1008-61. Offline, no subscription. $19.99 one-time.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0e1a;color:#c8d6e5;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#111827;border:2px solid #3b82f6;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#3b82f6;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#94a3b8;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#3b82f620;border:1px solid #3b82f640;color:#3b82f6;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#111827;border-radius:16px;border:1px solid #1e3a5f}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#3b82f6}
+.stat-label{font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Sections */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#94a3b8;text-align:center;margin-bottom:32px}
+
+/* Calculators */
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-bottom:40px}
+.calc-card{background:#111827;border:1px solid #1e3a5f;border-radius:14px;padding:24px}
+.calc-icon{font-size:32px;margin-bottom:12px}
+.calc-name{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px}
+.calc-list{list-style:none;padding:0}
+.calc-list li{font-size:13px;color:#94a3b8;padding:3px 0;padding-left:16px;position:relative}
+.calc-list li::before{content:'\2022';color:#3b82f6;position:absolute;left:0}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#111827;border:1px solid #1e3a5f;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#94a3b8;line-height:1.5}
+
+/* Standards */
+.std-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.std-badge{background:#111827;border:1px solid #1e3a5f;color:#94a3b8;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600}
+.std-badge strong{color:#3b82f6}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#111827;border:1px solid #1e3a5f;border-radius:12px;padding:16px}
+.why-check{color:#22c55e;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#94a3b8}
+.why-text strong{color:#fff}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#3b82f610;border:1px solid #3b82f630;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#94a3b8;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#f59e0b10;border-left:3px solid #f59e0b;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#f59e0b}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1e3a5f;margin-top:40px}
+.footer a{color:#3b82f6;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a5568;font-size:12px;margin-top:12px}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#9608;</div>
+<h1>VerCivil</h1>
+<p class="subtitle">Structural Engineering Calculator</p>
+<p class="tagline">Professional RC design with interactive 3D visualization. Beam, column, slab & foundation design to ACI 318-19 and DPT 1008-61. Fully offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $19.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $19.99</a>
+</div>
+<div class="price-tag">Pay once, use forever &mdash; No subscription, no ads</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">4</div><div class="stat-label">RC Calculators</div></div>
+<div class="stat"><div class="stat-num">3D</div><div class="stat-label">Visualization</div></div>
+<div class="stat"><div class="stat-num">2</div><div class="stat-label">Design Codes</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+</div>
+
+<!-- 4 Calculators -->
+<h2 class="section-title">Professional RC Design</h2>
+<p class="section-sub">Every calculator includes interactive 3D structural model</p>
+
+<div class="calc-grid">
+<div class="calc-card">
+<div class="calc-icon">&#9640;</div>
+<div class="calc-name">Slab Design</div>
+<ul class="calc-list">
+<li>Two-way RC slab analysis</li>
+<li>Auto thickness per code minimums</li>
+<li>Bottom &amp; top reinforcement both directions</li>
+<li>Deflection check &amp; crack width (Gergely-Lutz)</li>
+<li>3D slab model with rebar grid visualization</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-icon">&#9552;</div>
+<div class="calc-name">Beam Design</div>
+<ul class="calc-list">
+<li>Flexural design with iterative convergence</li>
+<li>Shear design &amp; auto stirrup spacing</li>
+<li>Multi-load, pinned &amp; fixed supports</li>
+<li>Moment &amp; shear diagrams in 3D</li>
+<li>Immediate &amp; long-term deflection</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-icon">&#9475;</div>
+<div class="calc-name">Column Design</div>
+<ul class="calc-list">
+<li>Axial + biaxial bending with magnification</li>
+<li>Bresler Load Contour interaction method</li>
+<li>Slenderness classification (short vs. slender)</li>
+<li>P-M interaction curve visualization</li>
+<li>Auto rebar &amp; tie selection</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-icon">&#9602;</div>
+<div class="calc-name">Foundation Design</div>
+<ul class="calc-list">
+<li>Isolated footing sizing from bearing capacity</li>
+<li>Eccentric loads &amp; partial bearing analysis</li>
+<li>Punching shear (ACI 318-19 three criteria)</li>
+<li>Pressure distribution heatmap</li>
+<li>Development length verification</li>
+</ul>
+</div>
+</div>
+
+<!-- 3D Feature Highlight -->
+<h2 class="section-title">Interactive 3D Visualization</h2>
+<p class="section-sub">See your structural design in three dimensions</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#128302;</div>
+<div class="feature-name">3D Structural Model</div>
+<div class="feature-desc">Rotate, zoom and pan to inspect concrete geometry, reinforcement layout and support conditions.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">Moment &amp; Shear Diagrams</div>
+<div class="feature-desc">Beam force diagrams rendered as 3D curves alongside the structural model.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128293;</div>
+<div class="feature-name">Pressure Heatmap</div>
+<div class="feature-desc">Foundation base pressure visualized as a color-coded heatmap under the footing.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128208;</div>
+<div class="feature-name">P-M Interaction Curve</div>
+<div class="feature-desc">Column axial-moment interaction with demand point plotted on the capacity curve.</div>
+</div>
+</div>
+
+<!-- Standards -->
+<h2 class="section-title">Design Standards</h2>
+<p class="section-sub">Verified formulas from established codes</p>
+
+<div class="std-row">
+<div class="std-badge"><strong>ACI 318-19</strong> &mdash; American Concrete Institute</div>
+<div class="std-badge"><strong>DPT 1008-61</strong> &mdash; Thai Department of Public Works</div>
+</div>
+
+<!-- Why VerCivil -->
+<h2 class="section-title">Why VerCivil?</h2>
+<p class="section-sub">Built by engineers, for engineers</p>
+
+<div class="why-grid">
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Deterministic calculations</strong> &mdash; same input always gives the same output. No AI guesswork.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Fully offline</strong> &mdash; works on construction sites with no signal.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Pass/Fail for every check</strong> &mdash; flexure, shear, punching, deflection, slenderness.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>No subscription</strong> &mdash; pay $19.99 once, use forever. All features unlocked.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>No ads, no tracking</strong> &mdash; your calculations stay on your device.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Material quantities</strong> &mdash; concrete volume &amp; rebar weight for every design.</div>
+</div>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>Disclaimer:</strong> For reference only. All calculations should be verified by a licensed professional engineer before use in any project.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Structural design demands precision. So should your tools.</h2>
+<p>Professional RC design with 3D visualization. ACI 318-19 compliant. Offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; Download on App Store</a>
+<a class="badge badge-google" href="#">&#9654; Get it on Google Play</a>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="support.html">Support</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</div>
+
+</div>
+</body>
+</html>

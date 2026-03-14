@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerBio — Biology Calculator | 41 Tools, 7 Categories</title>
+<meta name="description" content="Every biology calculation you need — from Punnett squares to blood gas analysis. 41 tools across genetics, molecular biology, ecology, biochemistry, biostatistics & physiology. 100% offline. Pay once $9.99.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#081a12;color:#e8f5e9;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f2a1c;border:2px solid #00e676;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#00e676;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#81c784;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00e67620;border:1px solid #00e67640;color:#00e676;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f2a1c;border-radius:16px;border:1px solid #1b4332}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00e676}
+.stat-label{font-size:12px;color:#81c784;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#81c784;text-align:center;margin-bottom:32px}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:40px}
+.cat-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:13px;font-weight:700;color:#fff}
+.cat-count{font-size:11px;color:#81c784;margin-top:2px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f2a1c;border:1px solid #1b4332;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#81c784;line-height:1.5}
+
+/* Viz Showcase */
+.viz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:40px}
+.viz-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.viz-icon{font-size:32px;margin-bottom:8px}
+.viz-name{font-size:13px;font-weight:600;color:#fff}
+.viz-desc{font-size:11px;color:#81c784;margin-top:4px}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px}
+.why-check{color:#00e676;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a5d6a7}
+.why-text strong{color:#fff}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f2a1c;border:1px solid #1b4332;color:#81c784;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00e67610;border:1px solid #00e67630;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#81c784;font-size:15px;margin-bottom:24px}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1b4332;margin-top:40px}
+.footer a{color:#00e676;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a7c59;font-size:12px;margin-top:12px}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#129516;</div>
+<h1>VerBio</h1>
+<p class="subtitle">Biology Calculator & Reference</p>
+<p class="tagline">Every biology calculation you need — from Punnett squares to blood gas analysis. Built for students, researchers, and lab professionals. 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $9.99</a>
+</div>
+<div class="price-tag">Pay once, use forever — No subscription, no ads</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">41</div><div class="stat-label">Calculators</div></div>
+<div class="stat"><div class="stat-num">7</div><div class="stat-label">Categories</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">Languages</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+</div>
+
+<!-- 7 Categories -->
+<h2 class="section-title">7 Categories of Biology</h2>
+<p class="section-sub">From genetics to human physiology</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#129516;</div><div class="cat-name">Genetics</div><div class="cat-count">6 calculators</div></div>
+<div class="cat-item"><div class="cat-icon">&#129529;</div><div class="cat-name">Molecular Bio</div><div class="cat-count">7 calculators</div></div>
+<div class="cat-item"><div class="cat-icon">&#128300;</div><div class="cat-name">Cell Biology</div><div class="cat-count">6 calculators</div></div>
+<div class="cat-item"><div class="cat-icon">&#127795;</div><div class="cat-name">Ecology</div><div class="cat-count">6 calculators</div></div>
+<div class="cat-item"><div class="cat-icon">&#9878;</div><div class="cat-name">Biochemistry</div><div class="cat-count">6 calculators</div></div>
+<div class="cat-item"><div class="cat-icon">&#128202;</div><div class="cat-name">Biostatistics</div><div class="cat-count">5 calculators</div></div>
+<div class="cat-item"><div class="cat-icon">&#129728;</div><div class="cat-name">Physiology</div><div class="cat-count">5 calculators</div></div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">More Than Just Calculators</h2>
+<p class="section-sub">Complete biology toolkit in your pocket</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#129516;</div>
+<div class="feature-name">Interactive Punnett Squares</div>
+<div class="feature-desc">Mono, di, and trihybrid crosses with genotype/phenotype ratios — rendered as interactive SVG grids.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">Live SVG Visualizations</div>
+<div class="feature-desc">Growth curves, Lotka-Volterra plots, enzyme kinetics charts, survivorship curves, diversity donuts — all in real time.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Built-in References</div>
+<div class="feature-desc">20 amino acids with properties, 64-codon genetic code table, biology constants, and searchable formula library.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12 Languages</div>
+<div class="feature-desc">English, Thai, Japanese, Korean, Chinese, Spanish, Portuguese (Brazil), French, German, Indonesian, Russian, Italian.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Offline</div>
+<div class="feature-desc">Works without internet — in exam halls, on lab benches, during fieldwork. All data is bundled in the app.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#9989;</div>
+<div class="feature-name">Step-by-Step Solutions</div>
+<div class="feature-desc">See every calculation step with proper formulas and units. Learn the process, not just the answer.</div>
+</div>
+</div>
+
+<!-- Visualizations Showcase -->
+<h2 class="section-title">Interactive Visualizations</h2>
+<p class="section-sub">Biology comes alive with real-time SVG charts</p>
+
+<div class="viz-grid">
+<div class="viz-item"><div class="viz-icon">&#9638;</div><div class="viz-name">Punnett Grid</div><div class="viz-desc">Color-coded genotypes</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">Growth Curves</div><div class="viz-desc">Exponential & logistic</div></div>
+<div class="viz-item"><div class="viz-icon">&#128256;</div><div class="viz-name">Predator-Prey</div><div class="viz-desc">Lotka-Volterra oscillation</div></div>
+<div class="viz-item"><div class="viz-icon">&#128201;</div><div class="viz-name">Enzyme Kinetics</div><div class="viz-desc">Michaelis-Menten + LB</div></div>
+<div class="viz-item"><div class="viz-icon">&#127984;</div><div class="viz-name">Hardy-Weinberg</div><div class="viz-desc">Frequency bar chart</div></div>
+<div class="viz-item"><div class="viz-icon">&#128336;</div><div class="viz-name">Survivorship</div><div class="viz-desc">Type I / II / III</div></div>
+<div class="viz-item"><div class="viz-icon">&#128168;</div><div class="viz-name">Lung Volumes</div><div class="viz-desc">Stacked diagram</div></div>
+<div class="viz-item"><div class="viz-icon">&#127856;</div><div class="viz-name">Diversity Donut</div><div class="viz-desc">Species proportions</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">Dose-Response</div><div class="viz-desc">Sigmoidal curve</div></div>
+<div class="viz-item"><div class="viz-icon">&#127752;</div><div class="viz-name">pH Scale</div><div class="viz-desc">0-14 gradient bar</div></div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">Why a Calculator App, Not AI?</h2>
+<p class="section-sub">For biology calculations, precision matters</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>AI can hallucinate</strong> — AI chatbots sometimes generate incorrect formulas or values. VerBio uses verified textbook equations every time.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Instant & offline</strong> — Results in milliseconds without internet. AI chatbots need a connection and can take seconds to respond.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Consistent results</strong> — Same inputs always give the same outputs. AI responses vary between sessions and may contradict themselves.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Pay once, use forever</strong> — $9.99 one-time purchase. AI chatbot subscriptions cost $20-240/year.</div>
+</div>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Available in 12 Languages</h2>
+<p class="section-sub">Reaching biology students worldwide</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Every Biology Calculation. One App.</h2>
+<p>From Punnett squares to blood gas analysis — 41 tools, 7 categories, 12 languages. 100% offline. No subscription.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $9.99</a>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">Privacy Policy</a>
+<a href="https://aivisibityrights.github.io/store/support.html">Support</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</div>
+
+</div>
+</body>
+</html>
