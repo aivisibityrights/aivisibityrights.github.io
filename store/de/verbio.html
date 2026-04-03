@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerBio — Biologie Rechner</title>
+<meta name="description" content="Vom Punnett-Quadrat bis zur Blutgasanalyse. Genetik, Molekularbiologie, Ökologie, Biochemie, Biostatistik und Physiologie. Dynamische interaktive Visualisierungen. 100% offline. Einmalkauf.">
+<link rel="alternate" hreflang="en" href="../verbio.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#081a12;color:#e8f5e9;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f2a1c;border:2px solid #00e676;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#00e676;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#81c784;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00e67620;border:1px solid #00e67640;color:#00e676;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f2a1c;border-radius:16px;border:1px solid #1b4332}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00e676}
+.stat-label{font-size:12px;color:#81c784;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#81c784;text-align:center;margin-bottom:32px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:40px}
+.cat-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:13px;font-weight:700;color:#fff}
+.cat-desc{font-size:11px;color:#81c784;margin-top:2px}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f2a1c;border:1px solid #1b4332;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#81c784;line-height:1.5}
+.viz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:40px}
+.viz-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.viz-icon{font-size:32px;margin-bottom:8px}
+.viz-name{font-size:13px;font-weight:600;color:#fff}
+.viz-desc{font-size:11px;color:#81c784;margin-top:4px}
+.viz-3d{border-color:#26c6da}
+.viz-3d .viz-name{color:#26c6da}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px}
+.why-check{color:#00e676;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a5d6a7}
+.why-text strong{color:#fff}
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f2a1c;border:1px solid #1b4332;color:#81c784;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00e67610;border:1px solid #00e67630;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#81c784;font-size:15px;margin-bottom:24px}
+.disclaimer{background:#ffab4010;border-left:3px solid #ffab40;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffab40}
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1b4332;margin-top:40px}
+.footer a{color:#00e676;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a7c59;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00e676;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#81c784;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerBio — Biology Calculator & Reference",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Every biology calculation you need — from Punnett squares to blood gas analysis. Genetics, molecular biology, ecology, biochemistry, biostatistics & physiology. 100% offline. $9.99 one-time.",
+  "featureList": "Interactive Punnett Squares, Live SVG Visualizations, 3D DNA and Cell Models, Blood Gas Analysis, Enzyme Kinetics, Hardy-Weinberg Calculator, Step-by-Step Solutions, 12 Languages"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#129516;</div>
+<h1>VerBio</h1>
+<p class="subtitle">Biologie Rechner &amp; Nachschlagewerk</p>
+<p class="tagline">Jede biologische Berechnung, die Sie brauchen &mdash; vom Punnett-Quadrat bis zur Blutgasanalyse. Entwickelt f&uuml;r Studierende, Forscher und Laborpersonal. 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+<div class="price-tag">Einmal kaufen, f&uuml;r immer nutzen &mdash; Kein Abo, keine Werbung</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">7</div><div class="stat-label">Kategorien</div></div>
+<div class="stat"><div class="stat-num">3D</div><div class="stat-label">Visualisierungen</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">Sprachen</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+</div>
+
+<!-- 7 Categories -->
+<h2 class="section-title">Umfassende Biologie-Abdeckung</h2>
+<p class="section-sub">Von Genetik bis Humanphysiologie</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#129516;</div><div class="cat-name">Genetik</div><div class="cat-desc">Punnett, Hardy-Weinberg, Chi-Quadrat</div></div>
+<div class="cat-item"><div class="cat-icon">&#129529;</div><div class="cat-name">Molekularbiologie</div><div class="cat-desc">DNA/RNA, Tm, PCR, GC-Gehalt</div></div>
+<div class="cat-item"><div class="cat-icon">&#128300;</div><div class="cat-name">Zellbiologie</div><div class="cat-desc">Osmolarit&auml;t, Membran, H&auml;mozytometer</div></div>
+<div class="cat-item"><div class="cat-icon">&#127795;</div><div class="cat-name">&Ouml;kologie</div><div class="cat-desc">Population, Diversit&auml;t, Lotka-Volterra</div></div>
+<div class="cat-item"><div class="cat-icon">&#9878;</div><div class="cat-name">Biochemie</div><div class="cat-desc">Enzymkinetik, Beer-Lambert, pI</div></div>
+<div class="cat-item"><div class="cat-icon">&#128202;</div><div class="cat-name">Biostatistik</div><div class="cat-desc">t-Test, ANOVA, Regression, Chi-Quadrat</div></div>
+<div class="cat-item"><div class="cat-icon">&#129728;</div><div class="cat-name">Physiologie</div><div class="cat-desc">BMI, Herzzeitvolumen, Lungenvolumina</div></div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">Mehr als nur Rechner</h2>
+<p class="section-sub">Das komplette Biologie-Werkzeug in Ihrer Tasche</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#129516;</div>
+<div class="feature-name">Interaktive Punnett-Quadrate</div>
+<div class="feature-desc">Mono-, Di- und Trihybridkreuzungen mit Genotyp-/Ph&auml;notyp-Verh&auml;ltnissen &mdash; dargestellt als interaktive SVG-Raster.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">Dynamische SVG-Visualisierungen</div>
+<div class="feature-desc">Wachstumskurven, Lotka-Volterra-Diagramme, Enzymkinetik-Diagramme, &Uuml;berlebenskurven, Diversit&auml;tsdiagramme &mdash; alles in Echtzeit.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Integrierte Nachschlagewerke</div>
+<div class="feature-desc">Aminos&auml;uren mit Eigenschaften, vollst&auml;ndige genetische Code-Tabelle, biologische Konstanten und durchsuchbare Formelsammlung.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12 Sprachen</div>
+<div class="feature-desc">Englisch, Thail&auml;ndisch, Japanisch, Koreanisch, Chinesisch, Spanisch, Portugiesisch (Brasilien), Franz&ouml;sisch, Deutsch, Indonesisch, Russisch, Italienisch.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Offline</div>
+<div class="feature-desc">Funktioniert ohne Internet &mdash; in Pr&uuml;fungen, am Labortisch und im Feld. Alle Daten sind in der App integriert.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#9989;</div>
+<div class="feature-name">Schritt-f&uuml;r-Schritt-L&ouml;sungen</div>
+<div class="feature-desc">Sehen Sie jeden Berechnungsschritt mit korrekten Formeln und Einheiten. Verstehen Sie den Prozess, nicht nur das Ergebnis.</div>
+</div>
+</div>
+
+<!-- 3D Visualizations -->
+<h2 class="section-title">Interaktive 3D-Modelle</h2>
+<p class="section-sub">Biologische Strukturen in drei Dimensionen erkunden</p>
+
+<div class="viz-grid">
+<div class="viz-item viz-3d"><div class="viz-icon">&#129529;</div><div class="viz-name">DNA-Doppelhelix</div><div class="viz-desc">Drehen &amp; zoomen der ikonischen Struktur</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128300;</div><div class="viz-name">Zellmembran</div><div class="viz-desc">Phospholipid-Doppelschicht in 3D</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128168;</div><div class="viz-name">Lungenanatomie</div><div class="viz-desc">3D-Atemwegsmodell</div></div>
+</div>
+
+<!-- SVG Visualizations -->
+<h2 class="section-title">Echtzeit-SVG-Diagramme</h2>
+<p class="section-sub">Biologie wird mit interaktiven Visualisierungen lebendig</p>
+
+<div class="viz-grid">
+<div class="viz-item"><div class="viz-icon">&#9638;</div><div class="viz-name">Punnett-Raster</div><div class="viz-desc">Farbcodierte Genotypen</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">Wachstumskurven</div><div class="viz-desc">Exponentiell &amp; logistisch</div></div>
+<div class="viz-item"><div class="viz-icon">&#128256;</div><div class="viz-name">R&auml;uber-Beute</div><div class="viz-desc">Lotka-Volterra-Oszillation</div></div>
+<div class="viz-item"><div class="viz-icon">&#128201;</div><div class="viz-name">Enzymkinetik</div><div class="viz-desc">Michaelis-Menten + LB</div></div>
+<div class="viz-item"><div class="viz-icon">&#127984;</div><div class="viz-name">Hardy-Weinberg</div><div class="viz-desc">Frequenz-Balkendiagramm</div></div>
+<div class="viz-item"><div class="viz-icon">&#128336;</div><div class="viz-name">&Uuml;berlebenskurven</div><div class="viz-desc">Typ I / II / III</div></div>
+<div class="viz-item"><div class="viz-icon">&#128168;</div><div class="viz-name">Lungenvolumina</div><div class="viz-desc">Gestapeltes Diagramm</div></div>
+<div class="viz-item"><div class="viz-icon">&#127856;</div><div class="viz-name">Diversit&auml;ts-Donut</div><div class="viz-desc">Artenverh&auml;ltnisse</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">Dosis-Wirkungs-Kurve</div><div class="viz-desc">Sigmoidale EC50-Kurve</div></div>
+<div class="viz-item"><div class="viz-icon">&#127752;</div><div class="viz-name">pH-Skala</div><div class="viz-desc">0&ndash;14 Gradientenbalken</div></div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">Warum eine Rechner-App, nicht KI?</h2>
+<p class="section-sub">Bei Biologie-Berechnungen z&auml;hlt Pr&auml;zision</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>KI kann halluzinieren</strong> &mdash; KI-Chatbots erzeugen manchmal falsche Formeln oder Werte. VerBio verwendet jedes Mal verifizierte Lehrbuchgleichungen.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Sofort &amp; offline</strong> &mdash; Ergebnisse in Millisekunden ohne Internet. KI-Chatbots ben&ouml;tigen eine Verbindung und k&ouml;nnen Sekunden brauchen.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Konsistente Ergebnisse</strong> &mdash; Gleiche Eingaben liefern immer gleiche Ausgaben. KI-Antworten variieren zwischen Sitzungen und k&ouml;nnen sich widersprechen.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Einmal kaufen, f&uuml;r immer nutzen</strong> &mdash; $9,99 Einmalkauf. KI-Chatbot-Abonnements kosten $20&ndash;240/Jahr.</div>
+</div>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Verf&uuml;gbar in 12 Sprachen</h2>
+<p class="section-sub">F&uuml;r Biologie-Studierende weltweit</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanisch</span>
+<span class="lang-badge">&#127472;&#127479; Koreanisch</span>
+<span class="lang-badge">&#127464;&#127475; Chinesisch</span>
+<span class="lang-badge">&#127466;&#127480; Spanisch</span>
+<span class="lang-badge">&#127463;&#127479; Portugiesisch</span>
+<span class="lang-badge">&#127467;&#127479; Franz&ouml;sisch</span>
+<span class="lang-badge">&#127465;&#127466; Deutsch</span>
+<span class="lang-badge">&#127470;&#127465; Indonesisch</span>
+<span class="lang-badge">&#127479;&#127482; Russisch</span>
+<span class="lang-badge">&#127470;&#127481; Italienisch</span>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>Hinweis:</strong> Der Blutgas-Interpreter dient ausschlie&szlig;lich Bildungszwecken &mdash; nicht f&uuml;r klinische Entscheidungen bestimmt.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Jede Biologie-Berechnung. Eine App.</h2>
+<p>Vom Punnett-Quadrat bis zur Blutgasanalyse. Umfassende Werkzeuge, interaktive Visualisierungen, 12 Sprachen. 100% offline. Kein Abo.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">H&auml;ufig gestellte Fragen</h2>
+<p class="section-sub">H&auml;ufige Fragen zu VerBio</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">Was ist die beste Biologie-Rechner-App f&uuml;r Studierende?</summary>
+<div class="faq-a">VerBio ist ein umfassender Biologie-Rechner mit 7 Kategorien: Genetik, Molekularbiologie, &Ouml;kologie, Biochemie, Zellbiologie, Biostatistik und Physiologie. Er funktioniert 100% offline und enth&auml;lt interaktive Punnett-Quadrate, Enzymkinetik-Diagramme und 3D-Modelle von DNA und Zellmembranen.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Kann ich Punnett-Quadrat-Berechnungen auf meinem Handy durchf&uuml;hren?</summary>
+<div class="faq-a">Ja. VerBio enth&auml;lt interaktive Punnett-Quadrate f&uuml;r Mono-, Di- und Trihybridkreuzungen. Ergebnisse werden als farbcodierte SVG-Raster mit Genotyp- und Ph&auml;notyp-Verh&auml;ltnissen und Schritt-f&uuml;r-Schritt-Erkl&auml;rungen dargestellt.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Gibt es eine App f&uuml;r Hardy-Weinberg-Gleichgewichtsberechnungen?</summary>
+<div class="faq-a">VerBio enth&auml;lt einen Hardy-Weinberg-Rechner, der Allel- und Genotypfrequenzen berechnet, mit einem visuellen Frequenz-Balkendiagramm. Er deckt auch den Chi-Quadrat-Anpassungstest f&uuml;r populationsgenetische Analysen ab.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Welche App verwenden Biologie-Forscher f&uuml;r Enzymkinetik?</summary>
+<div class="faq-a">VerBio bietet Michaelis-Menten-Kinetik-Berechnungen mit Lineweaver-Burk-Diagrammen, das Beer-Lambert-Gesetz f&uuml;r Spektrophotometrie und die Sch&auml;tzung des isoelektrischen Punkts. Alle Ergebnisse enthalten Echtzeit-SVG-Visualisierungen und Schritt-f&uuml;r-Schritt-L&ouml;sungen.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Wie genau sind Biologie-Rechner-Apps im Vergleich zu Lehrb&uuml;chern?</summary>
+<div class="faq-a">VerBio verwendet verifizierte Lehrbuchgleichungen f&uuml;r jede Berechnung. Anders als KI-Chatbots, die Formeln halluzinieren k&ouml;nnen, liefert VerBio deterministische Ergebnisse &mdash; gleiche Eingaben ergeben immer gleiche Ausgaben. Jede Formel basiert auf etablierten biologischen und statistischen Methoden.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Biologie-Rechner-App vs. ChatGPT &mdash; was ist besser f&uuml;r Hausaufgaben?</summary>
+<div class="faq-a">F&uuml;r Biologie-Berechnungen ist eine spezielle Rechner-App wie VerBio zuverl&auml;ssiger als KI-Chatbots. VerBio funktioniert offline, liefert sofortige Ergebnisse mit Schritt-f&uuml;r-Schritt-L&ouml;sungen, verwendet verifizierte Formeln und kostet einmalig $9,99 im Vergleich zu wiederkehrenden KI-Abonnements. KI-Chatbots k&ouml;nnen falsche Formeln oder inkonsistente Ergebnisse zwischen Sitzungen liefern.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Funktioniert VerBio offline w&auml;hrend Pr&uuml;fungen?</summary>
+<div class="faq-a">Ja. VerBio ist 100% offline &mdash; alle Berechnungen, 3D-Modelle, Referenzdaten und Visualisierungen sind in der App integriert. Es funktioniert in Pr&uuml;fungsr&auml;umen, am Labortisch und bei Feldarbeit ohne Internetverbindung.</div>
+</details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">Datenschutz</a>
+<a href="https://aivisibityrights.github.io/store/support.html">Support</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. Alle Rechte vorbehalten.</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerBio — Kalkulator Biologi & Referensi</title>
+<meta name="description" content="Semua perhitungan biologi yang Anda butuhkan — dari kotak Punnett hingga analisis gas darah. Genetika, biologi molekuler, ekologi, biokimia, biostatistika & fisiologi. 100% offline. $9.99 sekali bayar.">
+<link rel="alternate" hreflang="en" href="../verbio.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#081a12;color:#e8f5e9;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f2a1c;border:2px solid #00e676;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#00e676;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#81c784;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00e67620;border:1px solid #00e67640;color:#00e676;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f2a1c;border-radius:16px;border:1px solid #1b4332}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00e676}
+.stat-label{font-size:12px;color:#81c784;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#81c784;text-align:center;margin-bottom:32px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:40px}
+.cat-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:13px;font-weight:700;color:#fff}
+.cat-desc{font-size:11px;color:#81c784;margin-top:2px}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f2a1c;border:1px solid #1b4332;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#81c784;line-height:1.5}
+.viz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:40px}
+.viz-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.viz-icon{font-size:32px;margin-bottom:8px}
+.viz-name{font-size:13px;font-weight:600;color:#fff}
+.viz-desc{font-size:11px;color:#81c784;margin-top:4px}
+.viz-3d{border-color:#26c6da}
+.viz-3d .viz-name{color:#26c6da}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px}
+.why-check{color:#00e676;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a5d6a7}
+.why-text strong{color:#fff}
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f2a1c;border:1px solid #1b4332;color:#81c784;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00e67610;border:1px solid #00e67630;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#81c784;font-size:15px;margin-bottom:24px}
+.disclaimer{background:#ffab4010;border-left:3px solid #ffab40;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffab40}
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1b4332;margin-top:40px}
+.footer a{color:#00e676;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a7c59;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00e676;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#81c784;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerBio — Kalkulator Biologi & Referensi",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Semua perhitungan biologi yang Anda butuhkan — dari kotak Punnett hingga analisis gas darah. Genetika, biologi molekuler, ekologi, biokimia, biostatistika & fisiologi. 100% offline. $9.99 sekali bayar.",
+  "featureList": "Interactive Punnett Squares, Live SVG Visualizations, 3D DNA and Cell Models, Blood Gas Analysis, Enzyme Kinetics, Hardy-Weinberg Calculator, Step-by-Step Solutions, 12 Languages"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="hero">
+<div class="hero-icon">&#129516;</div>
+<h1>VerBio</h1>
+<p class="subtitle">Kalkulator Biologi &amp; Referensi</p>
+<p class="tagline">Semua perhitungan biologi yang Anda butuhkan &mdash; dari kotak Punnett hingga analisis gas darah. Dirancang untuk pelajar, peneliti, dan profesional laboratorium. 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+<div class="price-tag">Bayar sekali, gunakan selamanya &mdash; Tanpa langganan, tanpa iklan</div>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-num">7</div><div class="stat-label">Kategori</div></div>
+<div class="stat"><div class="stat-num">3D</div><div class="stat-label">Visualisasi</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">Bahasa</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+</div>
+
+<h2 class="section-title">Cakupan Biologi Lengkap</h2>
+<p class="section-sub">Dari genetika hingga fisiologi manusia</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#129516;</div><div class="cat-name">Genetika</div><div class="cat-desc">Punnett, Hardy-Weinberg, chi-kuadrat</div></div>
+<div class="cat-item"><div class="cat-icon">&#129529;</div><div class="cat-name">Biologi Molekuler</div><div class="cat-desc">DNA/RNA, Tm, PCR, kandungan GC</div></div>
+<div class="cat-item"><div class="cat-icon">&#128300;</div><div class="cat-name">Biologi Sel</div><div class="cat-desc">Osmolaritas, membran, hemositometer</div></div>
+<div class="cat-item"><div class="cat-icon">&#127795;</div><div class="cat-name">Ekologi</div><div class="cat-desc">Populasi, keanekaragaman, Lotka-Volterra</div></div>
+<div class="cat-item"><div class="cat-icon">&#9878;</div><div class="cat-name">Biokimia</div><div class="cat-desc">Kinetika enzim, Beer-Lambert, pI</div></div>
+<div class="cat-item"><div class="cat-icon">&#128202;</div><div class="cat-name">Biostatistika</div><div class="cat-desc">Uji t, ANOVA, regresi, chi-kuadrat</div></div>
+<div class="cat-item"><div class="cat-icon">&#129728;</div><div class="cat-name">Fisiologi</div><div class="cat-desc">IMT, curah jantung, volume paru</div></div>
+</div>
+
+<h2 class="section-title">Lebih dari Sekadar Kalkulator</h2>
+<p class="section-sub">Perangkat biologi lengkap di saku Anda</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#129516;</div>
+<div class="feature-name">Kotak Punnett Interaktif</div>
+<div class="feature-desc">Persilangan mono, di, dan trihibrida dengan rasio genotipe/fenotipe &mdash; ditampilkan sebagai grid SVG interaktif.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">Visualisasi SVG Langsung</div>
+<div class="feature-desc">Kurva pertumbuhan, plot Lotka-Volterra, grafik kinetika enzim, kurva kelangsungan hidup, donut keanekaragaman &mdash; semuanya real-time.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Referensi Bawaan</div>
+<div class="feature-desc">Asam amino beserta propertinya, tabel kode genetik lengkap, konstanta biologi, dan perpustakaan rumus yang dapat dicari.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12 Bahasa</div>
+<div class="feature-desc">Inggris, Thai, Jepang, Korea, Mandarin, Spanyol, Portugis (Brasil), Prancis, Jerman, Indonesia, Rusia, Italia.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Offline</div>
+<div class="feature-desc">Berfungsi tanpa internet &mdash; di ruang ujian, meja lab, dan saat kerja lapangan. Semua data terpaket dalam aplikasi.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#9989;</div>
+<div class="feature-name">Solusi Langkah demi Langkah</div>
+<div class="feature-desc">Lihat setiap langkah perhitungan dengan rumus dan satuan yang tepat. Pelajari prosesnya, bukan hanya jawabannya.</div>
+</div>
+</div>
+
+<h2 class="section-title">Model 3D Interaktif</h2>
+<p class="section-sub">Jelajahi struktur biologis dalam tiga dimensi</p>
+
+<div class="viz-grid">
+<div class="viz-item viz-3d"><div class="viz-icon">&#129529;</div><div class="viz-name">Heliks Ganda DNA</div><div class="viz-desc">Putar &amp; perbesar struktur ikonik</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128300;</div><div class="viz-name">Membran Sel</div><div class="viz-desc">Bilayer fosfolipid dalam 3D</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128168;</div><div class="viz-name">Anatomi Paru</div><div class="viz-desc">Model respirasi 3D</div></div>
+</div>
+
+<h2 class="section-title">Grafik SVG Real-Time</h2>
+<p class="section-sub">Biologi menjadi hidup dengan visualisasi interaktif</p>
+
+<div class="viz-grid">
+<div class="viz-item"><div class="viz-icon">&#9638;</div><div class="viz-name">Grid Punnett</div><div class="viz-desc">Genotipe berkode warna</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">Kurva Pertumbuhan</div><div class="viz-desc">Eksponensial &amp; logistik</div></div>
+<div class="viz-item"><div class="viz-icon">&#128256;</div><div class="viz-name">Predator-Mangsa</div><div class="viz-desc">Osilasi Lotka-Volterra</div></div>
+<div class="viz-item"><div class="viz-icon">&#128201;</div><div class="viz-name">Kinetika Enzim</div><div class="viz-desc">Michaelis-Menten + LB</div></div>
+<div class="viz-item"><div class="viz-icon">&#127984;</div><div class="viz-name">Hardy-Weinberg</div><div class="viz-desc">Diagram batang frekuensi</div></div>
+<div class="viz-item"><div class="viz-icon">&#128336;</div><div class="viz-name">Kelangsungan Hidup</div><div class="viz-desc">Tipe I / II / III</div></div>
+<div class="viz-item"><div class="viz-icon">&#128168;</div><div class="viz-name">Volume Paru</div><div class="viz-desc">Diagram bertumpuk</div></div>
+<div class="viz-item"><div class="viz-icon">&#127856;</div><div class="viz-name">Donut Keanekaragaman</div><div class="viz-desc">Proporsi spesies</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">Dosis-Respons</div><div class="viz-desc">Kurva sigmoidal EC50</div></div>
+<div class="viz-item"><div class="viz-icon">&#127752;</div><div class="viz-name">Skala pH</div><div class="viz-desc">Gradien batang 0&ndash;14</div></div>
+</div>
+
+<h2 class="section-title">Mengapa Aplikasi Kalkulator, Bukan AI?</h2>
+<p class="section-sub">Untuk perhitungan biologi, presisi itu penting</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>AI bisa berhalusinasi</strong> &mdash; Chatbot AI kadang menghasilkan rumus atau nilai yang salah. VerBio menggunakan persamaan buku teks terverifikasi setiap saat.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Instan &amp; offline</strong> &mdash; Hasil dalam milidetik tanpa internet. Chatbot AI memerlukan koneksi dan bisa memakan waktu beberapa detik untuk merespons.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Hasil konsisten</strong> &mdash; Input yang sama selalu menghasilkan output yang sama. Respons AI bervariasi antar sesi dan bisa saling bertentangan.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Bayar sekali, gunakan selamanya</strong> &mdash; Pembelian satu kali $9.99. Langganan chatbot AI menelan biaya $20&ndash;240/tahun.</div>
+</div>
+</div>
+
+<h2 class="section-title">Tersedia dalam 12 Bahasa</h2>
+<p class="section-sub">Menjangkau pelajar biologi di seluruh dunia</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Jepang</span>
+<span class="lang-badge">&#127472;&#127479; Korea</span>
+<span class="lang-badge">&#127464;&#127475; Mandarin</span>
+<span class="lang-badge">&#127466;&#127480; Spanyol</span>
+<span class="lang-badge">&#127463;&#127479; Portugis</span>
+<span class="lang-badge">&#127467;&#127479; Prancis</span>
+<span class="lang-badge">&#127465;&#127466; Jerman</span>
+<span class="lang-badge">&#127470;&#127465; Indonesia</span>
+<span class="lang-badge">&#127479;&#127482; Rusia</span>
+<span class="lang-badge">&#127470;&#127481; Italia</span>
+</div>
+
+<div class="disclaimer">
+<strong>Catatan:</strong> Penerjemah Gas Darah hanya untuk tujuan edukatif &mdash; tidak dimaksudkan untuk pengambilan keputusan klinis.
+</div>
+
+<div class="cta">
+<h2>Semua Perhitungan Biologi. Satu Aplikasi.</h2>
+<p>Dari kotak Punnett hingga analisis gas darah. Alat lengkap, visualisasi interaktif, 12 bahasa. 100% offline. Tanpa langganan.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+</div>
+
+<h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+<p class="section-sub">Pertanyaan umum tentang VerBio</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">Apa aplikasi kalkulator biologi terbaik untuk pelajar?</summary>
+<div class="faq-a">VerBio adalah kalkulator biologi lengkap yang mencakup 7 kategori termasuk genetika, biologi molekuler, ekologi, biokimia, biologi sel, biostatistika, dan fisiologi. Berfungsi 100% offline dan menyertakan kotak Punnett interaktif, grafik kinetika enzim, dan model 3D DNA serta membran sel.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Bisakah saya menghitung kotak Punnett di ponsel?</summary>
+<div class="faq-a">Ya. VerBio menyertakan kotak Punnett interaktif untuk persilangan monohibrida, dihibrida, dan trihibrida. Hasilnya ditampilkan sebagai grid SVG berkode warna yang menunjukkan rasio genotipe dan fenotipe dengan penjelasan langkah demi langkah.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Adakah aplikasi untuk perhitungan keseimbangan Hardy-Weinberg?</summary>
+<div class="faq-a">VerBio menyertakan kalkulator Hardy-Weinberg yang menghitung frekuensi alel dan genotipe dengan diagram batang frekuensi visual. Juga mencakup uji chi-kuadrat untuk analisis genetika populasi.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Aplikasi apa yang digunakan peneliti biologi untuk kinetika enzim?</summary>
+<div class="faq-a">VerBio menyediakan perhitungan kinetika Michaelis-Menten dengan plot Lineweaver-Burk, hukum Beer-Lambert untuk spektrofotometri, dan estimasi titik isoelektrik. Semua hasil dilengkapi visualisasi SVG real-time dan solusi langkah demi langkah.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Seberapa akurat aplikasi kalkulator biologi dibandingkan buku teks?</summary>
+<div class="faq-a">VerBio menggunakan persamaan buku teks terverifikasi untuk setiap perhitungan. Berbeda dengan chatbot AI yang bisa mengarang rumus, VerBio menghasilkan hasil deterministik &mdash; input yang sama selalu memberikan output yang sama. Setiap rumus berdasarkan metode biologi dan statistik yang mapan.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Aplikasi kalkulator biologi vs ChatGPT &mdash; mana yang lebih baik untuk tugas?</summary>
+<div class="faq-a">Untuk perhitungan biologi, aplikasi kalkulator khusus seperti VerBio lebih andal daripada chatbot AI. VerBio berfungsi offline, memberikan hasil instan dengan solusi langkah demi langkah, menggunakan rumus terverifikasi, dan hanya seharga $9.99 sekali bayar dibandingkan langganan AI yang berulang. Chatbot AI bisa menghasilkan rumus yang salah atau hasil yang tidak konsisten antar sesi.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Apakah VerBio berfungsi offline saat ujian?</summary>
+<div class="faq-a">Ya. VerBio 100% offline &mdash; semua perhitungan, model 3D, data referensi, dan visualisasi terpaket dalam aplikasi. Berfungsi di ruang ujian, meja lab, dan saat kerja lapangan tanpa koneksi internet.</div>
+</details>
+</div>
+
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">Kebijakan Privasi</a>
+<a href="https://aivisibityrights.github.io/store/support.html">Dukungan</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. Hak cipta dilindungi.</div>
+</div>
+
+</div>
+</body>
+</html>

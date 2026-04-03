@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerChem — Kalkulator Kimia untuk Pelajar</title>
+<meta name="description" content="Kalkulator kimia lengkap dengan tabel periodik, penyetara persamaan, pH, hukum gas, stoikiometri dan lainnya. Data NIST/IUPAC, 100% offline. $4.99 sekali bayar.">
+<link rel="alternate" hreflang="en" href="../verchem.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#080b1a;color:#c8d6e5;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f1330;border:2px solid #00d4aa;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
+.hero .subtitle{font-size:18px;color:#00d4aa;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#8b9dc3;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00d4aa18;border:1px solid #00d4aa35;color:#00d4aa;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f1330;border-radius:16px;border:1px solid #1c2345}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00d4aa}
+.stat-label{font-size:12px;color:#8b9dc3;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#8b9dc3;text-align:center;margin-bottom:32px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:18px}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:14px;font-weight:700;color:#fff}
+.cat-desc{font-size:12px;color:#8b9dc3;margin-top:4px;line-height:1.5}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:40px}
+.tool-item{background:#0f1330;border:1px solid #1c2345;border-radius:10px;padding:14px;text-align:center}
+.tool-icon{font-size:22px;margin-bottom:6px}
+.tool-name{font-size:12px;font-weight:600;color:#e0e6ed}
+.tool-desc{font-size:10px;color:#6b7c93;margin-top:3px}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f1330;border:1px solid #1c2345;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#8b9dc3;line-height:1.5}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:16px}
+.why-check{color:#00d4aa;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#8b9dc3}
+.why-text strong{color:#fff}
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f1330;border:1px solid #1c2345;color:#8b9dc3;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00d4aa0d;border:1px solid #00d4aa25;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#8b9dc3;font-size:15px;margin-bottom:24px}
+.disclaimer{background:#ffa94d12;border-left:3px solid #ffa94d;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffa94d}
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1c2345;margin-top:40px}
+.footer a{color:#00d4aa;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a5568;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00d4aa;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#8b9dc3;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerChem — Kalkulator Kimia untuk Pelajar",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "4.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Kalkulator kimia lengkap dengan tabel periodik, penyetara persamaan, pH, hukum gas, stoikiometri dan lainnya. Data NIST/IUPAC, 100% offline. $4.99 sekali bayar.",
+  "featureList": "Full Periodic Table with 118 Elements, Equation Balancer, Stoichiometry Calculator, pH and Buffer Calculator, Gas Laws, Titration Curves, VSEPR Molecular Geometry, Step-by-Step Solutions"
+}
+</script>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+<div class="hero-icon">&#9879;</div>
+<h1>VerChem</h1>
+<p class="subtitle">Kalkulator Kimia untuk Pelajar</p>
+<p class="tagline">Dari tabel periodik hingga kurva titrasi &mdash; semua alat kimia umum yang Anda butuhkan. Data referensi NIST/IUPAC, solusi langkah demi langkah, 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $4.99</a>
+</div>
+<div class="price-tag">Bayar sekali, gunakan selamanya &mdash; Tanpa langganan, tanpa iklan</div>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-num">118</div><div class="stat-label">Unsur</div></div>
+<div class="stat"><div class="stat-num">3</div><div class="stat-label">Kategori</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">Bahasa</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+</div>
+
+<h2 class="section-title">Cakupan Kimia Umum Lengkap</h2>
+<p class="section-sub">Alat interaktif, kalkulator, dan kebutuhan laboratorium</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#128300;</div><div class="cat-name">Alat Interaktif</div><div class="cat-desc">Tabel periodik lengkap 118 unsur, geometri molekul VSEPR, struktur Lewis, database senyawa</div></div>
+<div class="cat-item"><div class="cat-icon">&#128290;</div><div class="cat-name">Kalkulator</div><div class="cat-desc">Penyetara persamaan, stoikiometri, pH, hukum gas, termodinamika, kinetika, elektrokimia, konfigurasi elektron</div></div>
+<div class="cat-item"><div class="cat-icon">&#9878;</div><div class="cat-name">Alat Laboratorium</div><div class="cat-desc">Titrasi dengan kurva SVG, kimia nuklir, persiapan larutan, konversi satuan enam kategori</div></div>
+</div>
+
+<h2 class="section-title">Semua Alat dalam Satu Pandangan</h2>
+<p class="section-sub">Ketuk alat mana saja untuk melihat solusi langkah demi langkah</p>
+
+<div class="tool-grid">
+<div class="tool-item"><div class="tool-icon">&#128301;</div><div class="tool-name">Tabel Periodik</div><div class="tool-desc">118 unsur, cari &amp; filter</div></div>
+<div class="tool-item"><div class="tool-icon">&#128302;</div><div class="tool-name">Geometri VSEPR</div><div class="tool-desc">13 bentuk molekul</div></div>
+<div class="tool-item"><div class="tool-icon">&#128280;</div><div class="tool-name">Struktur Lewis</div><div class="tool-desc">Muatan formal &amp; pasangan bebas</div></div>
+<div class="tool-item"><div class="tool-icon">&#128218;</div><div class="tool-name">Senyawa</div><div class="tool-desc">50 senyawa terpilih</div></div>
+<div class="tool-item"><div class="tool-icon">&#9878;</div><div class="tool-name">Penyetara Persamaan</div><div class="tool-desc">Setara otomatis &amp; klasifikasi</div></div>
+<div class="tool-item"><div class="tool-icon">&#128290;</div><div class="tool-name">Stoikiometri</div><div class="tool-desc">Massa, mol, molekul</div></div>
+<div class="tool-item"><div class="tool-icon">&#128167;</div><div class="tool-name">Larutan &amp; pH</div><div class="tool-desc">Asam-basa &amp; buffer</div></div>
+<div class="tool-item"><div class="tool-icon">&#9729;</div><div class="tool-name">Hukum Gas</div><div class="tool-desc">Ideal, Boyle, Van der Waals</div></div>
+<div class="tool-item"><div class="tool-icon">&#128293;</div><div class="tool-name">Termodinamika</div><div class="tool-desc">Gibbs &amp; kesetimbangan</div></div>
+<div class="tool-item"><div class="tool-icon">&#9201;</div><div class="tool-name">Kinetika</div><div class="tool-desc">Hukum laju &amp; Arrhenius</div></div>
+<div class="tool-item"><div class="tool-icon">&#9889;</div><div class="tool-name">Elektrokimia</div><div class="tool-desc">Nernst &amp; elektrolisis</div></div>
+<div class="tool-item"><div class="tool-icon">&#127756;</div><div class="tool-name">Konfigurasi Elektron</div><div class="tool-desc">Diagram orbital kotak</div></div>
+<div class="tool-item"><div class="tool-icon">&#128200;</div><div class="tool-name">Titrasi</div><div class="tool-desc">Kurva SVG &amp; titik ekuivalen</div></div>
+<div class="tool-item"><div class="tool-icon">&#9762;</div><div class="tool-name">Kimia Nuklir</div><div class="tool-desc">Peluruhan &amp; energi ikat</div></div>
+<div class="tool-item"><div class="tool-icon">&#129514;</div><div class="tool-name">Persiapan Larutan</div><div class="tool-desc">Molaritas &amp; pengenceran</div></div>
+<div class="tool-item"><div class="tool-icon">&#128259;</div><div class="tool-name">Konversi Satuan</div><div class="tool-desc">6 kategori</div></div>
+</div>
+
+<h2 class="section-title">Dirancang Sesuai Cara Belajar Pelajar</h2>
+<p class="section-sub">Bukan sekadar jawaban &mdash; pemahaman</p>
+
+<div class="features">
+<div class="feature"><div class="feature-icon">&#128221;</div><div class="feature-name">Solusi Langkah demi Langkah</div><div class="feature-desc">Lihat setiap langkah perhitungan dengan rumus dan satuan yang tepat. Pelajari prosesnya, bukan hanya jawabannya.</div></div>
+<div class="feature"><div class="feature-icon">&#128200;</div><div class="feature-name">Visualisasi SVG Interaktif</div><div class="feature-desc">Skala gradien pH, kurva titrasi, diagram orbital, bentuk molekul VSEPR &mdash; semua ditampilkan secara real-time.</div></div>
+<div class="feature"><div class="feature-icon">&#128218;</div><div class="feature-name">Perpustakaan Rumus</div><div class="feature-desc">Kumpulan persamaan kimia penting yang dapat dicari, terorganisir berdasarkan topik. Salin rumus apa pun dengan satu ketukan.</div></div>
+<div class="feature"><div class="feature-icon">&#128274;</div><div class="feature-name">100% Offline</div><div class="feature-desc">Berfungsi tanpa internet &mdash; di ruang ujian, meja lab, dan di kelas. Semua data unsur terpaket dalam aplikasi.</div></div>
+<div class="feature"><div class="feature-icon">&#11088;</div><div class="feature-name">Favorit &amp; Pindah Cepat</div><div class="feature-desc">Tandai alat favorit Anda dan berpindah antar alat secara instan tanpa kembali ke layar utama.</div></div>
+<div class="feature"><div class="feature-icon">&#127760;</div><div class="feature-name">12 Bahasa</div><div class="feature-desc">Inggris, Jepang, Korea, Mandarin, Spanyol, Portugis (Brasil), Prancis, Jerman, Indonesia, Rusia, Italia, Thai.</div></div>
+</div>
+
+<h2 class="section-title">Mengapa Aplikasi Kalkulator, Bukan AI?</h2>
+<p class="section-sub">Untuk perhitungan kimia, presisi itu penting</p>
+
+<div class="why-grid">
+<div class="why-item"><div class="why-check">&#10003;</div><div class="why-text"><strong>AI bisa berhalusinasi</strong> &mdash; chatbot kadang mengarang rumus atau mengembalikan massa molar yang salah. VerChem menggunakan data NIST/IUPAC terverifikasi setiap saat.</div></div>
+<div class="why-item"><div class="why-check">&#10003;</div><div class="why-text"><strong>Instan &amp; offline</strong> &mdash; hasil dalam milidetik tanpa internet. Chatbot AI memerlukan koneksi dan sering memakan waktu beberapa detik.</div></div>
+<div class="why-item"><div class="why-check">&#10003;</div><div class="why-text"><strong>Hasil konsisten</strong> &mdash; input yang sama selalu menghasilkan output yang sama. Respons AI bervariasi antar sesi dan bisa saling bertentangan.</div></div>
+<div class="why-item"><div class="why-check">&#10003;</div><div class="why-text"><strong>Bayar sekali, gunakan selamanya</strong> &mdash; pembelian satu kali $4.99. Langganan chatbot AI menelan biaya $20&ndash;240/tahun.</div></div>
+</div>
+
+<h2 class="section-title">Sumber Data Tepercaya</h2>
+<p class="section-sub">Setiap nilai berasal dari referensi yang ditinjau sejawat</p>
+
+<div class="why-grid">
+<div class="why-item"><div class="why-check">&#128215;</div><div class="why-text"><strong>NIST Atomic Spectra Database</strong> &mdash; Referensi standar untuk data spektroskopi</div></div>
+<div class="why-item"><div class="why-check">&#128215;</div><div class="why-text"><strong>IUPAC 2021 Standard Atomic Weights</strong> &mdash; Massa unsur yang diterima secara internasional</div></div>
+<div class="why-item"><div class="why-check">&#128215;</div><div class="why-text"><strong>CODATA 2018 Physical Constants</strong> &mdash; Avogadro, Faraday, konstanta gas, Boltzmann</div></div>
+<div class="why-item"><div class="why-check">&#128215;</div><div class="why-text"><strong>CRC Handbook of Chemistry and Physics</strong> &mdash; Data termodinamika, potensial reduksi</div></div>
+</div>
+
+<div class="disclaimer">
+<strong>Penggunaan edukatif:</strong> VerChem dirancang untuk tujuan pendidikan saja. Selalu verifikasi perhitungan penting dengan instruktur atau referensi resmi Anda. Tidak dimaksudkan untuk penggunaan laboratorium atau industri profesional.
+</div>
+
+<div class="cta">
+<h2>Semua Perhitungan Kimia. Satu Aplikasi.</h2>
+<p>Tabel periodik, penyetaraan persamaan, pH, hukum gas, kurva titrasi, dan lainnya. Solusi langkah demi langkah, 12 bahasa, 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $4.99</a>
+</div>
+</div>
+
+<h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+<p class="section-sub">Pertanyaan umum tentang VerChem</p>
+<div class="faq-section">
+<details class="faq-item"><summary class="faq-q">Apa aplikasi kalkulator kimia terbaik untuk pelajar?</summary><div class="faq-a">VerChem adalah perangkat kimia umum lengkap dengan tabel periodik penuh, penyetara persamaan, kalkulator stoikiometri, pemecah pH, hukum gas, kurva titrasi, dan lainnya. Menggunakan data NIST/IUPAC terverifikasi dan berfungsi 100% offline seharga $4.99 sekali bayar.</div></details>
+<details class="faq-item"><summary class="faq-q">Bisakah saya menyetarakan persamaan kimia di ponsel?</summary><div class="faq-a">Ya. VerChem menyertakan penyetara persamaan otomatis yang menyetarakan persamaan kimia dan mengklasifikasikan jenis reaksi. Menunjukkan solusi langkah demi langkah sehingga Anda bisa mempelajari prosesnya.</div></details>
+<details class="faq-item"><summary class="faq-q">Adakah aplikasi dengan tabel periodik dan kalkulator sekaligus?</summary><div class="faq-a">VerChem menggabungkan tabel periodik interaktif penuh dari 118 unsur dengan kalkulator untuk stoikiometri, pH, hukum gas, termodinamika, kinetika, elektrokimia, dan lainnya. Semua data unsur berasal dari referensi NIST dan IUPAC.</div></details>
+<details class="faq-item"><summary class="faq-q">Aplikasi apa yang bisa digunakan untuk menghitung pH dan larutan buffer?</summary><div class="faq-a">VerChem memiliki kalkulator Larutan dan pH khusus yang menangani kesetimbangan asam-basa dan perhitungan buffer. Juga menyertakan alat titrasi dengan kurva SVG interaktif yang menunjukkan titik ekuivalen.</div></details>
+<details class="faq-item"><summary class="faq-q">Seberapa akurat aplikasi kalkulator kimia dibandingkan referensi laboratorium?</summary><div class="faq-a">VerChem menggunakan data dari NIST Atomic Spectra Database, IUPAC 2021 Standard Atomic Weights, CODATA 2018 Physical Constants, dan CRC Handbook. Setiap nilai berasal dari referensi yang ditinjau sejawat, menjadikan hasilnya konsisten dan andal.</div></details>
+<details class="faq-item"><summary class="faq-q">Aplikasi kalkulator kimia vs ChatGPT &mdash; mana yang harus saya gunakan?</summary><div class="faq-a">Untuk perhitungan kimia, VerChem lebih andal daripada chatbot AI. AI bisa mengarang rumus atau mengembalikan massa molar yang salah. VerChem menggunakan data NIST/IUPAC terverifikasi, berfungsi offline, dan memberikan hasil deterministik instan seharga $4.99 sekali bayar.</div></details>
+<details class="faq-item"><summary class="faq-q">Apakah VerChem berfungsi offline saat ujian?</summary><div class="faq-a">Ya. VerChem 100% offline &mdash; semua 118 unsur, kalkulator, dan data referensi terpaket dalam aplikasi. Berfungsi di ruang ujian, meja lab, dan di kelas tanpa koneksi internet.</div></details>
+</div>
+
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">Kebijakan Privasi</a>
+<a href="https://aivisibityrights.github.io/store/support.html">Dukungan</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. Hak cipta dilindungi.</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerChem — Calculadora de Química para Estudiantes</title>
+<meta name="description" content="Calculadora de química completa con tabla periódica, balanceador de ecuaciones, pH, leyes de gases, estequiometría y más. Datos NIST/IUPAC, 100% sin conexión. $4.99 pago único.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#080b1a;color:#c8d6e5;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f1330;border:2px solid #00d4aa;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
+.hero .subtitle{font-size:18px;color:#00d4aa;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#8b9dc3;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00d4aa18;border:1px solid #00d4aa35;color:#00d4aa;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f1330;border-radius:16px;border:1px solid #1c2345}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00d4aa}
+.stat-label{font-size:12px;color:#8b9dc3;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#8b9dc3;text-align:center;margin-bottom:32px}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:18px}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:14px;font-weight:700;color:#fff}
+.cat-count{font-size:11px;color:#4488ff;font-weight:600;margin-bottom:4px}
+.cat-desc{font-size:12px;color:#8b9dc3;margin-top:4px;line-height:1.5}
+
+/* Tools */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:40px}
+.tool-item{background:#0f1330;border:1px solid #1c2345;border-radius:10px;padding:14px;text-align:center}
+.tool-icon{font-size:22px;margin-bottom:6px}
+.tool-name{font-size:12px;font-weight:600;color:#e0e6ed}
+.tool-desc{font-size:10px;color:#6b7c93;margin-top:3px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f1330;border:1px solid #1c2345;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#8b9dc3;line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:16px}
+.why-check{color:#00d4aa;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#8b9dc3}
+.why-text strong{color:#fff}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f1330;border:1px solid #1c2345;color:#8b9dc3;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00d4aa0d;border:1px solid #00d4aa25;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#8b9dc3;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#ffa94d12;border-left:3px solid #ffa94d;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffa94d}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1c2345;margin-top:40px}
+.footer a{color:#00d4aa;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a5568;font-size:12px;margin-top:12px}
+
+/* Accent helpers */
+.accent-teal{color:#00d4aa}
+.accent-blue{color:#4488ff}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00d4aa;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#8b9dc3;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerChem — Chemistry Calculator for Students",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "4.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Complete chemistry calculator with periodic table, equation balancer, pH, gas laws, stoichiometry & more. NIST/IUPAC data, 100% offline. $4.99 one-time.",
+  "featureList": "Full Periodic Table with 118 Elements, Equation Balancer, Stoichiometry Calculator, pH and Buffer Calculator, Gas Laws, Titration Curves, VSEPR Molecular Geometry, Step-by-Step Solutions"
+}
+</script>
+<link rel="alternate" hreflang="en" href="../verchem.html">
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#9879;</div>
+<h1>VerChem</h1>
+<p class="subtitle">Calculadora de Química para Estudiantes</p>
+<p class="tagline">De la tabla periódica a las curvas de titulación — todas las herramientas de química general. Datos NIST/IUPAC, soluciones paso a paso, 100% sin conexión.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $4.99</a>
+</div>
+<div class="price-tag">Paga una vez, usa para siempre — Sin suscripción, sin anuncios</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">118</div><div class="stat-label">Elementos</div></div>
+<div class="stat"><div class="stat-num">3</div><div class="stat-label">Categorías</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">Idiomas</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Sin conexión</div></div>
+</div>
+
+<!-- Categories -->
+<h2 class="section-title">Cobertura Completa de Química General</h2>
+<p class="section-sub">Herramientas interactivas, calculadoras y esenciales de laboratorio</p>
+
+<div class="cat-grid">
+<div class="cat-item">
+<div class="cat-icon">&#128300;</div>
+<div class="cat-name">Herramientas Interactivas</div>
+<div class="cat-desc">Tabla periódica completa con 118 elementos, geometría molecular VSEPR, estructuras de Lewis, base de datos de compuestos</div>
+</div>
+<div class="cat-item">
+<div class="cat-icon">&#128290;</div>
+<div class="cat-name">Calculadoras</div>
+<div class="cat-desc">Balanceador de ecuaciones, estequiometría, pH, leyes de gases, termodinámica, cinética, electroquímica, configuración electrónica</div>
+</div>
+<div class="cat-item">
+<div class="cat-icon">&#9878;</div>
+<div class="cat-name">Herramientas de Laboratorio</div>
+<div class="cat-desc">Titulación con curvas SVG, química nuclear, preparación de soluciones, conversor de unidades</div>
+</div>
+</div>
+
+<!-- All Tools -->
+<h2 class="section-title">Todas las Herramientas de un Vistazo</h2>
+<p class="section-sub">Toca cualquier herramienta para ver soluciones paso a paso</p>
+
+<div class="tool-grid">
+<div class="tool-item"><div class="tool-icon">&#128301;</div><div class="tool-name">Tabla Periódica</div><div class="tool-desc">118 elementos, búsqueda y filtros</div></div>
+<div class="tool-item"><div class="tool-icon">&#128302;</div><div class="tool-name">Geometría VSEPR</div><div class="tool-desc">13 formas moleculares</div></div>
+<div class="tool-item"><div class="tool-icon">&#128280;</div><div class="tool-name">Estructuras de Lewis</div><div class="tool-desc">Cargas formales y pares libres</div></div>
+<div class="tool-item"><div class="tool-icon">&#128218;</div><div class="tool-name">Compuestos</div><div class="tool-desc">50 compuestos seleccionados</div></div>
+<div class="tool-item"><div class="tool-icon">&#9878;</div><div class="tool-name">Balanceador de Ecuaciones</div><div class="tool-desc">Balanceo automático y clasificación</div></div>
+<div class="tool-item"><div class="tool-icon">&#128290;</div><div class="tool-name">Estequiometría</div><div class="tool-desc">Masa, moles, moléculas</div></div>
+<div class="tool-item"><div class="tool-icon">&#128167;</div><div class="tool-name">Soluciones y pH</div><div class="tool-desc">Ácido-base y tampones</div></div>
+<div class="tool-item"><div class="tool-icon">&#9729;</div><div class="tool-name">Leyes de Gases</div><div class="tool-desc">Ideal, Boyle, Van der Waals</div></div>
+<div class="tool-item"><div class="tool-icon">&#128293;</div><div class="tool-name">Termodinámica</div><div class="tool-desc">Gibbs y equilibrio</div></div>
+<div class="tool-item"><div class="tool-icon">&#9201;</div><div class="tool-name">Cinética</div><div class="tool-desc">Leyes de velocidad y Arrhenius</div></div>
+<div class="tool-item"><div class="tool-icon">&#9889;</div><div class="tool-name">Electroquímica</div><div class="tool-desc">Nernst y electrólisis</div></div>
+<div class="tool-item"><div class="tool-icon">&#127756;</div><div class="tool-name">Config. Electrónica</div><div class="tool-desc">Diagramas de orbitales</div></div>
+<div class="tool-item"><div class="tool-icon">&#128200;</div><div class="tool-name">Titulación</div><div class="tool-desc">Curvas SVG y equivalencia</div></div>
+<div class="tool-item"><div class="tool-icon">&#9762;</div><div class="tool-name">Química Nuclear</div><div class="tool-desc">Desintegración y energía de enlace</div></div>
+<div class="tool-item"><div class="tool-icon">&#129514;</div><div class="tool-name">Preparación de Soluciones</div><div class="tool-desc">Molaridad y dilución</div></div>
+<div class="tool-item"><div class="tool-icon">&#128259;</div><div class="tool-name">Conversor de Unidades</div><div class="tool-desc">6 categorías</div></div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">Diseñada para Cómo Estudian los Estudiantes</h2>
+<p class="section-sub">No solo respuestas — comprensión</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#128221;</div>
+<div class="feature-name">Soluciones Paso a Paso</div>
+<div class="feature-desc">Ve cada paso del cálculo con fórmulas y unidades. Aprende el proceso, no solo la respuesta.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">Visualizaciones SVG Interactivas</div>
+<div class="feature-desc">Escalas de gradiente pH, curvas de titulación, diagramas de orbitales, formas moleculares VSEPR — todo en tiempo real.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Biblioteca de Referencia de Fórmulas</div>
+<div class="feature-desc">Colección buscable de ecuaciones esenciales de química organizadas por tema. Copia cualquier fórmula con un toque.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Sin Conexión</div>
+<div class="feature-desc">Funciona sin internet — en exámenes, en el laboratorio, en clase. Todos los datos están incluidos en la app.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#11088;</div>
+<div class="feature-name">Favoritos y Cambio Rápido</div>
+<div class="feature-desc">Marca tus herramientas más usadas y cambia entre ellas al instante sin volver al inicio.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12 Idiomas</div>
+<div class="feature-desc">Inglés, japonés, coreano, chino, español, portugués (Brasil), francés, alemán, indonesio, ruso, italiano, tailandés.</div>
+</div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">¿Por Qué una App Calculadora y No IA?</h2>
+<p class="section-sub">Para cálculos de química, la precisión importa</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>La IA puede alucinar</strong> — los chatbots a veces inventan fórmulas o dan masas molares incorrectas. VerChem usa datos verificados NIST/IUPAC.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Instantáneo y sin conexión</strong> — resultados en milisegundos sin internet. Los chatbots de IA necesitan conexión y tardan segundos.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Resultados consistentes</strong> — las mismas entradas siempre dan los mismos resultados. Las respuestas de IA varían y pueden contradecirse.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Paga una vez, usa para siempre</strong> — compra única de $4.99. Las suscripciones de chatbots cuestan $20–240/año.</div>
+</div>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Disponible en 12 Idiomas</h2>
+<p class="section-sub">Llegando a estudiantes de química en todo el mundo</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+</div>
+
+<!-- Data Sources -->
+<h2 class="section-title">Fuentes de Datos Confiables</h2>
+<p class="section-sub">Cada valor proviene de referencias revisadas por pares</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>NIST Atomic Spectra Database</strong> — Referencia estándar para datos espectroscópicos</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>IUPAC 2021 Standard Atomic Weights</strong> — Masas de elementos aceptadas internacionalmente</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>CODATA 2018 Physical Constants</strong> — Avogadro, Faraday, constante de gases, Boltzmann</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>CRC Handbook of Chemistry and Physics</strong> — Datos termodinámicos, potenciales de reducción</div>
+</div>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>Uso educativo:</strong> VerChem está diseñado únicamente para fines educativos. Siempre verifique los cálculos importantes con su profesor o referencias oficiales. No está destinado para uso profesional en laboratorios o industria.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Todos los Cálculos de Química. Una App.</h2>
+<p>Tabla periódica, balanceo de ecuaciones, pH, leyes de gases, curvas de titulación y más. Soluciones paso a paso, 12 idiomas, 100% sin conexión.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $4.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Preguntas Frecuentes</h2>
+<p class="section-sub">Preguntas comunes sobre VerChem</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es la mejor app de calculadora de química para estudiantes?</summary>
+<div class="faq-a">VerChem es un kit completo de química general con tabla periódica completa, balanceador de ecuaciones, calculadora de estequiometría, solucionador de pH, leyes de gases, curvas de titulación y más. Usa datos verificados NIST/IUPAC y funciona 100% sin conexión por $4.99 pago único.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo balancear ecuaciones químicas en mi teléfono?</summary>
+<div class="faq-a">Sí. VerChem incluye un balanceador automático de ecuaciones que balancea ecuaciones químicas y clasifica tipos de reacción. Muestra soluciones paso a paso.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Existe una app con tabla periódica y calculadoras juntas?</summary>
+<div class="faq-a">VerChem combina una tabla periódica interactiva de 118 elementos con calculadoras de estequiometría, pH, leyes de gases, termodinámica, cinética, electroquímica y más. Los datos provienen de referencias NIST e IUPAC.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué app puedo usar para calcular pH y soluciones tampón?</summary>
+<div class="faq-a">VerChem tiene una calculadora dedicada de Soluciones y pH que maneja equilibrios ácido-base y cálculos de tampones. También incluye una herramienta de titulación con curvas SVG interactivas.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué tan precisas son las apps calculadoras de química comparadas con referencias de laboratorio?</summary>
+<div class="faq-a">VerChem usa datos de NIST Atomic Spectra Database, IUPAC 2021 Standard Atomic Weights, CODATA 2018 Physical Constants y CRC Handbook. Cada valor proviene de referencias revisadas por pares.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">App de calculadora de química vs ChatGPT — ¿cuál debería usar?</summary>
+<div class="faq-a">Para cálculos de química, VerChem es más confiable que los chatbots de IA. La IA puede inventar fórmulas o dar masas molares incorrectas. VerChem usa datos NIST/IUPAC verificados, funciona sin conexión y da resultados determinísticos por $4.99 pago único.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿VerChem funciona sin conexión durante exámenes?</summary>
+<div class="faq-a">Sí. VerChem es 100% sin conexión — los 118 elementos, calculadoras y datos de referencia están incluidos en la app. Funciona en exámenes, en el laboratorio y en clase sin internet.</div>
+</details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">Política de Privacidad</a>
+<a href="https://aivisibityrights.github.io/store/support.html">Soporte</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</div>
+
+</div>
+</body>
+</html>

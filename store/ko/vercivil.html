@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="../vercivil.html">
+<title>VerCivil — 구조 계산기</title>
+<meta name="description" content="구조, 내진, 풍하중 및 수리 설계 — ACI, ASCE, AISC, 공학 다이어그램">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#121418;color:#c8cdd6;line-height:1.7}
+.container{max-width:820px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:8px;margin:0 auto 24px;background:#1c1e24;border:2px solid #2dd4a8;display:flex;align-items:center;justify-content:center;font-size:44px;letter-spacing:-2px;color:#2dd4a8;font-weight:900;font-family:'Courier New',Courier,monospace}
+.hero h1{font-size:32px;color:#f0f0f2;margin-bottom:8px;letter-spacing:-0.5px}
+.hero .subtitle{font-size:18px;color:#2dd4a8;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#8b8f9a;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:10px 24px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#f0f0f2;color:#121418}
+.price-tag{display:inline-block;background:#2dd4a815;border:1px solid #2dd4a830;color:#2dd4a8;padding:6px 16px;border-radius:4px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#1c1e24;border-radius:6px;border:1px solid #2a2d36}
+.stat{text-align:center}
+.stat-num{font-size:26px;font-weight:800;color:#2dd4a8}
+.stat-label{font-size:11px;color:#8b8f9a;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#f0f0f2;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#8b8f9a;text-align:center;margin-bottom:32px}
+
+/* Calculator Cards */
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;margin-bottom:40px}
+.calc-card{background:#1c1e24;border:1px solid #2a2d36;border-radius:6px;padding:22px;border-left:3px solid #2dd4a8}
+.calc-card.copper{border-left-color:#d4845e}
+.calc-card.neutral{border-left-color:#5b8def}
+.calc-name{font-size:16px;font-weight:700;color:#f0f0f2;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.calc-abbr{display:inline-block;background:#22252d;color:#2dd4a8;font-size:11px;font-weight:700;padding:2px 6px;border-radius:3px;font-family:'Courier New',monospace;letter-spacing:.5px}
+.calc-card.copper .calc-abbr{color:#d4845e}
+.calc-card.neutral .calc-abbr{color:#5b8def}
+.calc-desc{font-size:13px;color:#8b8f9a;line-height:1.5;margin-bottom:8px}
+.calc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.calc-tag{background:#22252d;border:1px solid #2a2d36;color:#8b8f9a;font-size:11px;padding:2px 8px;border-radius:3px}
+
+/* Standards Grid */
+.std-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:40px}
+.std-card{background:#1c1e24;border:1px solid #2a2d36;border-radius:6px;padding:18px}
+.std-label{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#d4845e;font-weight:700;margin-bottom:10px}
+.std-list{list-style:none;padding:0}
+.std-list li{font-size:13px;color:#8b8f9a;padding:3px 0;padding-left:14px;position:relative}
+.std-list li::before{content:'\2022';color:#2dd4a8;position:absolute;left:0;font-weight:bold}
+.std-list li strong{color:#f0f0f2;font-weight:600}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.feature{background:#1c1e24;border:1px solid #2a2d36;border-radius:6px;padding:20px}
+.feature-icon{font-size:24px;margin-bottom:10px}
+.feature-name{font-size:14px;font-weight:700;color:#f0f0f2;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#8b8f9a;line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#1c1e24;border:1px solid #2a2d36;border-radius:6px;padding:16px}
+.why-check{color:#2dd4a8;font-size:16px;flex-shrink:0;margin-top:2px;font-weight:bold}
+.why-text{font-size:14px;color:#8b8f9a}
+.why-text strong{color:#f0f0f2}
+
+/* Disclaimer */
+.disclaimer{background:#d4845e10;border-left:3px solid #d4845e;padding:16px;border-radius:0 4px 4px 0;margin:32px 0;font-size:13px;color:#d4845e}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#2dd4a808;border:1px solid #2dd4a820;border-radius:6px}
+.cta h2{font-size:22px;color:#f0f0f2;margin-bottom:8px}
+.cta p{color:#8b8f9a;font-size:15px;margin-bottom:24px}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #2a2d36;margin-top:40px}
+.footer a{color:#2dd4a8;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#5a5e6a;font-size:12px;margin-top:12px}
+
+/* Mobile */
+@media(max-width:420px){
+.hero h1{font-size:26px}
+.calc-grid{grid-template-columns:1fr}
+.std-grid{grid-template-columns:1fr}
+.stats{gap:20px}
+.stat-num{font-size:22px}
+}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#1c1e24;border:1px solid #2a2d36;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#f0f0f2;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#2dd4a8;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#8b8f9a;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerCivil — 구조 공학 계산기",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "19.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Professional structural engineering calculator — RC design, steel connections, seismic & wind analysis. ACI 318, Eurocode 2, IS 456, ASCE 7, AISC 360 & more. Interactive diagrams. 100% offline. $19.99 one-time.",
+  "featureList": "Slab Design (ACI 318/EC2/IS 456), Beam Design with Moment Diagrams, Column Design with P-M Interaction, Seismic Analysis (ASCE 7/EC8), Steel Connection Design (AISC 360/EC3), Wind Load Analysis, Foundation Design with Punching Shear, Interactive 2D Engineering Diagrams"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">CE</div>
+<h1>VerCivil</h1>
+<p class="subtitle">Structural Engineering Calculator</p>
+<p class="tagline">인터랙티브 공학 다이어그램을 갖춘 종합 구조 해석. RC, 강구조, 내진, 풍하중 설계의 다중 기준 지원. 완전 오프라인.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $19.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $19.99</a>
+</div>
+<div class="price-tag">한 번 구매, 영원히 사용 &mdash; 구독 없음, 광고 없음</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">Multi</div><div class="stat-label">기준</div></div>
+<div class="stat"><div class="stat-num">2D</div><div class="stat-label">다이어그램</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">언어</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">오프라인</div></div>
+</div>
+
+<!-- Structural Calculators -->
+<h2 class="section-title">구조 해석 스위트</h2>
+<p class="section-sub">철근 콘크리트부터 수리 관경 설계까지 &mdash; all in one app</p>
+
+<div class="calc-grid">
+
+<div class="calc-card">
+<div class="calc-name"><span class="calc-abbr">SLB</span> Slab Design</div>
+<div class="calc-desc">Two-way RC slab with automatic minimum thickness, deflection check, and crack width analysis. Bottom and top reinforcement in both directions.</div>
+<div class="calc-tags">
+<span class="calc-tag">ACI 318</span>
+<span class="calc-tag">EC2</span>
+<span class="calc-tag">IS 456</span>
+<span class="calc-tag">DPT 1008</span>
+</div>
+</div>
+
+<div class="calc-card copper">
+<div class="calc-name"><span class="calc-abbr">BM</span> Beam Design</div>
+<div class="calc-desc">Flexural and shear design with auto stirrup spacing. Moment and shear diagrams. Immediate and long-term deflection with support configuration.</div>
+<div class="calc-tags">
+<span class="calc-tag">ACI 318</span>
+<span class="calc-tag">EC2</span>
+<span class="calc-tag">IS 456</span>
+<span class="calc-tag">Moment Diagram</span>
+</div>
+</div>
+
+<div class="calc-card">
+<div class="calc-name"><span class="calc-abbr">COL</span> Column Design</div>
+<div class="calc-desc">Axial plus biaxial bending with magnified moments. Bresler Load Contour interaction method, slenderness classification, P-M interaction curve.</div>
+<div class="calc-tags">
+<span class="calc-tag">Bresler</span>
+<span class="calc-tag">P-M Curve</span>
+<span class="calc-tag">ACI 318</span>
+<span class="calc-tag">EC2</span>
+</div>
+</div>
+
+<div class="calc-card copper">
+<div class="calc-name"><span class="calc-abbr">FND</span> Foundation Design</div>
+<div class="calc-desc">Isolated footing sizing from allowable bearing capacity. Eccentric loads, ACI 318-19 three-criteria punching shear, and bearing pressure heatmap.</div>
+<div class="calc-tags">
+<span class="calc-tag">Punching Shear</span>
+<span class="calc-tag">Bearing Heatmap</span>
+<span class="calc-tag">IS 456</span>
+</div>
+</div>
+
+<div class="calc-card neutral">
+<div class="calc-name"><span class="calc-abbr">RW</span> Retaining Wall</div>
+<div class="calc-desc">Gravity, cantilever, and counterfort walls. Rankine, Coulomb, and Caquot-Kerisel earth pressure theories. Mononobe-Okabe seismic earth pressure.</div>
+<div class="calc-tags">
+<span class="calc-tag">Rankine</span>
+<span class="calc-tag">Coulomb</span>
+<span class="calc-tag">Mononobe-Okabe</span>
+</div>
+</div>
+
+<div class="calc-card">
+<div class="calc-name"><span class="calc-abbr">EQ</span> Seismic Analysis</div>
+<div class="calc-desc">Equivalent lateral force (ELF) procedure with story force distribution and base shear. Multiple structural systems and site class options.</div>
+<div class="calc-tags">
+<span class="calc-tag">ASCE 7</span>
+<span class="calc-tag">EC8</span>
+<span class="calc-tag">IS 1893</span>
+<span class="calc-tag">DPT 1302</span>
+</div>
+</div>
+
+<div class="calc-card copper">
+<div class="calc-name"><span class="calc-abbr">STL</span> Steel Connection</div>
+<div class="calc-desc">Bolted and welded connection design. Bearing and slip-critical bolts, fillet and CJP welds, block shear and combined force checks.</div>
+<div class="calc-tags">
+<span class="calc-tag">AISC 360</span>
+<span class="calc-tag">EC3</span>
+<span class="calc-tag">IS 800</span>
+<span class="calc-tag">A325/A490</span>
+</div>
+</div>
+
+<div class="calc-card neutral">
+<div class="calc-name"><span class="calc-abbr">WND</span> Wind Load</div>
+<div class="calc-desc">Directional procedure with windward, leeward, and sidewall pressures. Topographic factors, exposure categories, and story-level forces.</div>
+<div class="calc-tags">
+<span class="calc-tag">ASCE 7</span>
+<span class="calc-tag">EC1</span>
+<span class="calc-tag">DPT 1311</span>
+</div>
+</div>
+
+<div class="calc-card">
+<div class="calc-name"><span class="calc-abbr">SEC</span> Section Properties</div>
+<div class="calc-desc">Rectangle, circle, I-section, T-section, L-angle, C-channel, and hollow rectangle. Area, centroid, moments of inertia, torsion and plastic moduli.</div>
+<div class="calc-tags">
+<span class="calc-tag">Ix, Iy</span>
+<span class="calc-tag">Zx, Zy</span>
+<span class="calc-tag">J, Cw</span>
+</div>
+</div>
+
+<div class="calc-card copper">
+<div class="calc-name"><span class="calc-abbr">HYD</span> Hydraulic Design</div>
+<div class="calc-desc">Pipe sizing with Darcy-Weisbach, Hazen-Williams, and Manning equations. Water supply and drainage modes with optional pump sizing and NPSH.</div>
+<div class="calc-tags">
+<span class="calc-tag">Darcy-Weisbach</span>
+<span class="calc-tag">Hazen-Williams</span>
+</div>
+</div>
+
+<div class="calc-card neutral">
+<div class="calc-name"><span class="calc-abbr">LUX</span> Lighting Design</div>
+<div class="calc-desc">Lumen method per ISO 8995 guidelines. Room type presets, fixture layout grid, uniformity ratio, power density, and coefficient of utilization.</div>
+<div class="calc-tags">
+<span class="calc-tag">ISO 8995</span>
+<span class="calc-tag">Lumen Method</span>
+</div>
+</div>
+
+</div>
+
+<!-- 설계 기준 -->
+<h2 class="section-title">Design Standards</h2>
+<p class="section-sub">국제 규격의 검증된 공식</p>
+
+<div class="std-grid">
+<div class="std-card">
+<div class="std-label">Concrete</div>
+<ul class="std-list">
+<li><strong>ACI 318-19</strong> &mdash; US / International</li>
+<li><strong>Eurocode 2</strong> &mdash; EN 1992-1-1 (Europe)</li>
+<li><strong>IS 456:2000</strong> &mdash; India</li>
+<li><strong>DPT 1008-61</strong> &mdash; Thailand</li>
+</ul>
+</div>
+<div class="std-card">
+<div class="std-label">Seismic</div>
+<ul class="std-list">
+<li><strong>ASCE 7-22</strong> &mdash; US</li>
+<li><strong>Eurocode 8</strong> &mdash; EN 1998-1 (Europe)</li>
+<li><strong>IS 1893:2016</strong> &mdash; Part 1 (India)</li>
+<li><strong>DPT 1302</strong> &mdash; Thailand</li>
+</ul>
+</div>
+<div class="std-card">
+<div class="std-label">Steel Connections</div>
+<ul class="std-list">
+<li><strong>AISC 360-22</strong> &mdash; US</li>
+<li><strong>Eurocode 3</strong> &mdash; EN 1993-1-8 (Europe)</li>
+<li><strong>IS 800:2007</strong> &mdash; India</li>
+</ul>
+</div>
+<div class="std-card">
+<div class="std-label">Wind &amp; Other</div>
+<ul class="std-list">
+<li><strong>Eurocode 1</strong> &mdash; EN 1991-1-4 (Wind)</li>
+<li><strong>DPT 1311</strong> &mdash; Thai Wind Code</li>
+<li><strong>ISO 8995</strong> &mdash; Lighting</li>
+</ul>
+</div>
+</div>
+
+<!-- 모든 계산기에 포함된 기능 -->
+<h2 class="section-title">Every Calculator Includes</h2>
+<p class="section-sub">전체 스위트에 걸친 전문가급 기능</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#9881;</div>
+<div class="feature-name">Interactive Diagrams</div>
+<div class="feature-desc">2D engineering diagrams with labeled dimensions, reinforcement, and force values rendered for every calculation.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#10003;</div>
+<div class="feature-name">Pass / Fail Checks</div>
+<div class="feature-desc">Flexure, shear, punching, deflection, stability, slenderness &mdash; every check clearly marked.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#9878;</div>
+<div class="feature-name">Material Quantities</div>
+<div class="feature-desc">Concrete volume, rebar weight, and steel quantities estimated for each design scenario.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128190;</div>
+<div class="feature-name">Save &amp; Restore</div>
+<div class="feature-desc">Save calculations to history. Reload any past design with all inputs and results intact.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">SI &amp; Imperial Units</div>
+<div class="feature-desc">Toggle between metric (SI) and US customary (USCS) units. Inputs update automatically.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127463;</div>
+<div class="feature-name">12 Languages</div>
+<div class="feature-desc">English, Thai, Japanese, Korean, Chinese, Spanish, Portuguese, French, German, Indonesian, Hindi, Arabic.</div>
+</div>
+</div>
+
+<!-- Why VerCivil -->
+<h2 class="section-title">왜 VerCivil인가?</h2>
+<p class="section-sub">엔지니어에 의한, 엔지니어를 위한 설계</p>
+
+<div class="why-grid">
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>결정론적 계산</strong> &mdash; same input always gives the same output. No AI randomness, no hallucinated formulas.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>다중 기준</strong> &mdash; US, European, Indian, and Thai codes in one app. Switch standards per calculator.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>완전 오프라인</strong> &mdash; works on construction sites with no signal. Zero internet dependency.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>구독 없음</strong> &mdash; pay $19.99 once, use forever. Every calculator and standard unlocked from day one.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>광고 없음, 추적 없음</strong> &mdash; your design data stays on your device. Nothing leaves your phone.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Dark engineering theme</strong> &mdash; high-contrast interface optimized for field use and extended screen time.</div>
+</div>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>면책 조항:</strong> 참고 및 예비 설계 전용. All calculations must be verified by a licensed professional engineer before use in any construction project.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>구조 설계에는 정밀함이 필요합니다. 도구도 마찬가지입니다.</h2>
+<p>다중 기준 구조 공학. 인터랙티브 다이어그램. 완전 오프라인.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; Download on App Store</a>
+<a class="badge badge-google" href="#">&#9654; Get it on Google Play</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">자주 묻는 질문</h2>
+<p class="section-sub">VerCivil에 대한 일반적인 질문</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">What is the best structural engineering calculator app?</summary>
+<div class="faq-a">VerCivil is a professional structural engineering calculator supporting multiple international codes including ACI 318, Eurocode 2, IS 456, AISC 360, and ASCE 7. It covers RC slab, beam, column, and foundation design plus seismic analysis, steel connections, and wind loads with interactive 2D diagrams.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I design reinforced concrete beams and columns on my phone?</summary>
+<div class="faq-a">Yes. VerCivil includes beam design with flexural and shear analysis, moment and shear diagrams, and auto stirrup spacing. Column design features biaxial bending with Bresler Load Contour method and P-M interaction curves. Both support ACI 318, Eurocode 2, and IS 456.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is there an app for seismic analysis with ASCE 7?</summary>
+<div class="faq-a">VerCivil includes a seismic analysis calculator using the equivalent lateral force (ELF) procedure with story force distribution and base shear. It supports ASCE 7, Eurocode 8, IS 1893, and Thai DPT 1302 standards.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What app do civil engineers use for structural calculations on-site?</summary>
+<div class="faq-a">VerCivil is designed for field use — it works 100% offline on construction sites with no signal. It covers slab, beam, column, foundation, retaining wall, seismic, wind, steel connections, section properties, hydraulics, and lighting design. All calculations include interactive diagrams and pass/fail checks.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Structural calculator app vs AI chatbot — which is more reliable?</summary>
+<div class="faq-a">For structural engineering, a deterministic calculator like VerCivil is far more reliable than AI chatbots. VerCivil uses verified code-based formulas from ACI, Eurocode, and IS standards. Same inputs always produce the same outputs. AI chatbots can hallucinate formulas, which is unacceptable in structural safety calculations.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does VerCivil support both metric and imperial units?</summary>
+<div class="faq-a">Yes. VerCivil supports both SI (metric) and US customary (USCS/imperial) units. You can toggle between systems and all inputs update automatically. The app is available in 12 languages including English, Spanish, French, German, Japanese, Korean, and Chinese.</div>
+</details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="privacy-policy.html">개인정보 처리방침</a>
+<a href="support.html">지원</a>
+<a href="mailto:aivisibilityrights@gmail.com">문의</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerBio — Биология Калькулятор и Справочник</title>
+<link rel="alternate" hreflang="en" href="../verbio.html">
+<meta name="description" content="Все расчёты по биологии you need — from Punnett squares to blood gas analysis. Genetics, molecular biology, ecology, biochemistry, biostatistics & physiology. 100% offline. $9.99 one-time.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#081a12;color:#e8f5e9;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f2a1c;border:2px solid #00e676;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#00e676;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#81c784;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00e67620;border:1px solid #00e67640;color:#00e676;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f2a1c;border-radius:16px;border:1px solid #1b4332}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00e676}
+.stat-label{font-size:12px;color:#81c784;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#81c784;text-align:center;margin-bottom:32px}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:40px}
+.cat-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:13px;font-weight:700;color:#fff}
+.cat-desc{font-size:11px;color:#81c784;margin-top:2px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f2a1c;border:1px solid #1b4332;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#81c784;line-height:1.5}
+
+/* Viz Showcase */
+.viz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:40px}
+.viz-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.viz-icon{font-size:32px;margin-bottom:8px}
+.viz-name{font-size:13px;font-weight:600;color:#fff}
+.viz-desc{font-size:11px;color:#81c784;margin-top:4px}
+.viz-3d{border-color:#26c6da}
+.viz-3d .viz-name{color:#26c6da}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px}
+.why-check{color:#00e676;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a5d6a7}
+.why-text strong{color:#fff}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f2a1c;border:1px solid #1b4332;color:#81c784;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00e67610;border:1px solid #00e67630;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#81c784;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#ffab4010;border-left:3px solid #ffab40;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffab40}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1b4332;margin-top:40px}
+.footer a{color:#00e676;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a7c59;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00e676;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#81c784;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerBio — Biology Calculator & Reference",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Every biology calculation you need — from Punnett squares to blood gas analysis. Genetics, molecular biology, ecology, biochemistry, biostatistics & physiology. 100% offline. $9.99 one-time.",
+  "featureList": "Интерактивные решётки Пеннетта, Динамические SVG-визуализации, 3D DNA and Cell Models, Blood Gas Analysis, Ферментная кинетика, Hardy-Weinberg Calculator, Пошаговые решения, 12 Languages"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#129516;</div>
+<h1>VerBio</h1>
+<p class="subtitle">Калькулятор биологии и справочник</p>
+<p class="tagline">Все расчёты по биологии, которые вам нужны &mdash; от решётки Пеннетта до анализа газов крови. Создано для студентов, исследователей и лабораторных специалистов. 100% офлайн.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+<div class="price-tag">Купите один раз &mdash; пользуйтесь всегда. Без подписки, без рекламы</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">7</div><div class="stat-label">Категории</div></div>
+<div class="stat"><div class="stat-num">3D</div><div class="stat-label">Визуализации</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">Языки</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Офлайн</div></div>
+</div>
+
+<!-- 7 Categories -->
+<h2 class="section-title">Полный охват биологии</h2>
+<p class="section-sub">От генетики до физиологии человека</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#129516;</div><div class="cat-name">Генетика</div><div class="cat-desc">Пеннетт, Харди-Вайнберг, хи-квадрат</div></div>
+<div class="cat-item"><div class="cat-icon">&#129529;</div><div class="cat-name">Молекулярная биология</div><div class="cat-desc">DNA/RNA, Tm, PCR, GC content</div></div>
+<div class="cat-item"><div class="cat-icon">&#128300;</div><div class="cat-name">Клеточная биология</div><div class="cat-desc">Осмолярность, мембрана, гемоцитометр</div></div>
+<div class="cat-item"><div class="cat-icon">&#127795;</div><div class="cat-name">Экология</div><div class="cat-desc">Популяция, разнообразие, Лотки-Вольтерры</div></div>
+<div class="cat-item"><div class="cat-icon">&#9878;</div><div class="cat-name">Биохимия</div><div class="cat-desc">Ферментная кинетика, Бугера-Ламберта-Бера, pI</div></div>
+<div class="cat-item"><div class="cat-icon">&#128202;</div><div class="cat-name">Биостатистика</div><div class="cat-desc">t-test, ANOVA, regression, chi-square</div></div>
+<div class="cat-item"><div class="cat-icon">&#129728;</div><div class="cat-name">Физиология</div><div class="cat-desc">ИМТ, сердечный выброс, лёгочные объёмы</div></div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">Больше чем просто калькуляторы</h2>
+<p class="section-sub">Полный набор инструментов по биологии в вашем кармане</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#129516;</div>
+<div class="feature-name">Interactive Punnett Squares</div>
+<div class="feature-desc">Моно-, ди- и тригибридные скрещивания с соотношениями генотипов/фенотипов &mdash; отображаются как интерактивные SVG-таблицы.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">Live SVG Visualizations</div>
+<div class="feature-desc">Кривые роста, графики Лотки-Вольтерры, диаграммы ферментной кинетики, кривые выживаемости, диаграммы разнообразия &mdash; всё в реальном времени.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Встроенные справочники</div>
+<div class="feature-desc">Аминокислоты со свойствами, полная таблица генетического кода, биологические константы и библиотека формул с поиском.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12 Языков</div>
+<div class="feature-desc">Английский, тайский, японский, корейский, китайский, испанский, португальский (Бразилия), французский, немецкий, индонезийский, русский, итальянский.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Offline</div>
+<div class="feature-desc">Работает без интернета &mdash; на экзаменах, в лаборатории и в полевых условиях. Все данные встроены в приложение.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#9989;</div>
+<div class="feature-name">Step-by-Step Solutions</div>
+<div class="feature-desc">Смотрите каждый шаг расчёта с правильными формулами и единицами. Изучайте процесс, а не только ответ.</div>
+</div>
+</div>
+
+<!-- 3D Visualizations -->
+<h2 class="section-title">Интерактивные 3D-модели</h2>
+<p class="section-sub">Исследуйте биологические структуры в трёх измерениях</p>
+
+<div class="viz-grid">
+<div class="viz-item viz-3d"><div class="viz-icon">&#129529;</div><div class="viz-name">Двойная спираль ДНК</div><div class="viz-desc">Вращайте и масштабируйте культовую структуру</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128300;</div><div class="viz-name">Клеточная мембрана</div><div class="viz-desc">Фосфолипидный бислой в 3D</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128168;</div><div class="viz-name">Анатомия лёгких</div><div class="viz-desc">3D-модель дыхательной системы</div></div>
+</div>
+
+<!-- SVG Visualizations -->
+<h2 class="section-title">SVG-диаграммы в реальном времени</h2>
+<p class="section-sub">Биология оживает с интерактивными визуализациями</p>
+
+<div class="viz-grid">
+<div class="viz-item"><div class="viz-icon">&#9638;</div><div class="viz-name">Решётка Пеннетта</div><div class="viz-desc">Цветовая маркировка генотипов</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">Кривые роста</div><div class="viz-desc">Экспоненциальный и логистический</div></div>
+<div class="viz-item"><div class="viz-icon">&#128256;</div><div class="viz-name">Хищник-жертва</div><div class="viz-desc">Осцилляция Лотки-Вольтерры</div></div>
+<div class="viz-item"><div class="viz-icon">&#128201;</div><div class="viz-name">Enzyme Kinetics</div><div class="viz-desc">Michaelis-Menten + LB</div></div>
+<div class="viz-item"><div class="viz-icon">&#127984;</div><div class="viz-name">Hardy-Weinberg</div><div class="viz-desc">Столбчатая диаграмма частот</div></div>
+<div class="viz-item"><div class="viz-icon">&#128336;</div><div class="viz-name">Выживаемость</div><div class="viz-desc">Type I / II / III</div></div>
+<div class="viz-item"><div class="viz-icon">&#128168;</div><div class="viz-name">Лёгочные объёмы</div><div class="viz-desc">Многослойная диаграмма</div></div>
+<div class="viz-item"><div class="viz-icon">&#127856;</div><div class="viz-name">Доля видового разнообразия</div><div class="viz-desc">Пропорции видов</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">Доза-ответ</div><div class="viz-desc">Сигмоидальная кривая EC50</div></div>
+<div class="viz-item"><div class="viz-icon">&#127752;</div><div class="viz-name">Шкала pH</div><div class="viz-desc">Градиентная полоса 0&ndash;14</div></div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">Почему приложение-калькулятор, а не ИИ?</h2>
+<p class="section-sub">Для расчётов по биологии точность имеет значение</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>ИИ может галлюцинировать</strong> &mdash; ИИ-чатботы иногда генерируют неверные формулы или значения. VerBio использует проверенные учебные уравнения каждый раз.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Мгновенно и офлайн</strong> &mdash; Результаты за миллисекунды без интернета. ИИ-чатботам нужно подключение, и ответ может занять секунды.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Стабильные результаты</strong> &mdash; Одни и те же входные данные всегда дают одинаковые результаты. Ответы ИИ меняются между сессиями и могут противоречить друг другу.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Одна покупка навсегда</strong> &mdash; Разовая покупка $9,99. Подписки на ИИ-чатботы стоят $20&ndash;240/год.</div>
+</div>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Доступно на 12 языках</h2>
+<p class="section-sub">Для студентов-биологов по всему миру</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>Примечание:</strong> Интерпретатор газов крови предназначен только для образовательных целей &mdash; не для принятия клинических решений.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Все расчёты по биологии. Одно приложение.</h2>
+<p>От решётки Пеннетта до анализа газов крови. Полные инструменты, интерактивные визуализации, 12 языков. 100% офлайн. Без подписки.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Часто задаваемые вопросы</h2>
+<p class="section-sub">Частые вопросы о VerBio</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">Какое лучшее приложение-калькулятор биологии для студентов?</summary>
+<div class="faq-a">VerBio — это полный калькулятор биологии с 7 категориями: генетика, молекулярная биология, экология, биохимия, клеточная биология, биостатистика и физиология. Работает 100% офлайн и включает интерактивные решётки Пеннетта, диаграммы ферментной кинетики и 3D-модели ДНК и клеточных мембран.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Могу ли я делать расчёты решётки Пеннетта на телефоне?</summary>
+<div class="faq-a">Да. VerBio включает интерактивные решётки Пеннетта для моно-, ди- и тригибридных скрещиваний. Результаты отображаются как цветные SVG-таблицы с соотношениями генотипов и фенотипов и пошаговыми объяснениями.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Есть ли приложение для расчётов равновесия Харди-Вайнберга?</summary>
+<div class="faq-a">VerBio включает калькулятор Харди-Вайнберга, который вычисляет частоты аллелей и генотипов с визуальной столбчатой диаграммой. Также покрывает тест хи-квадрат для анализа популяционной генетики.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Какое приложение используют биологи-исследователи для ферментной кинетики?</summary>
+<div class="faq-a">VerBio предоставляет расчёты кинетики Михаэлиса-Ментен с графиками Лайнуивера-Бёрка, закон Бугера-Ламберта-Бера для спектрофотометрии и оценку изоэлектрической точки. Все результаты включают SVG-визуализации в реальном времени и пошаговые решения.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Насколько точны приложения-калькуляторы биологии по сравнению с учебниками?</summary>
+<div class="faq-a">VerBio использует проверенные учебные уравнения для каждого расчёта. В отличие от ИИ-чатботов, которые могут выдумать формулы, VerBio выдаёт детерминированные результаты — одни и те же входные данные всегда дают одинаковый результат. Каждая формула основана на установленных биологических и статистических методах.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Калькулятор биологии vs ChatGPT — что лучше для домашних заданий?</summary>
+<div class="faq-a">Для расчётов по биологии специализированный калькулятор как VerBio надёжнее ИИ-чатботов. VerBio работает офлайн, даёт мгновенные результаты с пошаговыми решениями, использует проверенные формулы и стоит $9,99 разово в сравнении с постоянными подписками на ИИ. ИИ-чатботы могут выдавать неверные формулы или непоследовательные результаты.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Работает ли VerBio офлайн во время экзаменов?</summary>
+<div class="faq-a">Да. VerBio работает 100% офлайн — все расчёты, 3D-модели, справочные данные и визуализации встроены в приложение. Работает на экзаменах, в лаборатории и в полевых условиях без подключения к интернету.</div>
+</details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">Политика конфиденциальности</a>
+<a href="https://aivisibityrights.github.io/store/support.html">Поддержка</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. Все права защищены.</div>
+</div>
+
+</div>
+</body>
+</html>

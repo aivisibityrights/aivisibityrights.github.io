@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="Kit professionnel d'ingénierie de l'eau : NSF WQI, Conception d'Aération, Dimensionnement de Tuyauterie et Normes PCD Thaïlandaises. 100% hors ligne. 29,99 $ achat unique.">
+<title>VerWater — Calculatrice Ingénierie de l'Eau et des Eaux Usées</title>
+<meta name="description" content="Professional water engineering toolkit: NSF WQI, Aeration Design, Pipe Sizing, and Thai PCD Standards. 100% offline. $29.99 one-time.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0b1a2e;color:#e2e8f0;line-height:1.7}
+.container{max-width:850px;margin:0 auto;padding:20px}
+
+/* Hero Section */
+.hero{text-align:center;padding:80px 20px 60px;background:radial-gradient(circle at top, #0ea5e915 0%, transparent 70%)}
+.hero-icon{width:130px;height:130px;border-radius:32px;margin:0 auto 28px;background:#0f243d;border:2px solid #0ea5e9;display:flex;align-items:center;justify-content:center;font-size:54px;box-shadow:0 0 30px rgba(14, 165, 233, 0.2)}
+.hero h1{font-size:36px;color:#fff;margin-bottom:10px;letter-spacing:-.5px}
+.hero .subtitle{font-size:20px;color:#0ea5e9;font-weight:600;margin-bottom:20px}
+.hero .tagline{font-size:16px;color:#94a3b8;max-width:600px;margin:0 auto 36px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:12px 28px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .2s, opacity .2s}
+.badge:hover{transform:translateY(-2px);opacity:.9}
+.badge-apple{background:#000;color:#fff;border:1px solid #334155}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#0ea5e915;border:1px solid #0ea5e940;color:#0ea5e9;padding:8px 20px;border-radius:10px;font-size:14px;font-weight:600;margin-top:24px}
+
+/* Stats Row */
+.stats{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin:40px 0;padding:30px;background:#0f243d;border-radius:20px;border:1px solid #1e293b}
+.stat{text-align:center;min-width:120px}
+.stat-num{font-size:30px;font-weight:800;color:#0ea5e9}
+.stat-label{font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+
+/* Sections */
+.section-title{font-size:24px;font-weight:700;color:#fff;text-align:center;margin:60px 0 12px}
+.section-sub{font-size:15px;color:#64748b;text-align:center;margin-bottom:40px}
+
+/* Feature Grid */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:20px;margin-bottom:60px}
+.feature-card{background:#0f243d;border:1px solid #1e293b;border-radius:18px;padding:24px;transition:border-color .3s}
+.feature-card:hover{border-color:#0ea5e960}
+.feature-icon{font-size:32px;margin-bottom:16px;display:block}
+.feature-name{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px}
+.feature-desc{font-size:14px;color:#94a3b8;line-height:1.6}
+
+/* Why VerWater */
+.why-container{background:#0f243d;border:1px solid #1e293b;border-radius:24px;padding:40px;margin:40px 0}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px}
+.why-item{display:flex;gap:16px}
+.why-check{color:#0ea5e9;font-size:20px;font-weight:bold;margin-top:2px}
+.why-text strong{color:#fff;display:block;margin-bottom:4px}
+.why-text p{font-size:14px;color:#94a3b8}
+
+/* Standards Highlight */
+.standards-box{background:linear-gradient(135deg, #0ea5e910 0%, #0ea5e905 100%);border:1px solid #0ea5e930;border-radius:20px;padding:30px;margin-top:40px;text-align:center}
+.standards-tag{display:inline-block;background:#0ea5e9;color:#fff;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:800;margin-bottom:16px;text-transform:uppercase}
+
+/* Language Row */
+.lang-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:40px 0}
+.lang-badge{background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:8px 16px;border-radius:10px;font-size:13px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:60px 20px;margin:60px 0;background:linear-gradient(rgba(14,165,233,0.1), rgba(14,165,233,0.05));border:1px solid #0ea5e930;border-radius:30px}
+.cta h2{font-size:28px;color:#fff;margin-bottom:12px}
+.cta p{color:#94a3b8;font-size:16px;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+
+/* Disclaimer */
+.disclaimer{background:#f59e0b10;border-left:4px solid #f59e0b;padding:20px;border-radius:0 12px 12px 0;margin:40px 0;font-size:13px;color:#f59e0b}
+
+/* Footer */
+.footer{text-align:center;padding:40px 20px;border-top:1px solid #1e293b;margin-top:60px}
+.footer-links{margin-bottom:20px}
+.footer-links a{color:#0ea5e9;text-decoration:none;margin:0 15px;font-size:14px}
+.footer-links a:hover{text-decoration:underline}
+.footer .copy{color:#475569;font-size:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f243d;border:1px solid #1e293b;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#0ea5e9;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#94a3b8;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+
+@media (max-width: 600px) {
+    .hero h1{font-size:28px}
+    .stats{gap:20px;padding:20px}
+    .stat{min-width:45%}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerWater — Water & Wastewater Engineering Calculator",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "29.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Professional water engineering toolkit: NSF WQI, Aeration Design, Pipe Sizing, and Thai PCD Standards. 100% offline. $29.99 one-time.",
+  "featureList": "NSF Water Quality Index (WQI), BOD/COD Analysis, Aeration System Design, Pipe Sizing with Darcy-Weisbach and Hazen-Williams, Thai PCD Standards Compliance Check, Pump Affinity Laws"
+}
+</script>
+<link rel="alternate" hreflang="en" href="../verwater.html">
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<header class="hero">
+<div class="hero-icon">💧</div>
+<h1>VerWater</h1>
+<p class="subtitle">Ingénierie de l'Eau et des Eaux Usées</p>
+<p class="tagline">The professional mobile toolkit for water engineers. Combine Water Quality, Aeration Design, Hydraulics, and Thai PCD Standards in one powerful offline app.</p>
+<div class="badge-row">
+<span class="badge badge-apple" style="opacity:0.6;cursor:default">Coming Soon to App Store</span>
+<span class="badge badge-google" style="opacity:0.6;cursor:default">Coming Soon to Google Play</span>
+</div>
+<div class="price-tag">$29.99 one-time • Professional-grade calculations • 100% Offline</div>
+</header>
+
+<!-- Stats -->
+<section class="stats">
+<div class="stat"><div class="stat-num">WQI</div><div class="stat-label">Norme NSF</div></div>
+<div class="stat"><div class="stat-num">PCD</div><div class="stat-label">Normes Thaïlandaises</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">Langues</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Hors Ligne</div></div>
+</section>
+
+<!-- Features -->
+<h2 class="section-title">Comprehensive Engineering Modules</h2>
+<p class="section-sub">Verified calculations based on industry-standard textbook references</p>
+
+<div class="feature-grid">
+<div class="feature-card">
+<span class="feature-icon">🌊</span>
+<h3 class="feature-name">Water Quality Index (WQI)</h3>
+<p class="feature-desc">NSF WQI calculation using Brown et al. (1970) method. Analyze multiple parameters with weighted sub-indices and automatic quality classification.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">💧</span>
+<h3 class="feature-name">BOD/COD Calculator</h3>
+<p class="feature-desc">Multiple analysis modes including BOD₅, BODu, and removal efficiency. Includes temperature correction (Arrhenius θ) and SRT/F:M ratio analysis.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🔵</span>
+<h3 class="feature-name">Aeration System Design</h3>
+<p class="feature-desc">Professional O₂ demand calculation, SOTR/AOTR corrections, and precise adiabatic blower power sizing based on site altitude and temperature.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🔧</span>
+<h3 class="feature-name">Pipe Sizing &amp; Hydraulics</h3>
+<h4 style="font-size:12px; color:#0ea5e9; margin-bottom:4px">H-W • Darcy-Weisbach • Manning</h4>
+<p class="feature-desc">Complete headloss calculation with 11 different fittings (Minor Loss) and Pump Affinity Laws for VFD optimization.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">📋</span>
+<h3 class="feature-name">Thai PCD Standards</h3>
+<p class="feature-desc">Built-in Surface Water (Class 1-5) and Effluent Standards (Type A/B/C). First-of-its-kind mobile integration of Thai regulatory data.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">✅</span>
+<h3 class="feature-name">Compliance Check</h3>
+<p class="feature-desc">Instant automated verification of effluent data against selected PCD standards with parameter-by-parameter pass/fail indicators.</p>
+</div>
+</div>
+
+<!-- Why VerWater -->
+<h2 class="section-title">Pourquoi les Professionnels Choisissent VerWater ?</h2>
+<p class="section-sub">Replacing expensive software with mobile precision</p>
+
+<div class="why-container">
+<div class="why-grid">
+<div class="why-item">
+<span class="why-check">✓</span>
+<div class="why-text">
+<strong>Precision over Hallucination</strong>
+<p>Unlike AI chatbots that may hallucinate formulas, VerWater uses strictly verified engineering equations from Metcalf &amp; Eddy and ASCE references.</p>
+</div>
+</div>
+<div class="why-item">
+<span class="why-check">✓</span>
+<div class="why-text">
+<strong>Treatment Plant Ready</strong>
+<p>100% Offline. Works in deep pump rooms, remote watersheds, and treatment plants without any cellular signal.</p>
+</div>
+</div>
+<div class="why-item">
+<span class="why-check">✓</span>
+<div class="why-text">
+<strong>World-First Integration</strong>
+<p>The first mobile app to combine industrial water supply hydraulics with complex wastewater biological process design.</p>
+</div>
+</div>
+<div class="why-item">
+<span class="why-check">✓</span>
+<div class="why-text">
+<strong>Accessible Investment</strong>
+<p>Professional engineering software can cost thousands. VerWater delivers core professional capabilities for a one-time payment of $29.99.</p>
+</div>
+</div>
+</div>
+
+<div class="standards-box">
+<span class="standards-tag">Global References</span>
+<p style="font-size:14px; color:#94a3b8">Includes reference data from <strong>WHO Drinking Water 2017</strong>, <strong>US EPA</strong>, and <strong>EU Water Framework Directive</strong>.</p>
+</div>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Global Engineering Reach</h2>
+<p class="section-sub">Fully localized for international engineering teams</p>
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">简体中文</span>
+<span class="lang-badge">Français</span>
+<span class="lang-badge">Deutsch</span>
+<span class="lang-badge">Bahasa Indonesia</span>
+<span class="lang-badge">Italiano</span>
+<span class="lang-badge">日本語</span>
+<span class="lang-badge">한국어</span>
+<span class="lang-badge">Português (BR)</span>
+<span class="lang-badge">Русский</span>
+<span class="lang-badge">Español</span>
+<span class="lang-badge">ภาษาไทย</span>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>Professional Disclaimer:</strong> VerWater is intended for preliminary engineering assessment and educational purposes. All final designs and regulatory submissions must be verified and approved by a licensed Professional Engineer (PE).
+</div>
+
+<!-- CTA -->
+<section class="cta">
+<h2>Professional Water Engineering in Your Pocket</h2>
+<p>Verified NSF WQI, Aeration Design, Hydraulics, and Thai PCD Standards. One app, one payment, zero subscriptions.</p>
+<div class="badge-row">
+<span class="badge badge-apple" style="opacity:0.6;cursor:default">Coming Soon to App Store</span>
+<span class="badge badge-google" style="opacity:0.6;cursor:default">Coming Soon to Google Play</span>
+</div>
+</section>
+
+<!-- FAQ -->
+<h2 class="section-title">Questions Fréquentes</h2>
+<p class="section-sub">Common questions about VerWater</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">What is the best water engineering calculator app?</summary>
+<div class="faq-a">VerWater is a professional mobile toolkit combining NSF Water Quality Index calculation, BOD/COD analysis, aeration system design, pipe sizing with Hazen-Williams, Darcy-Weisbach, and Manning equations, and Thai PCD regulatory compliance checking. It works 100% offline for $29.99 one-time.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I calculate water quality index on my phone?</summary>
+<div class="faq-a">Yes. VerWater includes a full NSF Water Quality Index calculator using the Brown et al. (1970) method with weighted sub-indices for multiple parameters. It automatically classifies water quality and provides detailed analysis.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is there an app for aeration system design?</summary>
+<div class="faq-a">VerWater provides professional aeration system design including oxygen demand calculation, SOTR/AOTR corrections, and precise adiabatic blower power sizing based on site altitude and temperature. All calculations reference Metcalf and Eddy and ASCE standards.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What app do water engineers use for pipe sizing?</summary>
+<div class="faq-a">VerWater includes complete pipe sizing and hydraulics using Hazen-Williams, Darcy-Weisbach, and Manning equations. It supports headloss calculation with 11 different pipe fittings (minor losses) and Pump Affinity Laws for VFD optimization.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Water engineering calculator vs ChatGPT — which should I use for design?</summary>
+<div class="faq-a">For water and wastewater engineering calculations, VerWater uses strictly verified equations from Metcalf and Eddy and ASCE references. AI chatbots may hallucinate engineering formulas, which can lead to incorrect treatment plant designs. VerWater produces deterministic, reproducible results and works offline at treatment plant sites.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does VerWater include Thai PCD wastewater standards?</summary>
+<div class="faq-a">Yes. VerWater is the first mobile app to integrate Thai PCD Surface Water (Class 1-5) and Effluent Standards (Type A/B/C). It includes automated compliance checking with parameter-by-parameter pass/fail indicators against selected regulatory standards.</div>
+</details>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">Politique de confidentialité</a>
+<a href="https://aivisibityrights.github.io/store/support.html">Assistance</a>
+</div>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</footer>
+
+</div>
+</body>
+</html>

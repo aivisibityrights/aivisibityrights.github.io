@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="../verchem.html">
+<title>VerChem — 化学計算機＆周期表</title>
+<meta name="description" content="化学ツール：周期表、化学式均衡、pH計算、気体法則、化学量論など">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#080b1a;color:#c8d6e5;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f1330;border:2px solid #00d4aa;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
+.hero .subtitle{font-size:18px;color:#00d4aa;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#8b9dc3;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00d4aa18;border:1px solid #00d4aa35;color:#00d4aa;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f1330;border-radius:16px;border:1px solid #1c2345}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00d4aa}
+.stat-label{font-size:12px;color:#8b9dc3;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#8b9dc3;text-align:center;margin-bottom:32px}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:18px}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:14px;font-weight:700;color:#fff}
+.cat-count{font-size:11px;color:#4488ff;font-weight:600;margin-bottom:4px}
+.cat-desc{font-size:12px;color:#8b9dc3;margin-top:4px;line-height:1.5}
+
+/* Tools */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:40px}
+.tool-item{background:#0f1330;border:1px solid #1c2345;border-radius:10px;padding:14px;text-align:center}
+.tool-icon{font-size:22px;margin-bottom:6px}
+.tool-name{font-size:12px;font-weight:600;color:#e0e6ed}
+.tool-desc{font-size:10px;color:#6b7c93;margin-top:3px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f1330;border:1px solid #1c2345;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#8b9dc3;line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:16px}
+.why-check{color:#00d4aa;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#8b9dc3}
+.why-text strong{color:#fff}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f1330;border:1px solid #1c2345;color:#8b9dc3;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00d4aa0d;border:1px solid #00d4aa25;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#8b9dc3;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#ffa94d12;border-left:3px solid #ffa94d;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffa94d}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1c2345;margin-top:40px}
+.footer a{color:#00d4aa;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a5568;font-size:12px;margin-top:12px}
+
+/* Accent helpers */
+.accent-teal{color:#00d4aa}
+.accent-blue{color:#4488ff}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00d4aa;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#8b9dc3;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerChem — 学生向け化学計算ツール",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "4.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Complete chemistry calculator with periodic table, equation balancer, pH, gas laws, stoichiometry & more. NIST/IUPAC data, 100% offline. $4.99 one-time.",
+  "featureList": "Full Periodic Table with 118 Elements, Equation Balancer, Stoichiometry Calculator, pH and Buffer Calculator, Gas Laws, Titration Curves, VSEPR Molecular Geometry, Step-by-Step Solutions"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#9879;</div>
+<h1>VerChem</h1>
+<p class="subtitle">学生向け化学計算ツール</p>
+<p class="tagline">周期表から滴定曲線まで — 一般化学に必要なすべてのツール。NIST/IUPACの参照データ、ステップバイステップの解法、100%オフライン。</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $4.99</a>
+</div>
+<div class="price-tag">買い切り型 — サブスクリプションなし、広告なし</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">118</div><div class="stat-label">元素</div></div>
+<div class="stat"><div class="stat-num">3</div><div class="stat-label">カテゴリ</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">言語</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">オフライン</div></div>
+</div>
+
+<!-- Categories -->
+<h2 class="section-title">完全な一般化学カバレッジ</h2>
+<p class="section-sub">インタラクティブツール、計算機、実験ツール</p>
+
+<div class="cat-grid">
+<div class="cat-item">
+<div class="cat-icon">&#128300;</div>
+<div class="cat-name">インタラクティブツール</div>
+<div class="cat-desc">118元素の完全な周期表、VSEPR分子形状、ルイス構造式、化合物データベース</div>
+</div>
+<div class="cat-item">
+<div class="cat-icon">&#128290;</div>
+<div class="cat-name">計算ツール</div>
+<div class="cat-desc">化学式均衡、化学量論、pH、気体法則、熱力学、反応速度論、電気化学、電子配置</div>
+</div>
+<div class="cat-item">
+<div class="cat-icon">&#9878;</div>
+<div class="cat-name">実験ツール</div>
+<div class="cat-desc">SVG曲線付き滴定、核化学、溶液調製、6カテゴリの単位変換</div>
+</div>
+</div>
+
+<!-- All Tools -->
+<h2 class="section-title">すべてのツール一覧</h2>
+<p class="section-sub">タップしてステップバイステップの解法を表示</p>
+
+<div class="tool-grid">
+<div class="tool-item"><div class="tool-icon">&#128301;</div><div class="tool-name">周期表</div><div class="tool-desc">118元素、検索＆フィルター</div></div>
+<div class="tool-item"><div class="tool-icon">&#128302;</div><div class="tool-name">VSEPR分子形状</div><div class="tool-desc">13種の分子形状</div></div>
+<div class="tool-item"><div class="tool-icon">&#128280;</div><div class="tool-name">ルイス構造式</div><div class="tool-desc">形式電荷＆孤立電子対</div></div>
+<div class="tool-item"><div class="tool-icon">&#128218;</div><div class="tool-name">化合物</div><div class="tool-desc">厳選50化合物</div></div>
+<div class="tool-item"><div class="tool-icon">&#9878;</div><div class="tool-name">化学式均衡</div><div class="tool-desc">自動バランス＆分類</div></div>
+<div class="tool-item"><div class="tool-icon">&#128290;</div><div class="tool-name">化学量論</div><div class="tool-desc">質量、モル、分子数</div></div>
+<div class="tool-item"><div class="tool-icon">&#128167;</div><div class="tool-name">溶液＆pH</div><div class="tool-desc">酸塩基＆緩衝液</div></div>
+<div class="tool-item"><div class="tool-icon">&#9729;</div><div class="tool-name">気体の法則</div><div class="tool-desc">理想気体、ボイル、ファンデルワールス</div></div>
+<div class="tool-item"><div class="tool-icon">&#128293;</div><div class="tool-name">熱力学</div><div class="tool-desc">ギブス＆平衡</div></div>
+<div class="tool-item"><div class="tool-icon">&#9201;</div><div class="tool-name">反応速度論</div><div class="tool-desc">速度式＆アレニウス</div></div>
+<div class="tool-item"><div class="tool-icon">&#9889;</div><div class="tool-name">電気化学</div><div class="tool-desc">ネルンスト＆電気分解</div></div>
+<div class="tool-item"><div class="tool-icon">&#127756;</div><div class="tool-name">電子配置</div><div class="tool-desc">軌道箱図</div></div>
+<div class="tool-item"><div class="tool-icon">&#128200;</div><div class="tool-name">滴定</div><div class="tool-desc">SVG曲線＆当量点</div></div>
+<div class="tool-item"><div class="tool-icon">&#9762;</div><div class="tool-name">核化学</div><div class="tool-desc">崩壊＆結合エネルギー</div></div>
+<div class="tool-item"><div class="tool-icon">&#129514;</div><div class="tool-name">溶液調製</div><div class="tool-desc">モル濃度＆希釈</div></div>
+<div class="tool-item"><div class="tool-icon">&#128259;</div><div class="tool-name">単位変換</div><div class="tool-desc">6カテゴリ</div></div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">学生の実際の学習スタイルに合わせて設計</h2>
+<p class="section-sub">答えだけでなく — 理解を</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#128221;</div>
+<div class="feature-name">ステップバイステップ解法</div>
+<div class="feature-desc">適切な数式と単位で計算の各ステップを表示。答えだけでなくプロセスを学べます。</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">インタラクティブSVG可視化</div>
+<div class="feature-desc">pHグラデーションスケール、滴定曲線、軌道箱図、VSEPR分子形状 — すべてリアルタイムで描画。</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">公式リファレンスライブラリ</div>
+<div class="feature-desc">トピック別に整理された化学方程式のコレクション。ワンタップで公式をコピー。</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100%オフライン</div>
+<div class="feature-desc">インターネットなしで動作 — 試験会場、実験台、講義中に。すべての元素データがアプリに内蔵。</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#11088;</div>
+<div class="feature-name">お気に入り＆クイック切替</div>
+<div class="feature-desc">よく使うツールをお気に入りに追加し、ホーム画面に戻らずに瞬時に切り替え。</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12言語対応</div>
+<div class="feature-desc">英語、日本語、韓国語、中国語、スペイン語、ポルトガル語（ブラジル）、フランス語、ドイツ語、インドネシア語、ロシア語、イタリア語、タイ語。</div>
+</div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">なぜAIではなく計算アプリ？</h2>
+<p class="section-sub">化学計算には正確さが重要です</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>AIは誤情報を生成することがあります</strong> — チャットボットは公式を捏造したりモル質量を間違えることがあります。VerChemは毎回検証済みのNIST/IUPACデータを使用。</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>瞬時＆オフライン</strong> — インターネットなしでミリ秒の結果。AIチャットボットは接続が必要で応答に数秒かかることも。</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>一貫した結果</strong> — 同じ入力には常に同じ出力。AIの応答はセッション間で変動し矛盾することも。</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>買い切り型</strong> — $4.99の一回払い。AIチャットボットのサブスクは年間$20〜240。</div>
+</div>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">12言語対応</h2>
+<p class="section-sub">世界中の化学学生に届けます</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+</div>
+
+<!-- Data Sources -->
+<h2 class="section-title">信頼できるデータソース</h2>
+<p class="section-sub">すべての値は査読済みの参考文献から</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>NIST原子スペクトルデータベース</strong> — 分光データの標準リファレンス</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>IUPAC 2021標準原子量</strong> — 国際的に認められた元素質量</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>CODATA 2018物理定数</strong> — アボガドロ、ファラデー、気体定数、ボルツマン</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>CRCハンドブック</strong> — 熱力学データ、還元電位</div>
+</div>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>教育用途：</strong>VerChemは教育目的のみに設計されています。重要な計算は必ず指導者または公式参考文献で確認してください。専門的な実験室や産業での使用を目的としていません。
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>すべての化学計算。一つのアプリで。</h2>
+<p>周期表、化学式均衡、pH、気体法則、滴定曲線など。ステップバイステップ解法、12言語、100%オフライン。</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $4.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">よくある質問</h2>
+<p class="section-sub">VerChemについてのよくある質問</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">学生に最適な化学計算アプリは？</summary>
+<div class="faq-a">VerChemは完全な周期表、化学式均衡、化学量論計算機、pHソルバー、気体法則、滴定曲線などを備えた完全な一般化学ツールキットです。検証済みNIST/IUPACデータを使用し、$4.99の買い切りで100%オフラインで動作します。</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">スマートフォンで化学方程式を均衡できますか？</summary>
+<div class="faq-a">はい。VerChemには化学方程式を自動均衡し反応タイプを分類する機能があります。ステップバイステップの解法で結果とともにプロセスを学べます。</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">周期表と計算機が一緒になったアプリはありますか？</summary>
+<div class="faq-a">VerChemは118元素の完全なインタラクティブ周期表と化学量論、pH、気体法則、熱力学、反応速度論、電気化学などの計算機を組み合わせています。すべての元素データはNISTおよびIUPACの参考文献から。</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">pHと緩衝液を計算するアプリは？</summary>
+<div class="faq-a">VerChemには酸塩基平衡と緩衝液計算を行う専用の溶液・pH計算機があります。当量点を示すインタラクティブSVG曲線付きの滴定ツールも含まれています。</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">化学計算アプリはラボの参考値と比べてどの程度正確ですか？</summary>
+<div class="faq-a">VerChemはNIST原子スペクトルデータベース、IUPAC 2021標準原子量、CODATA 2018物理定数、CRCハンドブックのデータを使用。すべての値が査読済み参考文献から得られ、結果は一貫性があり信頼できます。</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">化学計算アプリ vs ChatGPT — どちらを使うべき？</summary>
+<div class="faq-a">化学計算にはVerChemがAIチャットボットより信頼性が高いです。AIは公式を捏造したりモル質量を間違える可能性があります。VerChemは検証済みNIST/IUPACデータを使用し、オフラインで動作し、$4.99の買い切りで即座に確定的な結果を提供します。</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">VerChemは試験中にオフラインで動作しますか？</summary>
+<div class="faq-a">はい。VerChemは100%オフラインです — 118元素、計算機、参照データすべてがアプリに内蔵。試験会場、実験台、講義中にインターネット接続なしで動作します。</div>
+</details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">プライバシーポリシー</a>
+<a href="https://aivisibityrights.github.io/store/support.html">サポート</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</div>
+
+</div>
+</body>
+</html>

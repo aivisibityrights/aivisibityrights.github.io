@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerBio — 생물학 계산기</title>
+<meta name="description" content="생물학 계산기: 유전학, 생태학, 생화학 등. 완전 오프라인. 한 번 구매.">
+<link rel="alternate" hreflang="en" href="../verbio.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#081a12;color:#e8f5e9;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f2a1c;border:2px solid #00e676;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#00e676;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#81c784;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00e67620;border:1px solid #00e67640;color:#00e676;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f2a1c;border-radius:16px;border:1px solid #1b4332}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00e676}
+.stat-label{font-size:12px;color:#81c784;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#81c784;text-align:center;margin-bottom:32px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:40px}
+.cat-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:13px;font-weight:700;color:#fff}
+.cat-desc{font-size:11px;color:#81c784;margin-top:2px}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f2a1c;border:1px solid #1b4332;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#81c784;line-height:1.5}
+.viz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:40px}
+.viz-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.viz-icon{font-size:32px;margin-bottom:8px}
+.viz-name{font-size:13px;font-weight:600;color:#fff}
+.viz-desc{font-size:11px;color:#81c784;margin-top:4px}
+.viz-3d{border-color:#26c6da}
+.viz-3d .viz-name{color:#26c6da}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px}
+.why-check{color:#00e676;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a5d6a7}
+.why-text strong{color:#fff}
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f2a1c;border:1px solid #1b4332;color:#81c784;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00e67610;border:1px solid #00e67630;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#81c784;font-size:15px;margin-bottom:24px}
+.disclaimer{background:#ffab4010;border-left:3px solid #ffab40;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffab40}
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1b4332;margin-top:40px}
+.footer a{color:#00e676;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a7c59;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00e676;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#81c784;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerBio — Biology Calculator & Reference",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Every biology calculation you need — from Punnett squares to blood gas analysis. Genetics, molecular biology, ecology, biochemistry, biostatistics & physiology. 100% offline. $9.99 one-time.",
+  "featureList": "Interactive Punnett Squares, Live SVG Visualizations, 3D DNA and Cell Models, Blood Gas Analysis, Enzyme Kinetics, Hardy-Weinberg Calculator, Step-by-Step Solutions, 12 Languages"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="hero">
+<div class="hero-icon">&#129516;</div>
+<h1>VerBio</h1>
+<p class="subtitle">생물학 계산기</p>
+<p class="tagline">퍼넷 사각형부터 혈액가스 분석까지, 모든 생물학 계산을 한 앱에서. 학생, 연구원, 실험실 전문가를 위해 설계. 완전 오프라인.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+<div class="price-tag">한 번 구매, 영원히 사용 &mdash; 구독 없음, 광고 없음</div>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-num">7</div><div class="stat-label">카테고리</div></div>
+<div class="stat"><div class="stat-num">3D</div><div class="stat-label">시각화</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">언어</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">오프라인</div></div>
+</div>
+
+<h2 class="section-title">포괄적인 생물학 커버리지</h2>
+<p class="section-sub">유전학부터 생리학까지</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#129516;</div><div class="cat-name">유전학</div><div class="cat-desc">퍼넷, 하디-바인베르크, 카이제곱</div></div>
+<div class="cat-item"><div class="cat-icon">&#129529;</div><div class="cat-name">분자생물학</div><div class="cat-desc">DNA/RNA, Tm, PCR, GC 함량</div></div>
+<div class="cat-item"><div class="cat-icon">&#128300;</div><div class="cat-name">세포생물학</div><div class="cat-desc">삼투압, 막전위, 혈구계산판</div></div>
+<div class="cat-item"><div class="cat-icon">&#127795;</div><div class="cat-name">생태학</div><div class="cat-desc">개체군, 다양성, 로트카-볼테라</div></div>
+<div class="cat-item"><div class="cat-icon">&#9878;</div><div class="cat-name">생화학</div><div class="cat-desc">효소 동역학, 비어-람베르트, pI</div></div>
+<div class="cat-item"><div class="cat-icon">&#128202;</div><div class="cat-name">생물통계학</div><div class="cat-desc">t-검정, 분산분석, 회귀, 카이제곱</div></div>
+<div class="cat-item"><div class="cat-icon">&#129728;</div><div class="cat-name">생리학</div><div class="cat-desc">BMI, 심박출량, 폐용적</div></div>
+</div>
+
+<h2 class="section-title">단순한 계산기 그 이상</h2>
+<p class="section-sub">주머니 속 완벽한 생물학 툴킷</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#129516;</div>
+<div class="feature-name">인터랙티브 퍼넷 사각형</div>
+<div class="feature-desc">단성, 이성, 삼성 교배와 유전자형/표현형 비율 &mdash; 인터랙티브 SVG 그리드로 표시.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">실시간 SVG 시각화</div>
+<div class="feature-desc">성장 곡선, 로트카-볼테라 플롯, 효소 동역학 차트, 생존 곡선, 다양성 도넛 &mdash; 모두 실시간.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">내장 레퍼런스</div>
+<div class="feature-desc">아미노산 특성, 완전한 유전 암호표, 생물학 상수, 검색 가능한 수식 라이브러리.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12개 언어 지원</div>
+<div class="feature-desc">영어, 태국어, 일본어, 한국어, 중국어, 스페인어, 포르투갈어(브라질), 프랑스어, 독일어, 인도네시아어, 러시아어, 이탈리아어.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% 오프라인</div>
+<div class="feature-desc">인터넷 없이 동작 &mdash; 시험장, 실험대, 현장 조사에서도 사용 가능. 모든 데이터가 앱에 내장.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#9989;</div>
+<div class="feature-name">단계별 풀이</div>
+<div class="feature-desc">적절한 수식과 단위로 모든 계산 단계를 표시. 답만이 아닌 과정을 배울 수 있습니다.</div>
+</div>
+</div>
+
+<h2 class="section-title">인터랙티브 3D 모델</h2>
+<p class="section-sub">생물학적 구조를 3차원으로 탐색</p>
+
+<div class="viz-grid">
+<div class="viz-item viz-3d"><div class="viz-icon">&#129529;</div><div class="viz-name">DNA 이중 나선</div><div class="viz-desc">회전 및 확대하여 구조 탐색</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128300;</div><div class="viz-name">세포막</div><div class="viz-desc">인지질 이중층의 3D 모델</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128168;</div><div class="viz-name">폐 해부학</div><div class="viz-desc">3D 호흡기 모델</div></div>
+</div>
+
+<h2 class="section-title">실시간 SVG 차트</h2>
+<p class="section-sub">인터랙티브 시각화로 생물학이 살아납니다</p>
+
+<div class="viz-grid">
+<div class="viz-item"><div class="viz-icon">&#9638;</div><div class="viz-name">퍼넷 그리드</div><div class="viz-desc">색상 코딩된 유전자형</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">성장 곡선</div><div class="viz-desc">지수적 & 로지스틱</div></div>
+<div class="viz-item"><div class="viz-icon">&#128256;</div><div class="viz-name">포식-피식</div><div class="viz-desc">로트카-볼테라 진동</div></div>
+<div class="viz-item"><div class="viz-icon">&#128201;</div><div class="viz-name">효소 동역학</div><div class="viz-desc">미카엘리스-멘텐 + LB</div></div>
+<div class="viz-item"><div class="viz-icon">&#127984;</div><div class="viz-name">하디-바인베르크</div><div class="viz-desc">빈도 막대 차트</div></div>
+<div class="viz-item"><div class="viz-icon">&#128336;</div><div class="viz-name">생존 곡선</div><div class="viz-desc">I / II / III형</div></div>
+<div class="viz-item"><div class="viz-icon">&#128168;</div><div class="viz-name">폐용적</div><div class="viz-desc">적층 다이어그램</div></div>
+<div class="viz-item"><div class="viz-icon">&#127856;</div><div class="viz-name">다양성 도넛</div><div class="viz-desc">종 비율</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">용량-반응</div><div class="viz-desc">시그모이드 EC50 곡선</div></div>
+<div class="viz-item"><div class="viz-icon">&#127752;</div><div class="viz-name">pH 스케일</div><div class="viz-desc">0&ndash;14 그라데이션 바</div></div>
+</div>
+
+<h2 class="section-title">왜 AI가 아닌 계산 앱인가?</h2>
+<p class="section-sub">생물학 계산에서는 정확성이 중요합니다</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>AI는 할루시네이션을 할 수 있습니다</strong> &mdash; AI 챗봇은 때때로 부정확한 공식이나 값을 생성합니다. VerBio는 매번 검증된 교과서 방정식을 사용합니다.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>즉각적 & 오프라인</strong> &mdash; 인터넷 없이 밀리초 단위의 결과. AI 챗봇은 연결이 필요하고 응답에 수 초가 걸릴 수 있습니다.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>일관된 결과</strong> &mdash; 동일한 입력에는 항상 동일한 출력. AI 응답은 세션마다 다르고 자체적으로 모순될 수 있습니다.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>한 번 구매, 영원히 사용</strong> &mdash; $9.99 일회성 구매. AI 챗봇 구독은 연간 $20&ndash;240.</div>
+</div>
+</div>
+
+<h2 class="section-title">12개 언어 지원</h2>
+<p class="section-sub">전 세계 생물학생에게 다가갑니다</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+</div>
+
+<div class="disclaimer">
+<strong>참고:</strong> 혈액가스 인터프리터는 교육 목적으로만 사용하며 &mdash; 임상적 의사결정을 위한 것이 아닙니다.
+</div>
+
+<div class="cta">
+<h2>모든 생물학 계산. 하나의 앱으로.</h2>
+<p>퍼넷 사각형부터 혈액가스 분석까지. 포괄적인 도구, 인터랙티브 시각화, 12개 언어. 완전 오프라인. 구독 없음.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+</div>
+
+<h2 class="section-title">자주 묻는 질문</h2>
+<p class="section-sub">VerBio에 대한 일반적인 질문</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">학생에게 가장 좋은 생물학 계산기 앱은?</summary>
+<div class="faq-a">VerBio는 유전학, 분자생물학, 생태학, 생화학, 세포생물학, 생물통계학, 생리학을 포함한 7개 카테고리를 다루는 포괄적인 생물학 계산기입니다. 100% 오프라인으로 작동하며 인터랙티브 퍼넷 사각형, 효소 동역학 차트, DNA와 세포막의 3D 모델을 포함합니다.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">스마트폰에서 퍼넷 사각형 계산을 할 수 있나요?</summary>
+<div class="faq-a">네. VerBio에는 단성, 이성, 삼성 교배를 위한 인터랙티브 퍼넷 사각형이 포함되어 있습니다. 결과는 유전자형과 표현형 비율을 보여주는 색상 코딩된 SVG 그리드로 표시되며 단계별 설명이 포함됩니다.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">하디-바인베르크 평형 계산 앱이 있나요?</summary>
+<div class="faq-a">VerBio에는 대립유전자 빈도와 유전자형 빈도를 시각적 빈도 막대 차트와 함께 계산하는 하디-바인베르크 계산기가 포함되어 있습니다. 집단유전학 분석을 위한 카이제곱 적합도 검정도 다룹니다.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">생물학 연구자가 사용하는 효소 동역학 앱은?</summary>
+<div class="faq-a">VerBio는 라인위버-버크 플롯이 포함된 미카엘리스-멘텐 동역학 계산, 분광광도법을 위한 비어-람베르트 법칙, 등전점 추정을 제공합니다. 모든 결과에는 실시간 SVG 시각화와 단계별 풀이가 포함됩니다.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">생물학 계산기 앱은 교과서와 비교하여 얼마나 정확합니까?</summary>
+<div class="faq-a">VerBio는 모든 계산에 검증된 교과서 방정식을 사용합니다. 공식을 조작할 수 있는 AI 챗봇과 달리, VerBio는 결정론적 결과를 생성합니다 — 같은 입력에는 항상 같은 결과. 모든 수식은 확립된 생물학적 및 통계적 방법에 기반합니다.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">생물학 계산기 앱 vs ChatGPT &mdash; 숙제에는 어떤 것이 더 좋나요?</summary>
+<div class="faq-a">생물학 계산에는 VerBio와 같은 전용 계산기 앱이 AI 챗봇보다 더 신뢰할 수 있습니다. VerBio는 오프라인으로 작동하고, 단계별 풀이와 함께 즉각적인 결과를 제공하며, 검증된 수식을 사용하고, AI 구독에 비해 $9.99의 일회성 구매입니다.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">VerBio는 시험 중에 오프라인으로 작동하나요?</summary>
+<div class="faq-a">네. VerBio는 100% 오프라인입니다 — 모든 계산, 3D 모델, 참조 데이터, 시각화가 앱에 내장되어 있습니다. 시험장, 실험대, 현장 조사에서 인터넷 연결 없이 작동합니다.</div>
+</details>
+</div>
+
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">개인정보 처리방침</a>
+<a href="https://aivisibityrights.github.io/store/support.html">지원</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</div>
+
+</div>
+</body>
+</html>

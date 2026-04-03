@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerChem — 화학 계산기 & 주기율표</title>
+<meta name="description" content="화학 도구: 주기율표, 화학식 균형, pH, 기체법칙, 화학양론 등">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#080b1a;color:#c8d6e5;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f1330;border:2px solid #00d4aa;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
+.hero .subtitle{font-size:18px;color:#00d4aa;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#8b9dc3;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00d4aa18;border:1px solid #00d4aa35;color:#00d4aa;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f1330;border-radius:16px;border:1px solid #1c2345}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00d4aa}
+.stat-label{font-size:12px;color:#8b9dc3;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#8b9dc3;text-align:center;margin-bottom:32px}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:18px}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:14px;font-weight:700;color:#fff}
+.cat-count{font-size:11px;color:#4488ff;font-weight:600;margin-bottom:4px}
+.cat-desc{font-size:12px;color:#8b9dc3;margin-top:4px;line-height:1.5}
+
+/* Tools */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:40px}
+.tool-item{background:#0f1330;border:1px solid #1c2345;border-radius:10px;padding:14px;text-align:center}
+.tool-icon{font-size:22px;margin-bottom:6px}
+.tool-name{font-size:12px;font-weight:600;color:#e0e6ed}
+.tool-desc{font-size:10px;color:#6b7c93;margin-top:3px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f1330;border:1px solid #1c2345;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#8b9dc3;line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:16px}
+.why-check{color:#00d4aa;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#8b9dc3}
+.why-text strong{color:#fff}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f1330;border:1px solid #1c2345;color:#8b9dc3;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00d4aa0d;border:1px solid #00d4aa25;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#8b9dc3;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#ffa94d12;border-left:3px solid #ffa94d;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffa94d}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1c2345;margin-top:40px}
+.footer a{color:#00d4aa;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a5568;font-size:12px;margin-top:12px}
+
+/* Accent helpers */
+.accent-teal{color:#00d4aa}
+.accent-blue{color:#4488ff}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00d4aa;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#8b9dc3;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerChem — 학생용 화학 계산기",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "4.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Complete chemistry calculator with periodic table, equation balancer, pH, gas laws, stoichiometry & more. NIST/IUPAC data, 100% offline. $4.99 one-time.",
+  "featureList": "Full Periodic Table with 118 Elements, Equation Balancer, Stoichiometry Calculator, pH and Buffer Calculator, Gas Laws, Titration Curves, VSEPR Molecular Geometry, Step-by-Step Solutions"
+}
+</script>
+<link rel="alternate" hreflang="en" href="../verchem.html">
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#9879;</div>
+<h1>VerChem</h1>
+<p class="subtitle">학생용 화학 계산기</p>
+<p class="tagline">주기율표부터 적정 곡선까지 — 일반 화학에 필요한 모든 도구. NIST/IUPAC 참조 데이터, 단계별 풀이, 100% 오프라인.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $4.99</a>
+</div>
+<div class="price-tag">한 번 구매, 영원히 사용 — 구독 없음, 광고 없음</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">118</div><div class="stat-label">원소</div></div>
+<div class="stat"><div class="stat-num">3</div><div class="stat-label">카테고리</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">언어</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">오프라인</div></div>
+</div>
+
+<!-- Categories -->
+<h2 class="section-title">완벽한 일반 화학 커버리지</h2>
+<p class="section-sub">인터랙티브 도구, 계산기, 실험 도구</p>
+
+<div class="cat-grid">
+<div class="cat-item">
+<div class="cat-icon">&#128300;</div>
+<div class="cat-name">인터랙티브 도구</div>
+<div class="cat-desc">118개 원소의 완전한 주기율표, VSEPR 분자 기하학, 루이스 구조, 화합물 데이터베이스</div>
+</div>
+<div class="cat-item">
+<div class="cat-icon">&#128290;</div>
+<div class="cat-name">계산기</div>
+<div class="cat-desc">화학 반응식 균형, 화학양론, pH, 기체 법칙, 열역학, 반응 속도론, 전기화학, 전자 배치</div>
+</div>
+<div class="cat-item">
+<div class="cat-icon">&#9878;</div>
+<div class="cat-name">실험 도구</div>
+<div class="cat-desc">SVG 곡선 적정, 핵화학, 용액 제조, 6개 카테고리 단위 변환</div>
+</div>
+</div>
+
+<!-- All Tools -->
+<h2 class="section-title">모든 도구 한눈에</h2>
+<p class="section-sub">도구를 탭하여 단계별 풀이 보기</p>
+
+<div class="tool-grid">
+<div class="tool-item"><div class="tool-icon">&#128301;</div><div class="tool-name">주기율표</div><div class="tool-desc">118개 원소, 검색 & 필터</div></div>
+<div class="tool-item"><div class="tool-icon">&#128302;</div><div class="tool-name">VSEPR 분자 기하학</div><div class="tool-desc">13가지 분자 모양</div></div>
+<div class="tool-item"><div class="tool-icon">&#128280;</div><div class="tool-name">루이스 구조</div><div class="tool-desc">형식 전하 & 고립 전자쌍</div></div>
+<div class="tool-item"><div class="tool-icon">&#128218;</div><div class="tool-name">화합물</div><div class="tool-desc">엄선된 50개 화합물</div></div>
+<div class="tool-item"><div class="tool-icon">&#9878;</div><div class="tool-name">반응식 균형</div><div class="tool-desc">자동 균형 & 분류</div></div>
+<div class="tool-item"><div class="tool-icon">&#128290;</div><div class="tool-name">화학양론</div><div class="tool-desc">질량, 몰, 분자 수</div></div>
+<div class="tool-item"><div class="tool-icon">&#128167;</div><div class="tool-name">용액 & pH</div><div class="tool-desc">산-염기 & 완충 용액</div></div>
+<div class="tool-item"><div class="tool-icon">&#9729;</div><div class="tool-name">기체 법칙</div><div class="tool-desc">이상 기체, 보일, 판데르발스</div></div>
+<div class="tool-item"><div class="tool-icon">&#128293;</div><div class="tool-name">열역학</div><div class="tool-desc">깁스 & 평형</div></div>
+<div class="tool-item"><div class="tool-icon">&#9201;</div><div class="tool-name">반응 속도론</div><div class="tool-desc">속도 법칙 & 아레니우스</div></div>
+<div class="tool-item"><div class="tool-icon">&#9889;</div><div class="tool-name">전기화학</div><div class="tool-desc">네른스트 & 전기 분해</div></div>
+<div class="tool-item"><div class="tool-icon">&#127756;</div><div class="tool-name">전자 배치</div><div class="tool-desc">오비탈 상자 다이어그램</div></div>
+<div class="tool-item"><div class="tool-icon">&#128200;</div><div class="tool-name">적정</div><div class="tool-desc">SVG 곡선 & 당량점</div></div>
+<div class="tool-item"><div class="tool-icon">&#9762;</div><div class="tool-name">핵화학</div><div class="tool-desc">붕괴 & 결합 에너지</div></div>
+<div class="tool-item"><div class="tool-icon">&#129514;</div><div class="tool-name">용액 제조</div><div class="tool-desc">몰 농도 & 희석</div></div>
+<div class="tool-item"><div class="tool-icon">&#128259;</div><div class="tool-name">단위 변환</div><div class="tool-desc">6개 카테고리</div></div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">학생들의 실제 학습 방식에 맞게 설계</h2>
+<p class="section-sub">답만이 아닌 — 이해를</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#128221;</div>
+<div class="feature-name">단계별 풀이</div>
+<div class="feature-desc">적절한 수식과 단위로 모든 계산 단계를 표시. 답만이 아닌 과정을 배울 수 있습니다.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">인터랙티브 SVG 시각화</div>
+<div class="feature-desc">pH 그라데이션 스케일, 적정 곡선, 오비탈 상자 다이어그램, VSEPR 분자 모양 — 모두 실시간 렌더링.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">공식 레퍼런스 라이브러리</div>
+<div class="feature-desc">주제별로 정리된 화학 방정식 컬렉션. 한 번 탭으로 공식 복사.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% 오프라인</div>
+<div class="feature-desc">인터넷 없이 작동 — 시험장, 실험대, 강의실에서. 모든 원소 데이터가 앱에 내장.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#11088;</div>
+<div class="feature-name">즐겨찾기 & 빠른 전환</div>
+<div class="feature-desc">자주 사용하는 도구에 별표를 달고 홈 화면에 돌아가지 않고 즉시 전환.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12개 언어 지원</div>
+<div class="feature-desc">English, Japanese, Korean, Chinese, Spanish, Portuguese (Brazil), French, German, Indonesian, Russian, Italian, Thai.</div>
+</div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">왜 AI가 아닌 계산 앱인가?</h2>
+<p class="section-sub">화학 계산에서는 정확성이 중요합니다</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>AI는 할루시네이션을 할 수 있습니다</strong> — 챗봇은 공식을 조작하거나 잘못된 몰 질량을 반환할 수 있습니다. VerChem은 매번 검증된 NIST/IUPAC 데이터를 사용합니다.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>즉각적 & 오프라인</strong> — 인터넷 없이 밀리초 단위의 결과. AI 챗봇은 연결이 필요하고 응답에 수 초가 걸릴 수 있습니다.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>일관된 결과</strong> — 같은 입력에는 항상 같은 출력. AI 응답은 세션마다 다르고 자체적으로 모순될 수 있습니다.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>한 번 구매, 영원히 사용</strong> — $4.99 일회성 구매. AI 챗봇 구독은 연간 $20–240.</div>
+</div>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">12개 언어 지원</h2>
+<p class="section-sub">전 세계 화학 학생에게 다가갑니다</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+</div>
+
+<!-- Data Sources -->
+<h2 class="section-title">신뢰할 수 있는 데이터 소스</h2>
+<p class="section-sub">모든 값은 동료 심사를 거친 참고문헌에서 가져옵니다</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>NIST 원자 스펙트럼 데이터베이스</strong> — 분광 데이터의 표준 참조</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>IUPAC 2021 표준 원자량</strong> — 국제적으로 인정된 원소 질량</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>CODATA 2018 물리 상수</strong> — 아보가드로, 패러데이, 기체 상수, 볼츠만</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>CRC 화학 물리 핸드북</strong> — 열역학 데이터, 환원 전위</div>
+</div>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>교육용:</strong> VerChem은 교육 목적으로만 설계되었습니다. 중요한 계산은 반드시 강사 또는 공식 참고문헌으로 확인하세요. 전문 실험실 또는 산업용으로 사용할 수 없습니다.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>모든 화학 계산. 하나의 앱으로.</h2>
+<p>주기율표, 반응식 균형, pH, 기체 법칙, 적정 곡선 등. 단계별 풀이, 12개 언어, 100% 오프라인.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $4.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">VerChem에 대한 일반적인 질문</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">학생에게 가장 좋은 화학 계산기 앱은?</summary>
+<div class="faq-a">VerChem은 완전한 일반 화학 툴킷으로 with a full periodic table, equation balancer, stoichiometry calculator, pH solver, gas laws, titration curves, and more. It uses verified NIST/IUPAC data and works 100% offline for $4.99 one-time.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">스마트폰에서 화학 방정식을 균형 잡을 수 있나요?</summary>
+<div class="faq-a">네. VerChem에는 화학 방정식을 자동으로 균형 잡고 반응 유형을 분류하는 기능이 있습니다 that balances chemical equations and classifies reaction types. It shows step-by-step solutions so you can learn the process alongside the result.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">주기율표와 계산기가 함께 있는 앱이 있나요?</summary>
+<div class="faq-a">VerChem combines a full interactive periodic table of 118 elements with calculators for stoichiometry, pH, gas laws, thermodynamics, kinetics, electrochemistry, and more. All element data comes from NIST and IUPAC references.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">pH와 완충 용액을 계산하는 앱은?</summary>
+<div class="faq-a">VerChem has a dedicated Solutions and pH calculator that handles acid-base equilibria and buffer calculations. It also includes a titration tool with interactive SVG curves showing equivalence points.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">화학 계산기 앱은 실험실 참고값과 비교하여 얼마나 정확합니까?</summary>
+<div class="faq-a">VerChem uses data from NIST Atomic Spectra Database, IUPAC 2021 Standard Atomic Weights, CODATA 2018 Physical Constants, and CRC Handbook. Every value comes from peer-reviewed references, making results consistent and reliable.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">화학 계산기 앱 vs ChatGPT — 어떤 것을 사용해야 하나요?</summary>
+<div class="faq-a">For chemistry calculations, VerChem is more reliable than AI chatbots. AI can hallucinate formulas or return wrong molar masses. VerChem uses verified NIST/IUPAC data, works offline, and gives instant deterministic results for $4.99 one-time versus recurring AI subscriptions.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">VerChem은 시험 중에 오프라인으로 작동하나요?</summary>
+<div class="faq-a">네. VerChem은 100% 오프라인입니다 — all 118 elements, calculators, and reference data are bundled in the app. It works in exam halls, on lab benches, and in lectures with no internet connection needed.</div>
+</details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">개인정보 처리방침</a>
+<a href="https://aivisibityrights.github.io/store/support.html">지원</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</div>
+
+</div>
+</body>
+</html>

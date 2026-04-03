@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerBio — เครื่องคิดเลขชีววิทยาและอ้างอิง</title>
+<meta name="description" content="ทุกการคำนวณทางชีววิทยาที่คุณต้องการ — ตั้งแต่ตารางพันเนตต์ถึงการแปลผลก๊าซในเลือด พันธุศาสตร์ ชีววิทยาโมเลกุล นิเวศ ชีวเคมี สถิติชีวภาพ และสรีรวิทยา ออฟไลน์ 100% ซื้อครั้งเดียว $9.99">
+<link rel="alternate" hreflang="en" href="../verbio.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#081a12;color:#e8f5e9;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f2a1c;border:2px solid #00e676;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#00e676;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#81c784;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00e67620;border:1px solid #00e67640;color:#00e676;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f2a1c;border-radius:16px;border:1px solid #1b4332}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00e676}
+.stat-label{font-size:12px;color:#81c784;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#81c784;text-align:center;margin-bottom:32px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:40px}
+.cat-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:13px;font-weight:700;color:#fff}
+.cat-desc{font-size:11px;color:#81c784;margin-top:2px}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f2a1c;border:1px solid #1b4332;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#81c784;line-height:1.5}
+.viz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:40px}
+.viz-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px;text-align:center}
+.viz-icon{font-size:32px;margin-bottom:8px}
+.viz-name{font-size:13px;font-weight:600;color:#fff}
+.viz-desc{font-size:11px;color:#81c784;margin-top:4px}
+.viz-3d{border-color:#26c6da}
+.viz-3d .viz-name{color:#26c6da}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;padding:16px}
+.why-check{color:#00e676;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a5d6a7}
+.why-text strong{color:#fff}
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f2a1c;border:1px solid #1b4332;color:#81c784;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00e67610;border:1px solid #00e67630;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#81c784;font-size:15px;margin-bottom:24px}
+.disclaimer{background:#ffab4010;border-left:3px solid #ffab40;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffab40}
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1b4332;margin-top:40px}
+.footer a{color:#00e676;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a7c59;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00e676;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#81c784;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerBio — Biology Calculator & Reference",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Every biology calculation you need — from Punnett squares to blood gas analysis. Genetics, molecular biology, ecology, biochemistry, biostatistics & physiology. 100% offline. $9.99 one-time.",
+  "featureList": "Interactive Punnett Squares, Live SVG Visualizations, 3D DNA and Cell Models, Blood Gas Analysis, Enzyme Kinetics, Hardy-Weinberg Calculator, Step-by-Step Solutions, 12 Languages"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="hero">
+<div class="hero-icon">&#129516;</div>
+<h1>VerBio</h1>
+<p class="subtitle">เครื่องคิดเลขชีววิทยาและอ้างอิง</p>
+<p class="tagline">ทุกการคำนวณทางชีววิทยาที่คุณต้องการ &mdash; ตั้งแต่ตารางพันเนตต์ถึงการแปลผลก๊าซในเลือด สร้างสำหรับนักเรียน นักวิจัย และนักวิทยาศาสตร์ ใช้ออฟไลน์ได้ 100%</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+<div class="price-tag">ซื้อครั้งเดียว ใช้ตลอดชีวิต &mdash; ไม่มีค่าสมาชิก ไม่มีโฆษณา</div>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-num">7</div><div class="stat-label">หมวดหมู่</div></div>
+<div class="stat"><div class="stat-num">3D</div><div class="stat-label">กราฟิก</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">ภาษา</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">ออฟไลน์</div></div>
+</div>
+
+<h2 class="section-title">ครอบคลุมชีววิทยาครบทุกหมวด</h2>
+<p class="section-sub">จากพันธุศาสตร์ถึงสรีรวิทยามนุษย์</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#129516;</div><div class="cat-name">พันธุศาสตร์</div><div class="cat-desc">พันเนตต์, Hardy-Weinberg, ไคสแควร์</div></div>
+<div class="cat-item"><div class="cat-icon">&#129529;</div><div class="cat-name">ชีววิทยาโมเลกุล</div><div class="cat-desc">DNA/RNA, Tm, PCR, GC content</div></div>
+<div class="cat-item"><div class="cat-icon">&#128300;</div><div class="cat-name">ชีววิทยาของเซลล์</div><div class="cat-desc">ออสโมลาริตี, เยื่อหุ้มเซลล์, นับเซลล์</div></div>
+<div class="cat-item"><div class="cat-icon">&#127795;</div><div class="cat-name">นิเวศวิทยา</div><div class="cat-desc">ประชากร, ความหลากหลาย, Lotka-Volterra</div></div>
+<div class="cat-item"><div class="cat-icon">&#9878;</div><div class="cat-name">ชีวเคมี</div><div class="cat-desc">จลนศาสตร์เอนไซม์, Beer-Lambert, pI</div></div>
+<div class="cat-item"><div class="cat-icon">&#128202;</div><div class="cat-name">ชีวสถิติ</div><div class="cat-desc">ที-เทสต์, ANOVA, ถดถอย, ไคสแควร์</div></div>
+<div class="cat-item"><div class="cat-icon">&#129728;</div><div class="cat-name">สรีรวิทยา</div><div class="cat-desc">BMI, ปริมาณเลือดจากหัวใจ, ปริมาตรปอด</div></div>
+</div>
+
+<h2 class="section-title">มากกว่าแค่เครื่องคิดเลข</h2>
+<p class="section-sub">ชุดเครื่องมือชีววิทยาครบครันในมือคุณ</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#129516;</div>
+<div class="feature-name">ตารางพันเนตต์แบบโต้ตอบ</div>
+<div class="feature-desc">ผสมข้ามพันธุ์แบบโมโน ได และไตรไฮบริด พร้อมอัตราส่วนจีโนไทป์/ฟีโนไทป์ &mdash; แสดงเป็น SVG grid แบบโต้ตอบ</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">กราฟิก SVG แบบเรียลไทม์</div>
+<div class="feature-desc">กราฟการเติบโต, กราฟ Lotka-Volterra, แผนภูมิจลนศาสตร์เอนไซม์, เส้นการรอดชีวิต, แผนภูมิความหลากหลาย &mdash; ทั้งหมดแบบเรียลไทม์</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">ข้อมูลอ้างอิงในตัว</div>
+<div class="feature-desc">กรดอะมิโนพร้อมคุณสมบัติ ตารางรหัสพันธุกรรมครบถ้วน ค่าคงที่ทางชีววิทยา และคลังสูตรที่ค้นหาได้</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12 ภาษา</div>
+<div class="feature-desc">อังกฤษ ไทย ญี่ปุ่น เกาหลี จีน สเปน โปรตุเกส (บราซิล) ฝรั่งเศส เยอรมัน อินโดนีเซีย รัสเซีย อิตาลี</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">ออฟไลน์ 100%</div>
+<div class="feature-desc">ใช้งานได้โดยไม่ต้องมีอินเทอร์เน็ต &mdash; ในห้องสอบ ห้องปฏิบัติการ และภาคสนาม ข้อมูลทั้งหมดอยู่ในแอป</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#9989;</div>
+<div class="feature-name">วิธีทำทีละขั้นตอน</div>
+<div class="feature-desc">ดูทุกขั้นตอนการคำนวณพร้อมสูตรและหน่วยที่ถูกต้อง เรียนรู้กระบวนการ ไม่ใช่แค่คำตอบ</div>
+</div>
+</div>
+
+<h2 class="section-title">โมเดล 3D แบบโต้ตอบ</h2>
+<p class="section-sub">สำรวจโครงสร้างทางชีววิทยาในสามมิติ</p>
+
+<div class="viz-grid">
+<div class="viz-item viz-3d"><div class="viz-icon">&#129529;</div><div class="viz-name">เกลียวคู่ DNA</div><div class="viz-desc">หมุนและซูมโครงสร้างที่โดดเด่น</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128300;</div><div class="viz-name">เยื่อหุ้มเซลล์</div><div class="viz-desc">ชั้นฟอสโฟลิพิดคู่ใน 3D</div></div>
+<div class="viz-item viz-3d"><div class="viz-icon">&#128168;</div><div class="viz-name">กายวิภาคปอด</div><div class="viz-desc">โมเดลระบบหายใจ 3D</div></div>
+</div>
+
+<h2 class="section-title">แผนภูมิ SVG แบบเรียลไทม์</h2>
+<p class="section-sub">ชีววิทยามีชีวิตชีวาด้วยกราฟิกแบบโต้ตอบ</p>
+
+<div class="viz-grid">
+<div class="viz-item"><div class="viz-icon">&#9638;</div><div class="viz-name">ตารางพันเนตต์</div><div class="viz-desc">จีโนไทป์แบ่งสี</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">กราฟการเติบโต</div><div class="viz-desc">แบบเอกซ์โพเนนเชียลและโลจิสติก</div></div>
+<div class="viz-item"><div class="viz-icon">&#128256;</div><div class="viz-name">นักล่า-เหยื่อ</div><div class="viz-desc">การแกว่ง Lotka-Volterra</div></div>
+<div class="viz-item"><div class="viz-icon">&#128201;</div><div class="viz-name">จลนศาสตร์เอนไซม์</div><div class="viz-desc">Michaelis-Menten + LB</div></div>
+<div class="viz-item"><div class="viz-icon">&#127984;</div><div class="viz-name">Hardy-Weinberg</div><div class="viz-desc">แผนภูมิแท่งความถี่</div></div>
+<div class="viz-item"><div class="viz-icon">&#128336;</div><div class="viz-name">การรอดชีวิต</div><div class="viz-desc">ประเภท I / II / III</div></div>
+<div class="viz-item"><div class="viz-icon">&#128168;</div><div class="viz-name">ปริมาตรปอด</div><div class="viz-desc">แผนภาพซ้อนชั้น</div></div>
+<div class="viz-item"><div class="viz-icon">&#127856;</div><div class="viz-name">โดนัทความหลากหลาย</div><div class="viz-desc">สัดส่วนชนิดพันธุ์</div></div>
+<div class="viz-item"><div class="viz-icon">&#128200;</div><div class="viz-name">ขนาดยา-การตอบสนอง</div><div class="viz-desc">เส้นโค้งซิกมอยด์ EC50</div></div>
+<div class="viz-item"><div class="viz-icon">&#127752;</div><div class="viz-name">มาตรา pH</div><div class="viz-desc">แถบไล่ระดับ 0&ndash;14</div></div>
+</div>
+
+<h2 class="section-title">ทำไมต้องใช้แอปคิดเลข ไม่ใช่ AI?</h2>
+<p class="section-sub">การคำนวณทางชีววิทยาต้องการความแม่นยำ</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>AI อาจให้ข้อมูลผิด</strong> &mdash; AI chatbot บางครั้งสร้างสูตรหรือค่าที่ไม่ถูกต้อง VerBio ใช้สมการจากตำราเรียนที่ตรวจสอบแล้วทุกครั้ง</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>ผลทันทีและออฟไลน์</strong> &mdash; ได้ผลลัพธ์ในมิลลิวินาทีโดยไม่ต้องใช้อินเทอร์เน็ต AI chatbot ต้องใช้การเชื่อมต่อและอาจใช้เวลาหลายวินาที</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>ผลลัพธ์คงที่</strong> &mdash; ใส่ค่าเดิม ได้ผลเดิมทุกครั้ง คำตอบจาก AI แตกต่างกันในแต่ละครั้งและอาจขัดแย้งกันเอง</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>ซื้อครั้งเดียว ใช้ตลอดชีวิต</strong> &mdash; จ่ายครั้งเดียว $9.99 ค่าสมาชิก AI chatbot อยู่ที่ $20&ndash;240/ปี</div>
+</div>
+</div>
+
+<h2 class="section-title">รองรับ 12 ภาษา</h2>
+<p class="section-sub">เข้าถึงนักเรียนชีววิทยาทั่วโลก</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; ไทย</span>
+<span class="lang-badge">&#127471;&#127477; ญี่ปุ่น</span>
+<span class="lang-badge">&#127472;&#127479; เกาหลี</span>
+<span class="lang-badge">&#127464;&#127475; จีน</span>
+<span class="lang-badge">&#127466;&#127480; สเปน</span>
+<span class="lang-badge">&#127463;&#127479; โปรตุเกส</span>
+<span class="lang-badge">&#127467;&#127479; ฝรั่งเศส</span>
+<span class="lang-badge">&#127465;&#127466; เยอรมัน</span>
+<span class="lang-badge">&#127470;&#127465; อินโดนีเซีย</span>
+<span class="lang-badge">&#127479;&#127482; รัสเซีย</span>
+<span class="lang-badge">&#127470;&#127481; อิตาลี</span>
+</div>
+
+<div class="disclaimer">
+<strong>หมายเหตุ:</strong> การแปลผลก๊าซในเลือดมีไว้เพื่อการศึกษาเท่านั้น &mdash; ไม่ได้มีวัตถุประสงค์เพื่อใช้ในการตัดสินใจทางคลินิก
+</div>
+
+<div class="cta">
+<h2>ทุกการคำนวณทางชีววิทยา ในแอปเดียว</h2>
+<p>จากตารางพันเนตต์ถึงก๊าซในเลือด เครื่องมือครบครัน กราฟิกแบบโต้ตอบ 12 ภาษา ออฟไลน์ 100% ไม่ต้องสมัครสมาชิก</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+</div>
+
+<h2 class="section-title">คำถามที่พบบ่อย</h2>
+<p class="section-sub">คำถามทั่วไปเกี่ยวกับ VerBio</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">แอปคิดเลขชีววิทยาที่ดีที่สุดสำหรับนักเรียนคืออะไร?</summary>
+<div class="faq-a">VerBio เป็นเครื่องคิดเลขชีววิทยาที่ครอบคลุม 7 หมวดหมู่ ได้แก่ พันธุศาสตร์ ชีววิทยาโมเลกุล นิเวศ ชีวเคมี ชีววิทยาของเซลล์ ชีวสถิติ และสรีรวิทยา ใช้ออฟไลน์ 100% พร้อมตารางพันเนตต์แบบโต้ตอบ กราฟจลนศาสตร์เอนไซม์ และโมเดล 3D ของ DNA และเยื่อหุ้มเซลล์</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">คำนวณตารางพันเนตต์บนมือถือได้ไหม?</summary>
+<div class="faq-a">ได้ VerBio มีตารางพันเนตต์แบบโต้ตอบสำหรับการผสมพันธุ์แบบโมโน ได และไตรไฮบริด ผลลัพธ์แสดงเป็น SVG grid แบ่งสีตามจีโนไทป์และฟีโนไทป์ พร้อมวิธีทำทีละขั้นตอน</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">มีแอปสำหรับคำนวณสมดุล Hardy-Weinberg ไหม?</summary>
+<div class="faq-a">VerBio มีเครื่องคิดเลข Hardy-Weinberg ที่คำนวณความถี่อัลลีลและจีโนไทป์ พร้อมแผนภูมิแท่งความถี่ รวมถึงการทดสอบไคสแควร์สำหรับการวิเคราะห์พันธุศาสตร์ประชากร</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">นักวิจัยชีววิทยาใช้แอปอะไรสำหรับจลนศาสตร์เอนไซม์?</summary>
+<div class="faq-a">VerBio มีการคำนวณจลนศาสตร์ Michaelis-Menten พร้อมกราฟ Lineweaver-Burk, กฎ Beer-Lambert สำหรับสเปกโทรโฟโตเมทรี และการประมาณค่าจุดไอโซอิเล็กทริก ผลลัพธ์ทั้งหมดมีกราฟิก SVG แบบเรียลไทม์และวิธีทำทีละขั้นตอน</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">แอปคิดเลขชีววิทยาแม่นยำแค่ไหนเทียบกับตำราเรียน?</summary>
+<div class="faq-a">VerBio ใช้สมการจากตำราเรียนที่ตรวจสอบแล้วทุกการคำนวณ ต่างจาก AI chatbot ที่อาจแต่งสูตรขึ้นมา VerBio ให้ผลลัพธ์ที่แน่นอน &mdash; ใส่ค่าเดิม ได้ผลเดิมทุกครั้ง ทุกสูตรอิงจากวิธีการทางชีววิทยาและสถิติที่เป็นที่ยอมรับ</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">แอปคิดเลขชีววิทยา vs ChatGPT &mdash; อันไหนดีกว่าสำหรับทำการบ้าน?</summary>
+<div class="faq-a">สำหรับการคำนวณทางชีววิทยา แอปคิดเลขเฉพาะทางอย่าง VerBio น่าเชื่อถือกว่า AI chatbot VerBio ใช้ออฟไลน์ได้ ให้ผลทันทีพร้อมวิธีทำทีละขั้นตอน ใช้สูตรที่ตรวจสอบแล้ว และจ่ายเพียง $9.99 ครั้งเดียว เทียบกับค่าสมาชิก AI ที่เสียทุกเดือน AI chatbot อาจให้สูตรผิดหรือผลลัพธ์ไม่คงที่ในแต่ละครั้ง</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">VerBio ใช้ออฟไลน์ระหว่างสอบได้ไหม?</summary>
+<div class="faq-a">ได้ VerBio ออฟไลน์ 100% &mdash; การคำนวณ โมเดล 3D ข้อมูลอ้างอิง และกราฟิกทั้งหมดอยู่ในแอป ใช้ได้ในห้องสอบ ห้องปฏิบัติการ และภาคสนาม โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ต</div>
+</details>
+</div>
+
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">นโยบายความเป็นส่วนตัว</a>
+<a href="https://aivisibityrights.github.io/store/support.html">ฝ่ายสนับสนุน</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. สงวนลิขสิทธิ์</div>
+</div>
+
+</div>
+</body>
+</html>

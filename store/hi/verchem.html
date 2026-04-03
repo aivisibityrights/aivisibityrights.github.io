@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerChem — छात्रों के लिए रसायन कैलकुलेटर</title>
+<meta name="description" content="आवर्त सारणी, समीकरण संतुलक, pH, गैस नियम, स्टॉइकियोमेट्री सहित पूर्ण रसायन कैलकुलेटर। NIST/IUPAC डेटा, 100% ऑफलाइन। $4.99 एक बार।">
+<link rel="alternate" hreflang="en" href="../verchem.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#080b1a;color:#c8d6e5;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0f1330;border:2px solid #00d4aa;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
+.hero .subtitle{font-size:18px;color:#00d4aa;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#8b9dc3;max-width:560px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#00d4aa18;border:1px solid #00d4aa35;color:#00d4aa;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0f1330;border-radius:16px;border:1px solid #1c2345}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#00d4aa}
+.stat-label{font-size:12px;color:#8b9dc3;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#8b9dc3;text-align:center;margin-bottom:32px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:18px}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:14px;font-weight:700;color:#fff}
+.cat-desc{font-size:12px;color:#8b9dc3;margin-top:4px;line-height:1.5}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:40px}
+.tool-item{background:#0f1330;border:1px solid #1c2345;border-radius:10px;padding:14px;text-align:center}
+.tool-icon{font-size:22px;margin-bottom:6px}
+.tool-name{font-size:12px;font-weight:600;color:#e0e6ed}
+.tool-desc{font-size:10px;color:#6b7c93;margin-top:3px}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#0f1330;border:1px solid #1c2345;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#8b9dc3;line-height:1.5}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0f1330;border:1px solid #1c2345;border-radius:12px;padding:16px}
+.why-check{color:#00d4aa;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#8b9dc3}
+.why-text strong{color:#fff}
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0f1330;border:1px solid #1c2345;color:#8b9dc3;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#00d4aa0d;border:1px solid #00d4aa25;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#8b9dc3;font-size:15px;margin-bottom:24px}
+.disclaimer{background:#ffa94d12;border-left:3px solid #ffa94d;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#ffa94d}
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1c2345;margin-top:40px}
+.footer a{color:#00d4aa;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a5568;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00d4aa;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#8b9dc3;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerChem — Chemistry Calculator for Students",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "4.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Complete chemistry calculator with periodic table, equation balancer, pH, gas laws, stoichiometry & more. NIST/IUPAC data, 100% offline. $4.99 one-time.",
+  "featureList": "Full Periodic Table with 118 Elements, Equation Balancer, Stoichiometry Calculator, pH and Buffer Calculator, Gas Laws, Titration Curves, VSEPR Molecular Geometry, Step-by-Step Solutions"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="hero">
+<div class="hero-icon">&#9879;</div>
+<h1>VerChem</h1>
+<p class="subtitle">छात्रों के लिए रसायन कैलकुलेटर</p>
+<p class="tagline">आवर्त सारणी से अनुमापन वक्र तक — आपको आवश्यक हर सामान्य रसायन उपकरण। NIST/IUPAC संदर्भ डेटा, चरण-दर-चरण समाधान, 100% ऑफलाइन।</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $4.99</a>
+</div>
+<div class="price-tag">एक बार भुगतान करें, हमेशा उपयोग करें — कोई सदस्यता नहीं, कोई विज्ञापन नहीं</div>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-num">118</div><div class="stat-label">तत्व</div></div>
+<div class="stat"><div class="stat-num">3</div><div class="stat-label">श्रेणियाँ</div></div>
+<div class="stat"><div class="stat-num">12</div><div class="stat-label">भाषाएँ</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">ऑफलाइन</div></div>
+</div>
+
+<h2 class="section-title">पूर्ण सामान्य रसायन कवरेज</h2>
+<p class="section-sub">इंटरैक्टिव उपकरण, कैलकुलेटर और प्रयोगशाला आवश्यकताएँ</p>
+
+<div class="cat-grid">
+<div class="cat-item">
+<div class="cat-icon">&#128300;</div>
+<div class="cat-name">इंटरैक्टिव उपकरण</div>
+<div class="cat-desc">118 तत्वों की पूर्ण आवर्त सारणी, VSEPR आणविक ज्यामिति, लुईस संरचनाएँ, यौगिक डेटाबेस</div>
+</div>
+<div class="cat-item">
+<div class="cat-icon">&#128290;</div>
+<div class="cat-name">कैलकुलेटर</div>
+<div class="cat-desc">समीकरण संतुलक, स्टॉइकियोमेट्री, pH, गैस नियम, ऊष्मागतिकी, गतिकी, विद्युत रसायन, इलेक्ट्रॉन विन्यास</div>
+</div>
+<div class="cat-item">
+<div class="cat-icon">&#9878;</div>
+<div class="cat-name">प्रयोगशाला उपकरण</div>
+<div class="cat-desc">SVG वक्रों सहित अनुमापन, नाभिकीय रसायन, विलयन तैयारी, छह श्रेणियों में इकाई परिवर्तक</div>
+</div>
+</div>
+
+<h2 class="section-title">सभी उपकरण एक नज़र में</h2>
+<p class="section-sub">किसी भी उपकरण पर टैप करें चरण-दर-चरण समाधान देखने के लिए</p>
+
+<div class="tool-grid">
+<div class="tool-item"><div class="tool-icon">&#128301;</div><div class="tool-name">आवर्त सारणी</div><div class="tool-desc">118 तत्व, खोज और फ़िल्टर</div></div>
+<div class="tool-item"><div class="tool-icon">&#128302;</div><div class="tool-name">VSEPR ज्यामिति</div><div class="tool-desc">13 आणविक आकार</div></div>
+<div class="tool-item"><div class="tool-icon">&#128280;</div><div class="tool-name">लुईस संरचनाएँ</div><div class="tool-desc">औपचारिक आवेश और एकाकी युग्म</div></div>
+<div class="tool-item"><div class="tool-icon">&#128218;</div><div class="tool-name">यौगिक</div><div class="tool-desc">50 चुने हुए यौगिक</div></div>
+<div class="tool-item"><div class="tool-icon">&#9878;</div><div class="tool-name">समीकरण संतुलक</div><div class="tool-desc">स्वचालित संतुलन और वर्गीकरण</div></div>
+<div class="tool-item"><div class="tool-icon">&#128290;</div><div class="tool-name">स्टॉइकियोमेट्री</div><div class="tool-desc">द्रव्यमान, मोल, अणु</div></div>
+<div class="tool-item"><div class="tool-icon">&#128167;</div><div class="tool-name">विलयन और pH</div><div class="tool-desc">अम्ल-क्षार और बफ़र</div></div>
+<div class="tool-item"><div class="tool-icon">&#9729;</div><div class="tool-name">गैस नियम</div><div class="tool-desc">आदर्श, बॉयल, वैन डर वाल्स</div></div>
+<div class="tool-item"><div class="tool-icon">&#128293;</div><div class="tool-name">ऊष्मागतिकी</div><div class="tool-desc">गिब्स और साम्य</div></div>
+<div class="tool-item"><div class="tool-icon">&#9201;</div><div class="tool-name">रासायनिक गतिकी</div><div class="tool-desc">वेग नियम और आरेनियस</div></div>
+<div class="tool-item"><div class="tool-icon">&#9889;</div><div class="tool-name">विद्युत रसायन</div><div class="tool-desc">नर्न्स्ट और विद्युत अपघटन</div></div>
+<div class="tool-item"><div class="tool-icon">&#127756;</div><div class="tool-name">इलेक्ट्रॉन विन्यास</div><div class="tool-desc">कक्षक आरेख</div></div>
+<div class="tool-item"><div class="tool-icon">&#128200;</div><div class="tool-name">अनुमापन</div><div class="tool-desc">SVG वक्र और तुल्यांक बिंदु</div></div>
+<div class="tool-item"><div class="tool-icon">&#9762;</div><div class="tool-name">नाभिकीय रसायन</div><div class="tool-desc">क्षय और बंधन ऊर्जा</div></div>
+<div class="tool-item"><div class="tool-icon">&#129514;</div><div class="tool-name">विलयन तैयारी</div><div class="tool-desc">मोलरता और तनुकरण</div></div>
+<div class="tool-item"><div class="tool-icon">&#128259;</div><div class="tool-name">इकाई परिवर्तक</div><div class="tool-desc">6 श्रेणियाँ</div></div>
+</div>
+
+<h2 class="section-title">छात्रों की पढ़ाई के तरीके के लिए बनाया गया</h2>
+<p class="section-sub">सिर्फ उत्तर नहीं — समझ</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#128221;</div>
+<div class="feature-name">चरण-दर-चरण समाधान</div>
+<div class="feature-desc">उचित सूत्रों और इकाइयों के साथ हर गणना चरण देखें। प्रक्रिया सीखें, सिर्फ उत्तर नहीं।</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128200;</div>
+<div class="feature-name">इंटरैक्टिव SVG विज़ुअलाइज़ेशन</div>
+<div class="feature-desc">pH ग्रेडिएंट स्केल, अनुमापन वक्र, कक्षक आरेख, VSEPR आणविक आकार — सभी वास्तविक समय में।</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">सूत्र संदर्भ पुस्तकालय</div>
+<div class="feature-desc">विषय के अनुसार व्यवस्थित आवश्यक रसायन समीकरणों का खोजने योग्य संग्रह। एक टैप में कोई भी सूत्र कॉपी करें।</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% ऑफलाइन</div>
+<div class="feature-desc">इंटरनेट के बिना काम करता है — परीक्षा हॉल, लैब बेंच, व्याख्यान में। सभी तत्व डेटा ऐप में शामिल है।</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#11088;</div>
+<div class="feature-name">पसंदीदा और त्वरित स्विच</div>
+<div class="feature-desc">सबसे अधिक उपयोग किए जाने वाले उपकरणों पर स्टार लगाएं और होम स्क्रीन पर लौटे बिना तुरंत स्विच करें।</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">12 भाषाएँ</div>
+<div class="feature-desc">अंग्रेज़ी, जापानी, कोरियाई, चीनी, स्पेनिश, पुर्तगाली (ब्राज़ील), फ़्रेंच, जर्मन, इंडोनेशियाई, रूसी, इतालवी, थाई।</div>
+</div>
+</div>
+
+<h2 class="section-title">कैलकुलेटर ऐप क्यों, AI नहीं?</h2>
+<p class="section-sub">रसायन गणनाओं में सटीकता महत्वपूर्ण है</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>AI भ्रामक हो सकता है</strong> — चैटबॉट कभी-कभी सूत्र गढ़ लेते हैं या गलत मोलर मास देते हैं। VerChem हर बार सत्यापित NIST/IUPAC डेटा का उपयोग करता है।</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>तुरंत और ऑफलाइन</strong> — इंटरनेट के बिना मिलीसेकंड में परिणाम। AI चैटबॉट को कनेक्शन चाहिए और अक्सर जवाब में सेकंड लगते हैं।</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>सुसंगत परिणाम</strong> — समान इनपुट हमेशा समान आउटपुट देते हैं। AI प्रतिक्रियाएँ सत्रों के बीच भिन्न होती हैं और विरोधाभासी हो सकती हैं।</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>एक बार भुगतान, हमेशा उपयोग</strong> — $4.99 एकमुश्त खरीदारी। AI चैटबॉट सदस्यता $20–240/वर्ष खर्च होती है।</div>
+</div>
+</div>
+
+<h2 class="section-title">12 भाषाओं में उपलब्ध</h2>
+<p class="section-sub">दुनिया भर के रसायन छात्रों तक पहुँच</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+</div>
+
+<h2 class="section-title">विश्वसनीय डेटा स्रोत</h2>
+<p class="section-sub">हर मान सहकर्मी-समीक्षित संदर्भों से आता है</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>NIST परमाणु स्पेक्ट्रा डेटाबेस</strong> — स्पेक्ट्रोस्कोपिक डेटा के लिए मानक संदर्भ</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>IUPAC 2021 मानक परमाणु भार</strong> — अंतरराष्ट्रीय स्तर पर स्वीकृत तत्व भार</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>CODATA 2018 भौतिक स्थिरांक</strong> — एवोगाड्रो, फैराडे, गैस स्थिरांक, बोल्ट्ज़मान</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#128215;</div>
+<div class="why-text"><strong>CRC रसायन और भौतिकी हैंडबुक</strong> — ऊष्मागतिक डेटा, अपचयन विभव</div>
+</div>
+</div>
+
+<div class="disclaimer">
+<strong>शैक्षिक उपयोग:</strong> VerChem केवल शैक्षिक उद्देश्यों के लिए है। महत्वपूर्ण गणनाओं की हमेशा अपने शिक्षक या आधिकारिक संदर्भों से पुष्टि करें। पेशेवर प्रयोगशाला या औद्योगिक उपयोग के लिए नहीं।
+</div>
+
+<div class="cta">
+<h2>हर रसायन गणना। एक ऐप।</h2>
+<p>आवर्त सारणी, समीकरण संतुलन, pH, गैस नियम, अनुमापन वक्र और अधिक। चरण-दर-चरण समाधान, 12 भाषाएँ, 100% ऑफलाइन।</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store — $4.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play — $4.99</a>
+</div>
+</div>
+
+<h2 class="section-title">अक्सर पूछे जाने वाले प्रश्न</h2>
+<p class="section-sub">VerChem के बारे में सामान्य प्रश्न</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">छात्रों के लिए सबसे अच्छा रसायन कैलकुलेटर ऐप कौन सा है?</summary>
+<div class="faq-a">VerChem पूर्ण सामान्य रसायन टूलकिट है जिसमें पूर्ण आवर्त सारणी, समीकरण संतुलक, स्टॉइकियोमेट्री कैलकुलेटर, pH सॉल्वर, गैस नियम, अनुमापन वक्र और अधिक शामिल हैं। यह सत्यापित NIST/IUPAC डेटा का उपयोग करता है और $4.99 एकमुश्त में 100% ऑफलाइन काम करता है।</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">क्या मैं अपने फोन पर रासायनिक समीकरण संतुलित कर सकता हूँ?</summary>
+<div class="faq-a">हाँ। VerChem में स्वचालित समीकरण संतुलक शामिल है जो रासायनिक समीकरणों को संतुलित करता है और अभिक्रिया प्रकारों को वर्गीकृत करता है। यह चरण-दर-चरण समाधान दिखाता है ताकि आप परिणाम के साथ प्रक्रिया भी सीखें।</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">क्या आवर्त सारणी और कैलकुलेटर एक साथ वाला कोई ऐप है?</summary>
+<div class="faq-a">VerChem 118 तत्वों की पूर्ण इंटरैक्टिव आवर्त सारणी को स्टॉइकियोमेट्री, pH, गैस नियम, ऊष्मागतिकी, गतिकी, विद्युत रसायन और अधिक के कैलकुलेटर के साथ जोड़ता है। सभी तत्व डेटा NIST और IUPAC संदर्भों से है।</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">pH और बफ़र विलयन गणना के लिए कौन सा ऐप उपयोग कर सकता हूँ?</summary>
+<div class="faq-a">VerChem में समर्पित विलयन और pH कैलकुलेटर है जो अम्ल-क्षार साम्य और बफ़र गणनाओं को संभालता है। इसमें तुल्यांक बिंदु दिखाने वाले इंटरैक्टिव SVG वक्रों सहित अनुमापन उपकरण भी शामिल है।</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">प्रयोगशाला संदर्भों की तुलना में रसायन कैलकुलेटर ऐप कितने सटीक हैं?</summary>
+<div class="faq-a">VerChem NIST परमाणु स्पेक्ट्रा डेटाबेस, IUPAC 2021 मानक परमाणु भार, CODATA 2018 भौतिक स्थिरांक और CRC हैंडबुक से डेटा का उपयोग करता है। हर मान सहकर्मी-समीक्षित संदर्भों से आता है, जो परिणामों को सुसंगत और विश्वसनीय बनाता है।</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">रसायन कैलकुलेटर ऐप बनाम ChatGPT — किसे उपयोग करना चाहिए?</summary>
+<div class="faq-a">रसायन गणनाओं के लिए, VerChem AI चैटबॉट से अधिक विश्वसनीय है। AI सूत्र गढ़ सकता है या गलत मोलर मास दे सकता है। VerChem सत्यापित NIST/IUPAC डेटा का उपयोग करता है, ऑफलाइन काम करता है, और आवर्ती AI सदस्यता की तुलना में $4.99 एकमुश्त में तुरंत नियतात्मक परिणाम देता है।</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">क्या VerChem परीक्षा के दौरान ऑफलाइन काम करता है?</summary>
+<div class="faq-a">हाँ। VerChem 100% ऑफलाइन है — सभी 118 तत्व, कैलकुलेटर और संदर्भ डेटा ऐप में शामिल हैं। यह परीक्षा हॉल, लैब बेंच और व्याख्यान में बिना इंटरनेट कनेक्शन के काम करता है।</div>
+</details>
+</div>
+
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">गोपनीयता नीति</a>
+<a href="https://aivisibityrights.github.io/store/support.html">सहायता</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. सर्वाधिकार सुरक्षित।</div>
+</div>
+
+</div>
+</body>
+</html>
