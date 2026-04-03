@@ -88,7 +88,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .footer a{color:#42a5f5;text-decoration:none;margin:0 12px;font-size:13px}
 .footer a:hover{text-decoration:underline}
 .footer .copy{color:#37474f;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#121a2a;border:1px solid #1a2438;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#42a5f5;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#90a4ae;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerMed — Medical Calculator & Clinical Reference",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "29.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Trusted clinical calculators for the bedside, the ward, and the ER. Evidence-based scoring, drug dosing, and decision support — every result includes interpretation and recommended action. 100% offline. $29.99 one-time.",
+  "featureList": "Score-to-Action Clinical Interpretation, Critical Value Alerts, eGFR CKD-EPI 2021, ABG Interpreter, Drug Dosing Calculators, APACHE II and SOFA Scores, PHQ-9 and GAD-7 Screening, Built-in Lab Values Reference"
+}
+</script>
 </head>
 <body>
 
@@ -253,6 +276,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <a class="badge badge-apple" href="#">&#9654; App Store &mdash; $29.99</a>
 <a class="badge badge-google" href="#">&#9654; Google Play &mdash; $29.99</a>
 </div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerMed</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">What is the best medical calculator app for doctors and residents?</summary>
+<div class="faq-a">VerMed covers 13 clinical specialties with evidence-based calculators including APACHE II, SOFA, CHA2DS2-VASc, eGFR (CKD-EPI 2021), ABG interpreter, drug dosing, and more. Every result includes clinical interpretation and recommended action, not just a number.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I calculate eGFR and creatinine clearance on my phone?</summary>
+<div class="faq-a">Yes. VerMed includes eGFR using the CKD-EPI 2021 equation, creatinine clearance (Cockcroft-Gault), FeNa, and anion gap calculators. Results map to CKD stages (G1-G5) with a visual stage bar and clinical recommendations.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is there an app for ABG interpretation?</summary>
+<div class="faq-a">VerMed includes an arterial blood gas (ABG) interpreter that analyzes pH, PaCO2, and HCO3 to determine acid-base disorders. Results are displayed on a visual pH vs PaCO2 quadrant diagram with primary disorder identification, compensation status, and A-a gradient analysis.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What app do ER doctors use for clinical scoring?</summary>
+<div class="faq-a">VerMed provides critical care scores (APACHE II, SOFA, GCS, NEWS2), cardiology tools (HEART, Wells, CHA2DS2-VASc), and clinical decision rules (PECARN, Ottawa, PERC, Centor). Every score includes severity classification and a recommended next step for clinical workflow.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Medical calculator app vs ChatGPT — which should clinicians trust?</summary>
+<div class="faq-a">For clinical calculations, a verified calculator like VerMed is safer than AI chatbots. AI can hallucinate drug doses or misinterpret lab values — errors that can harm patients. VerMed uses deterministic algorithms from peer-reviewed publications, works offline in any clinical setting, and produces consistent auditable results.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does VerMed work offline in the hospital?</summary>
+<div class="faq-a">Yes. VerMed is 100% offline — all calculators, drug references, lab values, and clinical criteria are bundled in the app. It works in the ER, ICU, operating rooms, and rural clinics with no internet connection needed. No registration required.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is there an app for psychiatric screening tools like PHQ-9?</summary>
+<div class="faq-a">VerMed includes psychiatry calculators for PHQ-9 (depression), GAD-7 (anxiety), AUDIT-C (alcohol), MDQ (bipolar), and C-SSRS (suicide risk). Each screening tool provides score interpretation with severity classification and suggested clinical action.</div>
+</details>
 </div>
 
 <!-- Footer -->

@@ -66,7 +66,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .footer a{color:#38bdf8;text-decoration:none;margin:0 12px;font-size:13px}
 .footer a:hover{text-decoration:underline}
 .footer .copy{color:#4a5568;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f1340;border:1px solid #1e2560;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#38bdf8;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#94a3b8;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerPhysic — Physics Calculator",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Master physics with 41 precision calculators — Mechanics to Quantum Physics. IB, AP, A-Level, CBSE. CODATA 2018 constants. 100% offline. Pay once $9.99.",
+  "featureList": "41 Physics Calculators, Unit Converter with 200+ Conversions, CODATA 2018 Constants Reference, Formula Reference Library, Practice Mode with 50 Problems, Multi-Curriculum Support (IB/AP/A-Level/CBSE)"
+}
+</script>
 </head>
 <body>
 
@@ -185,6 +208,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <a class="badge badge-apple" href="#">&#9654; Download on App Store</a>
 <a class="badge badge-google" href="#">&#9654; Get it on Google Play</a>
 </div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerPhysic</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">What is the best physics calculator app for IB and AP students?</summary>
+<div class="faq-a">VerPhysic covers 7 categories of physics — Mechanics, Electricity, Waves, Thermodynamics, Optics, Modern Physics, and Astronomy — with 41 precision calculators. It supports IB Physics (HL/SL), AP Physics (1, 2, C), A-Level, and CBSE curricula.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I do physics unit conversions on my phone?</summary>
+<div class="faq-a">Yes. VerPhysic includes a unit converter with over 200 conversions across 19 dimensions including length, mass, force, energy, pressure, and temperature. All conversions work instantly and offline.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is there an app with verified physics constants?</summary>
+<div class="faq-a">VerPhysic includes NIST CODATA 2018 verified constants including G, h, c, Boltzmann constant, elementary charge, and Avogadro number. You can copy any constant with one tap for use in calculations.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What app do physics students use for exam preparation?</summary>
+<div class="faq-a">VerPhysic includes 41 calculators with step-by-step solutions, a searchable formula reference with 55+ formulas, and a practice mode with 50 multiple-choice problems with full explanations. It works 100% offline, making it suitable for exam hall use.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Physics calculator app vs ChatGPT — which gives more accurate results?</summary>
+<div class="faq-a">For physics calculations, VerPhysic uses deterministic algorithms with CODATA 2018 verified constants — the same inputs always produce the same outputs. AI chatbots can hallucinate formulas or use outdated values. VerPhysic costs $9.99 one-time versus $20-240/year for AI subscriptions.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does VerPhysic cover quantum physics and astrophysics?</summary>
+<div class="faq-a">Yes. VerPhysic includes 5 Modern Physics calculators (photoelectric effect, de Broglie wavelength, nuclear binding energy, and more) and 4 Astronomy calculators. All 7 categories from classical mechanics to modern physics are covered.</div>
+</details>
 </div>
 
 <!-- Footer -->

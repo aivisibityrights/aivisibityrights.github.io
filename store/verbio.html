@@ -80,7 +80,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .footer a{color:#00e676;text-decoration:none;margin:0 12px;font-size:13px}
 .footer a:hover{text-decoration:underline}
 .footer .copy{color:#4a7c59;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f2a1c;border:1px solid #1b4332;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00e676;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#81c784;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerBio — Biology Calculator & Reference",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Every biology calculation you need — from Punnett squares to blood gas analysis. Genetics, molecular biology, ecology, biochemistry, biostatistics & physiology. 100% offline. $9.99 one-time.",
+  "featureList": "Interactive Punnett Squares, Live SVG Visualizations, 3D DNA and Cell Models, Blood Gas Analysis, Enzyme Kinetics, Hardy-Weinberg Calculator, Step-by-Step Solutions, 12 Languages"
+}
+</script>
 </head>
 <body>
 
@@ -240,6 +263,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
 <a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
 </div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerBio</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">What is the best biology calculator app for students?</summary>
+<div class="faq-a">VerBio is a comprehensive biology calculator covering 7 categories including genetics, molecular biology, ecology, biochemistry, cell biology, biostatistics, and physiology. It works 100% offline and includes interactive Punnett squares, enzyme kinetics charts, and 3D models of DNA and cell membranes.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I do Punnett square calculations on my phone?</summary>
+<div class="faq-a">Yes. VerBio includes interactive Punnett squares for monohybrid, dihybrid, and trihybrid crosses. Results are rendered as color-coded SVG grids showing genotype and phenotype ratios with step-by-step explanations.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is there an app for Hardy-Weinberg equilibrium calculations?</summary>
+<div class="faq-a">VerBio includes a Hardy-Weinberg calculator that computes allele and genotype frequencies with a visual frequency bar chart. It also covers chi-square goodness-of-fit testing for population genetics analysis.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What app do biology researchers use for enzyme kinetics?</summary>
+<div class="faq-a">VerBio provides Michaelis-Menten kinetics calculations with Lineweaver-Burk plots, Beer-Lambert law for spectrophotometry, and isoelectric point estimation. All results include real-time SVG visualizations and step-by-step solutions.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">How accurate are biology calculator apps compared to textbooks?</summary>
+<div class="faq-a">VerBio uses verified textbook equations for every calculation. Unlike AI chatbots that can hallucinate formulas, VerBio produces deterministic results — the same inputs always give the same outputs. Every formula is based on established biological and statistical methods.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Biology calculator app vs ChatGPT — which is better for homework?</summary>
+<div class="faq-a">For biology calculations, a dedicated calculator app like VerBio is more reliable than AI chatbots. VerBio works offline, gives instant results with step-by-step solutions, uses verified formulas, and costs a one-time $9.99 versus recurring AI subscriptions. AI chatbots can produce incorrect formulas or inconsistent results between sessions.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does VerBio work offline during exams?</summary>
+<div class="faq-a">Yes. VerBio is 100% offline — all calculations, 3D models, reference data, and visualizations are bundled in the app. It works in exam halls, on lab benches, and during fieldwork with no internet connection required.</div>
+</details>
 </div>
 
 <!-- Footer -->

@@ -83,7 +83,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 /* Accent helpers */
 .accent-teal{color:#00d4aa}
 .accent-blue{color:#4488ff}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f1330;border:1px solid #1c2345;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#00d4aa;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#8b9dc3;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerChem — Chemistry Calculator for Students",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "4.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Complete chemistry calculator with periodic table, equation balancer, pH, gas laws, stoichiometry & more. NIST/IUPAC data, 100% offline. $4.99 one-time.",
+  "featureList": "Full Periodic Table with 118 Elements, Equation Balancer, Stoichiometry Calculator, pH and Buffer Calculator, Gas Laws, Titration Curves, VSEPR Molecular Geometry, Step-by-Step Solutions"
+}
+</script>
 </head>
 <body>
 
@@ -270,6 +293,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <a class="badge badge-apple" href="#">&#9654; App Store — $4.99</a>
 <a class="badge badge-google" href="#">&#9654; Google Play — $4.99</a>
 </div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerChem</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">What is the best chemistry calculator app for students?</summary>
+<div class="faq-a">VerChem is a complete general chemistry toolkit with a full periodic table, equation balancer, stoichiometry calculator, pH solver, gas laws, titration curves, and more. It uses verified NIST/IUPAC data and works 100% offline for $4.99 one-time.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I balance chemical equations on my phone?</summary>
+<div class="faq-a">Yes. VerChem includes an automatic equation balancer that balances chemical equations and classifies reaction types. It shows step-by-step solutions so you can learn the process alongside the result.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is there an app with a periodic table and calculators together?</summary>
+<div class="faq-a">VerChem combines a full interactive periodic table of 118 elements with calculators for stoichiometry, pH, gas laws, thermodynamics, kinetics, electrochemistry, and more. All element data comes from NIST and IUPAC references.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What app can I use to calculate pH and buffer solutions?</summary>
+<div class="faq-a">VerChem has a dedicated Solutions and pH calculator that handles acid-base equilibria and buffer calculations. It also includes a titration tool with interactive SVG curves showing equivalence points.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">How accurate are chemistry calculator apps compared to lab references?</summary>
+<div class="faq-a">VerChem uses data from NIST Atomic Spectra Database, IUPAC 2021 Standard Atomic Weights, CODATA 2018 Physical Constants, and CRC Handbook. Every value comes from peer-reviewed references, making results consistent and reliable.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Chemistry calculator app vs ChatGPT — which should I use?</summary>
+<div class="faq-a">For chemistry calculations, VerChem is more reliable than AI chatbots. AI can hallucinate formulas or return wrong molar masses. VerChem uses verified NIST/IUPAC data, works offline, and gives instant deterministic results for $4.99 one-time versus recurring AI subscriptions.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does VerChem work offline during exams?</summary>
+<div class="faq-a">Yes. VerChem is 100% offline — all 118 elements, calculators, and reference data are bundled in the app. It works in exam halls, on lab benches, and in lectures with no internet connection needed.</div>
+</details>
 </div>
 
 <!-- Footer -->

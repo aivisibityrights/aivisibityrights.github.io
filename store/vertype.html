@@ -93,6 +93,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .footer a{color:#8b5cf6;text-decoration:none;margin:0 12px;font-size:13px}
 .footer a:hover{text-decoration:underline}
 .footer .copy{color:#6b6880;font-size:12px;margin-top:12px}
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#1a1833;border:1px solid #2d2a4a;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#8b5cf6;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#9994b8;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
 
 @media(max-width:500px){
 .group-grid{grid-template-columns:1fr}
@@ -100,6 +107,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .stat-num{font-size:22px}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerType — Personality Types & Compatibility",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "LifestyleApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Discover your personality type, build a People Book of everyone you know, and explore compatibility across relationships, careers, and teams. 12 languages. $9.99 one-time.",
+  "featureList": "16 Personality Type Profiles, People Book for Saving Contacts' Types, 5-Context Compatibility Analysis, Team Dynamics for 3-10 Members, Career Matching with Fit Scores, 7-Day Growth Challenge, Communication Guide for 6 Situations"
+}
+</script>
 </head>
 <body>
 
@@ -276,6 +299,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <a class="badge badge-apple" href="https://apps.apple.com/app/id6759239513">&#9654; App Store &mdash; $9.99</a>
 <a class="badge badge-google" href="https://play.google.com/store/apps/details?id=com.aivisibilityrights.vermbti">&#9654; Google Play &mdash; $9.99</a>
 </div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerType</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">What is the best personality type app with compatibility analysis?</summary>
+<div class="faq-a">VerType offers all 16 personality types with deep profiles, cognitive function stacks, and compatibility analysis across 5 relationship contexts — partner, friend, work colleague, boss, and subordinate. It also includes a People Book to save and track the types of everyone you know.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I save my friends' personality types and check compatibility?</summary>
+<div class="faq-a">Yes. VerType's People Book feature lets you save the personality type of friends, family, coworkers, and anyone you know. You can track how you learned their type (told me, my guess, tested in-app) and see personalized compatibility scores and advice for each person.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is there an app for team personality analysis?</summary>
+<div class="faq-a">VerType includes team dynamics analysis for groups of 3 to 10 members. It shows team balance, collective strengths, blind spots, potential conflict zones, and suggests an ideal team leader based on the personality composition.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What app helps find the best career for my personality type?</summary>
+<div class="faq-a">VerType provides career matching with fit scores and real-world challenge factors for each of the 16 personality types. It also includes work style and learning style analysis to help you understand how your type performs in professional settings.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Personality type app vs asking ChatGPT about my type — what is the difference?</summary>
+<div class="faq-a">VerType uses a scientifically structured test (28 or 60 questions) with mistype detection for commonly confused pairs. AI chatbots just ask you to self-describe and forget between sessions. VerType also persistently saves your People Book, provides context-aware compatibility, and works completely offline.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does VerType include a personality growth program?</summary>
+<div class="faq-a">Yes. VerType includes a 7-Day Growth Challenge with progressive daily exercises targeting your inferior cognitive function. It also has a communication guide with do's and don'ts for each type across 6 situations: persuade, feedback, conflict, motivate, apologize, and appreciate.</div>
+</details>
 </div>
 
 <!-- Footer -->
