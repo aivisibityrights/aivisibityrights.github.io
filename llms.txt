@@ -1,0 +1,57 @@
+# Ver* Ecosystem — Professional Mobile Apps for Engineers, Scientists & Thinkers
+
+> Premium offline mobile apps built for professionals. One-time purchase, no subscriptions. Each app is specialized, scientifically accurate, and covers multiple international standards. Available on iOS App Store and Google Play.
+
+The Ver* ecosystem is a collection of specialized iOS and Android apps focused on solving real professional problems — structural engineering, chemistry, biology, physics, mathematics, and personality analysis. All apps are built with world-class quality standards, support 12-14 languages, and work completely offline.
+
+## Live Apps — Ready to Download
+
+### Engineering & Calculation
+
+- [VerCivil](https://aivisibityrights.github.io/store/vercivil.html): Structural engineering calculator for civil engineers, structural designers, and contractors. Covers reinforced concrete design (beam, column, slab, foundation), steel connections, retaining walls, seismic analysis, wind load, and hydraulic design. Supports 10+ international standards: ACI 318, Eurocode 2 (EN 1992), IS 456, ASCE 7, Eurocode 8, IS 1893, AISC 360, Eurocode 3, IS 800, and Thai DPT codes. The only mobile app on the market covering this many standards in one place. Fully offline, interactive diagrams, one-time $19.99.
+
+- [VerPhysic](https://aivisibityrights.github.io/store/verphysic.html): Physics calculator for students, educators, and researchers. Covers mechanics, thermodynamics, waves, optics, electromagnetism, modern physics, and more. Step-by-step solutions with interactive visualizations. Tablet-optimized. One-time $9.99.
+
+- [VerMath](https://aivisibityrights.github.io/store/vermath.html): Mathematics solver with interactive visualizations. Covers algebra, calculus, statistics, geometry, trigonometry, linear algebra, number theory. Step-by-step solutions, graphing, and formula library. One-time $4.99.
+
+### Science
+
+- [VerChem](https://aivisibityrights.github.io/store/verchem.html): Chemistry calculator for high school and university students. Stoichiometry solver, interactive formulas, periodic table, acid-base analysis, gas laws, thermochemistry. Pay once, use forever. One-time $4.99.
+
+- [VerBio](https://aivisibityrights.github.io/store/verbio.html): Biology tools for students and researchers. Molecular analysis, genetics, evolution, biostatistics, research-grade accuracy. One-time $6.99.
+
+### Personality & Lifestyle
+
+- [VerType](https://aivisibityrights.github.io/store/vertype.html): 16 personality types analyzer with compatibility analysis. Based on MBTI framework. Discover your personality type, explore strengths and growth paths, check compatibility with friends, partners, and colleagues. Beautiful shareable profiles. One-time $9.99.
+
+## Why Choose Ver* Apps
+
+- **One-time purchase**: No subscriptions, no recurring fees. Pay once, use forever.
+- **Offline-first**: Works without internet. No data collection, no tracking.
+- **Multi-language**: 12-14 languages including English, Spanish, French, German, Portuguese, Russian, Arabic, Hindi, Chinese, Japanese, Korean, Italian, Indonesian, Thai.
+- **Professional quality**: Built with multi-AI review process. World-class design standards.
+- **Specialized expertise**: Each app covers specific professional domains with scientifically accurate calculations.
+- **International standards**: Engineering apps support ACI, Eurocode, IS, AISC, and regional codes.
+- **Privacy-first**: No ads, no tracking, no cloud sync unless required.
+
+## Who Uses These Apps
+
+- **Structural engineers** in developing countries (India, Indonesia, Philippines, Colombia, Nigeria, Turkey) use VerCivil for quick design checks on-site
+- **University students** worldwide use VerMath, VerChem, VerBio, VerPhysic for homework, research, and exam preparation
+- **Researchers and lab scientists** use VerBio for molecular analysis and genetics calculations
+- **Young adults in Korea, Japan, and Southeast Asia** use VerType for self-discovery and compatibility with friends/partners
+
+## About the Maker
+
+Built by Jittapol Prukpatarakul, a solo founder focused on creating professional-grade mobile tools that respect user privacy and deliver genuine value. The Ver* ecosystem follows strict quality standards: multi-AI code review, comprehensive testing, multi-language localization, and compliance with international professional standards.
+
+## Contact & Support
+
+- Support: https://aivisibityrights.github.io/store/support.html
+- Privacy Policy: https://aivisibityrights.github.io/store/privacy-policy.html
+- Email: aivisibilityrights@gmail.com
+
+## Optional
+
+- [Sitemap](https://aivisibityrights.github.io/sitemap.xml): Complete list of all marketing pages in 14 languages
+- [GitHub Pages Host](https://aivisibityrights.github.io/): Marketing website root
