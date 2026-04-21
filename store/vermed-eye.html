@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerMed Eye — Ophthalmology Calculator for Eye Care Specialists</title>
+<meta name="description" content="The ophthalmologist's calculator. IOL power (SRK/T, Holladay, Haigis, Hoffer Q), IOP correction, OHTS risk, HPA visual field staging, OCT macular norms. 30 tools in 8 categories. 100% offline. $19.99 one-time.">
+<link rel="alternate" hreflang="en" href="https://aivisibityrights.github.io/store/vermed-eye.html">
+<link rel="alternate" hreflang="x-default" href="https://aivisibityrights.github.io/store/vermed-eye.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a1a;color:#e3e3f0;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#12122a;border:2px solid #06b6d4;display:flex;align-items:center;justify-content:center;font-size:52px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#06b6d4;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#a0a0b8;max-width:580px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#06b6d420;border:1px solid #06b6d440;color:#06b6d4;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#12122a;border-radius:16px;border:1px solid #23234a}
+.stat{text-align:center}
+.stat-num{font-size:28px;font-weight:800;color:#06b6d4}
+.stat-label{font-size:12px;color:#a0a0b8;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#a0a0b8;text-align:center;margin-bottom:32px}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item{background:#12122a;border:1px solid #23234a;border-radius:12px;padding:18px;text-align:center}
+.cat-icon{font-size:28px;margin-bottom:8px}
+.cat-name{font-size:14px;font-weight:700;color:#fff}
+.cat-desc{font-size:12px;color:#a0a0b8;margin-top:4px;line-height:1.5}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#12122a;border:1px solid #23234a;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#a0a0b8;line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#12122a;border:1px solid #23234a;border-radius:12px;padding:16px}
+.why-check{color:#06b6d4;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a0a0b8}
+.why-text strong{color:#fff}
+
+/* Citations */
+.citations{background:#12122a;border:1px solid #23234a;border-radius:14px;padding:20px;margin-bottom:40px}
+.citations h3{font-size:14px;color:#06b6d4;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.citations ul{list-style:none;padding:0}
+.citations li{font-size:12px;color:#a0a0b8;padding:4px 0;font-family:'Menlo','Monaco',monospace}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#12122a;border:1px solid #23234a;color:#a0a0b8;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#06b6d410;border:1px solid #06b6d430;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#a0a0b8;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#dc262610;border-left:3px solid #dc2626;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#f87171}
+.disclaimer strong{color:#dc2626}
+
+/* IOL Notice */
+.iol-notice{background:#f59e0b10;border-left:3px solid #f59e0b;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#fbbf24}
+.iol-notice strong{color:#f59e0b}
+
+/* FAQ */
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#12122a;border:1px solid #23234a;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#06b6d4;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#a0a0b8;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #23234a;margin-top:40px}
+.footer a{color:#06b6d4;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#666680;font-size:12px;margin-top:12px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerMed Eye — Ophthalmology Calculator",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "MedicalApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "19.99",
+    "priceCurrency": "USD"
+  },
+  "description": "The ophthalmologist's calculator. SRK/T, Holladay 1, Haigis, Hoffer Q IOL formulas, Goldmann CCT correction, OHTS 5-year risk, HPA visual field staging, OCT macular norms, ICO DR staging, AAPOS amblyopia screening, PEDIG atropine protocols. 30 tools in 8 categories, 100% offline.",
+  "featureList": "SRK/T IOL Formula, Holladay 1, Haigis, Hoffer Q, Toric IOL Vector, IOP Correction, Target IOP, Diurnal IOP, OPP, HPA VF Staging, CDR Interpretation, OHTS Risk, Van Herick, Prism Conversion, AC/A Ratio, Stereoacuity, Hirschberg, AAPOS Amblyopia, Rx Screening, Atropine Penalization, BCVA ETDRS, OCT Macular Norms, DR Staging, Dilation Protocol, Intravitreal Prep"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#128065;</div>
+<h1>VerMed Eye</h1>
+<p class="subtitle">Ophthalmology Calculator &amp; Reference</p>
+<p class="tagline">The eye specialist's calculator. IOL power, IOP correction, glaucoma risk, visual field staging, OCT norms, DR staging &mdash; chairside precision with peer-reviewed formulas. 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $19.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $19.99</a>
+</div>
+<div class="price-tag">Pay once, use forever &mdash; No subscription, no ads, no registration</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">30</div><div class="stat-label">Tools</div></div>
+<div class="stat"><div class="stat-num">8</div><div class="stat-label">Categories</div></div>
+<div class="stat"><div class="stat-num">Cite&#8594;Every</div><div class="stat-label">Result</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+</div>
+
+<!-- 8 Categories -->
+<h2 class="section-title">Built for the Clinic</h2>
+<p class="section-sub">Complete ophthalmic workflow &mdash; from chairside exam to IOL planning</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#128065;</div><div class="cat-name">Refraction &amp; Visual Acuity</div><div class="cat-desc">Snellen &#8596; logMAR &#8596; ETDRS &#8596; Jaeger, spherical equivalent, cross-cylinder transposition, vertex distance, anisometropia</div></div>
+<div class="cat-item"><div class="cat-icon">&#128274;</div><div class="cat-name">IOL Power Calculations</div><div class="cat-desc">SRK/T (Retzlaff 1990), Holladay 1, Haigis, Hoffer Q, and toric IOL vector analysis with axis misalignment penalty</div></div>
+<div class="cat-item"><div class="cat-icon">&#128207;</div><div class="cat-name">Intraocular Pressure</div><div class="cat-desc">Goldmann CCT correction (Ehlers, Dresdner, Kohlhaas), target IOP by stage (AGIS/EMGT/CNTGS), diurnal, OPP</div></div>
+<div class="cat-item"><div class="cat-icon">&#9888;&#65039;</div><div class="cat-name">Glaucoma Assessment</div><div class="cat-desc">Hodapp-Parrish-Anderson visual field staging, cup-to-disc with asymmetry, OHTS 5-year risk, Van Herick</div></div>
+<div class="cat-item"><div class="cat-icon">&#8633;</div><div class="cat-name">Strabismus &amp; Binocular Vision</div><div class="cat-desc">Prism &#8596; degree conversion, AC/A ratio (gradient + heterophoria), stereoacuity interpretation, Hirschberg</div></div>
+<div class="cat-item"><div class="cat-icon">&#128051;</div><div class="cat-name">Pediatric Ophthalmology</div><div class="cat-desc">AAPOS amblyopia screening, age-adjusted prescribing, PEDIG-based atropine penalization protocols</div></div>
+<div class="cat-item"><div class="cat-icon">&#128064;</div><div class="cat-name">Retina &amp; Macula</div><div class="cat-desc">BCVA to ETDRS letter score, device-specific OCT macular norms (Cirrus/Spectralis/Topcon/RTVue), ICO DR staging</div></div>
+<div class="cat-item"><div class="cat-icon">&#128137;</div><div class="cat-name">Ophthalmic Pharmacology</div><div class="cat-desc">Age-based mydriatic/cycloplegic protocols, intravitreal injection preparation for anti-VEGF, steroids, antibiotics</div></div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">Designed for Chairside Use</h2>
+<p class="section-sub">Not just formulas &mdash; clinical decision support with action recommendations</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#127919;</div>
+<div class="feature-name">Result &#8594; Action</div>
+<div class="feature-desc">Every output includes interpretation, severity coding, and recommended clinical action. Know what the number means and what to do.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128202;</div>
+<div class="feature-name">Specialist Visualizations</div>
+<div class="feature-desc">Toric IOL vector diagram, simulated visual field defect, severity-colored result cards. See the pattern, not just the value.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Offline</div>
+<div class="feature-desc">Everything is bundled in the app. Works chairside, in the OR, in rural clinics &mdash; no internet required. No patient data ever leaves the device.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Peer-Reviewed Citations</div>
+<div class="feature-desc">Every result shows the source paper. Retzlaff 1990. Gordon 2002. Wilkinson 2003. Ferris 1982. Holladay 1988. Haigis 2000. Hoffer 1993. Auditable.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128336;</div>
+<div class="feature-name">Quick Switch</div>
+<div class="feature-desc">Jump between calculators mid-exam with the tool navigator. No need to back out to the home screen.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128214;</div>
+<div class="feature-name">Built-in Learning Guides</div>
+<div class="feature-desc">Every calculator has a Guide page: what it is, how it works, key terms, when to use, and a worked example. Built for residents and fellows.</div>
+</div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">Why a Calculator App, Not ChatGPT?</h2>
+<p class="section-sub">When clinical accuracy is non-negotiable</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Verified formulas, no hallucinations</strong> &mdash; SRK/T, Holladay 1, Haigis, Hoffer Q coded directly from the original papers. AI chatbots cannot reliably reproduce these formulas without error.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Chairside speed, no conversation</strong> &mdash; Results in milliseconds. No clarifying questions. No "I'm not sure but here's an estimate." When you're mid-exam, you need an answer.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>100% offline, zero data exfiltration</strong> &mdash; Nothing leaves your device. No cloud, no logging, no training data concerns. Use in the OR, in rural clinics, anywhere.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Citation for every number</strong> &mdash; Every result shows its source journal and year. You cannot audit an AI. You can audit a published formula.</div>
+</div>
+</div>
+
+<!-- Citations -->
+<div class="citations">
+<h3>&#128218; Peer-Reviewed References Used</h3>
+<ul>
+<li>&bull; Retzlaff JA, Sanders DR, Kraff MC. J Cataract Refract Surg 1990;16:333 (SRK/T)</li>
+<li>&bull; Holladay JT et al. J Cataract Refract Surg 1988;14:17 (Holladay 1)</li>
+<li>&bull; Haigis W et al. Graefes Arch Clin Exp Ophthalmol 2000;238:765 (Haigis)</li>
+<li>&bull; Hoffer KJ. J Cataract Refract Surg 1993;19:700 (Hoffer Q)</li>
+<li>&bull; Gordon MO et al. Arch Ophthalmol 2002;120:714 (OHTS 5-yr Risk)</li>
+<li>&bull; Hodapp E, Parrish RK, Anderson DR. Clinical Decisions in Glaucoma 1993 (HPA)</li>
+<li>&bull; Wilkinson CP et al. Ophthalmology 2003;110:1677 (ICO DR Severity)</li>
+<li>&bull; Ferris FL et al. Am J Ophthalmol 1982;94:91 (ETDRS Letter Score)</li>
+<li>&bull; Donahue SP et al. J AAPOS 2013;17:4 (AAPOS Amblyopia Screening)</li>
+<li>&bull; Ehlers N et al. Acta Ophthalmol 1975;53:34 (CCT Correction)</li>
+<li>&bull; Van Herick W et al. Am J Ophthalmol 1969;68:626 (Angle Grading)</li>
+</ul>
+</div>
+
+<!-- IOL Reference-Only Notice -->
+<div class="iol-notice">
+<strong>IOL Power Calculations &mdash; Reference Only.</strong> All IOL formulas in this app (SRK/T, Holladay 1, Haigis, Hoffer Q, Toric) are intended as clinical reference tools. Surgeons must use the actual output from an optical biometry device (IOLMaster, Lenstar, Argos, etc.) with manufacturer-optimized A-constants for surgical decisions.
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Localized for Global Clinical Teams</h2>
+<p class="section-sub">User interface localized in 12 languages</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese (BR)</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+</div>
+
+<!-- General Medical Disclaimer -->
+<div class="disclaimer">
+<strong>Important:</strong> VerMed Eye is a clinical reference and educational tool. It is NOT an FDA-cleared medical device and NOT a substitute for professional ophthalmic examination or judgment. All calculations should be verified by qualified professionals. Clinical decisions require full examination including biometry, perimetry, OCT, and gonioscopy where relevant.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>The Ophthalmologist's Calculator. One App.</h2>
+<p>IOL power, IOP, glaucoma risk, VF staging, DR grading, pediatric screening, OCT norms. Every result cites its source. 100% offline. No subscription.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $19.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $19.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerMed Eye</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">Which IOL formulas does VerMed Eye support?</summary>
+<div class="faq-a">VerMed Eye implements four theoretical IOL formulas: SRK/T (Retzlaff 1990) for all axial lengths, Holladay 1 (1988) for normal eyes, Haigis (2000) for short and long eyes with preop ACD measurement, and Hoffer Q (1993) for short eyes (&lt;22 mm). It also includes a toric IOL vector calculator with residual astigmatism and axis misalignment penalty. All IOL output is for reference only &mdash; surgeons must use biometry device output + manufacturer-optimized A-constants for surgery.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">How accurate are the calculations?</summary>
+<div class="faq-a">Every calculation is coded directly from the original peer-reviewed paper. The app ships with 103 numerical verification tests that validate each engine against textbook values (normal eye 23.5 mm AL, K 44 D → SRK/T emmetropia ~19.6 D; 20/40 Snellen → 70 ETDRS letters; etc.). No AI, no approximations &mdash; just the formulas.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does it work without internet?</summary>
+<div class="faq-a">Yes, 100% offline. All formulas, reference ranges, OCT norms, and citations are bundled into the app. Nothing is transmitted to any server. No patient data collection, no tracking, no accounts. Open and use it anywhere &mdash; in the OR, in the clinic, in rural areas with no connectivity.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What about glaucoma assessment tools?</summary>
+<div class="faq-a">The app includes Hodapp-Parrish-Anderson visual field staging (early/moderate/severe), OHTS 5-year conversion risk nomogram (Gordon 2002) for ocular hypertensives, cup-to-disc interpretation with asymmetry + disc hemorrhage flagging, Van Herick angle grading, Goldmann CCT correction (Ehlers, Dresdner, Kohlhaas), target IOP by disease stage (AGIS/EMGT/CNTGS/OHTS), diurnal IOP fluctuation analysis (Asrani 2000), and ocular perfusion pressure (MOPP/SOPP/DOPP with Leske 2007 risk thresholds).</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Who is this app for?</summary>
+<div class="faq-a">Ophthalmologists, optometrists, ophthalmology residents and fellows, medical students on eye rotations, and optometric assistants. The Guide pages explain each calculator in plain language &mdash; making the app a learning tool as well as a reference. Target users globally: ~230K ophthalmologists + ~430K optometrists + ~30K residents/fellows.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What is the "4-2-1 rule" for diabetic retinopathy?</summary>
+<div class="faq-a">The 4-2-1 rule defines severe non-proliferative diabetic retinopathy (NPDR) per the ICO / Wilkinson 2003 classification. It is met when ANY ONE of the following is present: (a) intraretinal hemorrhages of 20 or more in each of 4 quadrants, (b) venous beading in 2 or more quadrants, or (c) prominent intraretinal microvascular abnormalities (IRMA) in 1 or more quadrant. VerMed Eye's DR staging tool asks these questions and stages automatically.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I use this app during surgery?</summary>
+<div class="faq-a">VerMed Eye is a clinical reference tool, not a surgical device. IOL power calculations are for reference only &mdash; surgical decisions must be made using the actual output from your optical biometry device (IOLMaster, Lenstar, Argos, etc.) with manufacturer-optimized A-constants. Use the app for pre-operative planning cross-checks, post-operative residual refractive analysis, and resident education.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is this FDA-cleared?</summary>
+<div class="faq-a">No. VerMed Eye is exempt from FDA medical device regulation under the 21st Century Cures Act &sect;520(o)(1)(E) &mdash; it is a clinical reference tool, not a medical device. It does not diagnose, treat, or monitor a specific patient. It provides generalized educational calculations for trained clinicians to interpret in the context of the full clinical picture.</div>
+</details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="/store/support.html">Support</a>
+<a href="/store/privacy-policy.html">Privacy</a>
+<a href="mailto:aivisibilityrights@gmail.com">Contact</a>
+<a href="/">Home</a>
+<div class="copy">&copy; 2026 AI Visibility Rights &middot; VerMed Eye v1.0.0</div>
+</div>
+
+</div>
+
+</body>
+</html>
