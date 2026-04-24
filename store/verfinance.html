@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerFinance — Finance &amp; Accounting Calculator for Students and Professionals</title>
+<meta name="description" content="Professional finance and accounting calculator for students, accountants, and working professionals. Time value of money, NPV, IRR, loan amortization, depreciation, financial ratios, retirement planning. 100% offline. $19.99 one-time.">
+<link rel="alternate" hreflang="en" href="https://aivisibityrights.github.io/store/verfinance.html">
+<link rel="alternate" hreflang="x-default" href="https://aivisibityrights.github.io/store/verfinance.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#e3e3f0;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#1e293b;border:2px solid #f59e0b;display:flex;align-items:center;justify-content:center;font-size:52px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#f59e0b;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#94a3b8;max-width:580px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#f59e0b20;border:1px solid #f59e0b40;color:#f59e0b;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#1e293b;border-radius:16px;border:1px solid #334155}
+.stat{text-align:center}
+.stat-num{font-size:26px;font-weight:800;color:#10b981}
+.stat-label{font-size:12px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#94a3b8;text-align:center;margin-bottom:32px}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;text-align:center}
+.cat-icon{font-size:28px;margin-bottom:8px}
+.cat-name{font-size:14px;font-weight:700;color:#fff}
+.cat-desc{font-size:12px;color:#94a3b8;margin-top:4px;line-height:1.5}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#94a3b8;line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px}
+.why-check{color:#10b981;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#94a3b8}
+.why-text strong{color:#fff}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#f59e0b10;border:1px solid #f59e0b30;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#94a3b8;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#f59e0b10;border-left:3px solid #f59e0b;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#fbbf24}
+.disclaimer strong{color:#f59e0b}
+
+/* FAQ */
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#1e293b;border:1px solid #334155;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#f59e0b;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#94a3b8;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+
+/* Sibling promo */
+.sibling{background:#1e293b;border:1px dashed #c084fc66;border-radius:14px;padding:18px;margin:32px 0;text-align:center}
+.sibling h3{color:#c084fc;font-size:15px;margin-bottom:6px}
+.sibling p{color:#94a3b8;font-size:13px}
+.sibling a{color:#c084fc;text-decoration:none;font-weight:600}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #334155;margin-top:40px}
+.footer a{color:#f59e0b;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#64748b;font-size:12px;margin-top:12px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerFinance — Finance & Accounting Calculator",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "19.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Professional finance and accounting calculator for students, accountants, and working professionals. Time value of money, NPV, IRR, loan amortization, depreciation, financial ratios, retirement planning. 100% offline.",
+  "featureList": "Compound Interest, TVM, NPV, IRR, Bond Valuation, CAPM, WACC, Black-Scholes, Loan Amortization, Mortgage, Depreciation, Break-Even, Financial Ratios, COGS, Inventory Valuation, Working Capital, Markup vs Margin, Payroll, VAT, Variance Analysis, ROI, Sharpe Ratio, Portfolio Return, Dividend Yield, P/E, DCF, Payback Period, EPS, Savings Goal, Retirement Planner, Debt Snowball, Tip, Lease vs Buy, Emergency Fund, Net Worth"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#128181;</div>
+<h1>VerFinance</h1>
+<p class="subtitle">Finance &amp; Accounting Calculator</p>
+<p class="tagline">Professional finance and accounting calculator for students, working professionals, and small-business owners. Verified formulas, transparent steps, full schedules. 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $19.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $19.99</a>
+</div>
+<div class="price-tag">Pay once, use forever &mdash; No subscription, no ads, no registration</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">Verified</div><div class="stat-label">Formulas</div></div>
+<div class="stat"><div class="stat-num">Step</div><div class="stat-label">By Step</div></div>
+<div class="stat"><div class="stat-num">Full</div><div class="stat-label">Schedules</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+</div>
+
+<!-- Categories -->
+<h2 class="section-title">Built for Real-World Finance Work</h2>
+<p class="section-sub">From classroom problems to weekly accounting tasks &mdash; covered</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#9200;</div><div class="cat-name">Finance &amp; Time Value</div><div class="cat-desc">Compound interest, TVM solver, loan amortization, mortgage, NPV, IRR, bond valuation, CAPM, WACC, Black-Scholes, currency, inflation, annuity</div></div>
+<div class="cat-item"><div class="cat-icon">&#128202;</div><div class="cat-name">Accounting</div><div class="cat-desc">Depreciation across multiple methods, break-even, financial ratios, COGS, inventory valuation, working capital, markup vs margin, payroll, VAT, variance</div></div>
+<div class="cat-item"><div class="cat-icon">&#128200;</div><div class="cat-name">Investment</div><div class="cat-desc">ROI, Sharpe ratio, portfolio return, dividend yield, P/E and PEG, DCF valuation, payback period, EPS</div></div>
+<div class="cat-item"><div class="cat-icon">&#128176;</div><div class="cat-name">Personal Finance</div><div class="cat-desc">Savings goal, retirement planner, debt snowball &amp; avalanche, tip, lease vs buy, emergency fund, net worth</div></div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">Designed for Daily Use</h2>
+<p class="section-sub">Not just answers &mdash; transparent reasoning you can audit and learn from</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#128221;</div>
+<div class="feature-name">Step-By-Step Solutions</div>
+<div class="feature-desc">Every result includes the formula and substituted values. Learn while you calculate &mdash; no black box.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128203;</div>
+<div class="feature-name">Full Schedules</div>
+<div class="feature-desc">Complete loan amortization and depreciation schedules period by period &mdash; copy them straight into your spreadsheet or homework.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Offline</div>
+<div class="feature-desc">Everything bundled. Works in class, in flight, in the field. No internet, no account, no tracking.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Built-In Guides</div>
+<div class="feature-desc">Every calculator has a Guide page: what it is, how it works, key terms, when to use, and a worked example.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128336;</div>
+<div class="feature-name">Quick Switch</div>
+<div class="feature-desc">Jump between calculators mid-analysis with the tool navigator. No need to back out to the home screen.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#11088;</div>
+<div class="feature-name">Favorites &amp; History</div>
+<div class="feature-desc">Star the calculators you use most. Restore any past calculation from history with a single tap.</div>
+</div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">Why a Calculator, Not ChatGPT?</h2>
+<p class="section-sub">When the answer goes on a homework, an audit, or a client report, accuracy is non-negotiable</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Verified formulas, no hallucinations</strong> &mdash; Every formula is coded from the textbook and tested against published values. AI chatbots regularly produce arithmetic errors on multi-step finance problems.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Deterministic output, every time</strong> &mdash; The same inputs always produce the same result. Your homework or audit cannot depend on which model version you happened to use today.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>100% offline, zero data sent</strong> &mdash; Nothing leaves your device. No cloud, no logging. Sensitive financial details stay private.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Learn while you calculate</strong> &mdash; Each result shows the formula and steps. Each calculator has a Guide. Built to help you understand, not just answer.</div>
+</div>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Localized for Global Users</h2>
+<p class="section-sub">User interface localized in many languages</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese (BR)</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+<span class="lang-badge">&#127462;&#127466; Arabic</span>
+<span class="lang-badge">&#127470;&#127475; Hindi</span>
+</div>
+
+<!-- Sibling promo -->
+<div class="sibling">
+<h3>Need advanced tools? &#8594; <a href="/store/verfinance-pro.html">VerFinance Pro</a></h3>
+<p>Fixed income, derivatives, risk management, corporate finance, real estate, and quantitative tools for CFA/CPA candidates and investment professionals.</p>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>Important:</strong> VerFinance is an educational and reference tool. It is NOT investment, tax, accounting, or legal advice and NOT a substitute for a licensed professional. All calculations should be verified independently before being used in any financial, lending, or accounting decision.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Finance and Accounting in One App. One Price.</h2>
+<p>Time value, valuation, accounting, investment, and personal finance &mdash; with steps, schedules, and guides. 100% offline. No subscription.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $19.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $19.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerFinance</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">Who is VerFinance designed for?</summary>
+<div class="faq-a">Finance and accounting students, working professionals (accountants, bookkeepers, finance staff), small-business owners, and anyone who needs reliable everyday financial calculations. If you need advanced tools (fixed income, derivatives, risk management, corporate finance), see VerFinance Pro.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">How accurate are the calculations?</summary>
+<div class="faq-a">Every calculation is coded from textbook formulas and verified against published values. Output is deterministic &mdash; the same inputs always produce the same result. No AI, no approximations.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does it work without internet?</summary>
+<div class="faq-a">Yes, 100% offline. All formulas, constants, and references are bundled. No account required. No data is transmitted to any server.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is the payroll calculator current?</summary>
+<div class="faq-a">Yes. The payroll calculator includes US Federal brackets and SSA wage base for 2024, 2025, and 2026 (with the year clearly labelled in the picker), plus Thailand PIT brackets. Each result shows which dataset was used so you can audit the calculation.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I export or share my results?</summary>
+<div class="faq-a">Yes. Each result screen has a copy button that puts the calculation, including formula and steps, on your clipboard ready to paste into a spreadsheet, email, or report.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is this investment advice?</summary>
+<div class="faq-a">No. VerFinance is an educational and reference tool. It does not provide investment, tax, accounting, or legal advice. Always verify results and consult a licensed professional before making financial decisions.</div>
+</details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="/store/support.html">Support</a>
+<a href="/store/privacy-policy.html">Privacy</a>
+<a href="mailto:aivisibilityrights@gmail.com">Contact</a>
+<a href="/">Home</a>
+<div class="copy">&copy; 2026 AI Visibility Rights &middot; VerFinance v1.0.0</div>
+</div>
+
+</div>
+
+</body>
+</html>
