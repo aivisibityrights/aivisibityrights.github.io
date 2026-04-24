@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerFinance Pro — Advanced Financial Analysis for CFA/CPA &amp; Investment Professionals</title>
+<meta name="description" content="Professional financial calculator for CFA/CPA candidates, analysts, investment bankers, and portfolio managers. Fixed income, derivatives, risk management, corporate finance, real estate, quantitative tools. 100% offline. $59.99 one-time.">
+<link rel="alternate" hreflang="en" href="https://aivisibityrights.github.io/store/verfinance-pro.html">
+<link rel="alternate" hreflang="x-default" href="https://aivisibityrights.github.io/store/verfinance-pro.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0c0a1a;color:#e3e3f0;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#14102a;border:2px solid #c084fc;display:flex;align-items:center;justify-content:center;font-size:52px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#c084fc;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#a0a0b8;max-width:580px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#c084fc20;border:1px solid #c084fc40;color:#c084fc;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#14102a;border-radius:16px;border:1px solid #2a1f4a}
+.stat{text-align:center}
+.stat-num{font-size:26px;font-weight:800;color:#f59e0b}
+.stat-label{font-size:12px;color:#a0a0b8;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#a0a0b8;text-align:center;margin-bottom:32px}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item{background:#14102a;border:1px solid #2a1f4a;border-radius:12px;padding:18px;text-align:center}
+.cat-icon{font-size:28px;margin-bottom:8px}
+.cat-name{font-size:14px;font-weight:700;color:#fff}
+.cat-desc{font-size:12px;color:#a0a0b8;margin-top:4px;line-height:1.5}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#14102a;border:1px solid #2a1f4a;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#a0a0b8;line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#14102a;border:1px solid #2a1f4a;border-radius:12px;padding:16px}
+.why-check{color:#c084fc;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a0a0b8}
+.why-text strong{color:#fff}
+
+/* Citations */
+.citations{background:#14102a;border:1px solid #2a1f4a;border-radius:14px;padding:20px;margin-bottom:40px}
+.citations h3{font-size:14px;color:#c084fc;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.citations ul{list-style:none;padding:0}
+.citations li{font-size:12px;color:#a0a0b8;padding:4px 0;font-family:'Menlo','Monaco',monospace}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#14102a;border:1px solid #2a1f4a;color:#a0a0b8;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#c084fc10;border:1px solid #c084fc30;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#a0a0b8;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#f59e0b10;border-left:3px solid #f59e0b;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#fbbf24}
+.disclaimer strong{color:#f59e0b}
+
+/* FAQ */
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#14102a;border:1px solid #2a1f4a;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#c084fc;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#a0a0b8;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #2a1f4a;margin-top:40px}
+.footer a{color:#c084fc;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#666680;font-size:12px;margin-top:12px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerFinance Pro — Advanced Financial Analysis",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "59.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Professional financial calculator for CFA/CPA candidates, financial analysts, investment bankers, and portfolio managers. Time value, valuation, fixed income, derivatives, risk management, corporate finance, real estate, and quantitative finance tools. Batch scenarios, audit trail, formula library. 100% offline, pay once.",
+  "featureList": "NPV, IRR, DCF, WACC, CAPM, Bond Valuation, Black-Scholes, Duration, Convexity, Yield Curve, Option Greeks, Binomial Pricing, Put-Call Parity, VaR, CVaR, Sortino, Treynor, Information Ratio, LBO, MOIC, EV/EBITDA, FCFF, FCFE, APV, EVA, Altman Z-Score, DuPont Analysis, Cash Conversion Cycle, Cap Rate, DSCR, NOI, Linear Regression, Efficient Frontier, Monte Carlo, Kelly Criterion"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#128181;</div>
+<h1>VerFinance Pro</h1>
+<p class="subtitle">Advanced Financial Analysis &amp; Professional Tools</p>
+<p class="tagline">The professional's financial calculator. Valuation, fixed income, derivatives, risk management, corporate finance, real estate, and quantitative tools &mdash; desk-side precision with peer-reviewed formulas. 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $59.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $59.99</a>
+</div>
+<div class="price-tag">Pay once, use forever &mdash; No subscription, no ads, no registration</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">CFA/CPA</div><div class="stat-label">Exam-Relevant</div></div>
+<div class="stat"><div class="stat-num">Cite&#8594;Every</div><div class="stat-label">Result</div></div>
+<div class="stat"><div class="stat-num">Audit</div><div class="stat-label">Trail Logged</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+</div>
+
+<!-- Categories -->
+<h2 class="section-title">Built for the Desk</h2>
+<p class="section-sub">Complete coverage from time-value fundamentals to advanced derivatives and portfolio theory</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#9200;</div><div class="cat-name">Time Value &amp; Valuation</div><div class="cat-desc">NPV, IRR, DCF, WACC, CAPM, Black-Scholes, bond valuation, annuity, loan amortization, mortgage</div></div>
+<div class="cat-item"><div class="cat-icon">&#128202;</div><div class="cat-name">Accounting</div><div class="cat-desc">Depreciation, break-even, financial ratios, COGS, inventory, working capital, variance analysis, payroll, VAT</div></div>
+<div class="cat-item"><div class="cat-icon">&#128200;</div><div class="cat-name">Investment Analysis</div><div class="cat-desc">ROI, Sharpe ratio, portfolio return, dividend yield, P/E, EPS, payback period, dollar-weighted return</div></div>
+<div class="cat-item"><div class="cat-icon">&#128176;</div><div class="cat-name">Personal Finance</div><div class="cat-desc">Savings, retirement, debt snowball &amp; avalanche, lease vs buy, emergency fund, net worth, tip, currency</div></div>
+<div class="cat-item"><div class="cat-icon">&#128179;</div><div class="cat-name">Fixed Income &amp; Bonds</div><div class="cat-desc">Macaulay &amp; Modified Duration, convexity, yield curve bootstrapping, credit spreads, callable/putable pricing</div></div>
+<div class="cat-item"><div class="cat-icon">&#128200;</div><div class="cat-name">Derivatives</div><div class="cat-desc">Option Greeks (Delta, Gamma, Theta, Vega, Rho), binomial tree (Cox-Ross-Rubinstein), put-call parity, futures, swap valuation</div></div>
+<div class="cat-item"><div class="cat-icon">&#9888;&#65039;</div><div class="cat-name">Risk Management</div><div class="cat-desc">Value at Risk (parametric / historical / Monte Carlo), CVaR, Beta, Sortino, Treynor, Information Ratio, Max Drawdown</div></div>
+<div class="cat-item"><div class="cat-icon">&#127970;</div><div class="cat-name">Corporate Finance</div><div class="cat-desc">LBO model, MOIC, EV/EBITDA, comparable analysis, FCFF/FCFE, Adjusted Present Value, Economic Value Added</div></div>
+<div class="cat-item"><div class="cat-icon">&#128181;</div><div class="cat-name">Advanced Accounting</div><div class="cat-desc">Altman Z-Score, DuPont 3 &amp; 5-factor, operating/financial leverage, cash conversion cycle, goodwill impairment, deferred tax</div></div>
+<div class="cat-item"><div class="cat-icon">&#127968;</div><div class="cat-name">Real Estate</div><div class="cat-desc">Cap Rate, GRM, Cash-on-Cash Return, DSCR, NOI &mdash; full deal underwriting support</div></div>
+<div class="cat-item"><div class="cat-icon">&#128290;</div><div class="cat-name">Quantitative Finance</div><div class="cat-desc">Linear regression, correlation matrix, efficient frontier (Markowitz), Monte Carlo simulation, Kelly Criterion</div></div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">Designed for Professional Use</h2>
+<p class="section-sub">Not just formulas &mdash; decision support with scenario comparison and an auditable trail</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#128221;</div>
+<div class="feature-name">Batch &amp; Scenario Analysis</div>
+<div class="feature-desc">Run best / base / worst case side-by-side for any calculator. Stress-test assumptions before the meeting.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128203;</div>
+<div class="feature-name">Audit Trail Logged</div>
+<div class="feature-desc">Every calculation captured with timestamp, inputs, results, and formula version. Export for compliance or model review.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Offline</div>
+<div class="feature-desc">Everything bundled in the app. Works on the trading floor, in flight, in client meetings &mdash; no internet required. No data ever leaves the device.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Peer-Reviewed Citations</div>
+<div class="feature-desc">Every result shows the source. Markowitz 1952. Sharpe 1964. Black-Scholes 1973. Cox-Ross-Rubinstein 1979. Altman 1968. Auditable.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128336;</div>
+<div class="feature-name">Quick Switch</div>
+<div class="feature-desc">Jump between calculators mid-analysis with the tool navigator. No need to back out to the home screen.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128214;</div>
+<div class="feature-name">Built-in Learning Guides</div>
+<div class="feature-desc">Every calculator has a Guide page: what it is, how it works, key terms, when to use, and a worked example. Built for CFA / CPA candidates.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128190;</div>
+<div class="feature-name">Export CSV / PDF</div>
+<div class="feature-desc">Export results and audit trail as CSV for spreadsheets or PDF reports with formula citations &mdash; desk-ready deliverables.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128269;</div>
+<div class="feature-name">Formula Library &amp; Glossary</div>
+<div class="feature-desc">Searchable formula reference with variable definitions, derivations, and provenance. Professional financial glossary included.</div>
+</div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">Why a Calculator App, Not ChatGPT?</h2>
+<p class="section-sub">When the model is going to a client, accuracy is non-negotiable</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Verified formulas, no hallucinations</strong> &mdash; Black-Scholes, Cox-Ross-Rubinstein, Markowitz, Altman coded directly from the original papers. AI chatbots cannot reliably reproduce these formulas without arithmetic error.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Deterministic output, every time</strong> &mdash; Same inputs always produce the same result. AI responses drift across sessions. Your valuation cannot depend on sampling temperature.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>100% offline, zero data exfiltration</strong> &mdash; Nothing leaves your device. No cloud, no logging, no exposure of deal terms or portfolio positions to a third-party LLM.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Citation for every number</strong> &mdash; Every result shows its source paper and year. You cannot audit an AI. You can audit a published formula.</div>
+</div>
+</div>
+
+<!-- Citations -->
+<div class="citations">
+<h3>&#128218; Peer-Reviewed References Used</h3>
+<ul>
+<li>&bull; Markowitz HM. J Finance 1952;7:77 (Portfolio Selection / Efficient Frontier)</li>
+<li>&bull; Sharpe WF. J Finance 1964;19:425 (CAPM / Sharpe Ratio)</li>
+<li>&bull; Black F, Scholes M. J Political Economy 1973;81:637 (Option Pricing)</li>
+<li>&bull; Cox JC, Ross SA, Rubinstein M. J Financial Economics 1979;7:229 (Binomial Option Pricing)</li>
+<li>&bull; Macaulay FR. NBER 1938 (Bond Duration)</li>
+<li>&bull; Altman EI. J Finance 1968;23:589 (Z-Score Bankruptcy Model)</li>
+<li>&bull; Modigliani F, Miller MH. Am Econ Rev 1958;48:261 (Capital Structure)</li>
+<li>&bull; Treynor JL. Harvard Business Review 1965 (Treynor Ratio)</li>
+<li>&bull; Sortino FA, van der Meer R. J Portfolio Mgmt 1991;17:27 (Downside Risk)</li>
+<li>&bull; Kelly JL. Bell System Technical J 1956;35:917 (Kelly Criterion)</li>
+<li>&bull; CFA Institute. Curriculum Handbook (CFA Levels I &mdash; III reference formulas)</li>
+</ul>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Localized for Global Finance Teams</h2>
+<p class="section-sub">User interface localized in 14 languages</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese (BR)</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+<span class="lang-badge">&#127462;&#127466; Arabic</span>
+<span class="lang-badge">&#127470;&#127475; Hindi</span>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>Important:</strong> VerFinance Pro is a professional reference and educational tool. It is NOT investment advice and NOT a substitute for professional judgment, due diligence, or a licensed advisor. All calculations should be verified independently before use in investment, lending, or accounting decisions. Past performance does not guarantee future results.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>The Professional's Financial Calculator. One App.</h2>
+<p>Valuation, fixed income, derivatives, risk, corporate finance, real estate, quantitative. Every result cites its source. 100% offline. No subscription.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $59.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $59.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerFinance Pro</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">Which option pricing models does VerFinance Pro support?</summary>
+<div class="faq-a">VerFinance Pro includes the Black-Scholes-Merton closed-form model for European options (with full Greeks: Delta, Gamma, Theta, Vega, Rho), and the Cox-Ross-Rubinstein binomial tree for both European and American options with multi-step resolution. Put-call parity, futures cost-of-carry, and interest rate swap valuation are also included. All models are coded directly from the original papers.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">How accurate are the calculations?</summary>
+<div class="faq-a">Every calculation is coded directly from the original peer-reviewed paper or CFA / CPA curriculum reference and verified against textbook values. Deterministic output: same inputs always produce the same result. No AI, no approximations &mdash; just the formulas.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does it work without internet?</summary>
+<div class="faq-a">Yes, 100% offline. All formulas, constants, reference tables, and citations are bundled into the app. Nothing is transmitted to any server. No account, no tracking, no data collection. Open and use it anywhere &mdash; trading floor, client meeting, flight, rural locations with no connectivity.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What risk management tools are included?</summary>
+<div class="faq-a">Value at Risk via three methods (parametric / variance-covariance, historical simulation, Monte Carlo), Conditional VaR (Expected Shortfall), Beta via regression against a market benchmark, Sortino Ratio (downside deviation), Treynor Ratio (systematic risk-adjusted), Information Ratio (active management skill / tracking error), and Maximum Drawdown with recovery analysis.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Who is this app for?</summary>
+<div class="faq-a">CFA candidates (Levels I, II, III), CPA candidates, financial analysts, investment bankers, private equity associates, portfolio managers, commercial real estate underwriters, corporate treasury professionals, and finance students. The Guide pages explain each calculator in plain language &mdash; making the app a learning tool as well as a desk reference.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I use it for CFA or CPA exam preparation?</summary>
+<div class="faq-a">Yes. The formulas and structure mirror the CFA Institute curriculum (Levels I &mdash; III) and CPA financial accounting / advanced financial accounting topics. Every formula is cited, and the Guide pages include key terms and worked examples appropriate for exam prep. Use it to work practice problems offline.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">What about LBO modeling and private equity tools?</summary>
+<div class="faq-a">The Corporate Finance category includes an LBO model with entry / exit equity, debt schedule with annual repayment, MOIC (Multiple on Invested Capital) with time adjustment, EV / EBITDA multiples, comparable trading analysis, two-stage FCFF and FCFE, Adjusted Present Value (unlevered NPV plus tax shield), and Economic Value Added. Full underwriting support for small and mid-market deals.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is this investment advice?</summary>
+<div class="faq-a">No. VerFinance Pro is a professional reference and educational calculator. It does not provide investment, tax, accounting, or legal advice. All output must be verified independently and interpreted by a qualified professional in the full context of the specific transaction, client, or portfolio. Past performance of any model does not guarantee future results.</div>
+</details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="/store/support.html">Support</a>
+<a href="/store/privacy-policy.html">Privacy</a>
+<a href="mailto:aivisibilityrights@gmail.com">Contact</a>
+<a href="/">Home</a>
+<div class="copy">&copy; 2026 AI Visibility Rights &middot; VerFinance Pro v1.0.0</div>
+</div>
+
+</div>
+
+</body>
+</html>
