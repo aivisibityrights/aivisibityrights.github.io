@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerAir — Air Quality & Emissions Engineering Calculator</title>
+<meta name="description" content="Professional air quality toolkit for environmental engineers. AQI, Gaussian Plume dispersion, EPA Stack Methods 1-5, AP-42, and Thai PCD Standards — fully offline. $59.99 one-time.">
+<meta property="og:title" content="VerAir — Air Quality & Emissions Engineering">
+<meta property="og:description" content="Professional air quality calculator: AQI, Gaussian dispersion, EPA stack tests, Thai PCD standards. Offline, $59.99 one-time.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aivisibityrights.github.io/store/verair.html">
+<link rel="alternate" hreflang="en" href="https://aivisibityrights.github.io/store/verair.html">
+<link rel="alternate" hreflang="ar" href="https://aivisibityrights.github.io/store/ar/verair.html">
+<link rel="alternate" hreflang="zh" href="https://aivisibityrights.github.io/store/zh/verair.html">
+<link rel="alternate" hreflang="fr" href="https://aivisibityrights.github.io/store/fr/verair.html">
+<link rel="alternate" hreflang="de" href="https://aivisibityrights.github.io/store/de/verair.html">
+<link rel="alternate" hreflang="hi" href="https://aivisibityrights.github.io/store/hi/verair.html">
+<link rel="alternate" hreflang="id" href="https://aivisibityrights.github.io/store/id/verair.html">
+<link rel="alternate" hreflang="it" href="https://aivisibityrights.github.io/store/it/verair.html">
+<link rel="alternate" hreflang="ja" href="https://aivisibityrights.github.io/store/ja/verair.html">
+<link rel="alternate" hreflang="ko" href="https://aivisibityrights.github.io/store/ko/verair.html">
+<link rel="alternate" hreflang="pt-BR" href="https://aivisibityrights.github.io/store/pt-BR/verair.html">
+<link rel="alternate" hreflang="ru" href="https://aivisibityrights.github.io/store/ru/verair.html">
+<link rel="alternate" hreflang="es" href="https://aivisibityrights.github.io/store/es/verair.html">
+<link rel="alternate" hreflang="th" href="https://aivisibityrights.github.io/store/th/verair.html">
+<link rel="alternate" hreflang="x-default" href="https://aivisibityrights.github.io/store/verair.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0b1a2e;color:#e2e8f0;line-height:1.7}
+.container{max-width:850px;margin:0 auto;padding:20px}
+
+.hero{text-align:center;padding:80px 20px 60px;background:radial-gradient(circle at top, #0ea5e915 0%, transparent 70%)}
+.hero-icon{width:130px;height:130px;border-radius:32px;margin:0 auto 28px;background:#0f243d;border:2px solid #0ea5e9;display:flex;align-items:center;justify-content:center;font-size:54px;box-shadow:0 0 30px rgba(14, 165, 233, 0.25)}
+.hero h1{font-size:36px;color:#fff;margin-bottom:10px;letter-spacing:-.5px}
+.hero .subtitle{font-size:20px;color:#0ea5e9;font-weight:600;margin-bottom:20px}
+.hero .tagline{font-size:16px;color:#94a3b8;max-width:600px;margin:0 auto 36px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:12px 28px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .2s, opacity .2s}
+.badge:hover{transform:translateY(-2px);opacity:.9}
+.badge-apple{background:#000;color:#fff;border:1px solid #334155}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#0ea5e915;border:1px solid #0ea5e940;color:#0ea5e9;padding:8px 20px;border-radius:10px;font-size:14px;font-weight:600;margin-top:24px}
+
+.stats{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin:40px 0;padding:30px;background:#0f243d;border-radius:20px;border:1px solid #1e293b}
+.stat{text-align:center;min-width:120px}
+.stat-num{font-size:30px;font-weight:800;color:#0ea5e9}
+.stat-label{font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+
+.section-title{font-size:24px;font-weight:700;color:#fff;text-align:center;margin:60px 0 12px}
+.section-sub{font-size:15px;color:#64748b;text-align:center;margin-bottom:40px}
+
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:20px;margin-bottom:60px}
+.feature-card{background:#0f243d;border:1px solid #1e293b;border-radius:18px;padding:24px;transition:border-color .3s}
+.feature-card:hover{border-color:#0ea5e960}
+.feature-icon{font-size:32px;margin-bottom:16px;display:block}
+.feature-name{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px}
+.feature-desc{font-size:14px;color:#94a3b8;line-height:1.6}
+
+.why-container{background:#0f243d;border:1px solid #1e293b;border-radius:24px;padding:40px;margin:40px 0}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px}
+.why-item{display:flex;gap:16px}
+.why-check{color:#0ea5e9;font-size:20px;font-weight:bold;margin-top:2px}
+.why-text strong{color:#fff;display:block;margin-bottom:4px}
+.why-text p{font-size:14px;color:#94a3b8}
+
+.standards-box{background:linear-gradient(135deg, #0ea5e910 0%, #0ea5e905 100%);border:1px solid #0ea5e930;border-radius:20px;padding:30px;margin-top:40px;text-align:center}
+.standards-tag{display:inline-block;background:#0ea5e9;color:#fff;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:800;margin-bottom:16px;text-transform:uppercase}
+
+.lang-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:40px 0}
+.lang-badge{background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:8px 16px;border-radius:10px;font-size:13px;font-weight:600}
+
+.cta{text-align:center;padding:60px 20px;margin:60px 0;background:linear-gradient(rgba(14,165,233,0.1), rgba(14,165,233,0.05));border:1px solid #0ea5e930;border-radius:30px}
+.cta h2{font-size:28px;color:#fff;margin-bottom:12px}
+.cta p{color:#94a3b8;font-size:16px;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+
+.disclaimer{background:#f59e0b10;border-left:4px solid #f59e0b;padding:20px;border-radius:0 12px 12px 0;margin:40px 0;font-size:13px;color:#f59e0b}
+
+.footer{text-align:center;padding:40px 20px;border-top:1px solid #1e293b;margin-top:60px}
+.footer-links{margin-bottom:20px}
+.footer-links a{color:#0ea5e9;text-decoration:none;margin:0 15px;font-size:14px}
+.footer-links a:hover{text-decoration:underline}
+.footer .copy{color:#475569;font-size:12px}
+
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0f243d;border:1px solid #1e293b;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#0ea5e9;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#94a3b8;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+
+@media (max-width: 600px) {
+    .hero h1{font-size:28px}
+    .stats{gap:20px;padding:20px}
+    .stat{min-width:45%}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerAir — Air Quality & Emissions Engineering Calculator",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "59.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Professional air quality toolkit for environmental engineers. AQI, Gaussian Plume dispersion, EPA Stack Methods 1-5, AP-42, and Thai PCD Standards — fully offline.",
+  "featureList": "US EPA AQI 2024, Gaussian Plume Dispersion (Pasquill-Gifford), EPA Stack Methods 1-5 (Isokinetic Sampling), AP-42 Emission Factors Database, Thai PCD Standards (พ.ศ.2566), Wind Rose Analysis, Multi-Source Dispersion, GEP Stack Height Wizard, Combustion Stoichiometry, Control Technology Cost-Benefit"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<header class="hero">
+<div class="hero-icon">🌬️</div>
+<h1>VerAir</h1>
+<p class="subtitle">Air Quality &amp; Emissions Engineering</p>
+<p class="tagline">The professional mobile toolkit for environmental engineers. AQI, Gaussian Plume dispersion, EPA Stack Testing Methods, AP-42 emission factors, and Thai PCD standards — all in one offline app.</p>
+<div class="badge-row">
+<span class="badge badge-apple" style="opacity:0.6;cursor:default">Coming Soon to App Store</span>
+<span class="badge badge-google" style="opacity:0.6;cursor:default">Coming Soon to Google Play</span>
+</div>
+<div class="price-tag">$59.99 one-time • Professional-grade calculations • 100% Offline</div>
+</header>
+
+<section class="stats">
+<div class="stat"><div class="stat-num">EPA</div><div class="stat-label">Methods 1-5</div></div>
+<div class="stat"><div class="stat-num">PCD</div><div class="stat-label">Thai พ.ศ.2566</div></div>
+<div class="stat"><div class="stat-num">14</div><div class="stat-label">Languages</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline-First</div></div>
+</section>
+
+<h2 class="section-title">Comprehensive Engineering Modules</h2>
+<p class="section-sub">Verified calculations referenced to peer-reviewed standards</p>
+
+<div class="feature-grid">
+<div class="feature-card">
+<span class="feature-icon">🌫️</span>
+<h3 class="feature-name">Air Quality Index (AQI)</h3>
+<p class="feature-desc">US EPA AQI 2024 breakpoints for PM2.5, PM10, O3, CO, NO2, SO2 with live unit conversion (ppm ↔ µg/m³) and Thai PCD compliance check.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🏭</span>
+<h3 class="feature-name">Gaussian Plume Dispersion</h3>
+<p class="feature-desc">Pasquill-Gifford stability classes A-F with Briggs plume rise equations. Centerline + lateral concentration grids and maximum impact distance finder.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🔬</span>
+<h3 class="feature-name">Stack Testing — EPA Methods 1-5</h3>
+<p class="feature-desc">Pitot traverse, isokinetic ratio verification (90-110%), volumetric flow at standard conditions, and molecular weight from O2/CO2 composition.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">📚</span>
+<h3 class="feature-name">AP-42 Emission Factors</h3>
+<p class="feature-desc">Searchable EPA AP-42 database for major combustion sources (natural gas, coal, fuel oil, biomass, MSW). Bundled offline.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">📋</span>
+<h3 class="feature-name">Thai PCD Standards</h3>
+<p class="feature-desc">Updated to ประกาศกรมควบคุมมลพิษ พ.ศ.2566 — PM2.5 24hr 37.5 µg/m³. First mobile app with full Thai regulatory data integration.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🌐</span>
+<h3 class="feature-name">Multi-Framework Compliance</h3>
+<p class="feature-desc">Side-by-side comparison against US EPA NAAQS, EU Air Quality Directive, WHO 2021 Global AQG, and ASEAN standards.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🧭</span>
+<h3 class="feature-name">Wind Rose &amp; Multi-Source</h3>
+<p class="feature-desc">16-direction wind rose with 7 speed classes. Combine multiple emission sources with receptor grid analysis.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🔥</span>
+<h3 class="feature-name">Combustion &amp; Control Tech</h3>
+<p class="feature-desc">Stoichiometric combustion from ultimate fuel analysis. NPV cost-benefit for ESP, baghouse, FGD, SCR, RTO and other control technologies.</p>
+</div>
+</div>
+
+<h2 class="section-title">Why Professionals Choose VerAir?</h2>
+<p class="section-sub">Verified science replacing expensive desktop software</p>
+
+<div class="why-container">
+<div class="why-grid">
+<div class="why-item">
+<span class="why-check">✓</span>
+<div class="why-text">
+<strong>Verified Over Hallucinated</strong>
+<p>Unlike AI chatbots that may hallucinate Pasquill-Gifford coefficients or AQI breakpoints, VerAir uses strictly verified equations from EPA Methods documents and peer-reviewed literature.</p>
+</div>
+</div>
+<div class="why-item">
+<span class="why-check">✓</span>
+<div class="why-text">
+<strong>Field Operations Ready</strong>
+<p>100% offline. Works at remote stack testing sites, in pump houses, on offshore platforms, and on flights with no cellular signal.</p>
+</div>
+</div>
+<div class="why-item">
+<span class="why-check">✓</span>
+<div class="why-text">
+<strong>Reproducible Results</strong>
+<p>Same inputs always produce same outputs — essential for regulatory audit trails and EIA report defense.</p>
+</div>
+</div>
+<div class="why-item">
+<span class="why-check">✓</span>
+<div class="why-text">
+<strong>Pay Once, Own Forever</strong>
+<p>Professional dispersion modeling software can cost thousands per seat. VerAir delivers core capabilities for one-time payment of $59.99.</p>
+</div>
+</div>
+</div>
+
+<div class="standards-box">
+<span class="standards-tag">Global References</span>
+<p style="font-size:14px; color:#94a3b8">Built on <strong>US EPA 40 CFR</strong>, <strong>Thai PCD พ.ศ.2566</strong>, <strong>WHO 2021</strong>, <strong>EU Directive 2008/50/EC</strong>, and <strong>ASEAN Transboundary Haze Agreement</strong>.</p>
+</div>
+</div>
+
+<h2 class="section-title">Global Engineering Reach</h2>
+<p class="section-sub">Designed for environmental professionals worldwide</p>
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">ภาษาไทย</span>
+<span class="lang-badge">简体中文</span>
+<span class="lang-badge">日本語</span>
+<span class="lang-badge">한국어</span>
+<span class="lang-badge">Español</span>
+<span class="lang-badge">Français</span>
+<span class="lang-badge">Deutsch</span>
+<span class="lang-badge">Italiano</span>
+<span class="lang-badge">Português (BR)</span>
+<span class="lang-badge">Русский</span>
+<span class="lang-badge">Bahasa Indonesia</span>
+<span class="lang-badge">العربية</span>
+<span class="lang-badge">हिन्दी</span>
+</div>
+
+<div class="disclaimer">
+<strong>Professional Disclaimer:</strong> VerAir is intended for preliminary engineering assessment, screening-level dispersion analysis, and educational purposes. All final regulatory submissions, EIA reports, and air quality permits must be verified and approved by a licensed Professional Engineer (PE) using approved regulatory models.
+</div>
+
+<section class="cta">
+<h2>Professional Air Quality Engineering in Your Pocket</h2>
+<p>EPA Methods, Gaussian dispersion, AP-42 emission factors, and Thai PCD standards. One app, one payment, zero subscriptions.</p>
+<div class="badge-row">
+<span class="badge badge-apple" style="opacity:0.6;cursor:default">Coming Soon to App Store</span>
+<span class="badge badge-google" style="opacity:0.6;cursor:default">Coming Soon to Google Play</span>
+</div>
+</section>
+
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerAir</p>
+<div class="faq-section">
+<details class="faq-item">
+<summary class="faq-q">What is the best air quality calculator app for environmental engineers?</summary>
+<div class="faq-a">VerAir is a professional mobile toolkit combining US EPA AQI, Gaussian Plume dispersion modeling with Pasquill-Gifford stability classes, EPA Stack Testing Methods 1-5 with isokinetic sampling, AP-42 emission factors database, and Thai PCD regulatory compliance checking. It works 100% offline for $59.99 one-time payment.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Can I run Gaussian Plume dispersion modeling on my phone?</summary>
+<div class="faq-a">Yes. VerAir includes a full Gaussian Plume dispersion model using Pasquill-Gifford dispersion coefficients (A-F stability classes) with Briggs plume rise equations for both buoyancy-dominated and momentum-dominated stack plumes. It computes ground-level concentrations along the centerline and at off-axis receptors, and finds the maximum impact distance.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does VerAir support EPA Stack Testing Methods 1-5?</summary>
+<div class="faq-a">Yes. VerAir implements EPA Method 1 (traverse points), Method 2 (pitot velocity with default S-type Cp = 0.84), Method 3 (Orsat O2/CO2), Method 4 (moisture), and Method 5 (PM isokinetic sampling with the 90-110% acceptable ratio gate). All calculations are reproducible for performance test reports and CEMS RATA verification.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Air quality calculator vs ChatGPT — which should I use for permits?</summary>
+<div class="faq-a">For regulatory air quality work, VerAir uses strictly verified equations from EPA 40 CFR documents and peer-reviewed dispersion modeling literature. AI chatbots can hallucinate AQI breakpoints, Pasquill-Gifford coefficients, or Thai PCD standard values. VerAir produces deterministic, reproducible results that stand up to regulatory audit and works offline at field sites.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Does VerAir include the latest Thai PCD air quality standards?</summary>
+<div class="faq-a">Yes. VerAir is updated to the current ประกาศกรมควบคุมมลพิษ พ.ศ.2566 — including the new PM2.5 24-hour standard of 37.5 µg/m³ and annual standard of 15 µg/m³. It also includes US EPA NAAQS 2024, EU Air Quality Directive, WHO 2021 Global AQG, and ASEAN standards for side-by-side multi-framework compliance comparison.</div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">Is the AP-42 emission factor database included offline?</summary>
+<div class="faq-a">Yes. VerAir bundles a searchable AP-42 emission factor database covering common combustion sources (natural gas, bituminous and sub-bituminous coal, lignite, fuel oil No. 2, wood biomass, and municipal solid waste / RDF). All factors are stored locally — no cloud lookups, no internet required at field sites.</div>
+</details>
+</div>
+
+<footer class="footer">
+<div class="footer-links">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">Privacy Policy</a>
+<a href="https://aivisibityrights.github.io/store/support.html">Support</a>
+</div>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</footer>
+
+</div>
+</body>
+</html>
