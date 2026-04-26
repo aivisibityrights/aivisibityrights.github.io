@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerMed Anes — Anesthesiology Calculator for the Operating Room</title>
+<meta name="description" content="The anesthesiologist's calculator. ASA, RCRI, Mallampati, MAC age-adjustment, NMB, opioid equivalents, sugammadex, 4-2-1 fluids, Nadler EBV, LA max safety caps, spinal dose, BIS, TOF, Apfel PONV, Aldrete, dedicated MH emergency screen with dantrolene + MHAUS hotline, anaphylaxis, LAST lipid rescue. 100% offline. $24.99 one-time.">
+<link rel="alternate" hreflang="en" href="https://aivisibityrights.github.io/store/vermed-anes.html">
+<link rel="alternate" hreflang="x-default" href="https://aivisibityrights.github.io/store/vermed-anes.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a1a;color:#e3e3f0;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero — violet anesthesia identity */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#1a1438;border:2px solid #8b5cf6;display:flex;align-items:center;justify-content:center;font-size:52px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px}
+.hero .subtitle{font-size:18px;color:#8b5cf6;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#a0a0b8;max-width:580px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#8b5cf620;border:1px solid #8b5cf640;color:#8b5cf6;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats — abstract, not numeric counts */
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#1a1438;border-radius:16px;border:1px solid #2a1f5a}
+.stat{text-align:center}
+.stat-num{font-size:24px;font-weight:800;color:#8b5cf6}
+.stat-label{font-size:12px;color:#a0a0b8;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#a0a0b8;text-align:center;margin-bottom:32px}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item{background:#1a1438;border:1px solid #2a1f5a;border-radius:12px;padding:18px;text-align:center}
+.cat-icon{font-size:28px;margin-bottom:8px}
+.cat-name{font-size:14px;font-weight:700;color:#fff}
+.cat-desc{font-size:12px;color:#a0a0b8;margin-top:4px;line-height:1.5}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#1a1438;border:1px solid #2a1f5a;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#a0a0b8;line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#1a1438;border:1px solid #2a1f5a;border-radius:12px;padding:16px}
+.why-check{color:#8b5cf6;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a0a0b8}
+.why-text strong{color:#fff}
+
+/* Citations */
+.citations{background:#1a1438;border:1px solid #2a1f5a;border-radius:14px;padding:20px;margin-bottom:40px}
+.citations h3{font-size:14px;color:#8b5cf6;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.citations ul{list-style:none;padding:0}
+.citations li{font-size:12px;color:#a0a0b8;padding:4px 0;font-family:'Menlo','Monaco',monospace}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#1a1438;border:1px solid #2a1f5a;color:#a0a0b8;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#8b5cf610;border:1px solid #8b5cf630;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#a0a0b8;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#dc262610;border-left:3px solid #dc2626;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#f87171}
+.disclaimer strong{color:#dc2626}
+
+/* Emergency notice (yellow accent for MH/LAST) */
+.emergency-notice{background:#f59e0b10;border-left:3px solid #f59e0b;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#fbbf24}
+.emergency-notice strong{color:#f59e0b}
+
+/* FAQ */
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#1a1438;border:1px solid #2a1f5a;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#8b5cf6;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#a0a0b8;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #2a1f5a;margin-top:40px}
+.footer a{color:#8b5cf6;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#666680;font-size:12px;margin-top:12px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerMed Anes — Anesthesiology Calculator",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "MedicalApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "24.99",
+    "priceCurrency": "USD"
+  },
+  "description": "The anesthesiologist's peri-operative calculator. ASA Physical Status, Lee RCRI, STOP-BANG, Mallampati, NPO guidelines, Cormack-Lehane, LEMON, 3-3-2 rule, ET tube sizing, induction agents, MAC age-adjustment, NMB dosing, opioid equivalents, sugammadex, 4-2-1 maintenance fluid, Nadler blood volume, allowable blood loss, local anesthetic max doses with cardiotoxicity warnings, spinal dose, epidural top-up, BIS, TOF, MAP target, Apfel PONV, Aldrete, VAS, dedicated MH emergency screen with dantrolene dosing and MHAUS hotline, anaphylaxis, LAST lipid rescue. 100% offline.",
+  "featureList": "ASA Physical Status, Lee RCRI, STOP-BANG, Mallampati, NPO Guidelines, Cormack-Lehane, LEMON, 3-3-2 Rule, ET Tube Size, Induction Agents, MAC Age-Adjusted, NMB Dosing, Opioid Equivalents, Sugammadex Reversal, 4-2-1 Maintenance, Nadler EBV, Allowable Blood Loss, Crystalloid:Colloid, Local Anesthetic Max Dose, Spinal Dose, Epidural Top-up, BIS Target, TOF Interpretation, MAP Target, Apfel PONV, Aldrete Score, VAS Pain, Malignant Hyperthermia + Dantrolene, Anaphylaxis Dosing, LAST Lipid Rescue"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#128137;</div>
+<h1>VerMed Anes</h1>
+<p class="subtitle">Anesthesiology Calculator &amp; Reference</p>
+<p class="tagline">The anesthesiologist's calculator for peri-operative care. MAC, MH, LAST, PONV, regional safety caps &mdash; OR-grade precision with peer-reviewed citations. 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $24.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $24.99</a>
+</div>
+<div class="price-tag">Pay once, use forever &mdash; No subscription, no ads, no registration</div>
+</div>
+
+<!-- Stats — abstract framing, no fixed counts (Rule 9-C) -->
+<div class="stats">
+<div class="stat"><div class="stat-num">All Phases</div><div class="stat-label">Pre-op &middot; Intra-op &middot; PACU</div></div>
+<div class="stat"><div class="stat-num">Cited</div><div class="stat-label">Every Result</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+<div class="stat"><div class="stat-num">Multi-Lingual</div><div class="stat-label">Global OR</div></div>
+</div>
+
+<!-- Categories -->
+<h2 class="section-title">Built for the Operating Room</h2>
+<p class="section-sub">Complete peri-operative workflow &mdash; from pre-op assessment to PACU discharge</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#128203;</div><div class="cat-name">Pre-Anesthesia Assessment</div><div class="cat-desc">ASA Physical Status (2020), Lee RCRI 30-day MACE, STOP-BANG OSA screen, Mallampati grade, ASA 2017 NPO guidelines</div></div>
+<div class="cat-item"><div class="cat-icon">&#128190;</div><div class="cat-name">Airway Assessment</div><div class="cat-desc">Cormack-Lehane laryngoscopic view, LEMON difficult-airway predictor, 3-3-2 rule, age-based ET tube sizing (cuffed + uncuffed)</div></div>
+<div class="cat-item"><div class="cat-icon">&#128138;</div><div class="cat-name">Anesthetic Dosing</div><div class="cat-desc">Induction agents (Propofol, Etomidate, Ketamine, Midazolam), age-adjusted MAC (Mapleson), NMB ED95&times;2, opioid equivalents, neostigmine + sugammadex</div></div>
+<div class="cat-item"><div class="cat-icon">&#128167;</div><div class="cat-name">Fluids &amp; Blood</div><div class="cat-desc">Holliday-Segar 4-2-1 maintenance, Nadler estimated blood volume, allowable blood loss (MABL + Gross), crystalloid:colloid replacement ratios</div></div>
+<div class="cat-item"><div class="cat-icon">&#128301;</div><div class="cat-name">Regional Anesthesia</div><div class="cat-desc">Local anesthetic max doses with absolute caps and cardiotoxicity warnings, hyperbaric bupivacaine spinal dose by target level, epidural top-up rates</div></div>
+<div class="cat-item"><div class="cat-icon">&#128202;</div><div class="cat-name">Intraoperative Monitoring</div><div class="cat-desc">BIS depth-of-anesthesia targets, train-of-four neuromuscular recovery interpretation, MAP target by patient factors</div></div>
+<div class="cat-item"><div class="cat-icon">&#128181;</div><div class="cat-name">Post-Op &amp; PACU</div><div class="cat-desc">Apfel PONV risk score with prophylaxis ladder, modified Aldrete discharge scoring, VAS pain ladder with treatment escalation</div></div>
+<div class="cat-item"><div class="cat-icon">&#128680;</div><div class="cat-name">Critical Events</div><div class="cat-desc">Malignant Hyperthermia (Dantrolene 2.5 mg/kg + MHAUS hotline 1-800-644-9737), perioperative anaphylaxis, LAST lipid emulsion 20% rescue protocol</div></div>
+</div>
+
+<!-- Features -->
+<h2 class="section-title">Designed for Time-Critical Decisions</h2>
+<p class="section-sub">Not just formulas &mdash; OR-grade clinical decision support</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#128680;</div>
+<div class="feature-name">MH Emergency Screen</div>
+<div class="feature-desc">Dedicated fast-access screen for malignant hyperthermia. Quick weight buttons, one-tap dantrolene dose, MHAUS hotline 1-800-644-9737 with one-tap call. The reference you hope you never need.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127919;</div>
+<div class="feature-name">Result &#8594; Action</div>
+<div class="feature-desc">Every output includes interpretation, severity coding, and recommended clinical action. Know what the number means and what to do next.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#9888;&#65039;</div>
+<div class="feature-name">Hard Safety Caps</div>
+<div class="feature-desc">Local anesthetic max-dose calculator enforces absolute caps (e.g., bupivacaine 2 mg/kg, max 175 mg) with cardiotoxicity warnings. Built-in defense against LAST.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Offline</div>
+<div class="feature-desc">Everything is bundled in the app. Works in the OR, in trauma bays, in field hospitals &mdash; no internet required. No patient data ever leaves the device.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Peer-Reviewed Citations</div>
+<div class="feature-desc">Every result shows the source paper. Lee 1999. Chung 2008. Mapleson 1996. Apfel 1999. Aldrete 1995. ASRA 2020. MHAUS guidelines. Auditable.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128336;</div>
+<div class="feature-name">Quick Switch + Built-In Guides</div>
+<div class="feature-desc">Jump between calculators mid-case with the tool navigator. Every calculator has a Guide page: what it is, how it works, key terms, when to use, worked example.</div>
+</div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">Why a Calculator App, Not ChatGPT?</h2>
+<p class="section-sub">When clinical accuracy is non-negotiable</p>
+
+<div class="why-grid">
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Verified formulas, no hallucinations</strong> &mdash; MAC age-adjustment (Mapleson 1996), Nadler EBV (1962), Lee RCRI (1999), Apfel PONV (1999) coded directly from the original papers. AI chatbots cannot reliably reproduce these formulas without error &mdash; the cost of one drug-dose mistake in the OR is too high.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>OR speed, no conversation</strong> &mdash; Results in milliseconds. No clarifying questions. No "I'm not sure but here's an estimate." When the patient is on the table and you need a dantrolene dose, you need the answer NOW.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>100% offline, zero data exfiltration</strong> &mdash; Nothing leaves your device. No cloud, no logging, no training data concerns. Use in the OR, in the ICU, in field hospitals. HIPAA-friendly by architecture.</div>
+</div>
+<div class="why-item">
+<div class="why-check">&#10003;</div>
+<div class="why-text"><strong>Citation for every number</strong> &mdash; Every result shows its source journal and year. You cannot audit an AI. You can audit a published formula. When the M&amp;M conference asks where the dose came from, you have an answer.</div>
+</div>
+</div>
+
+<!-- Citations -->
+<div class="citations">
+<h3>&#128218; Peer-Reviewed References Used</h3>
+<ul>
+<li>&bull; ASA Physical Status Classification System (2020 update)</li>
+<li>&bull; Lee TH et al. Circulation 1999;100:1043 (Revised Cardiac Risk Index)</li>
+<li>&bull; Chung F et al. Anesthesiology 2008;108:812 (STOP-BANG)</li>
+<li>&bull; Mallampati SR et al. Can Anaesth Soc J 1985;32:429 (Airway Classification)</li>
+<li>&bull; ASA NPO Guidelines (2017 update)</li>
+<li>&bull; Cormack RS, Lehane J. Anaesthesia 1984;39:1105 (Laryngoscopic Grade)</li>
+<li>&bull; Mapleson WW. Br J Anaesth 1996;76:179 (MAC Age-Adjustment)</li>
+<li>&bull; Nadler SB et al. Surgery 1962;51:224 (Estimated Blood Volume)</li>
+<li>&bull; Apfel CC et al. Anesthesiology 1999;91:693 (PONV Risk Score)</li>
+<li>&bull; Aldrete JA. J Clin Anesth 1995;7:89 (Modified Aldrete)</li>
+<li>&bull; ASRA Practice Advisory on LAST (2020 checklist)</li>
+<li>&bull; MHAUS Treatment Guidelines (mhaus.org)</li>
+<li>&bull; Bridion (Sugammadex) Prescribing Information, Merck</li>
+</ul>
+</div>
+
+<!-- Emergency Reference Notice -->
+<div class="emergency-notice">
+<strong>Emergency Reference Only.</strong> The Malignant Hyperthermia, LAST, and Anaphylaxis tools provide reference dosing and protocol step-throughs. They do NOT replace institutional emergency protocols. Always activate your institutional code, call the MHAUS hotline (1-800-644-9737 US/Canada or 001-209-417-3722 international) for MH events, and follow your facility's policies for resuscitation.
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Localized for Global Operating Rooms</h2>
+<p class="section-sub">User interface translated for clinical teams worldwide</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese (BR)</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+</div>
+
+<!-- General Medical Disclaimer -->
+<div class="disclaimer">
+<strong>Important:</strong> VerMed Anes is a clinical reference and educational tool. It is NOT an FDA-cleared medical device and NOT a substitute for professional anesthesia training, judgment, monitoring, or institutional protocols. The anesthesia provider remains solely responsible for all clinical decisions. All dose calculations are for reference only &mdash; verify against current manufacturer labeling and institutional policy before administration.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>The Anesthesiologist's Calculator. One App.</h2>
+<p>ASA, RCRI, MAC, NMB, opioid equivalents, regional safety caps, MH dantrolene, LAST lipid rescue, anaphylaxis epinephrine. Every result cites its source. 100% offline. No subscription.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $24.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $24.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerMed Anes</p>
+<div class="faq-section">
+
+<details class="faq-item">
+<summary class="faq-q">Who is this app for?</summary>
+<div class="faq-a">Anesthesiologists, CRNAs, anesthesia assistants, anesthesia residents and fellows, pain medicine specialists, and critical-care physicians. The Guide pages explain each calculator in plain language &mdash; making the app a learning tool as well as a reference. Useful both as a chairside lookup in the pre-op clinic and as a fast-access reference in the OR.</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-q">How does the MH Emergency screen work?</summary>
+<div class="faq-a">The MH Emergency screen is a dedicated, fast-access route reachable in two taps from the home screen. It shows a critical banner, a single weight input with quick-buttons (50/60/70/80/90/100 kg), one-tap dantrolene dose calculation (2.5 mg/kg initial bolus, both Dantrium and Ryanodex vial counts shown), MHAUS US/Canada hotline (1-800-644-9737) and international hotline (001-209-417-3722) with one-tap call, and a step-by-step protocol checklist. Built so that a panicked second-year resident can use it correctly.</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-q">How accurate is age-adjusted MAC?</summary>
+<div class="faq-a">VerMed Anes uses the Mapleson 1996 formula: MAC = MAC&#8324;&#8320; &times; 10^(&minus;0.00269 &times; (age &minus; 40)). MAC&#8324;&#8320; values are agent-specific (sevoflurane 2.05, isoflurane 1.17, desflurane 6.6, halothane 0.75, N&#8322;O 104). The formula is non-linear and validated against the foundational papers by Eger et al. The 70-year-old MAC is approximately 75% of the 40-year-old MAC for volatile agents.</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-q">What about local anesthetic safety?</summary>
+<div class="faq-a">The Local Anesthetic Max Dose calculator enforces both weight-based dosing and absolute caps. Lidocaine: 4.5 mg/kg plain (max 300 mg), 7 mg/kg with epinephrine (max 500 mg). Bupivacaine: 2 mg/kg plain (max 175 mg), 3 mg/kg with epi (max 225 mg). Ropivacaine: 3 mg/kg both routes (max 225 mg). Mepivacaine: 5 mg/kg plain, 7 mg/kg with epi. Cardiotoxicity warnings appear for bupivacaine. Pair with the LAST Lipid Rescue tool for the rescue protocol if toxicity occurs.</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-q">Does it work without internet?</summary>
+<div class="faq-a">Yes, 100% offline. All formulas, drug references, MAC values, LA max-dose tables, and citations are bundled into the app. Nothing is transmitted to any server. No patient data collection, no tracking, no accounts. Critical for OR use where Wi-Fi is unreliable, and for international or field-hospital deployment.</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-q">What about sugammadex dosing?</summary>
+<div class="faq-a">VerMed Anes implements full sugammadex dosing per the Bridion prescribing information: 2 mg/kg for moderate blockade (T2 reappearance), 4 mg/kg for deep blockade (post-tetanic count 1&ndash;2), 16 mg/kg for immediate reversal of high-dose rocuronium (e.g., cannot-intubate-cannot-ventilate within ~3 min of induction). Also calculates traditional neostigmine + glycopyrrolate dosing for facilities without sugammadex.</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-q">Is this FDA-cleared?</summary>
+<div class="faq-a">No. VerMed Anes is exempt from FDA medical device regulation under the 21st Century Cures Act &sect;520(o)(1)(E) &mdash; it is a clinical reference tool, not a medical device. It does not diagnose, treat, or monitor a specific patient. It provides generalized educational calculations for trained anesthesia clinicians to interpret in the context of the full clinical picture.</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-q">Why $24.99 instead of free or subscription?</summary>
+<div class="faq-a">Pay once, use forever. No subscription. No ads. No data harvesting. The price reflects the engineering effort to verify every formula against the original peer-reviewed paper, build dedicated emergency screens, ship in multiple languages, and maintain offline-first architecture. Anesthesiologists earn among the highest physician salaries globally; $24.99 is the cost of about 5 minutes of OR time.</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-q">What about pediatric dosing?</summary>
+<div class="faq-a">Pediatric guards are built into the engines. Propofol Infusion Syndrome (PRIS) warnings trigger for age &lt; 3 yr. ET tube sizing uses age-based formulas (Cole's: age/4 + 4 uncuffed; age/4 + 3.5 cuffed for age &ge; 2 yr) with neonatal/preterm tables per APLS. Anaphylaxis epinephrine is weight-capped (0.01 mg/kg up to 0.3 mg for &lt; 30 kg, up to 0.5 mg for &ge; 30 kg) per AAP 2024 guidance.</div>
+</details>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="/store/support.html">Support</a>
+<a href="/store/privacy-policy.html">Privacy</a>
+<a href="mailto:aivisibilityrights@gmail.com">Contact</a>
+<a href="/">Home</a>
+<div class="copy">&copy; 2026 AI Visibility Rights &middot; VerMed Anes v1.0.0</div>
+</div>
+
+</div>
+
+</body>
+</html>
