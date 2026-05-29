@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerMed Dent — Dentistry Calculator for Dental Professionals</title>
+<meta name="description" content="The dentist's calculator. DMFT, CAMBRA, periodontal CAL staging, Bolton, ANB, Pell-Gregory, working length, crown-root ratio, fluoride toxicity, local anaesthetic max dose, AHA 2021 prophylaxis. Every result cites its source. 100% offline. $14.99 one-time.">
+<link rel="alternate" hreflang="en" href="https://aivisibityrights.github.io/store/vermed-dent.html">
+<link rel="alternate" hreflang="x-default" href="https://aivisibityrights.github.io/store/vermed-dent.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#071413;color:#eafaf6;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:#0e2422;border:2px solid #14b8a6;display:flex;align-items:center;justify-content:center;font-size:56px}
+.hero h1{font-size:32px;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
+.hero .subtitle{font-size:18px;color:#2dd4bf;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#7da39d;max-width:580px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #1d3f3a}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#14b8a61f;border:1px solid #14b8a640;color:#2dd4bf;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#0e2422;border-radius:16px;border:1px solid #1d3f3a}
+.stat{text-align:center}
+.stat-num{font-size:24px;font-weight:800;color:#2dd4bf}
+.stat-label{font-size:12px;color:#7da39d;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Section */
+.section-title{font-size:22px;font-weight:700;color:#fff;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#7da39d;text-align:center;margin-bottom:32px}
+
+/* Categories / Features */
+.cat-grid,.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:40px}
+.cat-item,.feature{background:#0e2422;border:1px solid #1d3f3a;border-radius:12px;padding:18px}
+.cat-item{text-align:center}
+.cat-icon,.feature-icon{font-size:28px;margin-bottom:8px}
+.cat-name,.feature-name{font-size:14px;font-weight:700;color:#fff}
+.feature-name{font-size:15px;margin-bottom:6px}
+.cat-desc,.feature-desc{font-size:12px;color:#7da39d;margin-top:4px;line-height:1.5}
+.feature-desc{font-size:13px}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#0e2422;border:1px solid #1d3f3a;border-radius:12px;padding:16px}
+.why-check{color:#2dd4bf;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#7da39d}
+.why-text strong{color:#fff}
+
+/* Citations + affiliation */
+.citations{background:#0e2422;border:1px solid #1d3f3a;border-radius:14px;padding:20px;margin-bottom:24px}
+.citations h3{font-size:14px;color:#2dd4bf;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.citations ul{list-style:none;padding:0}
+.citations li{font-size:12px;color:#7da39d;padding:4px 0;font-family:'Menlo','Monaco',monospace}
+.citations a{color:#2dd4bf;text-decoration:none}
+.citations a:hover{text-decoration:underline}
+.affiliation{background:#0e2422;border:1px solid #1d3f3a;border-left:3px solid #2dd4bf;padding:16px;border-radius:0 8px 8px 0;margin-bottom:40px;font-size:12px;color:#7da39d}
+.affiliation strong{color:#eafaf6}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#0e2422;border:1px solid #1d3f3a;color:#7da39d;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:#14b8a610;border:1px solid #14b8a630;border-radius:20px}
+.cta h2{font-size:24px;color:#fff;margin-bottom:8px}
+.cta p{color:#7da39d;font-size:15px;margin-bottom:24px}
+
+/* Notices */
+.disclaimer{background:#dc262610;border-left:3px solid #dc2626;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#f87171}
+.disclaimer strong{color:#dc2626}
+.drug-notice{background:#f59e0b10;border-left:3px solid #f59e0b;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#fbbf24}
+.drug-notice strong{color:#f59e0b}
+
+/* FAQ */
+.faq-section{max-width:700px;margin:0 auto 40px}
+.faq-item{background:#0e2422;border:1px solid #1d3f3a;border-radius:12px;margin:8px 0;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:#2dd4bf;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 16px;font-size:14px;color:#7da39d;line-height:1.6}
+.faq-q::-webkit-details-marker{display:none}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #1d3f3a;margin-top:40px}
+.footer a{color:#2dd4bf;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#4a6661;font-size:12px;margin-top:12px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VerMed Dent — Dentistry Calculator",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "MedicalApplication",
+  "offers": { "@type": "Offer", "price": "14.99", "priceCurrency": "USD" },
+  "description": "The dentist's calculator. Caries risk (DMFT, CAMBRA, plaque, fluoride toxicity), periodontal (CAL staging, BOP, Miller, Glickman), orthodontics (Angle, Bolton, ANB, Little), endodontics (working length, obturation), oral surgery (Pell-Gregory, Winter, Pederson), restorative (crown-root, biologic width, VITA shade), pediatric (eruption, space maintainer, fluoride varnish), and pharmacology (local anaesthetic max dose, AHA 2021 antibiotic prophylaxis, post-op analgesia). Every result cites its source. 100% offline.",
+  "featureList": "DMFT/dmft, CAMBRA, O'Leary & Silness-Löe plaque, fluoride toxicity, Pocket depth & CAL staging, Bleeding on Probing, Miller mobility, Glickman furcation, Angle classification, Overjet/Overbite, Bolton analysis, ANB angle, Little irregularity index, Working length, Obturation volume, File taper, Pell-Gregory, Winter classification, Pederson difficulty, Crown-root ratio, Biologic width, VITA shade, Tooth eruption timing, Space maintainer, Fluoride varnish, Local anaesthetic max dose, AHA 2021 antibiotic prophylaxis, Post-op analgesia"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#129463;</div>
+<h1>VerMed Dent</h1>
+<p class="subtitle">Dentistry Calculator &amp; Reference</p>
+<p class="tagline">The dentist's calculator. Caries risk, periodontal, orthodontics, endodontics, oral surgery, restorative, pediatric, and drug dosing &mdash; chairside precision with peer-reviewed formulas. 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $14.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $14.99</a>
+</div>
+<div class="price-tag">Pay once, use forever &mdash; No subscription, no ads, no registration</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">Every</div><div class="stat-label">Discipline</div></div>
+<div class="stat"><div class="stat-num">Cite&#8594;Every</div><div class="stat-label">Result</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Offline</div></div>
+<div class="stat"><div class="stat-num">14</div><div class="stat-label">Languages</div></div>
+</div>
+
+<!-- Categories -->
+<h2 class="section-title">Built for the Operatory</h2>
+<p class="section-sub">The complete dental workflow &mdash; from chairside exam to treatment planning</p>
+
+<div class="cat-grid">
+<div class="cat-item"><div class="cat-icon">&#129463;</div><div class="cat-name">Caries &amp; Risk</div><div class="cat-desc">DMFT / dmft index, CAMBRA risk level (Featherstone), O'Leary &amp; Silness-Löe plaque, fluoride dose vs probable toxic dose (Whitford)</div></div>
+<div class="cat-item"><div class="cat-icon">&#129701;</div><div class="cat-name">Periodontal</div><div class="cat-desc">Pocket depth &amp; clinical attachment level with AAP/EFP staging, Bleeding on Probing, Miller mobility, Glickman furcation</div></div>
+<div class="cat-item"><div class="cat-icon">&#128208;</div><div class="cat-name">Orthodontics</div><div class="cat-desc">Angle classification, overjet/overbite, Bolton tooth-size ratio, ANB skeletal angle (Steiner), Little's irregularity index</div></div>
+<div class="cat-item"><div class="cat-icon">&#129683;</div><div class="cat-name">Endodontics</div><div class="cat-desc">Working length (Ingle radiographic correction), gutta-percha obturation volume, file taper by canal curvature</div></div>
+<div class="cat-item"><div class="cat-icon">&#129701;</div><div class="cat-name">Oral Surgery</div><div class="cat-desc">Pell-Gregory and Winter's classification of impacted third molars, Pederson extraction-difficulty index</div></div>
+<div class="cat-item"><div class="cat-icon">&#128081;</div><div class="cat-name">Restorative &amp; Prostho</div><div class="cat-desc">Crown-to-root ratio &amp; prognosis, biologic width / crown-lengthening (Gargiulo), VITA classical shade reference</div></div>
+<div class="cat-item"><div class="cat-icon">&#129496;</div><div class="cat-name">Pediatric Dentistry</div><div class="cat-desc">Primary &amp; permanent eruption timing, space maintainer indication guide, fluoride varnish dosing with safety check</div></div>
+<div class="cat-item"><div class="cat-icon">&#128137;</div><div class="cat-name">Pharmacology &amp; LA</div><div class="cat-desc">Local anaesthetic max dose &amp; cartridges (Malamed), AHA 2021 antibiotic prophylaxis, stepwise post-op analgesia</div></div>
+</div>
+
+<!-- Features -->
+<h2 class="section-title">Designed for Chairside Use</h2>
+<p class="section-sub">Not just formulas &mdash; clinical reference with interpretation and recommended action</p>
+
+<div class="features">
+<div class="feature"><div class="feature-icon">&#127919;</div><div class="feature-name">Result &#8594; Action</div><div class="feature-desc">Every output includes interpretation, severity coding, and a recommended next step. Know what the number means and what to do.</div></div>
+<div class="feature"><div class="feature-icon">&#128202;</div><div class="feature-name">Honest Visuals</div><div class="feature-desc">A severity gauge for BOP, fluoride dose vs toxic threshold, and Pederson difficulty; a cephalometric diagram for ANB. Pinch to zoom.</div></div>
+<div class="feature"><div class="feature-icon">&#128274;</div><div class="feature-name">100% Offline</div><div class="feature-desc">Everything is bundled in the app. Works chairside, in clinic, or with no signal &mdash; no internet required. No patient data ever leaves the device.</div></div>
+<div class="feature"><div class="feature-icon">&#128218;</div><div class="feature-name">Cited Results</div><div class="feature-desc">Every headline result shows its source. WHO, Featherstone, Bolton, Steiner, Pell-Gregory, Ingle, Malamed, AHA 2021. Auditable.</div></div>
+<div class="feature"><div class="feature-icon">&#128336;</div><div class="feature-name">Quick Switch</div><div class="feature-desc">Jump between calculators mid-exam with the tool navigator. No need to back out to the home screen.</div></div>
+<div class="feature"><div class="feature-icon">&#128214;</div><div class="feature-name">Built-in Guides</div><div class="feature-desc">Every calculator has a Guide: what it is, how it works, key terms, when to use, and a one-tap worked example. Built for students too.</div></div>
+</div>
+
+<!-- Why Not AI -->
+<h2 class="section-title">Why a Calculator, Not AI?</h2>
+<p class="section-sub">When clinical accuracy is non-negotiable</p>
+
+<div class="why-grid">
+<div class="why-item"><div class="why-check">&#10003;</div><div class="why-text"><strong>Verified formulas, no hallucinations</strong> &mdash; Bolton, ANB, Pederson, fluoride toxicity, and LA dosing are coded directly from the published literature and validated against textbook values. A general-purpose AI can mis-state a constant or a step.</div></div>
+<div class="why-item"><div class="why-check">&#10003;</div><div class="why-text"><strong>Chairside speed</strong> &mdash; Tap Calculate and read the answer in milliseconds. No prompt-writing, no clarifying questions. When you are mid-exam, you need the number.</div></div>
+<div class="why-item"><div class="why-check">&#10003;</div><div class="why-text"><strong>100% offline, no data leaves the device</strong> &mdash; No cloud, no logging, no accounts. Use it in clinic, in surgery, or in rural settings with no connectivity.</div></div>
+<div class="why-item"><div class="why-check">&#10003;</div><div class="why-text"><strong>Reproducible &amp; citable</strong> &mdash; Same input, same output, every time, with the source journal shown. You can audit a published formula; you cannot audit a chatbot.</div></div>
+</div>
+
+<!-- Citations -->
+<div class="citations">
+<h3>&#128218; Clinical Sources</h3>
+<ul>
+<li>&bull; WHO Oral Health Surveys &mdash; Basic Methods, 5th ed. 2013 (DMFT/dmft)</li>
+<li>&bull; Featherstone JDB et al. J Calif Dent Assoc 2007 (CAMBRA)</li>
+<li>&bull; O'Leary TJ et al. J Periodontol 1972; Silness J, Löe H. Acta Odontol Scand 1964 (plaque)</li>
+<li>&bull; Whitford GM. J Dent Res 1987 (fluoride probable toxic dose 5 mg F/kg)</li>
+<li>&bull; Tonetti MS et al. AAP/EFP. J Periodontol 2018 (CAL staging)</li>
+<li>&bull; Bolton WA. Angle Orthod 1962; Steiner CC 1953 (ANB); Little RM. Am J Orthod 1975</li>
+<li>&bull; Pell GJ, Gregory BT. Dent Dig 1933; Winter GB 1926; Pederson GW 1988</li>
+<li>&bull; Gargiulo AW et al. J Periodontol 1961 (biologic width)</li>
+<li>&bull; Malamed SF. Handbook of Local Anesthesia, 7th ed. 2019 (LA max dose)</li>
+<li>&bull; Wilson WR et al. AHA. Circulation 2021;143:e963-e978 (antibiotic prophylaxis)</li>
+<li>&bull; Moore PA, Hersh EV. JADA 2013 (post-op analgesia)</li>
+</ul>
+</div>
+
+<!-- Affiliation disclaimer (Government / Authority Reference Compliance) -->
+<div class="affiliation">
+<strong>Affiliation:</strong> VerMed Dent is an independent clinical-reference tool by AI Visibility Rights. It is NOT affiliated with, endorsed by, or sponsored by the World Health Organization, the American Heart Association, the American Academy of Pediatric Dentistry, the American Dental Association, or any other organization or government entity. Organization and author names identify published technical methodology only.
+</div>
+
+<!-- Drug-dosing notice -->
+<div class="drug-notice">
+<strong>Drug dosing &mdash; reference only.</strong> Local-anaesthetic maximums, antibiotic prophylaxis, and analgesia are reference calculations with safety warnings. Confirm every dose, indication, and contraindication against a current pharmacopoeia and the individual patient before prescribing. The antibiotic tool returns "Not indicated" unless a qualifying high-risk cardiac condition is affirmatively selected (AHA 2021).
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Localized for Global Clinical Teams</h2>
+<p class="section-sub">User interface localized in 14 languages</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese (BR)</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+<span class="lang-badge">&#127480;&#127462; Arabic</span>
+<span class="lang-badge">&#127470;&#127475; Hindi</span>
+</div>
+
+<!-- Medical disclaimer -->
+<div class="disclaimer">
+<strong>Important:</strong> VerMed Dent is a clinical-reference and educational tool for qualified dental professionals and students. It is NOT an FDA-cleared medical device and NOT a substitute for professional examination or judgment. It does not diagnose or prescribe. All calculations must be verified by a qualified professional in the context of the full clinical picture.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>The Dentist's Calculator. One App.</h2>
+<p>Caries, perio, ortho, endo, oral surgery, restorative, pediatric, and drug dosing. Every result cites its source. 100% offline. No subscription.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $14.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $14.99</a>
+</div>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Common questions about VerMed Dent</p>
+<div class="faq-section">
+<details class="faq-item"><summary class="faq-q">Which areas of dentistry does it cover?</summary><div class="faq-a">Every major discipline: caries &amp; risk assessment (DMFT/dmft, CAMBRA, plaque indices, fluoride toxicity), periodontal (pocket depth &amp; CAL with AAP/EFP staging, BOP, Miller mobility, Glickman furcation), orthodontics (Angle, overjet/overbite, Bolton, ANB, Little), endodontics (working length, obturation volume, taper), oral surgery (Pell-Gregory, Winter, Pederson), restorative &amp; prosthodontics (crown-root ratio, biologic width, VITA shade), pediatric dentistry (eruption timing, space maintainers, fluoride varnish), and pharmacology &amp; local anaesthesia.</div></details>
+<details class="faq-item"><summary class="faq-q">How accurate are the calculations?</summary><div class="faq-a">Every engine is coded directly from the published literature and validated by an automated test suite against textbook values (e.g. a 70 kg adult on lidocaine with vasoconstrictor &#8594; 490 mg / 13 cartridges; Bolton anterior ratio mean 77.2%; ANB 2&deg; &#8594; skeletal Class I; Pederson distoangular + Class III + Position C &#8594; 10, very difficult). No AI, no approximations &mdash; just the formulas, with a non-finite-output safety net on every result.</div></details>
+<details class="faq-item"><summary class="faq-q">Does it work without internet?</summary><div class="faq-a">Yes, 100% offline. All formulas, reference values, and citations are bundled into the app. Nothing is transmitted to any server. No patient-data collection, no tracking, no accounts. Open and use it anywhere &mdash; in clinic, in surgery, or in areas with no connectivity.</div></details>
+<details class="faq-item"><summary class="faq-q">How does it handle drug dosing safely?</summary><div class="faq-a">Local-anaesthetic maximums follow Malamed with weight-based and absolute ceilings, the binding limit, and a max-cartridge count plus agent age cautions. Antibiotic prophylaxis follows AHA 2021 and returns "Not indicated" unless a qualifying high-risk cardiac condition is affirmatively selected (clindamycin is no longer recommended). Fluoride tools warn at the probable toxic dose. Every drug result carries a "confirm against a current pharmacopoeia" disclaimer. These are reference aids, not prescriptions.</div></details>
+<details class="faq-item"><summary class="faq-q">Who is this app for?</summary><div class="faq-a">General dentists, orthodontists, periodontists, endodontists, oral surgeons, pediatric dentists, dental hygienists, and dental students. Every calculator has a plain-language Guide with a worked example, so the app is a learning tool as well as a chairside reference.</div></details>
+<details class="faq-item"><summary class="faq-q">Is it FDA-cleared?</summary><div class="faq-a">No. VerMed Dent is a clinical-reference and educational calculator, not a medical device. It does not diagnose, treat, or monitor a specific patient &mdash; it provides generalized educational calculations for trained clinicians to interpret in the context of the full clinical picture.</div></details>
+<details class="faq-item"><summary class="faq-q">When and where can I get it?</summary><div class="faq-a">VerMed Dent launches first on Google Play (Android). The iOS App Store release follows once our Organization developer account is active &mdash; Apple requires medical apps to be published under an Organization account. Pricing is a one-time $14.99 with no subscription, no in-app purchases, and no ads.</div></details>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="/store/support.html">Support</a>
+<a href="/store/privacy-policy.html">Privacy</a>
+<a href="mailto:aivisibilityrights@gmail.com">Contact</a>
+<a href="/">Home</a>
+<div class="copy">&copy; 2026 AI Visibility Rights &middot; VerMed Dent v1.0.0</div>
+</div>
+
+</div>
+
+</body>
+</html>
