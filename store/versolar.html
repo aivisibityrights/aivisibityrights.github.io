@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerSolar &mdash; Solar Panel &amp; PV Calculator | Sizing, Quotes &amp; Branded Proposal PDFs &mdash; Offline</title>
+<meta name="description" content="The offline solar app that takes a job from 'how many panels?' to a branded client proposal PDF. Standards-grade PV sizing, string design, wiring, production &amp; net-billing ROI calculators plus Project Mode with bill of materials, quote and multi-section proposal export. 14 languages. 100% offline. $9.99 one-time.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0c0a09;color:#d6d3d1;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+/* Hero */
+.hero{text-align:center;padding:60px 20px 40px}
+.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:linear-gradient(135deg,#292524,#0c0a09);border:2px solid #f59e0b;display:flex;align-items:center;justify-content:center;font-size:54px}
+.hero h1{font-size:32px;color:#fafaf9;margin-bottom:8px;letter-spacing:.5px}
+.hero h1 .accent{background:linear-gradient(90deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .subtitle{font-size:18px;color:#f59e0b;font-weight:600;margin-bottom:16px}
+.hero .tagline{font-size:15px;color:#a8a29e;max-width:620px;margin:0 auto 32px}
+.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
+.badge:hover{opacity:.85}
+.badge-apple{background:#000;color:#fff;border:1px solid #333}
+.badge-google{background:#fff;color:#000}
+.price-tag{display:inline-block;background:#f59e0b20;border:1px solid #f59e0b40;color:#f59e0b;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+
+/* Stats */
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#1c1917;border-radius:16px;border:1px solid #44403c}
+.stat{text-align:center}
+.stat-num{font-size:26px;font-weight:800;color:#f59e0b}
+.stat-num.orange{color:#f97316}
+.stat-num.green{color:#22c55e}
+.stat-label{font-size:12px;color:#78716c;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Sections */
+.section-title{font-size:22px;font-weight:700;color:#fafaf9;text-align:center;margin:48px 0 8px}
+.section-sub{font-size:14px;color:#a8a29e;text-align:center;margin-bottom:32px}
+
+/* Workflow (Project Mode) */
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:20px}
+.flow-step{background:#1c1917;border:1px solid #44403c;border-radius:14px;padding:20px 16px;position:relative}
+.flow-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#f59e0b;color:#0c0a09;font-weight:800;font-size:14px;margin-bottom:10px}
+.flow-name{font-size:15px;font-weight:700;color:#fafaf9;margin-bottom:6px}
+.flow-desc{font-size:12.5px;color:#a8a29e;line-height:1.55}
+.flow-note{background:#1c1917;border:1px solid #f59e0b40;border-radius:12px;padding:14px 18px;font-size:13px;color:#d6d3d1;margin-bottom:40px}
+.flow-note strong{color:#f59e0b}
+
+/* Category Headers */
+.cat-header{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #44403c}
+.cat-header-icon{font-size:20px}
+.cat-header-text{font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+
+/* Calculators */
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-bottom:8px}
+.calc-card{background:#1c1917;border:1px solid #44403c;border-radius:14px;padding:24px}
+.calc-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.calc-icon{font-size:28px;flex-shrink:0}
+.calc-name{font-size:17px;font-weight:700;color:#fafaf9}
+.calc-tag{display:inline-block;background:#f9731620;color:#fdba74;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0}
+.calc-list{list-style:none;padding:0}
+.calc-list li{font-size:13px;color:#a8a29e;padding:3px 0;padding-left:16px;position:relative}
+.calc-list li::before{content:'\25B8';color:#f59e0b;position:absolute;left:0}
+.calc-codes{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.calc-code{display:inline-block;background:#0c0a09;border:1px solid #44403c;color:#78716c;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.feature{background:#1c1917;border:1px solid #44403c;border-radius:14px;padding:20px}
+.feature-icon{font-size:28px;margin-bottom:10px}
+.feature-name{font-size:15px;font-weight:700;color:#fafaf9;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#a8a29e;line-height:1.5}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.why-item{display:flex;gap:12px;align-items:flex-start;background:#1c1917;border:1px solid #44403c;border-radius:12px;padding:16px}
+.why-check{color:#22c55e;font-size:18px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:#a8a29e}
+.why-text strong{color:#fafaf9}
+
+/* Compare */
+.compare{background:#1c1917;border:1px solid #44403c;border-radius:16px;padding:24px;margin-bottom:40px}
+.compare-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px dashed #44403c;gap:12px}
+.compare-row:last-child{border-bottom:none}
+.compare-label{font-size:14px;color:#a8a29e;font-weight:600}
+.compare-vs{font-size:13px;color:#78716c;display:flex;gap:12px;align-items:center;flex-shrink:0}
+.compare-old{text-decoration:line-through;color:#ef4444aa}
+.compare-new{color:#22c55e;font-weight:700}
+
+/* Languages */
+.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.lang-badge{background:#1c1917;border:1px solid #44403c;color:#78716c;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+
+/* CTA */
+.cta{text-align:center;padding:40px 20px;margin:40px 0;background:linear-gradient(135deg,#f59e0b10,#f9731610);border:1px solid #f59e0b30;border-radius:20px}
+.cta h2{font-size:24px;color:#fafaf9;margin-bottom:8px}
+.cta p{color:#a8a29e;font-size:15px;margin-bottom:24px}
+
+/* Disclaimer */
+.disclaimer{background:#f59e0b10;border-left:3px solid #f59e0b;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#f59e0b}
+
+/* Footer */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid #44403c;margin-top:40px}
+.footer a{color:#f59e0b;text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{text-decoration:underline}
+.footer .copy{color:#57534e;font-size:12px;margin-top:12px}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-icon">&#9728;&#65039;</div>
+<h1><span class="accent">Ver</span><span class="accent" style="background:linear-gradient(90deg,#f97316,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Solar</span></h1>
+<p class="subtitle">Solar Panel &amp; PV Calculator &mdash; Sizing, Quotes &amp; PDF Proposals</p>
+<p class="tagline">The offline solar app that takes a job from &ldquo;how many panels?&rdquo; to a branded client proposal PDF. Standards-grade sizing, string design, wiring and net-billing ROI &mdash; built for installers, prosumers, off-grid DIYers and students. 100% offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
+<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+</div>
+<div class="price-tag">Pay once, use forever &mdash; No subscription, no ads, no account</div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat"><div class="stat-num">NEC 690.7</div><div class="stat-label">String Limits</div></div>
+<div class="stat"><div class="stat-num orange">PDF</div><div class="stat-label">Client Proposals</div></div>
+<div class="stat"><div class="stat-num">14</div><div class="stat-label">Languages</div></div>
+<div class="stat"><div class="stat-num green">100%</div><div class="stat-label">Offline</div></div>
+</div>
+
+<!-- ==================== PROJECT MODE ==================== -->
+<h2 class="section-title">Design. Quote. Proposal. All Offline.</h2>
+<p class="section-sub">Project Mode chains your calculations into a client-ready document</p>
+
+<div class="flow">
+<div class="flow-step">
+<div class="flow-num">1</div>
+<div class="flow-name">Calculate</div>
+<div class="flow-desc">Run any calculator &mdash; loads, panels, battery, strings, wiring, production, ROI &mdash; then tap &ldquo;Save to Project&rdquo;.</div>
+</div>
+<div class="flow-step">
+<div class="flow-num">2</div>
+<div class="flow-name">Chain the Job</div>
+<div class="flow-desc">A guided &ldquo;next step&rdquo; on every result walks the workflow from energy needs all the way to payback &mdash; one named project file per client.</div>
+</div>
+<div class="flow-step">
+<div class="flow-num">3</div>
+<div class="flow-name">Build the Quote</div>
+<div class="flow-desc">Bill of materials with equipment, labor, margin, discount and tax &mdash; right inside the project.</div>
+</div>
+<div class="flow-step">
+<div class="flow-num">4</div>
+<div class="flow-name">Proposal PDF</div>
+<div class="flow-desc">Export a branded multi-section proposal: cover, executive summary, system design, wiring safety, financials, bill of materials and a key-assumptions audit.</div>
+</div>
+</div>
+
+<div class="flow-note"><strong>Your branding, pre-filled.</strong> Set your company profile once &mdash; name, contact details, license number &mdash; plus currency and quote defaults, and every new project starts ready. The paperwork is done before you leave the site.</div>
+
+<!-- ==================== CALCULATORS ==================== -->
+<h2 class="section-title">Standards-Grade PV Calculators</h2>
+<p class="section-sub">Six tool groups covering the full solar workflow &mdash; NEC Article 690 / 690.7, IEC 61724, IEEE 1562</p>
+
+<!-- System Sizing -->
+<div class="cat-header">
+<span class="cat-header-icon">&#9728;&#65039;</span>
+<span class="cat-header-text" style="color:#f59e0b">System Sizing</span>
+</div>
+
+<div class="calc-grid">
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128268;</span>
+<span class="calc-name">Appliance Load Estimator</span>
+</div>
+<ul class="calc-list">
+<li>Build your daily kWh appliance-by-appliance</li>
+<li>Preset library incl. EV-charger &amp; heat-pump presets for electrified homes</li>
+<li>Running vs. surge watts per appliance</li>
+<li>Send the total straight into panel &amp; battery sizing</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#9728;&#65039;</span>
+<span class="calc-name">Panel &amp; Array Sizing</span>
+</div>
+<ul class="calc-list">
+<li>Panel count &amp; system kW from daily energy, peak sun hours &amp; losses</li>
+<li>Roof-area fit check for your panel dimensions</li>
+<li>Daily &amp; annual production estimate</li>
+<li>Energy coverage vs. your consumption</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128267;</span>
+<span class="calc-name">Battery Bank Sizing</span>
+</div>
+<ul class="calc-list">
+<li>Bank kWh &amp; usable capacity from autonomy days</li>
+<li>Battery count as series &times; parallel layout</li>
+<li>C-rate &amp; estimated cycle life</li>
+<li>Li-ion, LiFePO4 &amp; lead-acid chemistry presets</li>
+<li>Round-trip efficiency accounted</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#9201;</span>
+<span class="calc-name">Battery Backup Runtime</span>
+<span class="calc-tag">Outage answer</span>
+</div>
+<ul class="calc-list">
+<li>How many hours your fridge, lights &amp; router actually run on the bank you propose</li>
+<li>State-of-charge &times; depth-of-discharge &times; inverter efficiency &amp; idle draw</li>
+<li>Half-load &amp; double-load sensitivity scenarios</li>
+<li>High-discharge (C-rate) warning</li>
+</ul>
+</div>
+</div>
+
+<!-- Inverter & String Design -->
+<div class="cat-header">
+<span class="cat-header-icon">&#9889;</span>
+<span class="cat-header-text" style="color:#06b6d4">Inverter &amp; String Design</span>
+</div>
+
+<div class="calc-grid">
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128260;</span>
+<span class="calc-name">Inverter Sizing &amp; MPPT Window</span>
+</div>
+<ul class="calc-list">
+<li>Recommended inverter size &amp; DC/AC ratio</li>
+<li>Cold-temperature Voc that decides your safe operating window</li>
+<li>Hot-day Vmp with its own temperature coefficient</li>
+<li>MPPT voltage-window check &amp; array Isc</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128279;</span>
+<span class="calc-name">String Sizing</span>
+<span class="calc-tag">NEC 690.7</span>
+</div>
+<ul class="calc-list">
+<li>Maximum panels per string from the cold-weather Voc limit</li>
+<li>Minimum panels to stay inside the MPPT window</li>
+<li>Parallel-string current</li>
+<li>The calculation that protects your inverter from cold-morning overvoltage</li>
+</ul>
+</div>
+</div>
+
+<!-- Wire & Conduit -->
+<div class="cat-header">
+<span class="cat-header-icon">&#128736;</span>
+<span class="cat-header-text" style="color:#94a3b8">Wire &amp; Conduit</span>
+</div>
+
+<div class="calc-grid">
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128268;</span>
+<span class="calc-name">DC Voltage Drop &amp; Conduit</span>
+<span class="calc-tag">Permit-grade</span>
+</div>
+<ul class="calc-list">
+<li>Round-trip DC voltage drop &amp; power loss for string runs</li>
+<li>Conduit fill per NEC Chapter 9</li>
+<li>Copper &amp; aluminum conductors</li>
+<li>AWG and mm&sup2; sizes side-by-side</li>
+<li>Cable &amp; conduit sized to code, not guessed</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128295;</span>
+<span class="calc-name">AC Wire &amp; Breaker</span>
+</div>
+<ul class="calc-list">
+<li>Inverter AC-output conductor sizing</li>
+<li>Overcurrent protection device rating (NEC 690.8 / 690.9)</li>
+<li>AC-side voltage drop check</li>
+</ul>
+</div>
+</div>
+
+<!-- Production & Orientation -->
+<div class="cat-header">
+<span class="cat-header-icon">&#128202;</span>
+<span class="cat-header-text" style="color:#f97316">Production &amp; Orientation</span>
+</div>
+
+<div class="calc-grid">
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128208;</span>
+<span class="calc-name">Tilt, Azimuth &amp; Shading</span>
+<span class="calc-tag">12-month curve</span>
+</div>
+<ul class="calc-list">
+<li>Annual production adjusted for roof tilt, orientation &amp; shading</li>
+<li>Month-by-month production chart</li>
+<li>Optimal tilt worked out for your latitude</li>
+<li>Transposition + orientation factor shown explicitly</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#127968;</span>
+<span class="calc-name">Multi-Array Production</span>
+<span class="calc-tag">Real roofs</span>
+</div>
+<ul class="calc-list">
+<li>Real roofs face more than one way &mdash; combine several roof faces into one system</li>
+<li>Each plane with its own size, tilt, azimuth &amp; shading</li>
+<li>Combined system total with per-array breakdown</li>
+<li>Best &amp; worst performing plane highlighted</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#127757;</span>
+<span class="calc-name">Peak Sun Hours by Location</span>
+</div>
+<ul class="calc-list">
+<li>Monthly &amp; annual peak sun hours from your latitude</li>
+<li>City presets plus fully custom input</li>
+<li>Optimal tilt with best &amp; worst months</li>
+<li>Works fully offline &mdash; no lookup service needed</li>
+</ul>
+</div>
+</div>
+
+<!-- Financial / ROI -->
+<div class="cat-header">
+<span class="cat-header-icon">&#128176;</span>
+<span class="cat-header-text" style="color:#22c55e">Financial / ROI</span>
+</div>
+
+<div class="calc-grid">
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128200;</span>
+<span class="calc-name">Solar ROI &amp; LCOE</span>
+</div>
+<ul class="calc-list">
+<li>Payback period &amp; lifetime savings</li>
+<li>Return on investment over system life</li>
+<li>Levelised cost of energy (LCOE)</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#129518;</span>
+<span class="calc-name">Regional Tariff ROI</span>
+<span class="calc-tag">Net-billing honest</span>
+</div>
+<ul class="calc-list">
+<li>Separate import &amp; export rates with a self-consumption split &mdash; the economics stay honest under today&rsquo;s net-billing tariffs</li>
+<li>Payback, NPV, IRR &amp; LCOE independently computed</li>
+<li>Panel degradation &amp; tariff inflation modeled</li>
+<li>Editable regional presets</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#127794;</span>
+<span class="calc-name">CO&#8322; Savings</span>
+</div>
+<ul class="calc-list">
+<li>Lifetime carbon avoided by your system</li>
+<li>Tree, car &amp; fuel equivalents for client conversations</li>
+</ul>
+</div>
+</div>
+
+<!-- Off-Grid & Pump -->
+<div class="cat-header">
+<span class="cat-header-icon">&#127961;</span>
+<span class="cat-header-text" style="color:#f43f5e">Off-Grid &amp; Pump</span>
+</div>
+
+<div class="calc-grid">
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128257;</span>
+<span class="calc-name">Charge Controller Sizing</span>
+</div>
+<ul class="calc-list">
+<li>MPPT vs. PWM controller current rating</li>
+<li>Matched to battery voltage &amp; array power</li>
+<li>Cold-temperature Voc correction on the input side</li>
+</ul>
+</div>
+
+<div class="calc-card">
+<div class="calc-head">
+<span class="calc-icon">&#128167;</span>
+<span class="calc-name">Solar Water Pump</span>
+</div>
+<ul class="calc-list">
+<li>Pump power from flow rate &amp; total head</li>
+<li>PV array size to drive the pump</li>
+<li>For farms, wells &amp; remote water systems</li>
+</ul>
+</div>
+</div>
+
+<!-- Compare -->
+<h2 class="section-title">A Pro Toolkit at a One-Time Price</h2>
+<p class="section-sub">No seat licenses, no annual renewals, no ads</p>
+
+<div class="compare">
+<div class="compare-row">
+<span class="compare-label">Professional solar design &amp; proposal software</span>
+<span class="compare-vs"><span class="compare-old">$1,000+/yr</span><span class="compare-new">$9.99 once</span></span>
+</div>
+<div class="compare-row">
+<span class="compare-label">Client proposal PDF with quote &amp; assumptions audit</span>
+<span class="compare-vs"><span class="compare-old">Subscription tier</span><span class="compare-new">Included</span></span>
+</div>
+<div class="compare-row">
+<span class="compare-label">Code-aware string &amp; wire sizing</span>
+<span class="compare-vs"><span class="compare-old">Separate tools</span><span class="compare-new">Included</span></span>
+</div>
+<div class="compare-row">
+<span class="compare-label">Works with no signal at the site</span>
+<span class="compare-vs"><span class="compare-old">Cloud-only</span><span class="compare-new">100% offline</span></span>
+</div>
+<div class="compare-row">
+<span class="compare-label">Ads &amp; data collection</span>
+<span class="compare-vs"><span class="compare-old">Typical in free apps</span><span class="compare-new">None</span></span>
+</div>
+</div>
+
+<!-- Key Features -->
+<h2 class="section-title">More Than Just Calculators</h2>
+<p class="section-sub">A complete solar workflow in your pocket</p>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">&#129517;</div>
+<div class="feature-name">Guided Next Step</div>
+<div class="feature-desc">Every result suggests the next calculation in the workflow &mdash; from energy needs all the way to ROI.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128218;</div>
+<div class="feature-name">Calculator Guides</div>
+<div class="feature-desc">Every tool has a built-in guide: what it is, how it works, key terms, when to use it, and a one-tap worked example.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128269;</div>
+<div class="feature-name">Quick Switch</div>
+<div class="feature-desc">A bottom-sheet navigator jumps between calculators without going back to Home.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128274;</div>
+<div class="feature-name">100% Offline</div>
+<div class="feature-desc">Works on the roof, at a remote site, or off-grid. Every calculation runs locally &mdash; nothing is sent to any server.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#128196;</div>
+<div class="feature-name">Copy, Share &amp; PDF</div>
+<div class="feature-desc">Export any single result as a clean PDF &mdash; or a full branded project proposal with quote and assumptions.</div>
+</div>
+<div class="feature">
+<div class="feature-icon">&#127760;</div>
+<div class="feature-name">14 Languages</div>
+<div class="feature-desc">English, Thai, Japanese, Korean, Chinese, Spanish, Portuguese (Brazil), French, German, Hindi, Indonesian, Italian, Russian &amp; Arabic.</div>
+</div>
+</div>
+
+<!-- Why VerSolar -->
+<h2 class="section-title">Why VerSolar?</h2>
+<p class="section-sub">Numbers that hold up for a real install</p>
+
+<div class="why-grid">
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Deterministic calculations</strong> &mdash; same input always gives the same output. No AI guesswork, no hallucinated formulas or code limits.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Temperature-corrected, code-aware</strong> &mdash; cold-Voc string limits (NEC 690.7), MPPT windows and conduit fill, not a back-of-napkin estimate.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Honest ROI</strong> &mdash; separate import/export rates and self-consumption split reflect today&rsquo;s net-billing reality instead of inflating payback.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Proposal-ready</strong> &mdash; a key-assumptions audit table in every proposal shows the client exactly what the numbers are based on.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Works on-site</strong> &mdash; 100% offline. Survey, size and quote at the site with no signal, and hand over the PDF before you leave.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>No subscription</strong> &mdash; pay $9.99 once, use forever. Every calculator and Project Mode unlocked from day one.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>No ads, no tracking</strong> &mdash; your client data and designs stay on your device. Privacy by design.</div>
+</div>
+<div class="why-item">
+<span class="why-check">&#10003;</span>
+<div class="why-text"><strong>Clean, readable UI</strong> &mdash; a distraction-free interface designed to be read in the sun.</div>
+</div>
+</div>
+
+<!-- Languages -->
+<h2 class="section-title">Available in 14 Languages</h2>
+<p class="section-sub">For installers and system owners worldwide</p>
+
+<div class="lang-row">
+<span class="lang-badge">English</span>
+<span class="lang-badge">&#127481;&#127469; Thai</span>
+<span class="lang-badge">&#127471;&#127477; Japanese</span>
+<span class="lang-badge">&#127472;&#127479; Korean</span>
+<span class="lang-badge">&#127464;&#127475; Chinese</span>
+<span class="lang-badge">&#127466;&#127480; Spanish</span>
+<span class="lang-badge">&#127463;&#127479; Portuguese</span>
+<span class="lang-badge">&#127467;&#127479; French</span>
+<span class="lang-badge">&#127465;&#127466; German</span>
+<span class="lang-badge">&#127470;&#127475; Hindi</span>
+<span class="lang-badge">&#127470;&#127465; Indonesian</span>
+<span class="lang-badge">&#127470;&#127481; Italian</span>
+<span class="lang-badge">&#127479;&#127482; Russian</span>
+<span class="lang-badge">&#127480;&#127462; Arabic</span>
+</div>
+
+<!-- Standards references (non-affiliation) -->
+<div class="disclaimer" style="background:#0ea5e910;border-left-color:#0ea5e9;color:#7dd3fc">
+<strong>Standards references:</strong> VerSolar&rsquo;s engineering methodology references published electrical and photovoltaic standards &mdash; NEC Article 690 / 690.7 (PV system voltage &amp; cold-temperature Voc), IEC 61724 (PV system performance) and IEEE 1562 (array &amp; battery sizing). These are engineering standards, not government agencies. VerSolar is an independent tool published by AI Visibility Rights and is <strong>not</strong> affiliated with, endorsed by, or sponsored by any standards organization or government entity. Standard names identify technical methodology only.
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>Professional disclaimer:</strong> For reference and design support only. Always verify against the applicable electrical code, the manufacturer datasheet, and a licensed professional before purchasing or installing equipment. This app does not replace professional engineering judgment or an on-site assessment.
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>From site survey to signed proposal &mdash; one app, no internet.</h2>
+<p>Standards-grade solar calculators plus Project Mode with branded proposal PDFs. 14 languages. Completely offline.</p>
+<div class="badge-row">
+<a class="badge badge-apple" href="#">&#9654; Download on App Store</a>
+<a class="badge badge-google" href="#">&#9654; Get it on Google Play</a>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<a href="https://aivisibityrights.github.io/store/privacy-policy.html">Privacy Policy</a>
+<a href="https://aivisibityrights.github.io/store/support.html">Support</a>
+<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+</div>
+
+</div>
+</body>
+</html>
