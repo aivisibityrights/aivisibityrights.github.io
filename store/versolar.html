@@ -5,573 +5,465 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VerSolar &mdash; Solar Panel &amp; PV Calculator | Sizing, Quotes &amp; Branded Proposal PDFs &mdash; Offline</title>
 <meta name="description" content="The offline solar app that takes a job from 'how many panels?' to a branded client proposal PDF. Standards-grade PV sizing, string design, wiring, production &amp; net-billing ROI calculators plus Project Mode with bill of materials, quote and multi-section proposal export. 14 languages. 100% offline. $9.99 one-time.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VerSolar — Solar Panel &amp; PV Calculator">
+<meta property="og:description" content="From 'how many panels?' to a branded client proposal PDF — standards-grade solar calculators, 100% offline, $9.99 one-time.">
+<meta property="og:url" content="https://aivisibityrights.github.io/store/versolar.html">
+<meta property="og:image" content="https://aivisibityrights.github.io/store/img/versolar-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{
+  --night:#0c0a09;
+  --char:#1c1917;
+  --coal:#292524;
+  --ash:#44403c;
+  --smoke:#a8a29e;
+  --faint:#78716c;
+  --bone:#faf7f0;
+  --bone-dim:#efe9dd;
+  --ink:#1c1917;
+  --ink-soft:#57534e;
+  --sun:#f59e0b;
+  --ember:#f97316;
+  --leaf:#22c55e;
+  --cy:#06b6d4;
+  --sl:#94a3b8;
+  --rs:#f43f5e;
+  --disp:'Bricolage Grotesque',sans-serif;
+  --body:'Instrument Sans',-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0c0a09;color:#d6d3d1;line-height:1.7}
-.container{max-width:800px;margin:0 auto;padding:20px}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--night);color:#e7e5e4;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--sun)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
 
-/* Hero */
-.hero{text-align:center;padding:60px 20px 40px}
-.hero-icon{width:120px;height:120px;border-radius:28px;margin:0 auto 24px;background:linear-gradient(135deg,#292524,#0c0a09);border:2px solid #f59e0b;display:flex;align-items:center;justify-content:center;font-size:54px}
-.hero h1{font-size:32px;color:#fafaf9;margin-bottom:8px;letter-spacing:.5px}
-.hero h1 .accent{background:linear-gradient(90deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero .subtitle{font-size:18px;color:#f59e0b;font-weight:600;margin-bottom:16px}
-.hero .tagline{font-size:15px;color:#a8a29e;max-width:620px;margin:0 auto 32px}
-.badge-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.badge{display:inline-block;background:#fff;color:#000;padding:10px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}
-.badge:hover{opacity:.85}
-.badge-apple{background:#000;color:#fff;border:1px solid #333}
-.badge-google{background:#fff;color:#000}
-.price-tag{display:inline-block;background:#f59e0b20;border:1px solid #f59e0b40;color:#f59e0b;padding:6px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:20px}
+/* ───────── top bar ───────── */
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.wordmark{font-family:var(--disp);font-weight:700;font-size:19px;color:var(--bone);letter-spacing:.2px;display:flex;align-items:center;gap:9px;text-decoration:none}
+.wordmark .dot{width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fcd34d,var(--sun) 60%,var(--ember));box-shadow:0 0 12px #f59e0b88}
+.top-meta{font-family:var(--mono);font-size:12px;color:var(--faint)}
+.top-meta b{color:var(--sun);font-weight:600}
 
-/* Stats */
-.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0;padding:24px;background:#1c1917;border-radius:16px;border:1px solid #44403c}
-.stat{text-align:center}
-.stat-num{font-size:26px;font-weight:800;color:#f59e0b}
-.stat-num.orange{color:#f97316}
-.stat-num.green{color:#22c55e}
-.stat-label{font-size:12px;color:#78716c;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+/* ───────── hero ───────── */
+.hero{position:relative;padding:56px 0 72px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);margin-bottom:20px}
+.eyebrow .sep{color:var(--ash);margin:0 6px}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(2.3rem,5.4vw,3.6rem);line-height:1.04;letter-spacing:-.02em;color:var(--bone)}
+h1 em{font-style:normal;color:var(--sun);position:relative;white-space:nowrap}
+h1 em::after{content:'';position:absolute;left:0;right:0;bottom:.04em;height:.14em;background:linear-gradient(90deg,var(--sun),var(--ember));border-radius:2px;opacity:.5}
+.hero-sub{margin:22px 0 30px;font-size:16.5px;color:var(--smoke);max-width:46ch}
+.badge-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;transition:transform .15s ease,opacity .15s ease}
+.badge:hover{transform:translateY(-1px);opacity:.92}
+.badge-apple{background:var(--bone);color:var(--ink)}
+.badge-google{background:transparent;color:var(--bone);border:1px solid var(--ash)}
+.hero-price{margin-top:18px;font-family:var(--mono);font-size:13px;color:var(--faint)}
+.hero-price b{color:var(--sun);font-weight:600}
 
-/* Sections */
-.section-title{font-size:22px;font-weight:700;color:#fafaf9;text-align:center;margin:48px 0 8px}
-.section-sub{font-size:14px;color:#a8a29e;text-align:center;margin-bottom:32px}
+/* paper mock + rising sun */
+.paper-zone{position:relative;min-height:420px}
+.paper-zone::before{content:'';position:absolute;top:-30px;right:9%;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fcd34d,var(--sun) 55%,var(--ember));box-shadow:0 0 22px #f59e0b99,0 0 70px #f59e0b44;animation:risepeek 1.5s .15s cubic-bezier(.22,.8,.36,1) both}
+@keyframes risepeek{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
+.sheet{position:absolute;inset:auto 0 0 8%;width:84%;background:var(--bone-dim);border-radius:10px;height:96%;transform:rotate(2deg) translateY(-6px)}
+.paper{position:relative;background:var(--bone);color:var(--ink);border-radius:10px;padding:26px 26px 20px;transform:rotate(-1.6deg);box-shadow:0 30px 60px -18px rgba(0,0,0,.65),0 4px 14px rgba(0,0,0,.4);animation:landing .9s .25s cubic-bezier(.22,.8,.36,1) both}
+@keyframes landing{from{opacity:0;transform:rotate(-1.6deg) translateY(26px)}to{opacity:1;transform:rotate(-1.6deg) translateY(0)}}
+.p-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:14px}
+.p-brand{font-family:var(--disp);font-weight:700;font-size:15px}
+.p-brand span{color:var(--ember)}
+.p-doc{font-family:var(--mono);font-size:10px;color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase}
+.p-title{font-family:var(--disp);font-weight:700;font-size:19px;margin-bottom:2px}
+.p-client{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-bottom:14px}
+.p-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.p-metric{background:#f2ecdf;border-radius:7px;padding:9px 8px;min-width:0}
+.p-metric .v{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--ink)}
+.p-metric .k{font-family:var(--mono);font-size:9px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.p-bars{display:flex;align-items:flex-end;gap:5px;height:64px;padding:10px 8px 6px;background:#f2ecdf;border-radius:7px;margin-bottom:14px}
+.p-bars i{flex:1;background:linear-gradient(180deg,var(--sun),var(--ember));border-radius:2px 2px 0 0;min-height:6px}
+.p-bars-cap{font-family:var(--mono);font-size:9px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin:-8px 0 12px 4px}
+.p-audit{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft)}
+.p-audit-row{display:flex;justify-content:space-between;padding:4px 2px;border-top:1px dashed #d6cebc}
+.p-audit-row b{color:var(--ink);font-weight:500}
+.p-foot{margin-top:12px;font-family:var(--mono);font-size:9px;color:#a89f8d;text-align:right}
+.paper-cap{grid-column:1/-1;margin-top:26px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--faint)}
 
-/* Workflow (Project Mode) */
-.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:20px}
-.flow-step{background:#1c1917;border:1px solid #44403c;border-radius:14px;padding:20px 16px;position:relative}
-.flow-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#f59e0b;color:#0c0a09;font-weight:800;font-size:14px;margin-bottom:10px}
-.flow-name{font-size:15px;font-weight:700;color:#fafaf9;margin-bottom:6px}
-.flow-desc{font-size:12.5px;color:#a8a29e;line-height:1.55}
-.flow-note{background:#1c1917;border:1px solid #f59e0b40;border-radius:12px;padding:14px 18px;font-size:13px;color:#d6d3d1;margin-bottom:40px}
-.flow-note strong{color:#f59e0b}
+/* ───────── data strip ───────── */
+.strip{border-top:1px solid var(--coal);border-bottom:1px solid var(--coal);padding:16px 0;margin:26px 0 0}
+.strip-row{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;font-family:var(--mono);font-size:12.5px;color:var(--smoke)}
+.strip-row span b{color:var(--sun);font-weight:600}
 
-/* Category Headers */
-.cat-header{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #44403c}
-.cat-header-icon{font-size:20px}
-.cat-header-text{font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+/* ───────── sections ───────── */
+section{padding:88px 0}
+.sec-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);margin-bottom:14px}
+.sec-title{font-family:var(--disp);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.01em;color:var(--bone);line-height:1.15;max-width:24ch}
+.sec-sub{color:var(--smoke);margin-top:14px;max-width:58ch}
 
-/* Calculators */
-.calc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-bottom:8px}
-.calc-card{background:#1c1917;border:1px solid #44403c;border-radius:14px;padding:24px}
-.calc-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.calc-icon{font-size:28px;flex-shrink:0}
-.calc-name{font-size:17px;font-weight:700;color:#fafaf9}
-.calc-tag{display:inline-block;background:#f9731620;color:#fdba74;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;margin-left:auto;flex-shrink:0}
-.calc-list{list-style:none;padding:0}
-.calc-list li{font-size:13px;color:#a8a29e;padding:3px 0;padding-left:16px;position:relative}
-.calc-list li::before{content:'\25B8';color:#f59e0b;position:absolute;left:0}
-.calc-codes{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
-.calc-code{display:inline-block;background:#0c0a09;border:1px solid #44403c;color:#78716c;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600}
+/* ───────── workflow (single-line diagram) ───────── */
+.flow{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px}
+.flow::before{content:'';position:absolute;top:15px;left:calc(12.5% );right:calc(12.5%);height:2px;background:repeating-linear-gradient(90deg,var(--ash) 0 8px,transparent 8px 14px)}
+.step{position:relative}
+.node{position:relative;width:32px;height:32px;border-radius:50%;background:var(--night);border:2px solid var(--sun);color:var(--sun);font-family:var(--mono);font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;z-index:1}
+.step:last-child .node{background:var(--sun);color:var(--night)}
+.step h3{font-family:var(--disp);font-weight:700;font-size:16.5px;color:var(--bone);text-align:center;margin-bottom:8px}
+.step p{font-size:13.5px;color:var(--smoke);text-align:center;line-height:1.55}
+.flow-note{margin:44px auto 0;max-width:640px;text-align:center;font-size:14.5px;color:var(--smoke);border:1px solid var(--coal);border-radius:12px;padding:16px 22px}
+.flow-note b{color:var(--sun);font-weight:600}
 
-/* Features */
-.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
-.feature{background:#1c1917;border:1px solid #44403c;border-radius:14px;padding:20px}
-.feature-icon{font-size:28px;margin-bottom:10px}
-.feature-name{font-size:15px;font-weight:700;color:#fafaf9;margin-bottom:6px}
-.feature-desc{font-size:13px;color:#a8a29e;line-height:1.5}
+/* ───────── proposal anatomy (day section) ───────── */
+.day{background:var(--bone);color:var(--ink)}
+.day .sec-eyebrow{color:var(--ember)}
+.day .sec-title{color:var(--ink)}
+.day .sec-sub{color:var(--ink-soft)}
+.doc{margin-top:52px;background:#fff;border:1px solid #e5ddcb;border-radius:14px;box-shadow:0 18px 46px -22px rgba(60,45,20,.28);overflow:hidden}
+.doc-head{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;border-bottom:2px solid var(--ink)}
+.doc-head .p-brand{font-size:17px}
+.doc-head .p-doc{font-size:11px}
+.doc-body{display:grid;grid-template-columns:1fr 1fr}
+.doc-cell{padding:24px 28px;border-top:1px solid #efe8d8}
+.doc-cell:nth-child(odd){border-right:1px solid #efe8d8}
+.doc-cell:nth-child(-n+2){border-top:none}
+.doc-num{font-family:var(--mono);font-size:11px;color:var(--ember);font-weight:600;letter-spacing:.08em;margin-bottom:6px}
+.doc-cell h3{font-family:var(--disp);font-weight:700;font-size:17px;margin-bottom:6px}
+.doc-cell p{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+.doc-foot{padding:14px 28px;background:#f7f2e7;font-family:var(--mono);font-size:11px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
-/* Why */
-.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px}
-.why-item{display:flex;gap:12px;align-items:flex-start;background:#1c1917;border:1px solid #44403c;border-radius:12px;padding:16px}
-.why-check{color:#22c55e;font-size:18px;flex-shrink:0;margin-top:2px}
-.why-text{font-size:14px;color:#a8a29e}
-.why-text strong{color:#fafaf9}
+/* ───────── calculators: spec sheet ───────── */
+.groups{margin-top:52px;display:grid;gap:36px}
+.group{border-top:1px solid var(--coal);padding-top:26px}
+.g-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.g-code{font-family:var(--mono);font-weight:600;font-size:13px;padding:3px 9px;border-radius:6px;letter-spacing:.06em}
+.g-name{font-family:var(--disp);font-weight:700;font-size:19px;color:var(--bone)}
+.g-desc{font-size:13px;color:var(--faint);margin-left:auto;font-family:var(--mono)}
+.calc-row{display:grid;grid-template-columns:240px 1fr auto;gap:18px;padding:13px 4px;border-top:1px dashed var(--coal);align-items:baseline}
+.calc-row:first-of-type{border-top:none}
+.c-name{font-weight:600;color:var(--bone);font-size:15px}
+.c-what{font-size:13.5px;color:var(--smoke);line-height:1.55}
+.c-tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.c-tag{font-family:var(--mono);font-size:10px;color:var(--faint);border:1px solid var(--ash);border-radius:5px;padding:2px 7px;white-space:nowrap}
+.c-tag.hot{color:var(--sun);border-color:#f59e0b55}
 
-/* Compare */
-.compare{background:#1c1917;border:1px solid #44403c;border-radius:16px;padding:24px;margin-bottom:40px}
-.compare-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px dashed #44403c;gap:12px}
-.compare-row:last-child{border-bottom:none}
-.compare-label{font-size:14px;color:#a8a29e;font-weight:600}
-.compare-vs{font-size:13px;color:#78716c;display:flex;gap:12px;align-items:center;flex-shrink:0}
-.compare-old{text-decoration:line-through;color:#ef4444aa}
-.compare-new{color:#22c55e;font-weight:700}
+/* ───────── why + price ───────── */
+.duo{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;margin-top:52px;align-items:start}
+.check{list-style:none}
+.check li{display:flex;gap:14px;padding:13px 0;border-top:1px dashed var(--coal);font-size:14.5px;color:var(--smoke)}
+.check li:first-child{border-top:none}
+.check li b{color:var(--bone);font-weight:600}
+.tick{font-family:var(--mono);color:var(--leaf);flex-shrink:0;font-size:14px;margin-top:1px}
+.price-card{background:var(--char);border:1px solid var(--coal);border-radius:16px;padding:30px;position:sticky;top:24px}
+.price-big{font-family:var(--disp);font-weight:800;font-size:56px;color:var(--bone);letter-spacing:-.02em;line-height:1}
+.price-big small{font-size:17px;font-weight:600;color:var(--faint);letter-spacing:0}
+.price-note{font-family:var(--mono);font-size:12px;color:var(--sun);margin:10px 0 22px}
+.price-rows{font-size:13.5px}
+.price-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px dashed var(--coal);color:var(--smoke)}
+.price-row .no{color:var(--faint);text-decoration:line-through;white-space:nowrap}
+.price-row .yes{color:var(--leaf);font-weight:600;white-space:nowrap}
 
-/* Languages */
-.lang-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.lang-badge{background:#1c1917;border:1px solid #44403c;color:#78716c;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+/* ───────── languages ───────── */
+.langs{display:flex;gap:9px;flex-wrap:wrap;margin-top:40px}
+.lang{font-family:var(--mono);font-size:12px;color:var(--smoke);border:1px solid var(--coal);border-radius:7px;padding:5px 12px}
 
-/* CTA */
-.cta{text-align:center;padding:40px 20px;margin:40px 0;background:linear-gradient(135deg,#f59e0b10,#f9731610);border:1px solid #f59e0b30;border-radius:20px}
-.cta h2{font-size:24px;color:#fafaf9;margin-bottom:8px}
-.cta p{color:#a8a29e;font-size:15px;margin-bottom:24px}
+/* ───────── footnotes ───────── */
+.notes{border-top:1px solid var(--coal);padding-top:36px;display:grid;gap:18px}
+.note{font-size:12.5px;color:var(--faint);line-height:1.7;padding-left:16px;border-left:2px solid var(--ash)}
+.note.std{border-left-color:var(--cy)}
+.note.pro{border-left-color:var(--sun)}
+.note b{color:var(--smoke)}
+.note a{color:var(--smoke)}
 
-/* Disclaimer */
-.disclaimer{background:#f59e0b10;border-left:3px solid #f59e0b;padding:16px;border-radius:0 8px 8px 0;margin:32px 0;font-size:13px;color:#f59e0b}
+/* ───────── CTA ───────── */
+.cta{position:relative;text-align:center;padding:96px 24px;background:linear-gradient(180deg,var(--night) 0%,#1a1208 55%,#2a1a06 100%);border-top:1px solid var(--coal);overflow:hidden}
+.cta::after{content:'';position:absolute;left:50%;bottom:-140px;transform:translateX(-50%);width:480px;height:280px;background:radial-gradient(ellipse at center,#f59e0b33,transparent 65%);pointer-events:none}
+.cta h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--bone);letter-spacing:-.015em;max-width:22ch;margin:0 auto 14px}
+.cta p{color:var(--smoke);max-width:52ch;margin:0 auto 30px;font-size:15.5px}
+.cta .badge-row{justify-content:center}
 
-/* Footer */
-.footer{text-align:center;padding:32px 20px;border-top:1px solid #44403c;margin-top:40px}
-.footer a{color:#f59e0b;text-decoration:none;margin:0 12px;font-size:13px}
-.footer a:hover{text-decoration:underline}
-.footer .copy{color:#57534e;font-size:12px;margin-top:12px}
+/* ───────── footer ───────── */
+.footer{text-align:center;padding:34px 20px;border-top:1px solid var(--coal)}
+.footer a{color:var(--smoke);text-decoration:none;margin:0 12px;font-size:13px}
+.footer a:hover{color:var(--sun)}
+.footer .copy{color:#57534e;font-size:12px;margin-top:12px;font-family:var(--mono)}
+
+/* ───────── reveal ───────── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .paper-zone::before{animation:none}
+  .paper{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ───────── responsive ───────── */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:64px}
+  .paper-zone{max-width:440px;margin:0 auto;width:100%}
+  .flow{grid-template-columns:1fr 1fr;gap:34px 22px}
+  .flow::before{display:none}
+  .duo{grid-template-columns:1fr;gap:40px}
+  .price-card{position:static}
+  .doc-body{grid-template-columns:1fr}
+  .doc-cell:nth-child(odd){border-right:none}
+  .doc-cell:nth-child(2){border-top:1px solid #efe8d8}
+}
+@media (max-width:600px){
+  section{padding:64px 0}
+  .calc-row{grid-template-columns:1fr;gap:5px}
+  .c-tags{justify-content:flex-start}
+  .flow{grid-template-columns:1fr}
+  .step h3,.step p{text-align:left}
+  .node{margin:0 0 14px}
+  .g-desc{display:none}
+}
+@media (max-width:420px){
+  .p-metrics{grid-template-columns:1fr 1fr}
+  .p-metric:first-child{grid-column:1/-1}
+  .paper{padding:22px 18px 16px}
+}
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="wrap">
+<!-- top bar -->
+<div class="top">
+<a class="wordmark" href="#"><span class="dot"></span>VerSolar</a>
+<div class="top-meta">iOS &amp; Android &middot; <b>$9.99</b> once</div>
+</div>
+</div>
 
-<!-- Hero -->
-<div class="hero">
-<div class="hero-icon">&#9728;&#65039;</div>
-<h1><span class="accent">Ver</span><span class="accent" style="background:linear-gradient(90deg,#f97316,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Solar</span></h1>
-<p class="subtitle">Solar Panel &amp; PV Calculator &mdash; Sizing, Quotes &amp; PDF Proposals</p>
-<p class="tagline">The offline solar app that takes a job from &ldquo;how many panels?&rdquo; to a branded client proposal PDF. Standards-grade sizing, string design, wiring and net-billing ROI &mdash; built for installers, prosumers, off-grid DIYers and students. 100% offline.</p>
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero">
+<div class="wrap">
+<div class="hero-grid">
+<div>
+<div class="eyebrow">Offline solar toolkit<span class="sep">/</span>PV sizing<span class="sep">/</span>Quotes<span class="sep">/</span>Proposals</div>
+<h1>From &ldquo;how many panels?&rdquo; to a <em>signed proposal.</em></h1>
+<p class="hero-sub">Standards-grade PV calculators &mdash; string limits, wiring, production, net-billing ROI &mdash; chained into a branded client proposal PDF. No signal needed on the roof. No subscription, ever.</p>
 <div class="badge-row">
-<a class="badge badge-apple" href="#">&#9654; App Store &mdash; $9.99</a>
-<a class="badge badge-google" href="#">&#9654; Google Play &mdash; $9.99</a>
+<a class="badge badge-apple" href="#">&#63743; App Store</a>
+<a class="badge badge-google" href="#">&#9654; Google Play</a>
 </div>
-<div class="price-tag">Pay once, use forever &mdash; No subscription, no ads, no account</div>
-</div>
-
-<!-- Stats -->
-<div class="stats">
-<div class="stat"><div class="stat-num">NEC 690.7</div><div class="stat-label">String Limits</div></div>
-<div class="stat"><div class="stat-num orange">PDF</div><div class="stat-label">Client Proposals</div></div>
-<div class="stat"><div class="stat-num">14</div><div class="stat-label">Languages</div></div>
-<div class="stat"><div class="stat-num green">100%</div><div class="stat-label">Offline</div></div>
+<p class="hero-price"><b>$9.99</b> one-time &middot; no ads &middot; no account &middot; 100% offline</p>
 </div>
 
-<!-- ==================== PROJECT MODE ==================== -->
-<h2 class="section-title">Design. Quote. Proposal. All Offline.</h2>
-<p class="section-sub">Project Mode chains your calculations into a client-ready document</p>
+<div class="paper-zone">
+<div class="sheet" aria-hidden="true"></div>
+<div class="paper" role="img" aria-label="Sample solar proposal document generated by VerSolar">
+<div class="p-head">
+<span class="p-brand">Sunrise Solar <span>Co.</span></span>
+<span class="p-doc">Proposal &middot; PV-2026-014</span>
+</div>
+<div class="p-title">7.00 kW Rooftop PV System</div>
+<div class="p-client">Prepared for: Residence, 3 roof planes (E / S / W)</div>
+<div class="p-metrics">
+<div class="p-metric"><div class="v">7.00 kW</div><div class="k">System size</div></div>
+<div class="p-metric"><div class="v">8,883 kWh</div><div class="k">Est. yr 1 production</div></div>
+<div class="p-metric"><div class="v">27.9 h</div><div class="k">Backup runtime</div></div>
+</div>
+<div class="p-bars" aria-hidden="true">
+<i style="height:34%"></i><i style="height:42%"></i><i style="height:58%"></i><i style="height:74%"></i><i style="height:88%"></i><i style="height:100%"></i><i style="height:96%"></i><i style="height:86%"></i><i style="height:70%"></i><i style="height:52%"></i><i style="height:38%"></i><i style="height:30%"></i>
+</div>
+<div class="p-bars-cap">Monthly production &middot; Jan &ndash; Dec</div>
+<div class="p-audit">
+<div class="p-audit-row"><span>Blended orientation factor</span><b>91.6 %</b></div>
+<div class="p-audit-row"><span>System losses</span><b>14 % (default)</b></div>
+<div class="p-audit-row"><span>Daily consumption</span><b>14.00 kWh (input)</b></div>
+</div>
+<div class="p-foot">Generated offline with VerSolar</div>
+</div>
+</div>
+<div class="paper-cap">Sample proposal &mdash; numbers from the app&rsquo;s verified worked example</div>
+</div>
+</div>
+
+<div class="strip">
+<div class="wrap strip-row">
+<span><b>NEC 690.7</b> cold-Voc string limits</span>
+<span><b>PDF</b> branded client proposals</span>
+<span><b>14</b> languages</span>
+<span><b>100%</b> offline &middot; zero data collected</span>
+</div>
+</div>
+</header>
+
+<!-- ═══════════ WORKFLOW ═══════════ -->
+<section>
+<div class="wrap">
+<div class="sec-eyebrow reveal">Project Mode</div>
+<h2 class="sec-title reveal">One job, four steps.</h2>
+<p class="sec-sub reveal">Every calculation can be saved into a named client project. A guided &ldquo;next step&rdquo; on each result walks the workflow from energy needs all the way to payback.</p>
 
 <div class="flow">
-<div class="flow-step">
-<div class="flow-num">1</div>
-<div class="flow-name">Calculate</div>
-<div class="flow-desc">Run any calculator &mdash; loads, panels, battery, strings, wiring, production, ROI &mdash; then tap &ldquo;Save to Project&rdquo;.</div>
-</div>
-<div class="flow-step">
-<div class="flow-num">2</div>
-<div class="flow-name">Chain the Job</div>
-<div class="flow-desc">A guided &ldquo;next step&rdquo; on every result walks the workflow from energy needs all the way to payback &mdash; one named project file per client.</div>
-</div>
-<div class="flow-step">
-<div class="flow-num">3</div>
-<div class="flow-name">Build the Quote</div>
-<div class="flow-desc">Bill of materials with equipment, labor, margin, discount and tax &mdash; right inside the project.</div>
-</div>
-<div class="flow-step">
-<div class="flow-num">4</div>
-<div class="flow-name">Proposal PDF</div>
-<div class="flow-desc">Export a branded multi-section proposal: cover, executive summary, system design, wiring safety, financials, bill of materials and a key-assumptions audit.</div>
-</div>
+<div class="step reveal"><div class="node">1</div><h3>Calculate</h3><p>Run any calculator &mdash; loads, panels, battery, strings, wiring, production, ROI &mdash; then tap &ldquo;Save to Project&rdquo;.</p></div>
+<div class="step reveal"><div class="node">2</div><h3>Chain the job</h3><p>Each result feeds the next. One project file holds the whole design for one client.</p></div>
+<div class="step reveal"><div class="node">3</div><h3>Build the quote</h3><p>Bill of materials with equipment, labor, margin, discount and tax &mdash; inside the project.</p></div>
+<div class="step reveal"><div class="node">4</div><h3>Hand over the PDF</h3><p>A branded, multi-section proposal &mdash; exported on the spot, before you leave the site.</p></div>
 </div>
 
-<div class="flow-note"><strong>Your branding, pre-filled.</strong> Set your company profile once &mdash; name, contact details, license number &mdash; plus currency and quote defaults, and every new project starts ready. The paperwork is done before you leave the site.</div>
+<p class="flow-note reveal"><b>Your branding, pre-filled.</b> Set your company profile once &mdash; name, contact details, license number &mdash; plus currency and quote defaults. Every new project starts ready.</p>
+</div>
+</section>
 
-<!-- ==================== CALCULATORS ==================== -->
-<h2 class="section-title">Standards-Grade PV Calculators</h2>
-<p class="section-sub">Six tool groups covering the full solar workflow &mdash; NEC Article 690 / 690.7, IEC 61724, IEEE 1562</p>
+<!-- ═══════════ PROPOSAL ANATOMY (day) ═══════════ -->
+<section class="day">
+<div class="wrap">
+<div class="sec-eyebrow reveal">The deliverable</div>
+<h2 class="sec-title reveal">Anatomy of the proposal</h2>
+<p class="sec-sub reveal">Not a screenshot of an app &mdash; a document a client can read, question, and sign. Seven sections, generated from the calculations you actually ran.</p>
 
-<!-- System Sizing -->
-<div class="cat-header">
-<span class="cat-header-icon">&#9728;&#65039;</span>
-<span class="cat-header-text" style="color:#f59e0b">System Sizing</span>
+<div class="doc reveal">
+<div class="doc-head">
+<span class="p-brand">Your Company <span>Name</span></span>
+<span class="p-doc">Proposal &middot; generated offline</span>
+</div>
+<div class="doc-body">
+<div class="doc-cell"><div class="doc-num">&sect; 1&ndash;2</div><h3>Cover &amp; executive summary</h3><p>Client, site and headline numbers &mdash; system size, estimated production, backup runtime &mdash; pulled straight from your saved results.</p></div>
+<div class="doc-cell"><div class="doc-num">&sect; 3</div><h3>System design</h3><p>Array, battery and inverter sizing with the panel counts, string layout and MPPT window that make the design real.</p></div>
+<div class="doc-cell"><div class="doc-num">&sect; 4</div><h3>Wiring &amp; safety</h3><p>String limits, voltage drop and conduit fill &mdash; the code-compliance math most proposals skip.</p></div>
+<div class="doc-cell"><div class="doc-num">&sect; 5</div><h3>Financials</h3><p>Payback, savings and levelised cost with import/export rates split honestly under net-billing tariffs.</p></div>
+<div class="doc-cell"><div class="doc-num">&sect; 6</div><h3>Bill of materials &amp; quote</h3><p>Equipment, labor, margin, discount and tax &mdash; the number the client actually asks about, itemised.</p></div>
+<div class="doc-cell"><div class="doc-num">&sect; 7</div><h3>Key-assumptions audit</h3><p>Every input behind the numbers &mdash; sun hours, losses, tariffs &mdash; listed verbatim. When the client asks &ldquo;based on what?&rdquo;, the answer is on the page.</p></div>
+</div>
+<div class="doc-foot"><span>Branded with your company profile</span><span>Exported as PDF &middot; no internet required</span></div>
+</div>
+</div>
+</section>
+
+<!-- ═══════════ CALCULATORS ═══════════ -->
+<section>
+<div class="wrap">
+<div class="sec-eyebrow reveal">The toolkit</div>
+<h2 class="sec-title reveal">Standards-grade calculators, six groups</h2>
+<p class="sec-sub reveal">Referenced to NEC Article 690 / 690.7, IEC 61724 and IEEE 1562. Every tool has a built-in guide with a one-tap worked example.</p>
+
+<div class="groups">
+
+<div class="group reveal">
+<div class="g-head"><span class="g-code" style="color:#f59e0b;background:#f59e0b1a">SZ</span><span class="g-name">System Sizing</span><span class="g-desc">load &rarr; array &rarr; battery &rarr; runtime</span></div>
+<div class="calc-row"><span class="c-name">Appliance Load Estimator</span><span class="c-what">Daily kWh built appliance-by-appliance &mdash; preset library includes EV-charger and heat-pump presets for electrified homes. Sends the total into panel &amp; battery sizing.</span><span class="c-tags"><span class="c-tag">running + surge W</span></span></div>
+<div class="calc-row"><span class="c-name">Panel &amp; Array Sizing</span><span class="c-what">Panel count and system kW from daily energy, peak sun hours and losses &mdash; with roof-area fit and energy coverage.</span><span class="c-tags"><span class="c-tag">roof fit</span></span></div>
+<div class="calc-row"><span class="c-name">Battery Bank Sizing</span><span class="c-what">Usable capacity, series &times; parallel count, C-rate and estimated life for Li-ion, LiFePO4 and lead-acid.</span><span class="c-tags"><span class="c-tag">3 chemistries</span></span></div>
+<div class="calc-row"><span class="c-name">Battery Backup Runtime</span><span class="c-what">The outage question, answered: how many hours the fridge, lights and router run on the bank you propose &mdash; inverter losses and idle draw included, with load sensitivity.</span><span class="c-tags"><span class="c-tag hot">outage answer</span></span></div>
 </div>
 
-<div class="calc-grid">
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128268;</span>
-<span class="calc-name">Appliance Load Estimator</span>
+<div class="group reveal">
+<div class="g-head"><span class="g-code" style="color:#06b6d4;background:#06b6d41a">SD</span><span class="g-name">Inverter &amp; String Design</span><span class="g-desc">the cold-morning overvoltage math</span></div>
+<div class="calc-row"><span class="c-name">Inverter Sizing &amp; MPPT Window</span><span class="c-what">Recommended inverter size, DC/AC ratio, cold-temperature Voc and hot-day Vmp with its own coefficient &mdash; the window that decides safe operation.</span><span class="c-tags"><span class="c-tag">DC/AC ratio</span></span></div>
+<div class="calc-row"><span class="c-name">String Sizing</span><span class="c-what">Maximum and minimum panels per string from the cold-weather Voc limit, plus parallel-string current &mdash; the calculation that protects the inverter.</span><span class="c-tags"><span class="c-tag hot">NEC 690.7</span></span></div>
 </div>
-<ul class="calc-list">
-<li>Build your daily kWh appliance-by-appliance</li>
-<li>Preset library incl. EV-charger &amp; heat-pump presets for electrified homes</li>
-<li>Running vs. surge watts per appliance</li>
-<li>Send the total straight into panel &amp; battery sizing</li>
+
+<div class="group reveal">
+<div class="g-head"><span class="g-code" style="color:#94a3b8;background:#94a3b81a">WR</span><span class="g-name">Wire &amp; Conduit</span><span class="g-desc">sized to code, not guessed</span></div>
+<div class="calc-row"><span class="c-name">DC Voltage Drop &amp; Conduit</span><span class="c-what">Round-trip string voltage drop, power loss and conduit fill per NEC Chapter 9 &mdash; copper or aluminum, AWG and mm&sup2; side by side.</span><span class="c-tags"><span class="c-tag hot">permit-grade</span></span></div>
+<div class="calc-row"><span class="c-name">AC Wire &amp; Breaker</span><span class="c-what">Inverter AC-output conductor, overcurrent device rating and voltage drop per NEC 690.8 / 690.9.</span><span class="c-tags"><span class="c-tag">OCPD</span></span></div>
+</div>
+
+<div class="group reveal">
+<div class="g-head"><span class="g-code" style="color:#f97316;background:#f973161a">PR</span><span class="g-name">Production &amp; Orientation</span><span class="g-desc">what the roof will really yield</span></div>
+<div class="calc-row"><span class="c-name">Tilt, Azimuth &amp; Shading</span><span class="c-what">Annual production adjusted for roof tilt, orientation and shading &mdash; with a month-by-month chart and the optimal angle for your latitude.</span><span class="c-tags"><span class="c-tag">12-month curve</span></span></div>
+<div class="calc-row"><span class="c-name">Multi-Array Production</span><span class="c-what">Real roofs face more than one way: combine several roof planes &mdash; each with its own size, tilt, azimuth and shading &mdash; into one system total with best/worst plane.</span><span class="c-tags"><span class="c-tag hot">multi-plane</span></span></div>
+<div class="calc-row"><span class="c-name">Peak Sun Hours by Location</span><span class="c-what">Monthly and annual peak sun hours from your latitude, with city presets, optimal tilt and best/worst months &mdash; no lookup service needed.</span><span class="c-tags"><span class="c-tag">offline PSH</span></span></div>
+</div>
+
+<div class="group reveal">
+<div class="g-head"><span class="g-code" style="color:#22c55e;background:#22c55e1a">FN</span><span class="g-name">Financial / ROI</span><span class="g-desc">economics that stay honest</span></div>
+<div class="calc-row"><span class="c-name">Solar ROI &amp; LCOE</span><span class="c-what">Payback period, lifetime savings, return on investment and levelised cost of energy.</span><span class="c-tags"><span class="c-tag">LCOE</span></span></div>
+<div class="calc-row"><span class="c-name">Regional Tariff ROI</span><span class="c-what">Payback, NPV, IRR and LCOE with separate import and export rates and a self-consumption split &mdash; honest under today&rsquo;s net-billing tariffs. Editable regional presets, degradation and inflation modeled.</span><span class="c-tags"><span class="c-tag hot">net-billing honest</span></span></div>
+<div class="calc-row"><span class="c-name">CO&#8322; Savings</span><span class="c-what">Lifetime carbon avoided, with tree, car and fuel equivalents for client conversations.</span><span class="c-tags"><span class="c-tag">equivalents</span></span></div>
+</div>
+
+<div class="group reveal">
+<div class="g-head"><span class="g-code" style="color:#f43f5e;background:#f43f5e1a">OG</span><span class="g-name">Off-Grid &amp; Pump</span><span class="g-desc">beyond the meter</span></div>
+<div class="calc-row"><span class="c-name">Charge Controller Sizing</span><span class="c-what">MPPT vs. PWM current rating matched to battery voltage and array power, with cold-temperature Voc correction.</span><span class="c-tags"><span class="c-tag">MPPT / PWM</span></span></div>
+<div class="calc-row"><span class="c-name">Solar Water Pump</span><span class="c-what">Pump power and the PV array to drive it, from flow rate and total head &mdash; for farms, wells and remote water systems.</span><span class="c-tags"><span class="c-tag">flow + head</span></span></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ═══════════ WHY + PRICE ═══════════ -->
+<section style="padding-top:0">
+<div class="wrap">
+<div class="sec-eyebrow reveal">Why VerSolar</div>
+<h2 class="sec-title reveal">Numbers that hold up for a real install</h2>
+
+<div class="duo">
+<ul class="check reveal">
+<li><span class="tick">[&#10003;]</span><span><b>Deterministic.</b> Same input, same output &mdash; no AI guesswork, no hallucinated formulas or code limits.</span></li>
+<li><span class="tick">[&#10003;]</span><span><b>Temperature-corrected, code-aware.</b> Cold-Voc string limits, MPPT windows and conduit fill &mdash; not a back-of-napkin estimate.</span></li>
+<li><span class="tick">[&#10003;]</span><span><b>Honest ROI.</b> Separate import/export rates and self-consumption reflect net-billing reality instead of inflating payback.</span></li>
+<li><span class="tick">[&#10003;]</span><span><b>Proposal-ready.</b> A key-assumptions audit in every PDF shows the client exactly what the numbers are based on.</span></li>
+<li><span class="tick">[&#10003;]</span><span><b>Works on the roof.</b> 100% offline &mdash; survey, size and quote with no signal, and hand over the PDF before you leave.</span></li>
+<li><span class="tick">[&#10003;]</span><span><b>Private by design.</b> No ads, no tracking, no account. Client data and designs never leave the device.</span></li>
+<li><span class="tick">[&#10003;]</span><span><b>Readable in the sun.</b> A clean, fast, distraction-free interface built for the jobsite, in 14 languages.</span></li>
 </ul>
-</div>
 
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#9728;&#65039;</span>
-<span class="calc-name">Panel &amp; Array Sizing</span>
+<div class="price-card reveal">
+<div class="price-big">$9.99<small> once</small></div>
+<div class="price-note">no subscription &middot; no ads &middot; no account</div>
+<div class="price-rows">
+<div class="price-row"><span>Pro design &amp; proposal software</span><span class="no">$1,000+/yr</span></div>
+<div class="price-row"><span>Proposal PDF with quote &amp; audit</span><span class="yes">Included</span></div>
+<div class="price-row"><span>Code-aware string &amp; wire sizing</span><span class="yes">Included</span></div>
+<div class="price-row"><span>Works with no signal on site</span><span class="yes">100% offline</span></div>
+<div class="price-row"><span>Ads &amp; data collection</span><span class="yes">None</span></div>
 </div>
-<ul class="calc-list">
-<li>Panel count &amp; system kW from daily energy, peak sun hours &amp; losses</li>
-<li>Roof-area fit check for your panel dimensions</li>
-<li>Daily &amp; annual production estimate</li>
-<li>Energy coverage vs. your consumption</li>
-</ul>
-</div>
-
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128267;</span>
-<span class="calc-name">Battery Bank Sizing</span>
-</div>
-<ul class="calc-list">
-<li>Bank kWh &amp; usable capacity from autonomy days</li>
-<li>Battery count as series &times; parallel layout</li>
-<li>C-rate &amp; estimated cycle life</li>
-<li>Li-ion, LiFePO4 &amp; lead-acid chemistry presets</li>
-<li>Round-trip efficiency accounted</li>
-</ul>
-</div>
-
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#9201;</span>
-<span class="calc-name">Battery Backup Runtime</span>
-<span class="calc-tag">Outage answer</span>
-</div>
-<ul class="calc-list">
-<li>How many hours your fridge, lights &amp; router actually run on the bank you propose</li>
-<li>State-of-charge &times; depth-of-discharge &times; inverter efficiency &amp; idle draw</li>
-<li>Half-load &amp; double-load sensitivity scenarios</li>
-<li>High-discharge (C-rate) warning</li>
-</ul>
 </div>
 </div>
 
-<!-- Inverter & String Design -->
-<div class="cat-header">
-<span class="cat-header-icon">&#9889;</span>
-<span class="cat-header-text" style="color:#06b6d4">Inverter &amp; String Design</span>
+<div class="langs reveal">
+<span class="lang">English</span><span class="lang">&#3652;&#3607;&#3618;</span><span class="lang">&#26085;&#26412;&#35486;</span><span class="lang">&#54620;&#44397;&#50612;</span><span class="lang">&#20013;&#25991;</span><span class="lang">Espa&ntilde;ol</span><span class="lang">Portugu&ecirc;s (BR)</span><span class="lang">Fran&ccedil;ais</span><span class="lang">Deutsch</span><span class="lang">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;</span><span class="lang">Bahasa Indonesia</span><span class="lang">Italiano</span><span class="lang">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span><span class="lang">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span>
 </div>
+</div>
+</section>
 
-<div class="calc-grid">
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128260;</span>
-<span class="calc-name">Inverter Sizing &amp; MPPT Window</span>
+<!-- ═══════════ FOOTNOTES ═══════════ -->
+<section style="padding-top:0">
+<div class="wrap">
+<div class="notes">
+<p class="note std"><b>Standards references.</b> VerSolar&rsquo;s methodology references published electrical and photovoltaic standards &mdash; NEC Article 690 / 690.7 (PV system voltage &amp; cold-temperature Voc), IEC 61724 (PV system performance) and IEEE 1562 (array &amp; battery sizing). These are engineering standards, not government agencies. VerSolar is an independent tool published by AI Visibility Rights and is not affiliated with, endorsed by, or sponsored by any standards organization or government entity. Standard names identify technical methodology only.</p>
+<p class="note pro"><b>Professional disclaimer.</b> For reference and design support only. Always verify against the applicable electrical code, the manufacturer datasheet, and a licensed professional before purchasing or installing equipment. This app does not replace professional engineering judgment or an on-site assessment.</p>
 </div>
-<ul class="calc-list">
-<li>Recommended inverter size &amp; DC/AC ratio</li>
-<li>Cold-temperature Voc that decides your safe operating window</li>
-<li>Hot-day Vmp with its own temperature coefficient</li>
-<li>MPPT voltage-window check &amp; array Isc</li>
-</ul>
 </div>
+</section>
 
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128279;</span>
-<span class="calc-name">String Sizing</span>
-<span class="calc-tag">NEC 690.7</span>
-</div>
-<ul class="calc-list">
-<li>Maximum panels per string from the cold-weather Voc limit</li>
-<li>Minimum panels to stay inside the MPPT window</li>
-<li>Parallel-string current</li>
-<li>The calculation that protects your inverter from cold-morning overvoltage</li>
-</ul>
-</div>
-</div>
-
-<!-- Wire & Conduit -->
-<div class="cat-header">
-<span class="cat-header-icon">&#128736;</span>
-<span class="cat-header-text" style="color:#94a3b8">Wire &amp; Conduit</span>
-</div>
-
-<div class="calc-grid">
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128268;</span>
-<span class="calc-name">DC Voltage Drop &amp; Conduit</span>
-<span class="calc-tag">Permit-grade</span>
-</div>
-<ul class="calc-list">
-<li>Round-trip DC voltage drop &amp; power loss for string runs</li>
-<li>Conduit fill per NEC Chapter 9</li>
-<li>Copper &amp; aluminum conductors</li>
-<li>AWG and mm&sup2; sizes side-by-side</li>
-<li>Cable &amp; conduit sized to code, not guessed</li>
-</ul>
-</div>
-
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128295;</span>
-<span class="calc-name">AC Wire &amp; Breaker</span>
-</div>
-<ul class="calc-list">
-<li>Inverter AC-output conductor sizing</li>
-<li>Overcurrent protection device rating (NEC 690.8 / 690.9)</li>
-<li>AC-side voltage drop check</li>
-</ul>
-</div>
-</div>
-
-<!-- Production & Orientation -->
-<div class="cat-header">
-<span class="cat-header-icon">&#128202;</span>
-<span class="cat-header-text" style="color:#f97316">Production &amp; Orientation</span>
-</div>
-
-<div class="calc-grid">
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128208;</span>
-<span class="calc-name">Tilt, Azimuth &amp; Shading</span>
-<span class="calc-tag">12-month curve</span>
-</div>
-<ul class="calc-list">
-<li>Annual production adjusted for roof tilt, orientation &amp; shading</li>
-<li>Month-by-month production chart</li>
-<li>Optimal tilt worked out for your latitude</li>
-<li>Transposition + orientation factor shown explicitly</li>
-</ul>
-</div>
-
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#127968;</span>
-<span class="calc-name">Multi-Array Production</span>
-<span class="calc-tag">Real roofs</span>
-</div>
-<ul class="calc-list">
-<li>Real roofs face more than one way &mdash; combine several roof faces into one system</li>
-<li>Each plane with its own size, tilt, azimuth &amp; shading</li>
-<li>Combined system total with per-array breakdown</li>
-<li>Best &amp; worst performing plane highlighted</li>
-</ul>
-</div>
-
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#127757;</span>
-<span class="calc-name">Peak Sun Hours by Location</span>
-</div>
-<ul class="calc-list">
-<li>Monthly &amp; annual peak sun hours from your latitude</li>
-<li>City presets plus fully custom input</li>
-<li>Optimal tilt with best &amp; worst months</li>
-<li>Works fully offline &mdash; no lookup service needed</li>
-</ul>
-</div>
-</div>
-
-<!-- Financial / ROI -->
-<div class="cat-header">
-<span class="cat-header-icon">&#128176;</span>
-<span class="cat-header-text" style="color:#22c55e">Financial / ROI</span>
-</div>
-
-<div class="calc-grid">
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128200;</span>
-<span class="calc-name">Solar ROI &amp; LCOE</span>
-</div>
-<ul class="calc-list">
-<li>Payback period &amp; lifetime savings</li>
-<li>Return on investment over system life</li>
-<li>Levelised cost of energy (LCOE)</li>
-</ul>
-</div>
-
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#129518;</span>
-<span class="calc-name">Regional Tariff ROI</span>
-<span class="calc-tag">Net-billing honest</span>
-</div>
-<ul class="calc-list">
-<li>Separate import &amp; export rates with a self-consumption split &mdash; the economics stay honest under today&rsquo;s net-billing tariffs</li>
-<li>Payback, NPV, IRR &amp; LCOE independently computed</li>
-<li>Panel degradation &amp; tariff inflation modeled</li>
-<li>Editable regional presets</li>
-</ul>
-</div>
-
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#127794;</span>
-<span class="calc-name">CO&#8322; Savings</span>
-</div>
-<ul class="calc-list">
-<li>Lifetime carbon avoided by your system</li>
-<li>Tree, car &amp; fuel equivalents for client conversations</li>
-</ul>
-</div>
-</div>
-
-<!-- Off-Grid & Pump -->
-<div class="cat-header">
-<span class="cat-header-icon">&#127961;</span>
-<span class="cat-header-text" style="color:#f43f5e">Off-Grid &amp; Pump</span>
-</div>
-
-<div class="calc-grid">
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128257;</span>
-<span class="calc-name">Charge Controller Sizing</span>
-</div>
-<ul class="calc-list">
-<li>MPPT vs. PWM controller current rating</li>
-<li>Matched to battery voltage &amp; array power</li>
-<li>Cold-temperature Voc correction on the input side</li>
-</ul>
-</div>
-
-<div class="calc-card">
-<div class="calc-head">
-<span class="calc-icon">&#128167;</span>
-<span class="calc-name">Solar Water Pump</span>
-</div>
-<ul class="calc-list">
-<li>Pump power from flow rate &amp; total head</li>
-<li>PV array size to drive the pump</li>
-<li>For farms, wells &amp; remote water systems</li>
-</ul>
-</div>
-</div>
-
-<!-- Compare -->
-<h2 class="section-title">A Pro Toolkit at a One-Time Price</h2>
-<p class="section-sub">No seat licenses, no annual renewals, no ads</p>
-
-<div class="compare">
-<div class="compare-row">
-<span class="compare-label">Professional solar design &amp; proposal software</span>
-<span class="compare-vs"><span class="compare-old">$1,000+/yr</span><span class="compare-new">$9.99 once</span></span>
-</div>
-<div class="compare-row">
-<span class="compare-label">Client proposal PDF with quote &amp; assumptions audit</span>
-<span class="compare-vs"><span class="compare-old">Subscription tier</span><span class="compare-new">Included</span></span>
-</div>
-<div class="compare-row">
-<span class="compare-label">Code-aware string &amp; wire sizing</span>
-<span class="compare-vs"><span class="compare-old">Separate tools</span><span class="compare-new">Included</span></span>
-</div>
-<div class="compare-row">
-<span class="compare-label">Works with no signal at the site</span>
-<span class="compare-vs"><span class="compare-old">Cloud-only</span><span class="compare-new">100% offline</span></span>
-</div>
-<div class="compare-row">
-<span class="compare-label">Ads &amp; data collection</span>
-<span class="compare-vs"><span class="compare-old">Typical in free apps</span><span class="compare-new">None</span></span>
-</div>
-</div>
-
-<!-- Key Features -->
-<h2 class="section-title">More Than Just Calculators</h2>
-<p class="section-sub">A complete solar workflow in your pocket</p>
-
-<div class="features">
-<div class="feature">
-<div class="feature-icon">&#129517;</div>
-<div class="feature-name">Guided Next Step</div>
-<div class="feature-desc">Every result suggests the next calculation in the workflow &mdash; from energy needs all the way to ROI.</div>
-</div>
-<div class="feature">
-<div class="feature-icon">&#128218;</div>
-<div class="feature-name">Calculator Guides</div>
-<div class="feature-desc">Every tool has a built-in guide: what it is, how it works, key terms, when to use it, and a one-tap worked example.</div>
-</div>
-<div class="feature">
-<div class="feature-icon">&#128269;</div>
-<div class="feature-name">Quick Switch</div>
-<div class="feature-desc">A bottom-sheet navigator jumps between calculators without going back to Home.</div>
-</div>
-<div class="feature">
-<div class="feature-icon">&#128274;</div>
-<div class="feature-name">100% Offline</div>
-<div class="feature-desc">Works on the roof, at a remote site, or off-grid. Every calculation runs locally &mdash; nothing is sent to any server.</div>
-</div>
-<div class="feature">
-<div class="feature-icon">&#128196;</div>
-<div class="feature-name">Copy, Share &amp; PDF</div>
-<div class="feature-desc">Export any single result as a clean PDF &mdash; or a full branded project proposal with quote and assumptions.</div>
-</div>
-<div class="feature">
-<div class="feature-icon">&#127760;</div>
-<div class="feature-name">14 Languages</div>
-<div class="feature-desc">English, Thai, Japanese, Korean, Chinese, Spanish, Portuguese (Brazil), French, German, Hindi, Indonesian, Italian, Russian &amp; Arabic.</div>
-</div>
-</div>
-
-<!-- Why VerSolar -->
-<h2 class="section-title">Why VerSolar?</h2>
-<p class="section-sub">Numbers that hold up for a real install</p>
-
-<div class="why-grid">
-<div class="why-item">
-<span class="why-check">&#10003;</span>
-<div class="why-text"><strong>Deterministic calculations</strong> &mdash; same input always gives the same output. No AI guesswork, no hallucinated formulas or code limits.</div>
-</div>
-<div class="why-item">
-<span class="why-check">&#10003;</span>
-<div class="why-text"><strong>Temperature-corrected, code-aware</strong> &mdash; cold-Voc string limits (NEC 690.7), MPPT windows and conduit fill, not a back-of-napkin estimate.</div>
-</div>
-<div class="why-item">
-<span class="why-check">&#10003;</span>
-<div class="why-text"><strong>Honest ROI</strong> &mdash; separate import/export rates and self-consumption split reflect today&rsquo;s net-billing reality instead of inflating payback.</div>
-</div>
-<div class="why-item">
-<span class="why-check">&#10003;</span>
-<div class="why-text"><strong>Proposal-ready</strong> &mdash; a key-assumptions audit table in every proposal shows the client exactly what the numbers are based on.</div>
-</div>
-<div class="why-item">
-<span class="why-check">&#10003;</span>
-<div class="why-text"><strong>Works on-site</strong> &mdash; 100% offline. Survey, size and quote at the site with no signal, and hand over the PDF before you leave.</div>
-</div>
-<div class="why-item">
-<span class="why-check">&#10003;</span>
-<div class="why-text"><strong>No subscription</strong> &mdash; pay $9.99 once, use forever. Every calculator and Project Mode unlocked from day one.</div>
-</div>
-<div class="why-item">
-<span class="why-check">&#10003;</span>
-<div class="why-text"><strong>No ads, no tracking</strong> &mdash; your client data and designs stay on your device. Privacy by design.</div>
-</div>
-<div class="why-item">
-<span class="why-check">&#10003;</span>
-<div class="why-text"><strong>Clean, readable UI</strong> &mdash; a distraction-free interface designed to be read in the sun.</div>
-</div>
-</div>
-
-<!-- Languages -->
-<h2 class="section-title">Available in 14 Languages</h2>
-<p class="section-sub">For installers and system owners worldwide</p>
-
-<div class="lang-row">
-<span class="lang-badge">English</span>
-<span class="lang-badge">&#127481;&#127469; Thai</span>
-<span class="lang-badge">&#127471;&#127477; Japanese</span>
-<span class="lang-badge">&#127472;&#127479; Korean</span>
-<span class="lang-badge">&#127464;&#127475; Chinese</span>
-<span class="lang-badge">&#127466;&#127480; Spanish</span>
-<span class="lang-badge">&#127463;&#127479; Portuguese</span>
-<span class="lang-badge">&#127467;&#127479; French</span>
-<span class="lang-badge">&#127465;&#127466; German</span>
-<span class="lang-badge">&#127470;&#127475; Hindi</span>
-<span class="lang-badge">&#127470;&#127465; Indonesian</span>
-<span class="lang-badge">&#127470;&#127481; Italian</span>
-<span class="lang-badge">&#127479;&#127482; Russian</span>
-<span class="lang-badge">&#127480;&#127462; Arabic</span>
-</div>
-
-<!-- Standards references (non-affiliation) -->
-<div class="disclaimer" style="background:#0ea5e910;border-left-color:#0ea5e9;color:#7dd3fc">
-<strong>Standards references:</strong> VerSolar&rsquo;s engineering methodology references published electrical and photovoltaic standards &mdash; NEC Article 690 / 690.7 (PV system voltage &amp; cold-temperature Voc), IEC 61724 (PV system performance) and IEEE 1562 (array &amp; battery sizing). These are engineering standards, not government agencies. VerSolar is an independent tool published by AI Visibility Rights and is <strong>not</strong> affiliated with, endorsed by, or sponsored by any standards organization or government entity. Standard names identify technical methodology only.
-</div>
-
-<!-- Disclaimer -->
-<div class="disclaimer">
-<strong>Professional disclaimer:</strong> For reference and design support only. Always verify against the applicable electrical code, the manufacturer datasheet, and a licensed professional before purchasing or installing equipment. This app does not replace professional engineering judgment or an on-site assessment.
-</div>
-
-<!-- CTA -->
+<!-- ═══════════ CTA ═══════════ -->
 <div class="cta">
-<h2>From site survey to signed proposal &mdash; one app, no internet.</h2>
-<p>Standards-grade solar calculators plus Project Mode with branded proposal PDFs. 14 languages. Completely offline.</p>
+<h2>The site has no signal. Your toolkit shouldn&rsquo;t care.</h2>
+<p>Standards-grade solar calculators plus Project Mode with branded proposal PDFs. Pay once, use forever.</p>
 <div class="badge-row">
-<a class="badge badge-apple" href="#">&#9654; Download on App Store</a>
+<a class="badge badge-apple" href="#">&#63743; Download on the App Store</a>
 <a class="badge badge-google" href="#">&#9654; Get it on Google Play</a>
 </div>
 </div>
 
-<!-- Footer -->
+<!-- footer -->
 <div class="footer">
 <a href="https://aivisibityrights.github.io/store/privacy-policy.html">Privacy Policy</a>
 <a href="https://aivisibityrights.github.io/store/support.html">Support</a>
-<div class="copy">&copy; 2026 AI Visibility Rights. All rights reserved.</div>
+<div class="copy">&copy; 2026 AI Visibility Rights</div>
 </div>
 
-</div>
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+
 </body>
 </html>
