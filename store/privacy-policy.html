@@ -28,7 +28,7 @@ a:hover{text-decoration:underline}
 <div class="container">
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: March 15, 2026</p>
+<p class="updated">Last updated: August 16, 2026</p>
 
 <p><span class="company">AI Visibility Rights</span> ("we", "us", or "our") operates the following mobile applications:</p>
 
@@ -80,7 +80,7 @@ a:hover{text-decoration:underline}
 <p>This Privacy Policy describes how we collect, use, and protect your information when you use our apps.</p>
 
 <div class="highlight">
-<strong>Summary:</strong> Our apps are designed with privacy first. We do NOT collect, store, or transmit any personal data to external servers. All data stays on your device.
+<strong>Summary:</strong> Our apps are designed with privacy first. We do not collect personal data, and everything you enter &mdash; your inputs, results, history and settings &mdash; stays on your device. The one exception is software updates: apps that support over-the-air updates ask our update provider whether a newer version of the app code is available. That request carries no personal data and is described in section 3.1.
 </div>
 
 <h2>1. Information We Collect</h2>
@@ -104,7 +104,8 @@ a:hover{text-decoration:underline}
 </ul>
 
 <h3>1.3 Usage Data</h3>
-<p>Our apps do not currently use any analytics or tracking services. We do not track how you use the app, which features you access, or how often you open the app.</p>
+<p>Our apps do not use any analytics or tracking services. We do not track how you use the app, which features you access, or how often you open it, and we receive no report of your activity.</p>
+<p>Apps with over-the-air updates enabled contact the update service when they launch, which necessarily reveals that an installation checked for an update at that moment. That check carries no information about what you did in the app. See section 3.1.</p>
 
 <h3>1.4 Data Stored on Device</h3>
 <p>Our apps store the following data <strong>locally on your device only</strong>:</p>
@@ -117,7 +118,7 @@ a:hover{text-decoration:underline}
 <li>App preferences and settings</li>
 <li>Purchase status (unlocked/free)</li>
 </ul>
-<p>This data is stored using your device's local storage (AsyncStorage) and is <strong>never transmitted</strong> to any server.</p>
+<p>This data is stored using your device's local storage (AsyncStorage). It is <strong>never transmitted</strong> to us or to any third party &mdash; it is not included in update checks, purchases, or anything else the app sends.</p>
 
 <h2>2. In-App Purchases</h2>
 <p>Our apps offer one-time purchases to unlock full features. These purchases are processed entirely by:</p>
@@ -129,10 +130,21 @@ a:hover{text-decoration:underline}
 <p>We do not have access to your payment information (credit card, billing address, etc.).</p>
 
 <h2>3. Third-Party Services</h2>
-<p>Our apps currently do not integrate any third-party services for analytics, advertising, or data collection. If this changes in the future, we will update this policy accordingly.</p>
+<p>Our apps do not integrate any third-party service for analytics, advertising, or data collection. If this changes in the future, we will update this policy accordingly.</p>
+
+<h3>3.1 Software Updates (Expo / EAS Update)</h3>
+<p>Most of our apps are built with <a href="https://expo.dev">Expo</a> and can receive over-the-air updates: corrections to the app's own code, delivered without waiting for a store release. When such an app launches, it asks Expo's update service whether a newer version has been published.</p>
+<p>That request contains only what is needed to answer it:</p>
+<ul>
+<li>the operating system and version the app is running on</li>
+<li>the app's project identifier and the version it currently has installed</li>
+<li>a random token that lets the service tell one installation from another, so it does not resend an update you already have. It is not your name, your account, or a device advertising identifier, and we cannot use it to identify you.</li>
+<li>if the app previously failed to start after an update, the text of that error, so the service can roll the app back to a working version</li>
+</ul>
+<p>It contains none of your inputs, calculations, results, photos, history, or settings. Expo's own description of what these requests carry is published at <a href="https://expo.dev/privacy-explained">expo.dev/privacy-explained</a>. If the device is offline the check simply fails and the app continues to work normally.</p>
 
 <h2>4. Data Sharing</h2>
-<p>We do <strong>not</strong> share, sell, rent, or trade any user data with third parties. Since we don't collect data, there is nothing to share.</p>
+<p>We do <strong>not</strong> share, sell, rent, or trade user data with third parties. We hold no personal data to share. The update information described in section 3.1 goes to our update provider solely to deliver app updates, and is never sold or used for advertising.</p>
 
 <h2>5. Children's Privacy (COPPA)</h2>
 <p>Our apps do not collect any personal information from anyone, including children under 13. Our apps are safe for users of all ages. We comply with the Children's Online Privacy Protection Act (COPPA) and similar international regulations.</p>
