@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerPet Carebook &mdash; Pet Care Log &amp; Vet Visit Brief</title>
+<meta name="description" content="A private, on-device pet care journal: your vet's plan, honest daily notes with photos, weights over time, and a visit brief you can share as text or PDF. No account, no ads, no subscription.">
+<meta property="og:title" content="VerPet Carebook — Pet Care Log & Vet Visit Brief">
+<meta property="og:description" content="Their little moments matter. Keep an honest care story for each pet and walk into the next vet visit ready.">
+<meta property="og:image" content="https://aivisibityrights.github.io/store/img/verpet-og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aivisibityrights.github.io/store/verpet.html">
+<link rel="alternate" hreflang="en" href="https://aivisibityrights.github.io/store/verpet.html">
+<link rel="alternate" hreflang="th" href="https://aivisibityrights.github.io/store/th/verpet.html">
+<link rel="alternate" hreflang="x-default" href="https://aivisibityrights.github.io/store/verpet.html">
+<link rel="icon" href="img/verpet-icon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#fff8f0;--surface:#fff;--ink:#2b3a34;--muted:#5f6f67;--line:#eadfd3;--accent:#ff7a5c;--accent-ink:#9a3b2c;--mint:#dff4e8;--mint-ink:#1e6b4a;--sky:#e2f1f6;--sky-ink:#1f5a6b;--butter:#fff1bf;--butter-ink:#6f5510;--lilac:#eee8fa;--lilac-ink:#4e3f8a;--peach:#ffe9d6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans','Noto Sans Thai',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
+a{color:var(--accent-ink)}
+.container{max-width:880px;margin:0 auto;padding:20px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:10px}
+.lang a{font-size:13px;margin-left:12px;color:var(--muted);text-decoration:none}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;padding:36px 0 20px}
+.hero h1{font-size:40px;line-height:1.15;letter-spacing:-.01em;margin-bottom:12px}
+.hero .lead{font-size:18px;color:var(--muted);margin-bottom:22px}
+.hero>*{min-width:0}
+.hero img{width:100%;max-width:100%;height:auto}
+img{max-width:100%}
+.badges{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;padding:11px 18px;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none}
+.badge.soft{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.price{display:inline-block;background:var(--butter);color:var(--butter-ink);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;margin-top:16px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px}
+.pillar .k{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.pillar h3{font-size:18px;margin-bottom:6px}
+.pillar p{font-size:14px;color:var(--muted)}
+.k.mint{background:var(--mint);color:var(--mint-ink)}.k.peach{background:var(--peach);color:var(--accent-ink)}.k.sky{background:var(--sky);color:var(--sky-ink)}
+.section{margin:44px 0}
+.section h2{font-size:28px;margin-bottom:6px}
+.section .sub{color:var(--muted);margin-bottom:22px}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:24px;margin-bottom:16px}
+.feature.rev{direction:rtl}.feature.rev>*{direction:ltr}
+.feature>*{min-width:0}
+.feature img{width:100%;max-width:340px;height:auto;margin:0 auto;display:block}
+.feature ul{padding-left:18px;color:var(--muted);font-size:15px}
+.feature li{margin-bottom:6px}
+.feature h3{font-size:22px;margin-bottom:10px}
+.privacy{background:var(--mint);border-radius:26px;padding:26px}
+.privacy h2{color:var(--mint-ink)}
+.privacy ul{padding-left:18px;color:var(--ink);font-size:15px}
+.disclaimer{background:var(--butter);color:var(--butter-ink);border-radius:18px;padding:16px 18px;font-size:14px;margin-top:24px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{color:var(--muted);font-size:14px;margin-top:8px}
+.footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+.footer a{margin:0 8px}
+@media (max-width:720px){.hero{grid-template-columns:1fr}.hero h1{font-size:32px}.pillars{grid-template-columns:1fr}.feature,.feature.rev{grid-template-columns:1fr;direction:ltr}}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="nav">
+    <a class="brand" href="verpet.html"><img src="img/verpet-icon.png" alt="">VerPet Carebook</a>
+    <div class="lang"><a href="verpet.html">English</a><a href="th/verpet.html">ไทย</a></div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>Their little moments matter.</h1>
+      <p class="lead">A private, on-device care journal for the time between one vet visit and the next. Your vet's plan, honest daily notes with photos, weights over time, and one clear visit brief to share.</p>
+      <div class="badges">
+        <a class="badge" href="#" aria-disabled="true">App Store</a>
+        <a class="badge" href="#" aria-disabled="true">Google Play</a>
+      </div>
+      <span class="price">Pay once, use forever. No subscription, no ads, no account.</span>
+    </div>
+    <img src="img/verpet-hero.png" alt="A cat, a dog and a small bird gathered around an open care notebook">
+  </section>
+
+  <div class="pillars">
+    <div class="pillar"><span class="k mint">Honest</span><h3>Blank means blank</h3><p>Each note is similar to usual, changed, or not observed. A day with no note stays blank. Not observed is never turned into fine.</p></div>
+    <div class="pillar"><span class="k peach">Light</span><h3>A few taps a day</h3><p>Tap what you noticed, add a short note or photo, done. A seven-day care trail shows the week at a glance.</p></div>
+    <div class="pillar"><span class="k sky">Ready</span><h3>Walk in prepared</h3><p>One visit brief with the plan, your observations, weights, photos and questions. Share as text or PDF when you choose.</p></div>
+  </div>
+
+  <section class="section">
+    <h2>What's inside</h2>
+    <p class="sub">Everything a careful owner needs between visits. Nothing that pretends to be a vet.</p>
+
+    <div class="feature">
+      <div>
+        <h3>A care story for each pet</h3>
+        <ul>
+          <li>Cats, dogs, birds, rabbits and any other companion, each with a photo</li>
+          <li>Keep your vet's plan in your own words and the questions for next time</li>
+          <li>Choose the things to follow: meals, energy, a healing wound</li>
+          <li>One-time or daily reminders from your device</li>
+        </ul>
+      </div>
+      <img src="img/verpet-honest.png" alt="The three friends peeking over a soft cloud">
+    </div>
+
+    <div class="feature rev">
+      <div>
+        <h3>Weight over time</h3>
+        <ul>
+          <li>Log weights in kilograms or pounds with the date, time and a note</li>
+          <li>A gentle chart shows the trend, so the conversation with your vet is about a line, not a single number</li>
+        </ul>
+      </div>
+      <img src="img/verpet-scale.png" alt="The cat sitting proudly on a bathroom scale">
+    </div>
+
+    <div class="feature">
+      <div>
+        <h3>A visit brief that is ready when you are</h3>
+        <ul>
+          <li>Days with entries, days observed, days not observed and days without an entry, shown separately</li>
+          <li>A four-week calendar that makes gaps visible instead of hiding them</li>
+          <li>Photos and weights included in the PDF</li>
+          <li>Text or PDF through your device's share sheet. You pick the recipient</li>
+        </ul>
+      </div>
+      <img src="img/verpet-visit.png" alt="The friends waiting calmly on a clinic bench with the notebook">
+    </div>
+  </section>
+
+  <section class="section privacy">
+    <h2>Your data stays with you</h2>
+    <ul>
+      <li>No account, no cloud sync, no ads, no tracking and no AI service</li>
+      <li>Notes, photos and weights are stored only on your device; you choose what to share and with whom</li>
+      <li>Export a backup as text or a file, and restore it after checking what it contains</li>
+      <li>Photos come from your library only; the app never asks for the camera</li>
+    </ul>
+    <div class="disclaimer">VerPet Carebook records the information you enter. It does not diagnose, assess urgency, recommend treatment, interpret symptoms or replace veterinary advice. Follow your veterinarian's instructions and contact them with any medical question.</div>
+  </section>
+
+  <section class="section faq">
+    <h2>Questions</h2>
+    <details><summary>Does the app tell me if my pet is sick?</summary><p>No. It keeps your own observations organised and honest so you can tell your vet what actually happened. Contact a veterinarian for any medical concern.</p></details>
+    <details><summary>Where is my data?</summary><p>On your device only. There is no account and no server of ours. Export a backup before changing phones or uninstalling.</p></details>
+    <details><summary>Is there a subscription?</summary><p>No. Pay once, use forever. No in-app purchases and no ads.</p></details>
+    <details><summary>Which languages?</summary><p>English and Thai, with more languages included in the app.</p></details>
+  </section>
+
+  <footer class="footer">
+    &copy; 2026 AI Visibility Rights ·
+    <a href="verpet-privacy.html">Privacy policy</a> ·
+    <a href="support.html">Support</a>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerPet Carebook &mdash; สมุดดูแลสัตว์เลี้ยง สรุปเตรียมนัดหมอ</title>
+<meta name="description" content="สมุดดูแลสัตว์เลี้ยงส่วนตัวบนเครื่องของคุณ: แผนของหมอ บันทึกประจำวันพร้อมรูปถ่าย น้ำหนักตามช่วงเวลา และสรุปเตรียมนัดที่แชร์เป็นข้อความหรือ PDF ได้ ไม่มีบัญชี ไม่มีโฆษณา ไม่มีสมัครสมาชิก">
+<meta property="og:title" content="VerPet Carebook — สมุดดูแลสัตว์เลี้ยง สรุปเตรียมนัดหมอ">
+<meta property="og:description" content="ทุกเรื่องเล็ก ๆ ของเขา สำคัญเสมอ เก็บเรื่องที่ดูแลอย่างซื่อสัตย์ แล้วเดินเข้าห้องตรวจครั้งหน้าอย่างพร้อม">
+<meta property="og:image" content="https://aivisibityrights.github.io/store/img/verpet-og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aivisibityrights.github.io/store/th/verpet.html">
+<link rel="alternate" hreflang="en" href="https://aivisibityrights.github.io/store/verpet.html">
+<link rel="alternate" hreflang="th" href="https://aivisibityrights.github.io/store/th/verpet.html">
+<link rel="alternate" hreflang="x-default" href="https://aivisibityrights.github.io/store/verpet.html">
+<link rel="icon" href="../img/verpet-icon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#fff8f0;--surface:#fff;--ink:#2b3a34;--muted:#5f6f67;--line:#eadfd3;--accent:#ff7a5c;--accent-ink:#9a3b2c;--mint:#dff4e8;--mint-ink:#1e6b4a;--sky:#e2f1f6;--sky-ink:#1f5a6b;--butter:#fff1bf;--butter-ink:#6f5510;--lilac:#eee8fa;--lilac-ink:#4e3f8a;--peach:#ffe9d6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans','Noto Sans Thai',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
+a{color:var(--accent-ink)}
+.container{max-width:880px;margin:0 auto;padding:20px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:10px}
+.lang a{font-size:13px;margin-left:12px;color:var(--muted);text-decoration:none}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;padding:36px 0 20px}
+.hero h1{font-size:40px;line-height:1.15;letter-spacing:-.01em;margin-bottom:12px}
+.hero .lead{font-size:18px;color:var(--muted);margin-bottom:22px}
+.hero>*{min-width:0}
+.hero img{width:100%;max-width:100%;height:auto}
+img{max-width:100%}
+.badges{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;padding:11px 18px;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none}
+.badge.soft{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.price{display:inline-block;background:var(--butter);color:var(--butter-ink);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;margin-top:16px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px}
+.pillar .k{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.pillar h3{font-size:18px;margin-bottom:6px}
+.pillar p{font-size:14px;color:var(--muted)}
+.k.mint{background:var(--mint);color:var(--mint-ink)}.k.peach{background:var(--peach);color:var(--accent-ink)}.k.sky{background:var(--sky);color:var(--sky-ink)}
+.section{margin:44px 0}
+.section h2{font-size:28px;margin-bottom:6px}
+.section .sub{color:var(--muted);margin-bottom:22px}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:24px;margin-bottom:16px}
+.feature.rev{direction:rtl}.feature.rev>*{direction:ltr}
+.feature>*{min-width:0}
+.feature img{width:100%;max-width:340px;height:auto;margin:0 auto;display:block}
+.feature ul{padding-left:18px;color:var(--muted);font-size:15px}
+.feature li{margin-bottom:6px}
+.feature h3{font-size:22px;margin-bottom:10px}
+.privacy{background:var(--mint);border-radius:26px;padding:26px}
+.privacy h2{color:var(--mint-ink)}
+.privacy ul{padding-left:18px;color:var(--ink);font-size:15px}
+.disclaimer{background:var(--butter);color:var(--butter-ink);border-radius:18px;padding:16px 18px;font-size:14px;margin-top:24px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{color:var(--muted);font-size:14px;margin-top:8px}
+.footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+.footer a{margin:0 8px}
+@media (max-width:720px){.hero{grid-template-columns:1fr}.hero h1{font-size:32px}.pillars{grid-template-columns:1fr}.feature,.feature.rev{grid-template-columns:1fr;direction:ltr}}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="nav">
+    <a class="brand" href="verpet.html"><img src="../img/verpet-icon.png" alt="">VerPet Carebook</a>
+    <div class="lang"><a href="../verpet.html">English</a><a href="verpet.html">ไทย</a></div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>ทุกเรื่องเล็ก ๆ ของเขา สำคัญเสมอ</h1>
+      <p class="lead">สมุดดูแลส่วนตัวบนเครื่องของคุณ สำหรับช่วงเวลาระหว่างนัดหมอครั้งหนึ่งกับครั้งถัดไป แผนของหมอ บันทึกประจำวันอย่างซื่อสัตย์พร้อมรูปถ่าย น้ำหนักตามช่วงเวลา และสรุปเตรียมนัดฉบับเดียวที่ชัดเจน</p>
+      <div class="badges">
+        <a class="badge" href="#" aria-disabled="true">App Store</a>
+        <a class="badge" href="#" aria-disabled="true">Google Play</a>
+      </div>
+      <span class="price">จ่ายครั้งเดียว ใช้ได้ตลอด ไม่มีสมัครสมาชิก ไม่มีโฆษณา ไม่มีบัญชี</span>
+    </div>
+    <img src="../img/verpet-hero.png" alt="แมว สุนัข และนกตัวเล็กอยู่รอบสมุดดูแลที่เปิดอยู่">
+  </section>
+
+  <div class="pillars">
+    <div class="pillar"><span class="k mint">ซื่อสัตย์</span><h3>ว่างก็คือว่าง</h3><p>แต่ละบันทึกคือใกล้เคียงเดิม มีสิ่งเปลี่ยนไป หรือไม่ได้สังเกต วันที่ไม่ได้จดจะเว้นว่างไว้ ไม่ได้สังเกตไม่มีวันถูกแปลงเป็นปกติดี</p></div>
+    <div class="pillar"><span class="k peach">เบา</span><h3>วันละไม่กี่แตะ</h3><p>แตะสิ่งที่สังเกตเห็น เพิ่มโน้ตสั้น ๆ หรือรูป เสร็จ รอยทางการดูแลเจ็ดวันให้เห็นทั้งสัปดาห์ในพริบตา</p></div>
+    <div class="pillar"><span class="k sky">พร้อม</span><h3>เดินเข้าห้องตรวจอย่างพร้อม</h3><p>สรุปเตรียมนัดฉบับเดียวรวมแผน สิ่งที่สังเกต น้ำหนัก รูปถ่าย และคำถาม แชร์เป็นข้อความหรือ PDF เมื่อคุณเลือก</p></div>
+  </div>
+
+  <section class="section">
+    <h2>มีอะไรข้างใน</h2>
+    <p class="sub">ทุกอย่างที่เจ้าของผู้ใส่ใจต้องใช้ระหว่างนัด ไม่มีอะไรที่แกล้งทำเป็นหมอ</p>
+
+    <div class="feature">
+      <div>
+        <h3>เรื่องที่ดูแลของสัตว์เลี้ยงแต่ละตัว</h3>
+        <ul>
+          <li>แมว สุนัข นก กระต่าย และเพื่อนตัวอื่น แต่ละตัวมีรูปของตัวเอง</li>
+          <li>เก็บแผนของหมอด้วยคำของคุณเอง พร้อมคำถามสำหรับครั้งหน้า</li>
+          <li>เลือกสิ่งที่ต้องติดตาม: มื้ออาหาร พลังงาน แผลที่กำลังหาย</li>
+          <li>ตั้งเตือนครั้งเดียวหรือทุกวันจากเครื่องของคุณ</li>
+        </ul>
+      </div>
+      <img src="../img/verpet-honest.png" alt="เพื่อนสามตัวโผล่หน้ามาจากหลังก้อนเมฆนุ่ม ๆ">
+    </div>
+
+    <div class="feature rev">
+      <div>
+        <h3>น้ำหนักตามช่วงเวลา</h3>
+        <ul>
+          <li>บันทึกน้ำหนักเป็นกิโลกรัมหรือปอนด์ พร้อมวัน เวลา และโน้ต</li>
+          <li>กราฟแนวโน้มอ่านง่าย ให้คุยกับหมอเรื่องเส้นแนวโน้ม ไม่ใช่ตัวเลขครั้งเดียว</li>
+        </ul>
+      </div>
+      <img src="../img/verpet-scale.png" alt="แมวนั่งอย่างภูมิใจบนเครื่องชั่ง">
+    </div>
+
+    <div class="feature">
+      <div>
+        <h3>สรุปเตรียมนัดที่พร้อมเมื่อคุณพร้อม</h3>
+        <ul>
+          <li>แยกวันที่มีบันทึก วันที่สังเกตจริง วันที่ระบุว่าไม่ได้สังเกต และวันที่ไม่มีบันทึกออกจากกัน</li>
+          <li>ปฏิทินสี่สัปดาห์ที่ทำให้เห็นช่องว่าง แทนที่จะซ่อนไว้</li>
+          <li>รูปถ่ายและน้ำหนักรวมอยู่ใน PDF</li>
+          <li>ข้อความหรือ PDF ผ่านหน้าต่างแชร์ของเครื่อง คุณเป็นผู้เลือกผู้รับ</li>
+        </ul>
+      </div>
+      <img src="../img/verpet-visit.png" alt="เพื่อน ๆ นั่งรออย่างสงบบนม้านั่งคลินิกพร้อมสมุด">
+    </div>
+  </section>
+
+  <section class="section privacy">
+    <h2>ข้อมูลอยู่กับคุณ</h2>
+    <ul>
+      <li>ไม่มีบัญชี ไม่มีการซิงก์คลาวด์ ไม่มีโฆษณา ไม่มีการติดตาม และไม่มีบริการ AI</li>
+      <li>บันทึก รูปถ่าย และน้ำหนักเก็บอยู่ในเครื่องของคุณเท่านั้น คุณเลือกว่าจะแชร์อะไรและกับใคร</li>
+      <li>ส่งออกข้อมูลสำรองเป็นข้อความหรือไฟล์ และกู้คืนได้หลังตรวจดูเนื้อหาแล้ว</li>
+      <li>รูปมาจากคลังภาพเท่านั้น แอปไม่ขอใช้กล้อง</li>
+    </ul>
+    <div class="disclaimer">VerPet Carebook บันทึกข้อมูลที่คุณกรอกเท่านั้น ไม่วินิจฉัย ไม่ประเมินความเร่งด่วน ไม่แนะนำการรักษา ไม่ตีความอาการ และไม่ใช่สิ่งทดแทนคำแนะนำจากสัตวแพทย์ โปรดปฏิบัติตามคำแนะนำของสัตวแพทย์และติดต่อสัตวแพทย์เมื่อมีคำถามทางการแพทย์</div>
+  </section>
+
+  <section class="section faq">
+    <h2>คำถามที่พบบ่อย</h2>
+    <details><summary>แอปบอกได้ไหมว่าสัตว์เลี้ยงป่วย</summary><p>ไม่ได้ แอปช่วยจัดสิ่งที่คุณสังเกตให้เป็นระเบียบและซื่อสัตย์ เพื่อให้คุณเล่าให้หมอฟังได้ว่าเกิดอะไรขึ้นจริง ติดต่อสัตวแพทย์เมื่อมีข้อกังวลทางการแพทย์</p></details>
+    <details><summary>ข้อมูลของฉันอยู่ที่ไหน</summary><p>ในเครื่องของคุณเท่านั้น ไม่มีบัญชีและไม่มีเซิร์ฟเวอร์ของเรา ส่งออกข้อมูลสำรองก่อนเปลี่ยนเครื่องหรือลบแอป</p></details>
+    <details><summary>มีสมัครสมาชิกไหม</summary><p>ไม่มี จ่ายครั้งเดียว ใช้ได้ตลอด ไม่มีซื้อในแอปและไม่มีโฆษณา</p></details>
+    <details><summary>รองรับภาษาอะไรบ้าง</summary><p>ไทย อังกฤษ และภาษาอื่น ๆ ที่มีในแอป</p></details>
+  </section>
+
+  <footer class="footer">
+    &copy; 2026 AI Visibility Rights ·
+    <a href="../verpet-privacy.html">นโยบายความเป็นส่วนตัว</a> ·
+    <a href="../support.html">ติดต่อช่วยเหลือ</a>
+  </footer>
+</div>
+</body>
+</html>
