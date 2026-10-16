@@ -65,7 +65,7 @@ a{color:#9a3b2c}
 </ul>
 
 <h2>5. Network activity</h2>
-<p>The only network activity is the standard Expo over-the-air update check, which lets us deliver fixes to the app's JavaScript without a store release. This request contains no user data. There are no analytics, advertising or tracking SDKs in the app.</p>
+<p>The only network activity is the standard Expo over-the-air update check, which lets us deliver fixes to the app's JavaScript without a store release. That request carries a random installation identifier created by the update library (not your name, device serial or advertising ID), the app version and the platform, so the update service can count installations and serve the right update. It carries none of your records. The identifier is not used for advertising or tracking, and it is reset when the app is uninstalled. There are no analytics, advertising or tracking SDKs in the app.</p>
 
 <h2>6. Purchases</h2>
 <p>VerPet Carebook is a one-time paid download handled by the App Store or Google Play. There are no in-app purchases and no subscriptions. Payment information is processed by the store, never by the app.</p>
