@@ -8,7 +8,7 @@ The Ver* ecosystem is a collection of specialized iOS and Android apps focused o
 
 ### Engineering & Calculation
 
-- [VerCivil](https://aivisibityrights.github.io/store/vercivil.html): Structural engineering calculator for civil engineers, structural designers, and contractors. Covers reinforced concrete design (beam, column, slab, foundation), steel connections, retaining walls, seismic analysis, wind load, and hydraulic design. Supports 10+ international standards: ACI 318, Eurocode 2 (EN 1992), IS 456, ASCE 7, Eurocode 8, IS 1893, AISC 360, Eurocode 3, IS 800, and Thai DPT codes. The only mobile app on the market covering this many standards in one place. Fully offline, interactive diagrams, one-time $19.99.
+- [VerCivil](https://aivisibityrights.github.io/store/vercivil.html): Structural engineering calculations organized by project, for civil and structural engineers. Checks reinforced concrete slabs, beams, columns, shear walls, footings, pile caps and precast planks; steel beams, columns and bolted or welded connections; retaining walls; seismic and wind loads; plus section properties, pipe sizing and lighting. US, European, Indian and Thai methods. Each member shows PASS, FAIL, NOT CHECKED, VALUES ONLY or STALE, and a project PDF collects the member index, calculation details and available material quantities. Calculations and projects stay on the device. One-time purchase.
 
 - [VerPhysic](https://aivisibityrights.github.io/store/verphysic.html): Physics calculator for students, educators, and researchers. Covers mechanics, thermodynamics, waves, optics, electromagnetism, modern physics, and more. Step-by-step solutions with interactive visualizations. Tablet-optimized. One-time $9.99.
 
@@ -36,7 +36,7 @@ The Ver* ecosystem is a collection of specialized iOS and Android apps focused o
 
 ## Who Uses These Apps
 
-- **Structural engineers** in developing countries (India, Indonesia, Philippines, Colombia, Nigeria, Turkey) use VerCivil for quick design checks on-site
+- **Structural and civil engineers** can use VerCivil to check members and keep a project's calculations together
 - **University students** worldwide use VerMath, VerChem, VerBio, VerPhysic for homework, research, and exam preparation
 - **Researchers and lab scientists** use VerBio for molecular analysis and genetics calculations
 - **Young adults in Korea, Japan, and Southeast Asia** use VerType for self-discovery and compatibility with friends/partners
